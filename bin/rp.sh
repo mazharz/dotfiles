@@ -1,0 +1,16 @@
+#!/bin/bash
+
+defaultDir='/home/m47h4r/mzd/music/'
+dir=${1:-$defaultDir}
+
+IFS=$'\r\n' GLOBIGNORE='*' command eval 'musicList=($(find ${dir} -type f | grep -E -i "(\.flac|\.m4a|\.mp3|\.webm|\.ogg)"))'
+
+# get array length
+musicListLength=${#musicList[@]}
+
+while true
+do
+	currentMusic=`shuf -i 1-$musicListLength -n 1`
+	mpv --audio-display=no "${musicList[$currentMusic]}"
+	#sleep .5
+done

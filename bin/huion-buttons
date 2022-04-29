@@ -1,0 +1,17 @@
+#!/bin/bash
+
+xsetwacom set "HID 256c:006d Pad pad" Button 1 key "ctrl"
+xsetwacom set "HID 256c:006d Pad pad" Button 2 key "shift"
+xsetwacom set "HID 256c:006d Pad pad" Button 3 key "alt"
+xsetwacom set "HID 256c:006d Pad pad" Button 8 key "super" # for some reason 4-7 are not supported.
+xsetwacom set "HID 256c:006d Pad pad" Button 9 key "+space"
+xsetwacom set "HID 256c:006d Pad pad" Button 10 key "ctrl +space"
+xsetwacom set "HID 256c:006d Pad pad" Button 11 key "ctrl +z"
+xsetwacom set "HID 256c:006d Pad pad" Button 12 key "ctrl +shift +z"
+# i'll configure the rest for when I learn what I need
+#xsetwacom set "HID 256c:006d Pad pad" Button 1 key "super"
+#xsetwacom set "HID 256c:006d Pad pad" Button 1 key "super"
+#xsetwacom set "HID 256c:006d Pad pad" Button 1 key "super"
+#xsetwacom set "HID 256c:006d Pad pad" Button 1 key "super"
+#xsetwacom set "HID 256c:006d Pad pad" Button 1 key "super"
+#xsetwacom set "HID 256c:006d Pad pad" Button 1 key "super"

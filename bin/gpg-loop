@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# usage:
+# $ gpg-loop encode *.ogg
+# $ gpg-loop decode *.ogg.gpg
+
+args=("$@")
+
+read -s -p "Pass: " pass
+echo # go on next line after getting pass
+
+if [ "$1" == "encode" ]; then
+  for ((i=1; i < $#; i++)); do
+    gpg -c --cipher-algo aes256 --batch --passphrase "$pass" "${args[$i]}"
+  done
+elif [ "$1" == "decode" ];then
+  for ((i=1; i < $#; i++)); do
+    gpg --batch --passphrase "$pass" "${args[$i]}"
+  done
+fi

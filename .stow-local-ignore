@@ -1,0 +1,4 @@
+# stow will ignore these when it populates the symlinks
+
+README.md
+\.git

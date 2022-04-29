@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# usage:
+# $ webm-to-ogg *.webm
+
+args=("$@")
+
+for ((i=0; i < $#; i++)); do
+  ffmpeg -i "${args[$i]}" -c:a copy -vn "${args[$i]}.ogg"
+done
+

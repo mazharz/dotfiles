@@ -1,0 +1,6 @@
+#!/bin/bash
+
+mkdir -p to_move
+for filename in $(ls *.jpg | cut -d'.' -f1); do
+	mv $filename* to_move
+done

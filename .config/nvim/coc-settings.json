@@ -1,0 +1,6 @@
+{
+  "tailwindCSS.headwind.runOnSave": false,
+  "list.normalMappings": {
+    "v": "action:vsplit"
+  }
+}

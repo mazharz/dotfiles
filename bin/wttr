@@ -1,0 +1,10 @@
+#!/bin/bash
+
+type=$1
+location="sanandaj"
+
+if [ "$type" == "line" ]; then
+  curl "wttr.in/${location}?format=3"
+else
+  curl "wttr.in/${location}"
+fi
