@@ -13,6 +13,7 @@ syntax on
 
 " set mouse compatibility
 set mouse=a
+set guicursor=i:block
 
 " encoding utf 8
 set encoding=utf-8
