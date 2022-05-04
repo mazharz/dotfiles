@@ -95,12 +95,14 @@ source $ZSH/oh-my-zsh.sh
 #   export EDITOR='mvim'
 # fi
 EDITOR='nvim'
+VIM='nvim'
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 alias vim="nvim"
+alias vi="nvim"
 alias wd="cd ~/mzd/wd/"
 alias code="cd ~/mzd/code/"
 alias lockPrivate="sudo chmod 000 ~/mzd/multimedia/private"
@@ -123,3 +125,6 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 export FZF_DEFAULT_OPTS='--height 100% --layout=reverse-list --border'
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -l -g ""'
 
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export PATH=$PATH:/home/m47h4r/bin/

@@ -1,0 +1,4 @@
+#!/bin/bash
+song=`playerctl --player=vlc metadata | grep title | awk '{for(i=3;i<=NF;++i)printf $i""FS ; print ""}'`
+
+echo $song

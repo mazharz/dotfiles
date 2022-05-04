@@ -12,11 +12,7 @@ currentPictureIndex=`shuf -i 1-$pictureListLength -n 1`
 currentPicture=${pictureList[$currentPictureIndex]}
 currentPictureName=`echo "${currentPicture}" | rev | cut -d'/' -f1 | rev`
 
-# make sure wallpaper dir exists
-mkdir -p "$HOME/Pictures/Wallpapers"
-
 # get a copy in ~/Pictures dir
-cp "$currentPicture" /home/m47h4r/Pictures/Wallpapers/
+cp "$currentPicture" ~/.config/wal.jpeg
 
-gsettings set org.gnome.desktop.background picture-uri "file:///home/m47h4r/Pictures/Wallpapers/$currentPictureName"
-
+feh --bg-fill ~/.config/wal.jpeg

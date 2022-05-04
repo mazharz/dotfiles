@@ -123,9 +123,9 @@ Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'Yggdroot/indentLine'
-Plug 'HerringtonDarkholme/yats.vim'
-Plug 'MaxMEllon/vim-jsx-pretty'
-Plug 'peitalin/vim-jsx-typescript'
+" Plug 'HerringtonDarkholme/yats.vim'
+" Plug 'MaxMEllon/vim-jsx-pretty'
+" Plug 'peitalin/vim-jsx-typescript'
 Plug 'sbdchd/neoformat'
 Plug 'prettier/vim-prettier', {
   \ 'do': 'npm install',
@@ -133,6 +133,8 @@ Plug 'prettier/vim-prettier', {
 Plug 'jiangmiao/auto-pairs'
 Plug 'easymotion/vim-easymotion'
 Plug 'jparise/vim-graphql'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+" bash c comment cpp css dockerfile go graphql html http javascript json jsdoc python regex scss tsx typescript
 call plug#end()
 
 " colorscheme
@@ -146,6 +148,11 @@ if (empty($TMUX))
     set termguicolors
   endif
 endif
+
+" transparent background
+highlight Normal     ctermbg=NONE guibg=NONE
+highlight LineNr     ctermbg=NONE guibg=NONE
+highlight SignColumn ctermbg=NONE guibg=NONE
 
 " nerdtree
 map <C-b> :NERDTreeToggle<CR>

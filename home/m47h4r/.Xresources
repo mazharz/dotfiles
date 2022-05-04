@@ -1,0 +1,78 @@
+! -----------------------------------------------------------------------
+! URxvt: Scroll
+! -----------------------------------------------------------------------
+! do not scroll with output
+URxvt*scrollTtyOutput: false
+! scroll in relation to buffer (with mouse scroll or Shift+Page Up)
+URxvt*scrollWithBuffer: true
+! scroll back to the bottom on keypress
+URxvt*scrollTtyKeypress: true
+
+! -----------------------------------------------------------------------
+! URxvt: font
+! -----------------------------------------------------------------------
+URxvt.font: xft:Fira Code:size=16
+
+! -----------------------------------------------------------------------
+! URxvt: back and fore ground colors with cursor color
+! -----------------------------------------------------------------------
+*background: #1a1a1a
+*foreground: #dadada
+*cursorColor: #5c5fd7
+
+! -----------------------------------------------------------------------
+! URxvt: colors
+! -----------------------------------------------------------------------
+! black
+*color0: #1a1a1a
+! red
+*color1: #d15252
+! green
+*color2: #639247
+! yellow
+*color3: #c0a161
+! blue
+*color4: #5c5fd7
+! magenta
+*color5: #7f56a3
+! cyan
+*color6: #5da0b5
+! white
+*color7: #dadada
+! black-bright
+*color8: #454545
+! red-bright
+*color9: #dd8686
+! green-bright
+*color10: #93c079
+! yellow-bright
+*color11: #ceb88b
+! blue-bright
+*color12: #8082d7
+! magenta-bright
+*color13: #ab72dd
+! cyan-bright
+*color14: #85c3d7
+! white-bright
+*color15: #ffffff
+
+!*color15: #dadada
+
+! ----------------------------------------------------------------------
+! Urxvt: misc config
+! -----------------------------------------------------------------------
+!URxvt.internalBorder: 40
+URxvt.depth: 32
+URxvt*lineSpace: 3
+URxvt*scrollBar: false
+URxvt.geometry: 80x23
+URxvt*saveLines: 4096
+!URxvt*cursorUnderline: true
+URxvt*cursorBlink: true
+URxvt*allow_bold: true
+! set cursor size
+Xcursor.size: 32
+
+URxvt*transparent: true
+URxvt*shading: 25
+!URxvt*blurRadius: 20x20
