@@ -1,0 +1,4 @@
+#!/bin/bash
+
+datetime=`TZ=Australia/Brisbane date`
+notify-send "${datetime}"

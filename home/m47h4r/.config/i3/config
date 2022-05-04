@@ -195,8 +195,8 @@ bar {
 
 # key bindings
 # screenshot
-bindsym $mod+x exec maim /home/m47h4r/Pictures/$(date +%s).png
-bindsym $mod+ctrl+x exec maim -s /home/m47h4r/Pictures/$(date +%s).png
+bindsym $mod+x exec maim | tee /home/m47h4r/Pictures/$(date +%s).png | xclip -selection clipboard -t image/png
+bindsym $mod+ctrl+x exec maim -s | tee /home/m47h4r/Pictures/$(date +%s).png | xclip -selection clipboard -t image/png
 # brightness
 #bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 #bindsym XF86MonBrightnessUp exec xbacklight -inc 5
@@ -220,10 +220,10 @@ bindsym $mod+semicolon exec ~/bin/lock
 bindsym $mod+Mod1+l exec playerctl --player=vlc next; exec pkill -SIGRTMIN+11 i3blocks
 bindsym $mod+Mod1+j exec playerctl --player=vlc previous; exec pkill -SIGRTMIN+11 i3blocks
 bindsym $mod+Mod1+k exec playerctl --player=vlc play-pause; exec pkill -SIGRTMIN+11 i3blocks
-#bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
+bindsym $mod+Mod1+bracketleft exec playerctl --player=vlc position 10-
+bindsym $mod+Mod1+bracketright exec playerctl --player=vlc position 10+
 # open rofi with mouse thumb button
 bindsym --whole-window --border $mod+Tab exec rofi -show window
-
 # program shortcuts
 bindsym $mod+c exec exec google-chrome-stable
 bindsym $mod+Mod1+f exec nautilus
@@ -233,7 +233,7 @@ bindsym $mod+Mod1+v exec ~/bin/vlc-player
 # player seek forward/backward
 bindsym $mod+Mod1+Ctrl+Left exec playerctl position 10-
 bindsym $mod+Mod1+Ctrl+Right exec playerctl position 10+
-
+bindsym $mod+Mod1+c exec ~/bin/clocks
 
 # needed for i3blocks for capslock and numlock
 # handled by xfce
@@ -246,3 +246,4 @@ exec ~/bin/kb_layout
 exec dunst &
 exec nm-applet &
 exec blueman-applet &
+exec copyq &
