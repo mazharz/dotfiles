@@ -1,0 +1,6 @@
+[core]
+  editor = nvim
+  pager = less -F
+[user]
+  name = Mazhar Zandsalimi
+  email = m47h4r@gmail.com

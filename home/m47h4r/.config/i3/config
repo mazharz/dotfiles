@@ -247,3 +247,4 @@ exec dunst &
 exec nm-applet &
 exec blueman-applet &
 exec copyq &
+exec picom &

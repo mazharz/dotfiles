@@ -76,3 +76,4 @@ Xcursor.size: 32
 URxvt*transparent: true
 URxvt*shading: 25
 !URxvt*blurRadius: 20x20
+
