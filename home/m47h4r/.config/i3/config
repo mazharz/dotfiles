@@ -234,6 +234,9 @@ bindsym $mod+Mod1+v exec ~/bin/vlc-player
 bindsym $mod+Mod1+Ctrl+Left exec playerctl position 10-
 bindsym $mod+Mod1+Ctrl+Right exec playerctl position 10+
 bindsym $mod+Mod1+c exec ~/bin/clocks
+# dunst
+bindsym Ctrl+space exec dunstctl close
+bindsym Ctrl+Shift+space exec dunstctl history-pop
 
 # needed for i3blocks for capslock and numlock
 # handled by xfce

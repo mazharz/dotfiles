@@ -5,9 +5,10 @@ value=`pactl list sinks | grep '^[[:space:]]Volume:' | head -n $(( $SINK + 1 )) 
 if [ "$action" == "inc" ]; then
 	if [ "$value" -le 98 ]; then
 		pactl set-sink-volume 0 +2%
+    paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga
 	fi
 elif [ "$action" == "dec" ]; then
 	pactl set-sink-volume 0 -2%
+  paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga
 fi
 
-paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga
