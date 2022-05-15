@@ -13,7 +13,6 @@ syntax on
 
 " set mouse compatibility
 set mouse=a
-" set guicursor=i:block
 
 " encoding utf 8
 set encoding=utf-8
@@ -21,7 +20,6 @@ set fileencoding=utf-8
 
 " line number
 set number relativenumber
-"set number
 
 " set splits on bottom and right
 set splitbelow splitright
@@ -43,7 +41,7 @@ let mapleader = ","
 " search
 " find next match as typing
 set incsearch
-" hilight searches
+" highlight searches
 set hlsearch
 
 " indentation
@@ -55,23 +53,15 @@ set expandtab
 " tab replacement
 set list
 set listchars=tab:\|-
-set nocp
 set clipboard=unnamed
 set clipboard=unnamedplus
 set ignorecase
-
-" automatic fold
-:autocmd FileType python :set foldmethod=indent
-:autocmd FileType typescript,javascript,html,css :set foldmethod=syntax
 
 " keep the cursor visible within 3 lines when scrolling
 set scrolloff=3
 
 " center cursor in file
 :nnoremap <Leader>zz :let &scrolloff=999-&scrolloff+3<CR>
-
-" <C-Space> for Vim's keyword autocomplete
-"inoremap <Nul> <C-n>
 
 " paste mode
 set pastetoggle=<f9>
@@ -105,12 +95,13 @@ set colorcolumn=80
 " =============================================================================
 call plug#begin(stdpath('data') . '/plugged')
 Plug 'preservim/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'morhetz/gruvbox'
+" Plug 'morhetz/gruvbox'
+Plug 'joshdick/onedark.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" coc plugins: coc-tsserver coc-yaml coc-tailwindcss coc-swagger coc-svg coc-sql coc-sh coc-python coc-prettier coc-json coc-html-css-support coc-html coc-highlight coc-graphql coc-git coc-eslint coc-emmet coc-cssmodules coc-css coc-angular
+" coc plugins: coc-tsserver coc-yaml coc-tailwindcss coc-swagger coc-svg coc-sql coc-sh coc-python coc-prettier coc-json coc-html-css-support coc-html coc-highlight coc-graphql coc-git coc-eslint coc-emmet coc-cssmodules coc-css coc-angular coc-sumneko-lua
 Plug 'wesQ3/vim-windowswap'
 Plug 'mattn/emmet-vim'
 Plug 'terryma/vim-multiple-cursors'
@@ -118,41 +109,31 @@ Plug 'vim-airline/vim-airline'
 Plug 'airblade/vim-gitgutter'
 Plug 'qpkorr/vim-bufkill'
 Plug 'tpope/vim-surround'
-" Plug 'tpope/vim-commentary'
-Plug 'tomtom/tcomment_vim'
+Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'Yggdroot/indentLine'
-" Plug 'HerringtonDarkholme/yats.vim'
-" Plug 'MaxMEllon/vim-jsx-pretty'
-" Plug 'peitalin/vim-jsx-typescript'
 Plug 'sbdchd/neoformat'
 Plug 'prettier/vim-prettier', {
   \ 'do': 'npm install',
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 Plug 'jiangmiao/auto-pairs'
 Plug 'easymotion/vim-easymotion'
-Plug 'jparise/vim-graphql'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'JoosepAlviste/nvim-ts-context-commentstring' " support for tsx commenting
+Plug 'xolox/vim-misc' " required for vim-session
+Plug 'xolox/vim-session'
 " bash c comment cpp css dockerfile go graphql html http javascript json jsdoc python regex scss tsx typescript
 call plug#end()
 
 " colorscheme
-colorscheme gruvbox
-" enable correct colors
-if (empty($TMUX))
-  if (has("nvim"))
-    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-  endif
-  if (has("termguicolors"))
-    set termguicolors
-  endif
-endif
+colorscheme onedark
+set termguicolors
 
 " transparent background
-highlight Normal     ctermbg=NONE guibg=NONE
-highlight LineNr     ctermbg=NONE guibg=NONE
-highlight SignColumn ctermbg=NONE guibg=NONE
+highlight Normal          ctermbg=NONE guibg=NONE
+highlight LineNr          ctermbg=NONE guibg=NONE
+highlight SignColumn      ctermbg=NONE guibg=NONE
 
 " nerdtree
 map <C-b> :NERDTreeToggle<CR>
@@ -318,59 +299,8 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
-" nvim terminal configuration
-nnoremap <leader>t :terminal<CR>
-tnoremap <Esc> <C-\><C-n>
-" use alt+direction to navigate
-tnoremap <A-h> <C-\><C-N><C-w>h
-tnoremap <A-j> <C-\><C-N><C-w>j
-tnoremap <A-k> <C-\><C-N><C-w>k
-tnoremap <A-l> <C-\><C-N><C-w>l
-inoremap <A-h> <C-\><C-N><C-w>h
-inoremap <A-j> <C-\><C-N><C-w>j
-inoremap <A-k> <C-\><C-N><C-w>k
-inoremap <A-l> <C-\><C-N><C-w>l
-nnoremap <A-h> <C-w>h
-nnoremap <A-j> <C-w>j
-nnoremap <A-k> <C-w>k
-nnoremap <A-l> <C-w>l
-
 " provide path to node for coc
 let g:coc_node_path = trim(system('which node'))
 
-"""""""""""""""""""""""""""""""""""""""""""""
-" airline
-let g:airline_left_sep = '»'
-let g:airline_left_sep = ''
-let g:airline_right_sep = '«'
-let g:airline_right_sep = ''
-
-"let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_sep = ''
-let g:airline#extensions#tabline#left_alt_sep = ' '
-let g:airline_powerline_fonts = 1
-
-
-"""""""""""""""""""""""""""""""""""""""""""""
-" vim-bufkill
-nnoremap <leader>d :BD<CR>
-
-"""""""""""""""""""""""""""""""""""""""""""""
-" indentLine
-let g:indentLine_char = '│'
-autocmd FileType help,nerdtree IndentLinesDisable " disable in help & nerdtree
-
-"""""""""""""""""""""""""""""""""""""""""""""
-" neoformat auto format on save
-"autocmd BufWritePre "*.(js|jsx)" Neoformat
-augroup fmt
-  autocmd!
-  autocmd BufWritePre * undojoin | Neoformat
-augroup END
-
-" easy-motion overwindow shortcut
-map  <Leader>f <Plug>(easymotion-bd-f)
-nmap <Leader>f <Plug>(easymotion-overwin-f)
-
-" fix for tsx tcomment_vim issue
-let g:tcomment#filetype#guess_typescriptreact = 1
+lua require('basic.keybindings')
+lua require('plugin')

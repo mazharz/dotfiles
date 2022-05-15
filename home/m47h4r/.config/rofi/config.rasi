@@ -15,7 +15,7 @@ configuration {
   matching: "fuzzy";
 }
 
-@theme "/usr/share/rofi/themes/gruvbox-dark.rasi"
+@theme "./onedark.rasi"
 
 listview {
   scrollbar: false;

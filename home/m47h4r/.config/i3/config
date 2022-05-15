@@ -235,8 +235,8 @@ bindsym $mod+Mod1+Ctrl+Left exec playerctl position 10-
 bindsym $mod+Mod1+Ctrl+Right exec playerctl position 10+
 bindsym $mod+Mod1+c exec ~/bin/clocks
 # dunst
-bindsym Ctrl+space exec dunstctl close
-bindsym Ctrl+Shift+space exec dunstctl history-pop
+bindsym $mod+Ctrl+space exec dunstctl close
+bindsym $mod+Ctrl+Shift+space exec dunstctl history-pop
 
 # needed for i3blocks for capslock and numlock
 # handled by xfce
@@ -244,7 +244,8 @@ bindsym Ctrl+Shift+space exec dunstctl history-pop
 #bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
 
 # autostart programs
-exec ~/bin/wallpaper
+exec ~/bin/rw.sh
+# exec ~/bin/wallpaper
 exec ~/bin/kb_layout
 exec dunst &
 exec nm-applet &
