@@ -109,7 +109,7 @@ alias lockPrivate="sudo chmod 000 ~/mzd/multimedia/private"
 alias unlockPrivate="sudo chmod 775 ~/mzd/multimedia/private; nautilus ~/mzd/multimedia/private"
 alias m="cd ~/mzd/text/markdowns; nvim"
 alias t="nvim ~/mzd/text/markdowns/notes/todo.md"
-alias backup="unlockPrivate; rsync -au --delete --progress /home/m47h4r/mzd/* /media/m47h4r/mzed"
+alias backup="unlockPrivate; rsync -au --delete --progress /home/m47h4r/mzd/* /run/media/m47h4r/mzed"
 alias gwat="cd ~/mzd/code/gwat; ls"
 alias w="tmux new -s work -n code \; neww -n shell \; selectw -t 1"
 

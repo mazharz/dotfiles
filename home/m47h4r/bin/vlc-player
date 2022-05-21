@@ -1,3 +1,0 @@
-#!/bin/bash
-
-vlc --random --loop --ignore-filetypes "rar,jpeg,jpg,png" "/home/m47h4r/mzd/music/" & disown

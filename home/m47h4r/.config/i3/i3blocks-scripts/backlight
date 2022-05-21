@@ -1,5 +1,0 @@
-#!/bin/bash
-#xbacklight -get | cut -d'.' -f 1
-value=`cat /sys/class/backlight/intel_backlight/brightness | awk '{print int($1+0.5)}'`
-max=`cat /sys/class/backlight/intel_backlight/max_brightness`
-echo $((value * 100 / max))
