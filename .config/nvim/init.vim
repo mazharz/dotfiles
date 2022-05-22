@@ -137,6 +137,7 @@ highlight SignColumn      ctermbg=NONE guibg=NONE
 
 " nerdtree
 map <C-b> :NERDTreeToggle<CR>
+map <leader>/ :NERDTreeFind<cr>
 
 " fzf
 nnoremap <C-p> :Files<CR>

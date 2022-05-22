@@ -4,3 +4,6 @@
 [user]
   name = Mazhar Zandsalimi
   email = m47h4r@gmail.com
+
+[includeIf "gitdir:~/mzd/code/gwat/"]
+  path = gwat
