@@ -109,9 +109,10 @@ alias lockPrivate="sudo chmod 000 ~/mzd/multimedia/private"
 alias unlockPrivate="sudo chmod 775 ~/mzd/multimedia/private; nautilus ~/mzd/multimedia/private"
 alias m="cd ~/mzd/text/markdowns; nvim"
 alias t="nvim ~/mzd/text/markdowns/notes/todo.md"
-alias backup="unlockPrivate; rsync -au --delete --progress /home/m47h4r/mzd/* /run/media/m47h4r/mzed"
+alias backup="unlockPrivate; rsync -au --delete --progress /home/m47h4r/mzd/* /media/m47h4r/mzed"
 alias gwat="cd ~/mzd/code/gwat; ls"
 alias w="tmux new -s work -n code \; neww -n shell \; selectw -t 1"
+alias r="ranger"
 
 #git aliases
 alias git-log-origin-to-head="git log origin..HEAD --format=%B"
@@ -128,3 +129,4 @@ export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -l -g ""'
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 export PATH=$PATH:/home/m47h4r/bin/
+export PATH=$PATH:/home/m47h4r/.local/bin # youtube-dl

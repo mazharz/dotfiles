@@ -94,7 +94,7 @@ set colorcolumn=80
 " uses https://github.com/junegunn/vim-plug to manage plugins
 " =============================================================================
 call plug#begin(stdpath('data') . '/plugged')
-Plug 'preservim/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'preservim/nerdtree', { 'on':  ['NERDTreeToggle', 'NERDTreeMirror', 'NERDTreeFind'] }
 " Plug 'morhetz/gruvbox'
 Plug 'joshdick/onedark.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -112,11 +112,9 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-sleuth'
 Plug 'Yggdroot/indentLine'
 Plug 'sbdchd/neoformat'
-Plug 'prettier/vim-prettier', {
-  \ 'do': 'npm install',
-  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 Plug 'jiangmiao/auto-pairs'
 Plug 'easymotion/vim-easymotion'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -138,6 +136,8 @@ highlight SignColumn      ctermbg=NONE guibg=NONE
 " nerdtree
 map <C-b> :NERDTreeToggle<CR>
 map <leader>/ :NERDTreeFind<cr>
+let NERDTreeMapOpenSplit='<C-h>'
+let NERDTreeMapOpenVSplit='<C-v>'
 
 " fzf
 nnoremap <C-p> :Files<CR>
