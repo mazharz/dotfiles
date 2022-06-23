@@ -1,8 +1,0 @@
-{
-  "tailwindCSS.headwind.runOnSave": false,
-  "list.normalMappings": {
-    "v": "action:vsplit"
-  },
-  "Lua.telemetry.enable": false,
-  "Lua.diagnostics.globals": ["vim"]
-}

@@ -26,7 +26,7 @@ ZSH_THEME="gozilla"
 # Uncomment the following lines to change the auto-update behavior
 # zstyle ':omz:update' mode disabled  # disable automatic updates
 # zstyle ':omz:update' mode auto      # update automatically without asking
-zstyle ':omz:update' mode reminder  # just remind me to update when it's time
+zstyle ':omz:update' mode disabled  # just remind me to update when it's time
 
 # Uncomment the following line to change how often to auto-update (in days).
 zstyle ':omz:update' frequency 30
@@ -94,7 +94,7 @@ source $ZSH/oh-my-zsh.sh
 # else
 #   export EDITOR='mvim'
 # fi
-EDITOR='nvim'
+export EDITOR='nvim'
 VIM='nvim'
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
@@ -110,11 +110,10 @@ alias unlockPrivate="sudo chmod 775 ~/mzd/multimedia/private; nautilus ~/mzd/mul
 alias m="cd ~/mzd/text/markdowns; nvim"
 alias t="nvim ~/mzd/text/markdowns/notes/todo.md"
 alias backup="unlockPrivate; rsync -au --delete --progress /home/m47h4r/mzd/* /media/m47h4r/mzed"
-alias gwat="cd ~/mzd/code/gwat; ls"
-alias w="tmux new -s work -n code \; neww -n shell \; selectw -t 1"
+alias gwat="cd ~/mzd/code/gwat"
 alias r="ranger"
 
-#git aliases
+# git aliases
 alias git-log-origin-to-head="git log origin..HEAD --format=%B"
 
 # add nvm path

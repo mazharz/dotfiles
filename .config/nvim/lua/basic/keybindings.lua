@@ -18,3 +18,25 @@ vim.keymap.set('n', '<A-S-j>', '<C-w>J')
 vim.keymap.set('n', '<A-S-k>', '<C-w>K')
 vim.keymap.set('n', '<A-S-l>', '<C-w>L')
 
+-- maximize a window
+vim.keymap.set('n', '<A-f>', '<C-w>_<C-w>|')
+vim.keymap.set('i', '<A-f>', '<C-w>_<C-w>|')
+
+vim.keymap.set('n', '<A-v>', '<C-w>_')
+vim.keymap.set('i', '<A-v>', '<C-w>_')
+
+vim.keymap.set('n', '<A-x>', '<C-w>|')
+vim.keymap.set('i', '<A-x>', '<C-w>|')
+
+vim.keymap.set('n', '<A-=>', '<C-w>=')
+vim.keymap.set('i', '<A-=>', '<C-w>=')
+
+vim.keymap.set('n', '<A-|>', '<C-w>=<C-w>_')
+vim.keymap.set('i', '<A-|>', '<C-w>=<C-w>_')
+
+vim.keymap.set('n', '<A-_>', '<C-w>=<C-w>|')
+vim.keymap.set('i', '<A-_>', '<C-w>=<C-w>|')
+
+-- Replace
+vim.keymap.set('n', '<leader>R', ':%s/')
+
