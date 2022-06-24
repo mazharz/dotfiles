@@ -42,6 +42,10 @@ require'nvim-treesitter.configs'.setup {
   }
 }
 
+-- use treesitter folding expressions (better folding in a nutshell!)
 vim.o.foldmethod = 'expr'
 vim.o.foldexpr = 'nvim_treesitter#foldexpr()'
 
+-- disable folding by default since it can get annoying
+-- for instance quickly skimming through usages of a symbol
+vim.wo.foldenable = false

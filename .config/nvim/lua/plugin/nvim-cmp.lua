@@ -6,7 +6,7 @@ local has_words_before = function()
 end
 
 local luasnip = require("luasnip")
-local cmp = require'cmp'
+local cmp = require("cmp")
 
 cmp.setup({
   snippet = {
@@ -14,10 +14,7 @@ cmp.setup({
       require('luasnip').lsp_expand(args.body)
     end,
   },
-  window = {
-    -- completion = cmp.config.window.bordered(),
-    -- documentation = cmp.config.window.bordered(),
-  },
+  window = {},
   mapping = cmp.mapping.preset.insert({
     ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
@@ -40,26 +37,23 @@ cmp.setup({
         fallback()
       end
     end, { "i", "s" }),
-    -- ['<C-b>'] = cmp.mapping.scroll_docs(-4),
-    -- ['<C-f>'] = cmp.mapping.scroll_docs(4),
     ['<C-Space>'] = cmp.mapping.complete(),
-    -- ['<C-e>'] = cmp.mapping.abort(),
-    ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+    ['<CR>'] = cmp.mapping.confirm({ select = true }),
   }),
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
-    { name = 'luasnip' }, -- For luasnip users.
+    { name = 'luasnip' },
   }, {
     { name = 'buffer' },
   })
 })
 
--- Set configuration for specific filetype.
--- cmp.setup.filetype('gitcommit', {
---   sources = cmp.config.sources({
---     { name = 'cmp_git' }, -- You can specify the `cmp_git` source if you were installed it.
---   }, {
---     { name = 'buffer' },
---   })
--- })
+-- to jump between snippet sections
+local opts = { noremap = true, silent = true }
+vim.keymap.set("i", "<c-j>", "<cmd>lua require'luasnip'.jump(1)<CR>", opts)
+vim.keymap.set("s", "<c-j>", "<cmd>lua require'luasnip'.jump(1)<CR>", opts)
+vim.keymap.set("i", "<c-k>", "<cmd>lua require'luasnip'.jump(-1)<CR>", opts)
+vim.keymap.set("s", "<c-k>", "<cmd>lua require'luasnip'.jump(-1)<CR>", opts)
 
+-- load rafamadriz/friendly-snippets snippets
+require("luasnip/loaders/from_vscode").lazy_load()

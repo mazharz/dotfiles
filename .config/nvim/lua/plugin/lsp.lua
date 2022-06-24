@@ -1,11 +1,9 @@
--- Pre-requisites:
--- npm i -g typescript typescript-language-server
-
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 local on_attach = function(client, bufnr)
   local bufopts = { noremap=true, silent=true, buffer=bufnr }
   vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
+  vim.keymap.set('n', '<leader>K', vim.lsp.buf.signature_help, bufopts)
 
   vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
   vim.keymap.set('n', 'gvd', ':vsplit | lua vim.lsp.buf.definition()<CR>', bufopts)
@@ -51,8 +49,29 @@ local on_attach = function(client, bufnr)
 
 end
 
+require("nvim-lsp-installer").setup {
+  automatic_installation = true
+}
+
 require'lspconfig'.tsserver.setup {
   capabilities = capabilities,
   on_attach = on_attach
 }
+
+require("lspconfig").sumneko_lua.setup {
+  settings = {
+    Lua = {
+      diagnostics = {
+        -- prevent getting lots of global var undefined warnings
+        globals = { 'vim' }
+      }
+    }
+  }
+}
+require("lspconfig").graphql.setup {}
+require("lspconfig").eslint.setup {}
+require("lspconfig").tailwindcss.setup {}
+require("lspconfig").html.setup {}
+require("lspconfig").cssls.setup {}
+require("lspconfig").cssmodules_ls.setup {}
 

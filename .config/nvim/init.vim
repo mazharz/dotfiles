@@ -93,10 +93,11 @@ set colorcolumn=80
 " uses https://github.com/junegunn/vim-plug to manage plugins
 " =============================================================================
 call plug#begin(stdpath('data') . '/plugged')
-Plug 'preservim/nerdtree', { 'on':  ['NERDTreeToggle', 'NERDTreeMirror', 'NERDTreeFind'] }
-
 " colorscheme
 Plug 'ellisonleao/gruvbox.nvim'
+
+" file-tree explorer
+Plug 'kyazdani42/nvim-tree.lua'
 
 " Telescope
 Plug 'nvim-lua/plenary.nvim'
@@ -108,6 +109,7 @@ Plug 'kyazdani42/nvim-web-devicons'
 
 " lsp
 Plug 'neovim/nvim-lspconfig'
+Plug 'williamboman/nvim-lsp-installer'
 " lsp autocomplete
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
@@ -115,15 +117,12 @@ Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'L3MON4D3/LuaSnip'
 Plug 'saadparwaiz1/cmp_luasnip'
+Plug 'rafamadriz/friendly-snippets'
 
 " lualine
 Plug 'nvim-lualine/lualine.nvim'
 
-Plug 'pangloss/vim-javascript'
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" coc plugins: coc-tsserver coc-yaml coc-tailwindcss coc-swagger coc-svg coc-sql coc-sh coc-python coc-prettier coc-json coc-html-css-support coc-html coc-highlight coc-graphql coc-git coc-eslint coc-emmet coc-cssmodules coc-css coc-angular coc-sumneko-lua
 Plug 'wesQ3/vim-windowswap'
-Plug 'mattn/emmet-vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'airblade/vim-gitgutter'
 Plug 'qpkorr/vim-bufkill'
@@ -142,7 +141,6 @@ Plug 'JoosepAlviste/nvim-ts-context-commentstring' " support for tsx commenting
 " managing session
 Plug 'xolox/vim-misc' " required for vim-session
 Plug 'xolox/vim-session'
-" bash c comment cpp css dockerfile go graphql html http javascript json jsdoc python regex scss tsx typescript
 call plug#end()
 
 " colorscheme
@@ -153,12 +151,6 @@ set termguicolors
 highlight Normal          ctermbg=NONE guibg=NONE
 highlight LineNr          ctermbg=NONE guibg=NONE
 highlight SignColumn      ctermbg=NONE guibg=NONE
-
-" nerdtree
-map <C-b> :NERDTreeToggle<CR>
-map <leader>/ :NERDTreeFind<cr>
-let NERDTreeMapOpenSplit='<C-h>'
-let NERDTreeMapOpenVSplit='<C-v>'
 
 " conceal
 set conceallevel=1
