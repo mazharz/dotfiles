@@ -53,12 +53,14 @@ require("nvim-lsp-installer").setup {
   automatic_installation = true
 }
 
-require'lspconfig'.tsserver.setup {
+require("lspconfig").tsserver.setup {
   capabilities = capabilities,
   on_attach = on_attach
 }
 
 require("lspconfig").sumneko_lua.setup {
+  capabilities = capabilities,
+  on_attach = on_attach,
   settings = {
     Lua = {
       diagnostics = {
@@ -68,10 +70,39 @@ require("lspconfig").sumneko_lua.setup {
     }
   }
 }
-require("lspconfig").graphql.setup {}
-require("lspconfig").eslint.setup {}
-require("lspconfig").tailwindcss.setup {}
-require("lspconfig").html.setup {}
-require("lspconfig").cssls.setup {}
-require("lspconfig").cssmodules_ls.setup {}
-
+require("lspconfig").graphql.setup {
+  capabilities = capabilities,
+  on_attach = on_attach,
+}
+require("lspconfig").eslint.setup {
+  capabilities = capabilities,
+  on_attach = on_attach,
+}
+require("lspconfig").tailwindcss.setup {
+  capabilities = capabilities,
+  on_attach = on_attach,
+}
+require("lspconfig").html.setup {
+  capabilities = capabilities,
+  on_attach = on_attach,
+}
+require("lspconfig").cssls.setup {
+  capabilities = capabilities,
+  on_attach = on_attach,
+}
+require("lspconfig").cssmodules_ls.setup {
+  capabilities = capabilities,
+  on_attach = on_attach,
+}
+require("lspconfig").hls.setup {
+  capabilities = capabilities,
+  on_attach = on_attach,
+}
+require("lspconfig").angularls.setup {
+  capabilities = capabilities,
+  on_attach = on_attach,
+}
+require("lspconfig").bashls.setup {
+  capabilities = capabilities,
+  on_attach = on_attach,
+}

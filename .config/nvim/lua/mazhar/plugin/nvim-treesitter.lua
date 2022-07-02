@@ -17,7 +17,8 @@ require'nvim-treesitter.configs'.setup {
     "regex",
     "scss",
     "tsx",
-    "typescript"
+    "typescript",
+    "haskell"
   },
 
   sync_install = false,
