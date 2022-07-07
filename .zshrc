@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/m47h4r/.oh-my-zsh"
+export ZSH="/usr/share/oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -116,11 +116,13 @@ alias gwat="cd ~/mzd/code/gwat"
 alias git-log-origin-to-head="git log origin..HEAD --format=%B"
 
 # add nvm path
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+[ -z "$NVM_DIR" ] && export NVM_DIR="$HOME/.nvm"
+source /usr/share/nvm/nvm.sh
+source /usr/share/nvm/bash_completion
+source /usr/share/nvm/install-nvm-exec
 
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# used `pacman -Ql fzf` to figure out where this was
+[ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
 export FZF_DEFAULT_OPTS='--height 100% --layout=reverse-list --border'
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -l -g ""'
 
@@ -129,4 +131,6 @@ export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -l -g ""'
 export PATH=$PATH:/home/m47h4r/bin/
 export PATH=$PATH:/home/m47h4r/.local/bin # youtube-dl
 
-[ -f "/home/m47h4r/.ghcup/env" ] && source "/home/m47h4r/.ghcup/env" # ghcup-env
+# [ -f "/home/m47h4r/.ghcup/bin" ] && source "/home/m47h4r/.ghcup/bin" # ghcup-env
+export PATH="$HOME/.ghcup/bin:$PATH"
+

@@ -12,7 +12,4 @@ currentPictureIndex=`shuf -i 1-$pictureListLength -n 1`
 currentPicture=${pictureList[$currentPictureIndex]}
 currentPictureName=`echo "${currentPicture}" | rev | cut -d'/' -f1 | rev`
 
-# get a copy in ~/Pictures dir
-cp "$currentPicture" ~/.config/wal.jpeg
-
-feh --bg-fill ~/.config/wal.jpeg
+~/bin/wallpaper "$currentPicture"

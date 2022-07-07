@@ -1,4 +1,6 @@
 #!/bin/bash
 
-datetime=`TZ=Australia/Brisbane date`
-notify-send "${datetime}"
+Brisbane=`TZ=Australia/Brisbane date`
+UTC=`TZ=UTC date`
+notify-send  "$(echo -e "Brisbane: ${Brisbane}\nUTC: ${UTC}")"
+

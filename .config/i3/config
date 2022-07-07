@@ -2,7 +2,7 @@
 set $mod Mod4
 
 # set colors
-set $bg #1a1a1a
+set $bg #282828e6
 set $fg #dadada
 set $ac #D4B483
 
@@ -174,11 +174,11 @@ bar {
 	position bottom
 	tray_output primary
 	tray_padding 2
-	font pango:Fira Code 12
+	font pango:FiraCode Nerd Font 12
 	separator_symbol " │ "
-	#mode hide
-	#hidden_state hide
-	#modifier $mod
+	# mode hide
+	# hidden_state hide
+	# modifier $mod
 
 	colors {
 		background $bg
@@ -217,11 +217,11 @@ bindsym $mod+i exec ~/bin/kb_layout
 # lock
 bindsym $mod+semicolon exec ~/bin/lock
 # control vlc with keyboard
-bindsym $mod+Mod1+period exec playerctl --player=vlc next; exec pkill -SIGRTMIN+11 i3blocks
-bindsym $mod+Mod1+comma exec playerctl --player=vlc previous; exec pkill -SIGRTMIN+11 i3blocks
-bindsym $mod+Mod1+j exec playerctl --player=vlc play-pause; exec pkill -SIGRTMIN+11 i3blocks
-bindsym $mod+Mod1+bracketleft exec playerctl --player=vlc position 10-
-bindsym $mod+Mod1+bracketright exec playerctl --player=vlc position 10+
+bindsym $mod+Mod1+period exec playerctl --player=cmus next; exec pkill -SIGRTMIN+11 i3blocks
+bindsym $mod+Mod1+comma exec playerctl --player=cmus previous; exec pkill -SIGRTMIN+11 i3blocks
+bindsym $mod+Mod1+j exec playerctl --player=cmus play-pause; exec pkill -SIGRTMIN+11 i3blocks
+bindsym $mod+Mod1+bracketleft exec playerctl --player=cmus position 10-
+bindsym $mod+Mod1+bracketright exec playerctl --player=cmus position 10+
 # open rofi with mouse thumb button
 bindsym --whole-window --border $mod+Tab exec rofi -show window
 # program shortcuts
@@ -245,11 +245,10 @@ bindsym $mod+Ctrl+Shift+space exec dunstctl history-pop
 
 # autostart programs
 exec ~/bin/rw.sh
-# exec ~/bin/wallpaper
 exec ~/bin/kb_layout
 exec dunst &
 exec nm-applet &
 exec blueman-applet &
 exec copyq &
 exec picom &
-exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=ssh,secrets,pkcs11
+exec redshift-gtk &

@@ -44,12 +44,12 @@ local options = {
   -- is one of my fav
   scrolloff = 3,
   -- highlight column 80
-  colorcolumn = "80",
+  -- colorcolumn = "80",
   -- paste mode
   pastetoggle = "<F9>",
   -- customize spaces and tabs
   list = true,
-  listchars= "tab:> ,trail:·,nbsp:·,leadmultispace:· ",
+  listchars= "tab:> ,trail:·,nbsp:·,multispace:· ",
   -- find next match as typing for search
   incsearch = true,
   -- auto indent

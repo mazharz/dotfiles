@@ -2,6 +2,8 @@
 song=`playerctl --player=vlc metadata | grep title | awk '{for(i=3;i<=NF;++i)printf $i""FS ; print ""}'`
 filename=`playerctl --player=vlc metadata | grep file | awk '{ print $3 }' | xargs basename | sed 's/%20/ /g'`
 
+function urldecode() { local i="${*//+/ }"; echo -e "${i//%/\\x}"; }
+
 output=''
 
 if [ "${#song}" -gt 0 ]; then
@@ -10,4 +12,5 @@ else
   output=$filename
 fi
 
-echo $output
+urldecodedOutput=$(urldecode "$output")
+echo $urldecodedOutput

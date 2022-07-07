@@ -10,4 +10,4 @@ i3lock --image='/tmp/lock.png'
 #i3lock --image='/home/m47h4r/bin/Archi3Lock.png'
 
 #only if i3lock is running, turn off monitor
-sleep 60; pgrep i3lock && xset dpms force off
+sleep 2; pgrep i3lock && xset dpms force off
