@@ -20,5 +20,11 @@
 .config/qBittorrent/
 .config/spotify/
 .config/vlc/
-.config/cmus/
 .config/trizen/
+.config/cmus/autosave
+.config/cmus/cache
+.config/cmus/command-history
+.config/cmus/lib.pl
+.config/cmus/search-history
+.config/cmus/search-history
+.config/cmus/playlists/

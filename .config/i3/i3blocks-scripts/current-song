@@ -1,6 +1,7 @@
 #!/bin/bash
-song=`playerctl --player=vlc metadata | grep title | awk '{for(i=3;i<=NF;++i)printf $i""FS ; print ""}'`
-filename=`playerctl --player=vlc metadata | grep file | awk '{ print $3 }' | xargs basename | sed 's/%20/ /g'`
+song=`playerctl --player=cmus metadata | grep title | awk '{for(i=3;i<=NF;++i)printf $i""FS ; print ""}'`
+filename=`cmus-remote -Q | grep file | rev | cut -d '/' -f1 | rev `
+
 
 function urldecode() { local i="${*//+/ }"; echo -e "${i//%/\\x}"; }
 
