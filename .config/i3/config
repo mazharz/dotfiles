@@ -198,6 +198,8 @@ bar {
 # screenshot
 bindsym $mod+x exec maim | tee /home/m47h4r/Pictures/$(date +%s).png | xclip -selection clipboard -t image/png
 bindsym $mod+ctrl+x exec maim -s | tee /home/m47h4r/Pictures/$(date +%s).png | xclip -selection clipboard -t image/png
+# magnifier
+bindsym $mod+Mod1+z exec slop -r boxzoom
 # brightness
 #bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 #bindsym XF86MonBrightnessUp exec xbacklight -inc 5
