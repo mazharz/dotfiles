@@ -15,7 +15,7 @@ configuration {
   matching: "fuzzy";
 }
 
-@theme "./onedark.rasi"
+@theme "gruvbox-dark"
 
 listview {
   scrollbar: false;
