@@ -19,9 +19,6 @@ keymap("n", "<C-c>", ":cclose<CR>", opts)
 -- unhighlight search results
 keymap("n", "<C-l>", ":nohl<CR>", opts)
 
--- delete to black hole in visual mode so you can paste more than once
-keymap("v", "p", '"_dP', opts)
-
 -- faster replace
 keymap('n', '<leader>R', ':%s/', opts)
 

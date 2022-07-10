@@ -232,19 +232,18 @@ bindsym $mod+i exec ~/bin/kb_layout
 # lock
 bindsym $mod+semicolon exec ~/bin/lock
 # control cmus with keyboard
-# using playerctl for next & prev acts slow (i guess) and the signal won't update i3blocks
 bindsym $mod+Mod1+period exec cmus-remote --next; exec pkill -SIGRTMIN+11 i3blocks
 bindsym $mod+Mod1+comma exec cmus-remote --prev; exec pkill -SIGRTMIN+11 i3blocks
-bindsym $mod+Mod1+j exec playerctl --player=cmus play-pause; exec pkill -SIGRTMIN+11 i3blocks
-bindsym $mod+Mod1+bracketleft exec playerctl --player=cmus position 10-
-bindsym $mod+Mod1+bracketright exec playerctl --player=cmus position 10+
+bindsym $mod+Mod1+j exec cmus-remote --pause; exec pkill -SIGRTMIN+11 i3blocks
+bindsym $mod+Mod1+bracketleft exec cmus-remote --seek -10
+bindsym $mod+Mod1+bracketright exec cmus-remote --seek +10
 # open rofi with mouse thumb button
 bindsym --whole-window --border $mod+Tab exec rofi -show window
 # program shortcuts
-bindsym $mod+c exec google-chrome-stable
+bindsym $mod+c      workspace $ws2; exec google-chrome-stable
 bindsym $mod+Mod1+f exec nautilus
-bindsym $mod+Mod1+t exec telegram-desktop
-bindsym $mod+Mod1+s exec slack
+bindsym $mod+Mod1+t workspace $ws4; exec telegram-desktop
+bindsym $mod+Mod1+s workspace $ws3; exec slack
 bindsym $mod+Mod1+m exec kitty cmus
 bindsym $mod+Mod1+c exec ~/bin/clocks
 # dunst
