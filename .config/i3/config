@@ -1,122 +1,131 @@
-# set the main modifier
+################################################################################
+# Core
+################################################################################
 set $mod Mod4
 
-# set colors
-set $bg #282828e6
+# set $bg #282828e6
+set $bg #000000cc
 set $fg #fbf1c7
 set $ac #d79921
 set $red #cc241d
 
-# set the font
 font pango:FiraCode Nerd Font 12
 
 floating_modifier $mod
 
-# start a terminal
 bindsym $mod+Return exec kitty
 
-# kill focused window
 bindsym $mod+q kill
 
-# rofi
 bindsym $mod+d exec rofi -show drun
 bindsym $mod+w exec rofi -show window
 #bindsym $mod+r exec rofi -show ssh
 
-# change focus
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
-
-# alternatively, you can use the cursor keys:
-bindsym $mod+Left  focus left
-bindsym $mod+Down  focus down
-bindsym $mod+Up    focus up
-bindsym $mod+Right focus right
-
-# move focused window
-bindsym $mod+Shift+h move left  20 px
-bindsym $mod+Shift+j move down  20 px
-bindsym $mod+Shift+k move up    20 px
-bindsym $mod+Shift+l move right 20 px
-
-# alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left  move left  20 px
-bindsym $mod+Shift+Down  move down  20 px
-bindsym $mod+Shift+Up    move up    20 px
-bindsym $mod+Shift+Right move right 20 px
-
-# split in horizontal orientation
-bindsym $mod+b split h
-
-# split in vertical orientation
-bindsym $mod+v split v
-
-# enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
-
-# change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+t layout tabbed
-bindsym $mod+g layout toggle split
-
-# toggle floating & sticky windows
-bindsym $mod+Shift+space floating toggle
-bindsym $mod+Shift+s sticky toggle
-
-# change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
-
-# focus the parent container
-bindsym $mod+a focus parent
-
-# focus the child container
-bindsym $mod+z focus child
-
-# focus follows mouse
-focus_follows_mouse yes 
-
-# border style
 new_window pixel 2
 # new_window normal 2
 
-# hide alone-window borders
 hide_edge_borders smart
 
-# gaps
-# gaps inner 0
-# gaps outer 0
+gaps inner 0
 
+################################################################################
+# Focus and moving
+################################################################################
+bindsym $mod+h     focus left
+bindsym $mod+Left  focus left
+bindsym $mod+j     focus down
+bindsym $mod+Down  focus down
+bindsym $mod+k     focus up
+bindsym $mod+Up    focus up
+bindsym $mod+l     focus right
+bindsym $mod+Right focus right
 
-# define workspaces
-set $ws1  "1: "
-set $ws2  "2: "
-set $ws3  "3: "
-set $ws4  "4: "
-set $ws5  "5: "
+bindsym $mod+Shift+h     move left  20 px
+bindsym $mod+Shift+Left  move left  20 px
+bindsym $mod+Shift+j     move down  20 px
+bindsym $mod+Shift+Down  move down  20 px
+bindsym $mod+Shift+k     move up    20 px
+bindsym $mod+Shift+Up    move up    20 px
+bindsym $mod+Shift+l     move right 20 px
+bindsym $mod+Shift+Right move right 20 px
+
+bindsym $mod+b split h
+bindsym $mod+v split v
+
+bindsym $mod+f fullscreen toggle
+bindsym $mod+s layout     stacking
+bindsym $mod+t layout     tabbed
+bindsym $mod+g layout     toggle   split
+bindsym $mod+Shift+space  floating toggle
+bindsym $mod+Shift+s      sticky   toggle
+bindsym $mod+space        focus    mode_toggle
+
+bindsym $mod+a focus parent
+bindsym $mod+z focus child
+
+focus_follows_mouse yes 
+
+################################################################################
+# Marks
+################################################################################
+show_marks yes
+
+bindsym $mod+m mode "$mark-mode"
+
+mode "$mark-mode" {
+  bindsym s [con_mark="s"] focus; mode "default"
+  bindsym f [con_mark="f"] focus; mode "default"
+  bindsym t [con_mark="t"] focus; mode "default"
+  bindsym m [con_mark="m"] focus; mode "default"
+  bindsym c [con_mark="c"] focus; mode "default"
+  bindsym v [con_mark="v"] focus; mode "default"
+  bindsym w [con_mark="w"] focus; mode "default"
+  bindsym p [con_mark="p"] focus; mode "default"
+
+  bindsym Escape mode "default"
+  bindsym Return mode "default"
+}
+
+################################################################################
+# Auto assignments
+################################################################################
+for_window [class="Pavucontrol"]     floating enable
+for_window [class="mpv"]             floating enable
+for_window [class="Slack"]           mark s
+for_window [class="Nautilus"]        mark f
+for_window [class="TelegramDesktop"] mark t
+for_window [title="cmus"]            mark m
+for_window [class="Google-chrome"]   mark c
+for_window [class="mpv"]             mark v
+for_window [class="Gnome-pomodoro"]  mark p
+
+################################################################################
+# Workspaces
+################################################################################
+set $ws1  "1"
+set $ws2  "2"
+set $ws3  "3"
+set $ws4  "4"
+set $ws5  "5"
 set $ws6  "6"
 set $ws7  "7"
 set $ws8  "8"
-set $ws9  "9:神 "
-set $ws10 "10: "
+set $ws9  "9"
+set $ws10 "10"
 
-# switch to workspace
-bindsym $mod+1 workspace $ws1
-bindsym $mod+2 workspace $ws2
-bindsym $mod+3 workspace $ws3
-bindsym $mod+4 workspace $ws4
-bindsym $mod+5 workspace $ws5
-bindsym $mod+6 workspace $ws6
-bindsym $mod+7 workspace $ws7
-bindsym $mod+8 workspace $ws8
-bindsym $mod+9 workspace $ws9
-bindsym $mod+0 workspace $ws10
-# go to next/prev ws
-bindsym $mod+bracketleft  workspace prev
-bindsym $mod+bracketright workspace next
+bindsym $mod+1 workspace  $ws1
+bindsym $mod+2 workspace  $ws2
+bindsym $mod+3 workspace  $ws3
+bindsym $mod+4 workspace  $ws4
+bindsym $mod+5 workspace  $ws5
+bindsym $mod+6 workspace  $ws6
+bindsym $mod+7 workspace  $ws7
+bindsym $mod+8 workspace  $ws8
+bindsym $mod+9 workspace  $ws9
+bindsym $mod+0 workspace  $ws10
+bindsym $mod+comma  workspace prev
+bindsym $mod+period workspace next
 
-# move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
 bindsym $mod+Shift+2 move container to workspace $ws2
 bindsym $mod+Shift+3 move container to workspace $ws3
@@ -128,7 +137,6 @@ bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
-# move focused container to workspace and go there
 bindsym $mod+Ctrl+1 move container to workspace $ws1;  workspace $ws1
 bindsym $mod+Ctrl+2 move container to workspace $ws2;  workspace $ws2
 bindsym $mod+Ctrl+3 move container to workspace $ws3;  workspace $ws3
@@ -140,36 +148,28 @@ bindsym $mod+Ctrl+8 move container to workspace $ws8;  workspace $ws8
 bindsym $mod+Ctrl+9 move container to workspace $ws9;  workspace $ws9
 bindsym $mod+Ctrl+0 move container to workspace $ws10; workspace $ws10
 
-# make sure certain window classes are in certain wss
-assign [class="Google-chrome"] $ws2
-assign [class="Slack"] $ws3
-assign [class="TelegramDesktop"] $ws4
-assign [class="qBittorrent"] $ws5
-assign [class="Gnome-pomodoro"] $ws9
-for_window [title="cmus"] move to workspace $ws10
-
-# reload the configuration file
+################################################################################
+# Manage i3 instance
+################################################################################
 bindsym $mod+Shift+c reload
-
-# restart i3 inplace
 bindsym $mod+Shift+r restart
-
-# exit i3
 bindsym $mod+Shift+q exec "i3-nagbar -t warning -m 'Exit?' -b 'Yes, exit i3' 'i3-msg exit'"
 
-# resize window ( you can also use the mouse for that )
-bindsym $mod+Control+h resize shrink width  20 px or 20 ppt
-bindsym $mod+Control+j resize grow   height 20 px or 20 ppt
-bindsym $mod+Control+k resize shrink height 20 px or 20 ppt
-bindsym $mod+Control+l resize grow   width  20 px or 20 ppt
-
-# alternative resize using arrow keys
+################################################################################
+# Resize windows
+################################################################################
+bindsym $mod+Control+h     resize shrink width  20 px or 20 ppt
 bindsym $mod+Control+Left  resize shrink width  20 px or 20 ppt
+bindsym $mod+Control+j     resize grow   height 20 px or 20 ppt
 bindsym $mod+Control+Down  resize grow   height 20 px or 20 ppt
+bindsym $mod+Control+k     resize shrink height 20 px or 20 ppt
 bindsym $mod+Control+Up    resize shrink height 20 px or 20 ppt
+bindsym $mod+Control+l     resize grow   width  20 px or 20 ppt
 bindsym $mod+Control+Right resize grow   width  20 px or 20 ppt
 
-# colors
+################################################################################
+# Colors
+################################################################################
 # class                 border  backgr. text    indicator child_border
 client.focused          $ac     $ac     $bg     $bg       $ac
 client.focused_inactive $ac     $bg     $ac     $bg       $bg
@@ -178,9 +178,9 @@ client.urgent           $bg     $bg     $bg     $red      $red
 client.placeholder      $bg     $bg     $bg     $bg       $bg
 client.background       $bg
 
-# ------------------------------------------------------
-# i3bar
-# ------------------------------------------------------
+################################################################################
+# Bar
+################################################################################
 bar {
   status_command i3blocks -c ~/.config/i3/i3blocks.conf
   position bottom
@@ -188,13 +188,11 @@ bar {
   tray_padding 2
   font pango:FiraCode Nerd Font 12
   separator_symbol " │ "
-  # mode hide
-  # hidden_state hide
-  # modifier $mod
   
   colors {
-    # set transparency in picom
-    background #282828
+    # transparency is set in picom
+    # background #282828
+    background #000000
     statusline $bg
     separator  $ac
     #<color class>     <border> <background> <text>
@@ -206,59 +204,61 @@ bar {
   }
 }
 
-# key bindings
-# screenshot
-bindsym $mod+x exec maim | tee /home/m47h4r/Pictures/$(date +%s).png | xclip -selection clipboard -t image/png
+################################################################################
+# Key bindings
+################################################################################
+bindsym $mod+x      exec maim | tee /home/m47h4r/Pictures/$(date +%s).png | xclip -selection clipboard -t image/png
 bindsym $mod+ctrl+x exec maim -s | tee /home/m47h4r/Pictures/$(date +%s).png | xclip -selection clipboard -t image/png
-# magnifier
+
 bindsym $mod+Mod1+z exec slop -r boxzoom
-# brightness
+
 #bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 #bindsym XF86MonBrightnessUp exec xbacklight -inc 5
 bindsym XF86MonBrightnessDown exec sudo ~/bin/brightness dec; exec pkill -SIGRTMIN+11 i3blocks
-bindsym XF86MonBrightnessUp exec sudo ~/bin/brightness inc; exec pkill -SIGRTMIN+11 i3blocks
-# volume
+bindsym XF86MonBrightnessUp   exec sudo ~/bin/brightness inc; exec pkill -SIGRTMIN+11 i3blocks
+
 bindsym --whole-window --border $mod+Mod1+button4 exec ~/bin/volume inc; exec pkill -SIGRTMIN+11 i3blocks
 bindsym --whole-window --border $mod+Mod1+button5 exec ~/bin/volume dec; exec pkill -SIGRTMIN+11 i3blocks
 bindsym $mod+Mod1+i exec ~/bin/volume inc; exec pkill -SIGRTMIN+11 i3blocks
 bindsym $mod+Mod1+k exec ~/bin/volume dec; exec pkill -SIGRTMIN+11 i3blocks
-# monitor
-bindsym $mod+m exec ~/bin/monitor dual
-bindsym $mod+shift+m exec ~/bin/monitor mono
-# huion tablet
+
+bindsym $mod+n       exec ~/bin/monitor dual
+bindsym $mod+shift+n exec ~/bin/monitor mono
+
 bindsym $mod+Mod1+shift+h exec ~/bin/huion-buttons
-# keyboard layout
+
 bindsym $mod+i exec ~/bin/kb_layout
-# lock
+
 bindsym $mod+semicolon exec ~/bin/lock
-# control cmus with keyboard
-bindsym $mod+Mod1+period exec cmus-remote --next; exec pkill -SIGRTMIN+11 i3blocks
-bindsym $mod+Mod1+comma exec cmus-remote --prev; exec pkill -SIGRTMIN+11 i3blocks
-bindsym $mod+Mod1+j exec cmus-remote --pause; exec pkill -SIGRTMIN+11 i3blocks
-bindsym $mod+Mod1+bracketleft exec cmus-remote --seek -10
+
+bindsym $mod+Mod1+period       exec cmus-remote --next; exec pkill -SIGRTMIN+11 i3blocks
+bindsym $mod+Mod1+comma        exec cmus-remote --prev; exec pkill -SIGRTMIN+11 i3blocks
+bindsym $mod+Mod1+j            exec cmus-remote --pause; exec pkill -SIGRTMIN+11 i3blocks
+bindsym $mod+Mod1+bracketleft  exec cmus-remote --seek -10
 bindsym $mod+Mod1+bracketright exec cmus-remote --seek +10
+
 # open rofi with mouse thumb button
 bindsym --whole-window --border $mod+Tab exec rofi -show window
-# program shortcuts
-bindsym $mod+c      workspace $ws2; exec google-chrome-stable
+
+bindsym $mod+c      exec google-chrome-stable --profile-directory=Default
+bindsym $mod+Mod1+c exec google-chrome-stable --profile-directory='Profile 2'
 bindsym $mod+Mod1+f exec nautilus
-bindsym $mod+Mod1+t workspace $ws4; exec telegram-desktop
-bindsym $mod+Mod1+s workspace $ws3; exec slack
+bindsym $mod+Mod1+t exec telegram-desktop
+bindsym $mod+Mod1+s exec slack
 bindsym $mod+Mod1+m exec kitty cmus
-bindsym $mod+Mod1+c exec ~/bin/clocks
-# dunst
-bindsym $mod+Ctrl+space exec dunstctl close
+bindsym $mod+Ctrl+c exec ~/bin/clocks
+
+bindsym $mod+Ctrl+space       exec dunstctl close
 bindsym $mod+Ctrl+Shift+space exec dunstctl history-pop
-bindsym $mod+Ctrl+Return exec dunstctl action
+bindsym $mod+Ctrl+Return      exec dunstctl action
 
 # needed for i3blocks for capslock and numlock
-# handled by xfce
 bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
 bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
 
 # autostart programs
+exec_always ~/bin/kb_layout
 exec ~/bin/rw.sh
-exec ~/bin/kb_layout
 exec dunst &
 exec nm-applet &
 exec blueman-applet &

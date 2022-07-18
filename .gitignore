@@ -30,3 +30,7 @@
 .config/cmus/playlists/
 .config/gedit/
 .config/xournalpp/
+.config/nvim/plugin/
+.config/sqlitebrowser/
+.config/calibre/
+bin/ghcup

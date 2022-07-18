@@ -18,7 +18,7 @@ set color_statusline_bg=default
 set color_statusline_fg=4
 # bottom title line
 set color_titleline_bg=default
-set color_titleline_fg=1
+set color_titleline_fg=3
 set color_titleline_attr=bold
 # top title area
 set color_win_title_bg=default
@@ -27,13 +27,15 @@ set color_win_title_attr=bold
 
 ##### playing file colors #####
 # unselected currently playing track's text
-set color_win_cur=1
+set color_win_cur=3
+set color_win_cur_attr=bold
+set color_win_cur_sel_attr=bold
 # active selection for currently playing track
-set color_win_cur_sel_bg=1
-set color_win_cur_sel_fg=0
+set color_win_cur_sel_bg=0
+set color_win_cur_sel_fg=3
 # inactive selection for currently playing track
 set color_win_inactive_cur_sel_bg=-1
-set color_win_inactive_cur_sel_fg=1
+set color_win_inactive_cur_sel_fg=3
 ##### non-playing file colors #####
 # active selection
 set color_win_sel_bg=3

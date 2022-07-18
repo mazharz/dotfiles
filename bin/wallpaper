@@ -2,7 +2,7 @@
 picture=$1
 
 if [ -n "$1" ]; then
-	cp "$1" ~/Pictures/wal.jpeg
+	cp "$1" ~/Pictures/Wallpaper/wal.jpeg
 fi
 
-feh --bg-fill ~/Pictures/wal.jpeg
+feh --bg-fill ~/Pictures/Wallpaper/wal.jpeg

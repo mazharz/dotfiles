@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# set mark for i3
+i3-msg 'mark w'
+
 workingDirectory=$1
 
 if [ -z "$1" ]; then

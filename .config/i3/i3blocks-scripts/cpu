@@ -1,0 +1,7 @@
+#!/bin/bash
+
+idle=`mpstat | tail -n 1 | rev | awk '{ print $1 }' | rev`
+busy=`echo "100 $idle" | awk '{ print $1 - $2 }'`
+decimals_removed=`echo $busy | sed -e 's/\..*//'`
+
+echo "${decimals_removed}%"

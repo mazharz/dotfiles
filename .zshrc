@@ -131,6 +131,6 @@ export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -l -g ""'
 export PATH=$PATH:/home/m47h4r/bin/
 export PATH=$PATH:/home/m47h4r/.local/bin # youtube-dl
 
-# [ -f "/home/m47h4r/.ghcup/bin" ] && source "/home/m47h4r/.ghcup/bin" # ghcup-env
-export PATH="$HOME/.ghcup/bin:$PATH"
+export PATH="$HOME/.cabal/bin:$HOME/.ghcup/bin:$PATH"
+
 

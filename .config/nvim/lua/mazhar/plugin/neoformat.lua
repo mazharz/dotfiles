@@ -7,9 +7,3 @@ vim.api.nvim_create_autocmd('BufWritePre', {
   command = 'Neoformat'
 })
 
--- used to be like this in case you want it in future:
---
--- augroup fmt
---   autocmd!
---   autocmd BufWritePre * Neoformat
--- augroup END

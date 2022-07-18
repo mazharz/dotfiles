@@ -1,3 +1,4 @@
+require('mazhar.plugin.packer')
 require('mazhar.plugin.lualine')
 require('mazhar.plugin.vim-bufkill')
 require('mazhar.plugin.neoformat')
