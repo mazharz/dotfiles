@@ -47,6 +47,10 @@ local on_attach = function(client, bufnr)
     })
   end
 
+  -- prevent tsserver from formatting, let null-ls handle it
+  if client.name == "tsserver" then
+    client.resolved_capabilities.document_formatting = false
+  end
 end
 
 require("nvim-lsp-installer").setup {

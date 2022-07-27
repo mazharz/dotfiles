@@ -49,24 +49,13 @@ local options = {
   pastetoggle = "<F9>",
   -- customize spaces and tabs
   list = true,
-  listchars= "tab:> ,trail:·,nbsp:·,multispace:· ",
+  listchars = "tab:> ,trail:·,nbsp:·,multispace:· ",
   -- find next match as typing for search
   incsearch = true,
   -- auto indent
   autoindent = true,
 }
 
--- set colorscheme
-vim.cmd("colorscheme gruvbox")
-
--- transparent background
-vim.cmd[[
-highlight Normal          ctermbg=NONE guibg=NONE
-highlight LineNr          ctermbg=NONE guibg=NONE
-highlight SignColumn      ctermbg=NONE guibg=NONE
-]]
-
 for key, value in pairs(options) do
   vim.opt[key] = value
 end
-

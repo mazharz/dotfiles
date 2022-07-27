@@ -111,6 +111,7 @@ alias m="cd ~/mzd/text/markdowns; nvim"
 alias t="nvim ~/mzd/text/markdowns/notes/todo.md"
 alias backup="unlockPrivate; rsync -au --delete --progress /home/m47h4r/mzd/* /run/media/m47h4r/mzed"
 alias gwat="cd ~/mzd/code/gwat"
+alias sortMirrors="sudo reflector --latest 5 --sort rate --protocol https --save /etc/pacman.d/mirrorlist"
 
 # git aliases
 alias git-log-origin-to-head="git log origin..HEAD --format=%B"
@@ -132,5 +133,4 @@ export PATH=$PATH:/home/m47h4r/bin/
 export PATH=$PATH:/home/m47h4r/.local/bin # youtube-dl
 
 export PATH="$HOME/.cabal/bin:$HOME/.ghcup/bin:$PATH"
-
 

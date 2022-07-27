@@ -1,17 +1,20 @@
 #!/bin/bash
-song=`playerctl --player=cmus metadata | grep title | awk '{for(i=3;i<=NF;++i)printf $i""FS ; print ""}'`
-filename=`cmus-remote -Q | grep file | rev | cut -d '/' -f1 | rev `
+# song=`playerctl --player=cmus metadata | grep title | awk '{for(i=3;i<=NF;++i)printf $i""FS ; print ""}'`
+# filename=`cmus-remote -Q | grep file | rev | cut -d '/' -f1 | rev `
+#
+#
+# function urldecode() { local i="${*//+/ }"; echo -e "${i//%/\\x}"; }
+#
+# output=''
+#
+# if [ "${#song}" -gt 0 ]; then
+#   output=$song
+# else
+#   output=$filename
+# fi
+#
+# urldecodedOutput=$(urldecode "$output")
+# echo $urldecodedOutput
 
-
-function urldecode() { local i="${*//+/ }"; echo -e "${i//%/\\x}"; }
-
-output=''
-
-if [ "${#song}" -gt 0 ]; then
-  output=$song
-else
-  output=$filename
-fi
-
-urldecodedOutput=$(urldecode "$output")
-echo $urldecodedOutput
+song=`mpc current`
+echo $song

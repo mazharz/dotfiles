@@ -13,11 +13,13 @@ require('telescope').setup {
     mappings = {
       n = {
         ["<M-p>"] = layout.toggle_preview,
-        ["<C-h>"] = actions.file_split
+        ["<C-h>"] = actions.file_split,
       },
       i = {
         ["<M-p>"] = layout.toggle_preview,
-        ["<C-h>"] = actions.file_split
+        ["<C-h>"] = actions.file_split,
+        ["<C-k>"] = actions.move_selection_previous,
+        ["<C-j>"] = actions.move_selection_next,
       }
     }
   }

@@ -19,7 +19,7 @@ end
 vim.cmd [[
   augroup packer_user_config
     autocmd!
-    autocmd BufWritePost plugin.lua source <afile> | PackerSync
+    autocmd BufWritePost packer.lua source <afile> | PackerSync
   augroup end
 ]]
 
@@ -30,69 +30,60 @@ if not status_ok then
   return
 end
 
--- Have packer use a popup window
--- packer.init {
---   display = {
---     open_fn = function()
---       return require("packer.util").float { border = "rounded" }
---     end,
---   },
--- }
-
 return packer.startup(function(use)
--- almighty packer himself!
-use 'wbthomason/packer.nvim'
--- colorscheme
-use 'ellisonleao/gruvbox.nvim'
+  -- almighty packer himself!
+  use 'wbthomason/packer.nvim'
+  -- colorscheme
+  use 'ellisonleao/gruvbox.nvim'
 
--- file-tree explorer
-use 'kyazdani42/nvim-tree.lua'
+  -- file-tree explorer
+  use 'kyazdani42/nvim-tree.lua'
 
--- Telescope
-use 'nvim-lua/plenary.nvim'
-use 'nvim-telescope/telescope.nvim'
--- plugin for better sort
-use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
--- plugin for devicons
-use 'kyazdani42/nvim-web-devicons'
+  -- Telescope
+  use 'nvim-lua/plenary.nvim'
+  use 'nvim-telescope/telescope.nvim'
+  -- plugin for better sort
+  use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+  -- plugin for devicons
+  use 'kyazdani42/nvim-web-devicons'
 
--- lsp
-use 'neovim/nvim-lspconfig'
-use 'williamboman/nvim-lsp-installer'
--- lsp autocomplete
-use 'hrsh7th/nvim-cmp'
-use 'hrsh7th/cmp-nvim-lsp'
-use 'hrsh7th/cmp-buffer'
-use 'hrsh7th/cmp-path'
-use 'L3MON4D3/LuaSnip'
-use 'saadparwaiz1/cmp_luasnip'
-use 'rafamadriz/friendly-snippets'
+  -- lsp
+  use 'neovim/nvim-lspconfig'
+  use 'williamboman/nvim-lsp-installer'
+  use 'jose-elias-alvarez/null-ls.nvim'
+  -- lsp autocomplete
+  use 'hrsh7th/nvim-cmp'
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/cmp-path'
+  use 'L3MON4D3/LuaSnip'
+  use 'saadparwaiz1/cmp_luasnip'
 
--- lualine
-use 'nvim-lualine/lualine.nvim'
+  -- lualine
+  use 'nvim-lualine/lualine.nvim'
 
--- comment
-use 'numToStr/Comment.nvim'
--- support for tsx commenting
-use 'JoosepAlviste/nvim-ts-context-commentstring'
+  -- comment
+  use 'numToStr/Comment.nvim'
+  -- support for tsx commenting
+  use 'JoosepAlviste/nvim-ts-context-commentstring'
 
-use 'wesQ3/vim-windowswap'
-use 'terryma/vim-multiple-cursors'
-use 'airblade/vim-gitgutter'
-use 'qpkorr/vim-bufkill'
-use 'tpope/vim-surround'
-use 'tpope/vim-fugitive'
-use 'tpope/vim-repeat'
-use 'tpope/vim-sleuth'
-use 'sbdchd/neoformat'
-use 'jiangmiao/auto-pairs'
-use 'easymotion/vim-easymotion'
-use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
+  use 'wesQ3/vim-windowswap'
+  use 'terryma/vim-multiple-cursors'
+  use 'airblade/vim-gitgutter'
+  use 'qpkorr/vim-bufkill'
+  use 'tpope/vim-surround'
+  use 'tpope/vim-fugitive'
+  use 'tpope/vim-repeat'
+  use 'tpope/vim-sleuth'
+  use 'jiangmiao/auto-pairs'
+  use 'easymotion/vim-easymotion'
+  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 
--- managing session
-use 'xolox/vim-session'
--- required for vim-session
-use 'xolox/vim-misc'
+  -- managing session
+  use {
+    'xolox/vim-session',
+    requires = { 'xolox/vim-misc' }
+  }
 
   -- Automatically set up configuration after cloning packer.nvim
   if PACKER_BOOTSTRAP then

@@ -2,7 +2,7 @@ local keymap = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
 -- set leader to comma
-vim.g.mapleader = ","
+vim.g.mapleader = " "
 
 -- center cursor in file
 -- don't keep it centered though, reset to normal behavior
@@ -71,4 +71,3 @@ keymap('n', '<A-|>', '<C-w>=<C-w>_', opts)
 keymap('i', '<A-|>', '<C-w>=<C-w>_', opts)
 keymap('n', '<A-_>', '<C-w>=<C-w>|', opts)
 keymap('i', '<A-_>', '<C-w>=<C-w>|', opts)
-

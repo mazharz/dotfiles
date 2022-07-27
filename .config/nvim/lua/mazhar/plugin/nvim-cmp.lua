@@ -1,7 +1,6 @@
--- TODO: move luasnip sections into its own module
 -- TODO: see if u can update/get-rid-of that unpack warn
 
-vim.opt.completeopt={"menu","menuone","noselect"}
+vim.opt.completeopt = { "menu", "menuone", "noselect" }
 
 local has_words_before = function()
   local line, col = unpack(vim.api.nvim_win_get_cursor(0))
@@ -45,13 +44,3 @@ cmp.setup({
     { name = 'buffer' },
   })
 })
-
--- to jump between snippet sections
-local opts = { noremap = true, silent = true }
-vim.keymap.set("i", "<c-j>", "<cmd>lua require'luasnip'.jump(1)<CR>", opts)
-vim.keymap.set("s", "<c-j>", "<cmd>lua require'luasnip'.jump(1)<CR>", opts)
-vim.keymap.set("i", "<c-k>", "<cmd>lua require'luasnip'.jump(-1)<CR>", opts)
-vim.keymap.set("s", "<c-k>", "<cmd>lua require'luasnip'.jump(-1)<CR>", opts)
-
--- load rafamadriz/friendly-snippets snippets
-require("luasnip/loaders/from_vscode").lazy_load()

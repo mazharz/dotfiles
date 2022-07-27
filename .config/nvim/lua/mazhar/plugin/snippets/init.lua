@@ -1,0 +1,7 @@
+require('mazhar.plugin.snippets.javascript')
+require('mazhar.plugin.snippets.typescript')
+require('mazhar.plugin.snippets.javascriptreact')
+require('mazhar.plugin.snippets.typescriptreact')
+require('mazhar.plugin.snippets.html')
+require('mazhar.plugin.snippets.markdown')
+require('mazhar.plugin.snippets.gitcommit')

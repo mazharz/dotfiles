@@ -1,0 +1,6 @@
+#!/bin/bash
+
+cmus-remote -C clear
+cmus-remote -C "add ~/mzd/music"
+cmus-remote -C "update-cache -f"
+

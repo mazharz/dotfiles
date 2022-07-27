@@ -70,34 +70,30 @@ focus_follows_mouse yes
 ################################################################################
 show_marks yes
 
-bindsym $mod+m mode "$mark-mode"
+bindsym $mod+Shift+m exec i3-input -f "pango:FiraCode Nerd Font 12" \
+  -F 'mark %s' \
+  -l 1 \
+  -P 'Mark: '
+bindsym $mod+m exec i3-input -f "pango:FiraCode Nerd Font 12" \
+  -F '[con_mark="%s"] focus' \
+  -l 1 \
+  -P 'Goto: '
 
-mode "$mark-mode" {
-  bindsym s [con_mark="s"] focus; mode "default"
-  bindsym f [con_mark="f"] focus; mode "default"
-  bindsym t [con_mark="t"] focus; mode "default"
-  bindsym m [con_mark="m"] focus; mode "default"
-  bindsym c [con_mark="c"] focus; mode "default"
-  bindsym v [con_mark="v"] focus; mode "default"
-  bindsym w [con_mark="w"] focus; mode "default"
-  bindsym p [con_mark="p"] focus; mode "default"
-
-  bindsym Escape mode "default"
-  bindsym Return mode "default"
-}
+# auto mark mostly used windows
+for_window [class="Slack"]                 mark s
+for_window [class="Nautilus"]              mark f
+for_window [class="TelegramDesktop"]       mark t
+for_window [class="Google-chrome"]         mark c
+for_window [class="mpv"]                   mark v
+for_window [class="Postman"]               mark p
+for_window [class="Altair GraphQL Client"] mark a
+for_window [title="ncmpc"]                 mark m
 
 ################################################################################
 # Auto assignments
 ################################################################################
 for_window [class="Pavucontrol"]     floating enable
 for_window [class="mpv"]             floating enable
-for_window [class="Slack"]           mark s
-for_window [class="Nautilus"]        mark f
-for_window [class="TelegramDesktop"] mark t
-for_window [title="cmus"]            mark m
-for_window [class="Google-chrome"]   mark c
-for_window [class="mpv"]             mark v
-for_window [class="Gnome-pomodoro"]  mark p
 
 ################################################################################
 # Workspaces
@@ -231,11 +227,11 @@ bindsym $mod+i exec ~/bin/kb_layout
 
 bindsym $mod+semicolon exec ~/bin/lock
 
-bindsym $mod+Mod1+period       exec cmus-remote --next; exec pkill -SIGRTMIN+11 i3blocks
-bindsym $mod+Mod1+comma        exec cmus-remote --prev; exec pkill -SIGRTMIN+11 i3blocks
-bindsym $mod+Mod1+j            exec cmus-remote --pause; exec pkill -SIGRTMIN+11 i3blocks
-bindsym $mod+Mod1+bracketleft  exec cmus-remote --seek -10
-bindsym $mod+Mod1+bracketright exec cmus-remote --seek +10
+bindsym $mod+Mod1+period       exec mpc next; exec pkill -SIGRTMIN+11 i3blocks
+bindsym $mod+Mod1+comma        exec mpc prev; exec pkill -SIGRTMIN+11 i3blocks
+bindsym $mod+Mod1+j            exec mpc toggle; exec pkill -SIGRTMIN+11 i3blocks
+bindsym $mod+Mod1+bracketleft  exec mpc seek -10
+bindsym $mod+Mod1+bracketright exec mpc seek +10
 
 # open rofi with mouse thumb button
 bindsym --whole-window --border $mod+Tab exec rofi -show window
@@ -245,7 +241,7 @@ bindsym $mod+Mod1+c exec google-chrome-stable --profile-directory='Profile 2'
 bindsym $mod+Mod1+f exec nautilus
 bindsym $mod+Mod1+t exec telegram-desktop
 bindsym $mod+Mod1+s exec slack
-bindsym $mod+Mod1+m exec kitty cmus
+bindsym $mod+Mod1+m exec kitty ncmpc
 bindsym $mod+Ctrl+c exec ~/bin/clocks
 
 bindsym $mod+Ctrl+space       exec dunstctl close
