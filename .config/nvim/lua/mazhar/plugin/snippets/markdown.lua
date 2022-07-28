@@ -1,32 +1,51 @@
 local ls = require("luasnip")
 local s = ls.snippet
 local i = ls.insert_node
-local t = ls.text_node
+local fmt = require("luasnip.extras.fmt").fmt
 
 ls.filetype_extend("javascriptreact", { "javascript", "html" })
 
 local snippets = {
-  s({ trig = "l", name = "markdown:link" }, {
-    t("["), i(1, "name"), t("]("), i(2, "link"), t(")")
-  }),
-  s({ trig = "t", name = "markdown:task" }, {
-    t("- ["), i(2, "-"), t("] "), i(1, "task")
-  }),
-  s({ trig = "x1", name = "markdown:1x1 table" }, {
-    t("| "), i(1, "column 1"), t({ " |", "" }),
-    t({ "| -------- |", "" }),
-    t("| "), i(2, " item  1"), t({ " |", "" }),
-  }),
-  s({ trig = "x2", name = "markdown:1x2 table" }, {
-    t("| "), i(1, "column 1"), t(" | "), i(2, "column 2"), t({ " |", "" }),
-    t({ "| -------- | -------- |", "" }),
-    t("| "), i(3, " item  1"), t(" | "), i(4, " item  2"), t({ " |", "" }),
-  }),
-  s({ trig = "x3", name = "markdown:1x3 table" }, {
-    t("| "), i(1, "column 1"), t(" | "), i(2, "column 2"), t(" | "), i(3, "column 3"), t({ " |", "" }),
-    t({ "| -------- | -------- | -------- |", "" }),
-    t("| "), i(4, " item  1"), t(" | "), i(5, " item  2"), t(" | "), i(6, " item  3"), t({ " |", "" }),
-  })
+  s("l", fmt("[{}]({})",
+    { i(1, "name"), i(2, "link") }
+  )),
+
+  s("t", fmt("- [{}] {}",
+    { i(2, " "), i(1, "task") }
+  )),
+
+  s("x1", fmt([[
+    | {} |
+    | -------- |
+    | {} |
+    ]],
+    {
+      i(1, "column 1"),
+      i(2, " item  1")
+    }
+  )),
+
+  s("x2", fmt([[
+    | {} | {} |
+    | -------- | -------- |
+    | {} | {} |
+    ]],
+    {
+      i(1, "column 1"), i(2, "column 2"),
+      i(3, " item  1"), i(4, " item  2")
+    }
+  )),
+
+  s("x3", fmt([[
+    | {} | {} | {} |
+    | -------- | -------- | -------- |
+    | {} | {} | {} |
+    ]],
+    {
+      i(1, "column 1"), i(2, "column 2"), i(3, "column 3"),
+      i(4, " item  1"), i(5, " item  2"), i(6, " item  3")
+    }
+  )),
 }
 
 ls.add_snippets("markdown", snippets);

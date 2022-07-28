@@ -1,26 +1,45 @@
 local ls = require("luasnip")
 local s = ls.snippet
 local i = ls.insert_node
-local t = ls.text_node
+local fmt = require("luasnip.extras.fmt").fmt
 
 ls.filetype_extend("javascriptreact", { "javascript", "html" })
 
 local snippets = {
-  s({ trig = "us", name = "react:useState" }, {
-    t("const ["), i(1, "state"), t(", set"), i(2, "State"), t("] = useState("), i(3, "init"), t(")")
-  }),
-  s({ trig = "ue", name = "react:useEffect" }, {
-    t({ "useEffect(() => {", "\t" }), i(2), t({ "", "}, [" }), i(1, "dep"), t("])")
-  }),
-  s({ trig = "uc", name = "react:useContext" }, {
-    t("const "), i(1, "ctx"), t(" = useContext("), i(2, "Ctx"), t(")")
-  }),
-  s({ trig = "ucb", name = "react:useCallback" }, {
-    t("const "), i(1, "fn"), t({ " = useCallback(() => {", "\t" }), i(3), t({ "", "}, [" }), i(2, "dep"), t("])")
-  }),
-  s({ trig = "ume", name = "react:useMemo" }, {
-    t("const "), i(1, "memoized"), t({ " = useMemo(() => {", "\t" }), i(3), t({ "", "}, [" }), i(2, "dep"), t("])")
-  }),
+  s("us", fmt("const [{}, set{}] = useState({})",
+    { i(1, "state"), i(2, "State"), i(3, "init") }
+  )),
+
+  s("ue", fmt([[
+    useEffect(() => {
+      qp
+    }, [qp])
+    ]],
+    { i(2), i(1, "dep") },
+    { delimiters = "qp" }
+  )),
+
+  s("uc", fmt("const {} = useContext({})",
+    { i(1, "ctx"), i(2, "Ctx") }
+  )),
+
+  s("ucb", fmt([[
+    const qp = useCallback(() => {
+      qp
+    }, [qp])
+    ]],
+    { i(1, "fn"), i(3), i(2, "dep") },
+    { delimiters = "qp" }
+  )),
+
+  s("ume", fmt([[
+    const qp = useMemo(() => {
+      qp
+    }, [qp])
+    ]],
+    { i(1, "memoized"), i(3), i(2, "dep") },
+    { delimiters = "qp" }
+  )),
 }
 
 ls.add_snippets("javascriptreact", snippets);
