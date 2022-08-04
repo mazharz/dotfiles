@@ -1,48 +1,42 @@
 local ls = require("luasnip")
 local s = ls.snippet
 local i = ls.insert_node
+local t = ls.text_node
+local c = ls.choice_node
 local rep = require("luasnip.extras").rep
 local fmt = require("luasnip.extras.fmt").fmt
 
 local snippets = {
-  s("cl", fmt("console.log('{}:', {})",
-    { rep(1), i(1, "var") }
+  s("cl", fmt("console.{}('{}:', {})",
+    {
+      c(1, { t "log", t "warn", t "error" }),
+      rep(2),
+      i(2, "var")
+    }
   )),
 
   s("ds", fmt([[
-    describe("[]", () => {
-      []
-    })
+    describe("{}", {} () => {{
+      {}
+    }})
     ]],
-    { i(1, "description"), i(0) },
-    { delimiters = "[]" }
-  )),
-
-  s("dsa", fmt([[
-    describe("[]", async () => {
-      []
-    })
-    ]],
-    { i(1, "description"), i(0) },
-    { delimiters = "[]" }
+    {
+      i(1, "description"),
+      c(2, { t "", t "async" }),
+      i(0)
+    }
   )),
 
   s("it", fmt([[
-    it("should []", () => {
-      []
-    })
+    it("should {}", {} () => {{
+      {}
+    }})
     ]],
-    { i(1, "be x y z"), i(0) },
-    { delimiters = "[]" }
-  )),
-
-  s("ita", fmt([[
-    it("should []", async () => {
-      []
-    })
-    ]],
-    { i(1, "be x y z"), i(0) },
-    { delimiters = "[]" }
+    {
+      i(1, "be x y z"),
+      c(2, { t "", t "async" }),
+      i(0)
+    }
   )),
 
   s("imp", fmt("import { [] } from \"[]\"",
@@ -88,12 +82,11 @@ local snippets = {
     { delimiters = "[]" }
   )),
 
-  s("js", fmt("JSON.stringify({})",
-    { i(1) }
-  )),
-
-  s("jp", fmt("JSON.parse({})",
-    { i(1) }
+  s("js", fmt("JSON.{}({})",
+    {
+      c(1, { t "stringify", t "parse" }),
+      i(2)
+    }
   )),
 
   s("tc", fmt([[

@@ -30,3 +30,4 @@ fi
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 export EDITOR='nvim'
+. "$HOME/.cargo/env"

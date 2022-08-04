@@ -1,47 +1,21 @@
 local ls = require("luasnip")
 local s = ls.snippet
 local i = ls.insert_node
+local c = ls.choice_node
+local t = ls.text_node
 local fmt = require("luasnip.extras.fmt").fmt
 
 local snippets = {
-  s("t", fmt([[
-    feat({}): {}
+  s("f", fmt([[
+    {}({}): {}
 
 
     ]],
-    { i(1, "scope"), i(2, "message") }
-  )),
-
-  s("x", fmt([[
-    fix({}): {}
-
-
-    ]],
-    { i(1, "scope"), i(2, "message") }
-  )),
-
-  s("r", fmt([[
-    refactor({}): {}
-
-
-    ]],
-    { i(1, "scope"), i(2, "message") }
-  )),
-
-  s("p", fmt([[
-    perf({}): {}
-
-
-    ]],
-    { i(1, "scope"), i(2, "message") }
-  )),
-
-  s("s", fmt([[
-    test({}): {}
-
-
-    ]],
-    { i(1, "scope"), i(2, "message") }
+    {
+      c(1, { t "feat", t "fix", t "refactor", t "perf", t "test" }),
+      i(2, "scope"),
+      i(3, "message")
+    }
   )),
 
   s("b", fmt("BREAKING CHANGE: {}",
