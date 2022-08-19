@@ -105,16 +105,11 @@ alias vim="nvim"
 alias vi="nvim"
 alias wd="cd ~/mzd/wd/; ls"
 alias code="cd ~/mzd/code/; ls"
-alias lockPrivate="sudo chmod 000 ~/mzd/multimedia/private"
-alias unlockPrivate="sudo chmod 775 ~/mzd/multimedia/private; nautilus ~/mzd/multimedia/private"
 alias m="cd ~/mzd/text/markdowns; nvim"
 alias t="nvim ~/mzd/text/markdowns/notes/todo.md"
-alias backup="unlockPrivate; rsync -au --delete --progress /home/m47h4r/mzd/* /run/media/m47h4r/mzed"
+alias backup="rsync -au --delete --progress /home/m47h4r/mzd/* /run/media/m47h4r/mzed"
 alias gwat="cd ~/mzd/code/gwat"
 alias sortMirrors="sudo reflector --latest 5 --sort rate --protocol https --save /etc/pacman.d/mirrorlist"
-
-# git aliases
-alias git-log-origin-to-head="git log origin..HEAD --format=%B"
 
 # add nvm path
 [ -z "$NVM_DIR" ] && export NVM_DIR="$HOME/.nvm"
@@ -131,6 +126,4 @@ export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -l -g ""'
 
 export PATH=$PATH:/home/m47h4r/bin/
 export PATH=$PATH:/home/m47h4r/.local/bin # youtube-dl
-
-export PATH="$HOME/.cabal/bin:$HOME/.ghcup/bin:$PATH"
 

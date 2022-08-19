@@ -1,0 +1,33 @@
+#!/bin/bash
+
+# Essentials
+echo 'Installing the very essentials...'
+sleep 1
+sudo pacman -S base-devel curl wget git stow python-pip
+
+# Create ~/builds dir
+echo 'Creating ~/builds directory...'
+sleep 1
+mkdir $HOME/builds
+
+# Install trizen for handling aur
+echo 'Installing trizen for handling aur...'
+sleep 1
+git clone https://aur.archlinux.org/trizen-git.git $HOME/builds/trizen
+cd $HOME/builds/trizen
+makepkg -si
+cd $HOME
+
+# Setup cli essentials
+echo 'Setting up cli essentials...'
+sleep 1
+sudo pacman -S kitty zsh
+trizen -S oh-my-zsh-git
+
+# Populate dotfiles
+echo 'Populating dotfiles...'
+sleep 1
+git clone git@github.com:m47h4r/dotfiles.git $HOME/.dotfiles
+cd ~/.dotfiles/
+stow .
+cd $HOME
