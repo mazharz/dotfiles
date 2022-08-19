@@ -54,6 +54,8 @@ local options = {
   incsearch = true,
   -- auto indent
   autoindent = true,
+  -- mouse right button extends selection
+  mousemodel = 'extend',
 }
 
 for key, value in pairs(options) do

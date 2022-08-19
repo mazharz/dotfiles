@@ -1,3 +1,4 @@
+local lspconfig = require('lspconfig');
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 local on_attach = function(client, bufnr)
@@ -49,7 +50,7 @@ local on_attach = function(client, bufnr)
 
   -- prevent tsserver from formatting, let null-ls handle it
   if client.name == "tsserver" then
-    client.resolved_capabilities.document_formatting = false
+    client.server_capabilities.document_formatting = false
   end
 end
 
@@ -57,12 +58,12 @@ require("nvim-lsp-installer").setup {
   automatic_installation = true
 }
 
-require("lspconfig").tsserver.setup {
+lspconfig.tsserver.setup {
   capabilities = capabilities,
   on_attach = on_attach
 }
 
-require("lspconfig").sumneko_lua.setup {
+lspconfig.sumneko_lua.setup {
   capabilities = capabilities,
   on_attach = on_attach,
   settings = {
@@ -74,43 +75,39 @@ require("lspconfig").sumneko_lua.setup {
     }
   }
 }
-require("lspconfig").graphql.setup {
+lspconfig.graphql.setup {
   capabilities = capabilities,
   on_attach = on_attach,
 }
-require("lspconfig").eslint.setup {
+lspconfig.eslint.setup {
   capabilities = capabilities,
   on_attach = on_attach,
 }
-require("lspconfig").tailwindcss.setup {
+lspconfig.tailwindcss.setup {
   capabilities = capabilities,
   on_attach = on_attach,
 }
-require("lspconfig").html.setup {
+lspconfig.html.setup {
   capabilities = capabilities,
   on_attach = on_attach,
 }
-require("lspconfig").cssls.setup {
+lspconfig.cssls.setup {
   capabilities = capabilities,
   on_attach = on_attach,
 }
-require("lspconfig").cssmodules_ls.setup {
+lspconfig.cssmodules_ls.setup {
   capabilities = capabilities,
   on_attach = on_attach,
 }
-require("lspconfig").hls.setup {
+lspconfig.angularls.setup {
   capabilities = capabilities,
   on_attach = on_attach,
 }
-require("lspconfig").angularls.setup {
+lspconfig.bashls.setup {
   capabilities = capabilities,
   on_attach = on_attach,
 }
-require("lspconfig").bashls.setup {
-  capabilities = capabilities,
-  on_attach = on_attach,
-}
-require("lspconfig").rust_analyzer.setup {
+lspconfig.rust_analyzer.setup {
   capabilities = capabilities,
   on_attach = on_attach,
 }

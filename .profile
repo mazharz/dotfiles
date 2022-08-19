@@ -25,9 +25,5 @@ fi
 if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
-
-# load fzf
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
-export EDITOR='nvim'
 . "$HOME/.cargo/env"
+

@@ -61,6 +61,7 @@ return packer.startup(function(use)
 
   -- lualine
   use 'nvim-lualine/lualine.nvim'
+  use 'arkav/lualine-lsp-progress'
 
   -- comment
   use 'numToStr/Comment.nvim'
