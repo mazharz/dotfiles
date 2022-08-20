@@ -110,6 +110,8 @@ alias t="nvim ~/mzd/text/markdowns/notes/todo.md"
 alias backup="rsync -au --delete --progress /home/m47h4r/mzd/* /run/media/m47h4r/mzed"
 alias gwat="cd ~/mzd/code/gwat"
 alias sortMirrors="sudo reflector --latest 5 --sort rate --protocol https --save /etc/pacman.d/mirrorlist"
+alias ncum="nmcli con up mzv"
+alias ncdm="nmcli con down mzv"
 
 # add nvm path
 [ -z "$NVM_DIR" ] && export NVM_DIR="$HOME/.nvm"

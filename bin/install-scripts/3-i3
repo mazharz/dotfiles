@@ -1,32 +1,44 @@
 #!/bin/bash
 
 # Install packages
-echo 'Installing i3 packages...'
+echo '##################################################'
+echo '# Installing i3 packages...'
+echo '##################################################'
 sleep 1
-sudo pacman -S xorg xorg-init i3 i3blocks rofi maim feh arandr pipewire pipewire-alsa pipewire-pulse pavucontrol nautilus dunst picom copyq bluez bluez-utils blueman openssh networkmanager networkmanager-openvpn network-manager-applet playerctl xclip redshift lxappearance gucharmap gnome-calculator slop gvfs-mtp gvfs-gphoto2 gnome-keyring libsecret libgnome-keyring seahorse
+sudo pacman -S xorg xorg-xinit i3 i3blocks rofi kitty maim feh arandr pipewire pipewire-alsa pipewire-pulse pavucontrol nautilus dunst picom copyq bluez bluez-utils blueman openssh networkmanager networkmanager-openvpn network-manager-applet playerctl xclip redshift lxappearance gucharmap gnome-calculator slop gvfs-mtp gvfs-gphoto2 gnome-keyring libsecret libgnome-keyring seahorse
 
 # Append necessary configuration to gnome keyring
-echo 'Appending necessary configuration to gnome keyring...'
+echo '##################################################'
+echo '# Appending necessary configuration to gnome keyring...'
+echo '##################################################'
 sleep 1
-echo -e "\nauth optional pam_gnome_keyring.so\nsession optional pam_gnome_keyring.so auto_start\n" >> /etc/pam.d/login
+echo -e "\nauth optional pam_gnome_keyring.so\nsession optional pam_gnome_keyring.so auto_start\n" | sudo tee -a /etc/pam.d/login
 
 # Install themes
-echo 'Installing themes...'
+echo '##################################################'
+echo '# Installing themes...'
+echo '##################################################'
 sleep 1
 trizen -S gruvbox-material-gtk-theme-git
 trizen -S gruvbox-material-icon-theme-git
 
 # Install xkb-switch
-echo 'Installing xkb-switch...'
+echo '##################################################'
+echo '# Installing xkb-switch...'
+echo '##################################################'
 sleep 1
 trizen -S xkb-switch
 
 # Create ~/Pictures/Wallpaper dir
-echo 'Creating ~/Pictures/Wallpaper dir...'
+echo '##################################################'
+echo '# Creating ~/Pictures/Wallpaper dir...'
+echo '##################################################'
 sleep 1
-mkdir $HOME/Pictures/Wallpaper
+mkdir -p $HOME/Pictures/Wallpaper
 
 # Enable & start bluetooth service
-echo 'Enabling & starting bluetooth service...'
+echo '##################################################'
+echo '# Enabling & starting bluetooth service...'
+echo '##################################################'
 sleep 1
 sudo systemctl enable --now bluetooth.service

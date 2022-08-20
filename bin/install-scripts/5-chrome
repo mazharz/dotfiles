@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Install chrome
+echo '##################################################'
+echo '# Installing chrome...'
+echo '##################################################'
+sleep 1
+trizen -S google-chrome

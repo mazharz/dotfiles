@@ -2,35 +2,49 @@
 # Run with root
 
 # copy sudoers file for m47h4r user
-echo 'Copying sudoers file...'
+echo '##################################################'
+echo '# Installing sudo...'
+echo '##################################################'
+sleep 1
+pacman -S sudo
+echo '##################################################'
+echo '# Copying sudoers file...'
+echo '##################################################'
 sleep 1
 sudo_source="./files/sudo/m47h4r"
 sudo_destination="/etc/sudoers.d/m47h4r"
-
 cp $sudo_source $sudo_destination
 chown root:root $sudo_destination
 chmod 0440 $sudo_destination
 
 # disable power saving for audio devices
-echo 'Copying audio powersaving file...'
+echo '##################################################'
+echo '# Copying audio powersaving file...'
+echo '##################################################'
 sleep 1
 audio_source="./files/power/audio"
 audio_destination="/etc/modprobe.d/audio_powersave.conf"
-
 cp $audio_source $audio_destination
 
 # enable click on touch for touchpad
-echo 'Copying touchpad file...'
+echo '##################################################'
+echo '# Installing xorg...'
+echo '##################################################'
+sleep 1
+pacman -S xorg
+echo '##################################################'
+echo '# Copying touchpad file...'
+echo '##################################################'
 sleep 1
 touchpad_source="./files/touchpad/30-touchpad.conf"
 touchpad_destination="/etc/X11/xorg.conf.d/30-touchpad.conf"
-
 cp $touchpad_source $touchpad_destination
 
 # add mzd to fstab
-echo 'Adding mzd to fstab...'
+echo '##################################################'
+echo '# Adding mzd to fstab...'
+echo '##################################################'
 sleep 1
 fstab_source="./files/fstab/mzd"
 fstab_destiantion="/etc/fstab"
-
-echo $fstab_source >> $fstab_destiantion
+cat $fstab_source >> $fstab_destiantion

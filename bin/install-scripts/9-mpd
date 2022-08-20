@@ -1,0 +1,24 @@
+#!/bin/bash
+
+echo '##################################################'
+echo '# Installing packages...'
+echo '##################################################'
+sudo pacman -S mpd mpc ncmpc
+
+echo '##################################################'
+echo '# Creating ~/.mpd directory...'
+echo '##################################################'
+mkdir $HOME/.mpd
+
+echo '##################################################'
+echo '# Creating mpd files...'
+echo '##################################################'
+touch ~/.mpd/log
+touch ~/.mpd/pid
+touch ~/.mpd/state
+touch ~/.mpd/sticker.sql
+
+echo '##################################################'
+echo '# Enabling & starting mpd.service...'
+echo '##################################################'
+sudo systemctl enable --user --now mpd.service
