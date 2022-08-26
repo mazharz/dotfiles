@@ -19,8 +19,22 @@ keymap("n", "<C-c>", ":cclose<CR>", opts)
 -- unhighlight search results
 keymap("n", "<C-l>", ":nohl<CR>", opts)
 
--- faster replace
-keymap('n', '<leader>R', ':%s/', opts)
+-- faster save
+keymap('n', '<leader>ww', ':w<CR>', opts)
+keymap('n', '<leader>wa', ':wa<CR>', opts)
+keymap('n', '<leader>wq', ':wq<CR>', opts)
+keymap('n', '<leader>wQ', ':wqa<CR>', opts)
+-- faster quit
+keymap('n', '<leader>q', ':q<CR>', opts)
+-- use register for pasting yanked
+keymap('n', '<leader>p', 'ciw<C-r>0<ESC>')
+
+-- easier tab cycling
+keymap('n', '<A-S-,>', ':tabnext<CR>', opts)
+keymap('n', '<A-S-.>', ':tabprevious<CR>', opts)
+
+-- pass selected lines to appropriate program
+keymap('v', '<leader>c', "::w !xargs kitty xdg-open<CR>", opts)
 
 -------------------------------------------------------------------------------
 -- Windows

@@ -21,4 +21,4 @@ touch ~/.mpd/sticker.sql
 echo '##################################################'
 echo '# Enabling & starting mpd.service...'
 echo '##################################################'
-sudo systemctl enable --user --now mpd.service
+sudo systemctl --user enable --now mpd.service

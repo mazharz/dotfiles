@@ -50,7 +50,7 @@ local on_attach = function(client, bufnr)
 
   -- prevent tsserver from formatting, let null-ls handle it
   if client.name == "tsserver" then
-    client.server_capabilities.document_formatting = false
+    client.resolved_capabilities.document_formatting = false
   end
 end
 

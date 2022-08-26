@@ -68,7 +68,6 @@ return packer.startup(function(use)
   -- support for tsx commenting
   use 'JoosepAlviste/nvim-ts-context-commentstring'
 
-  use 'wesQ3/vim-windowswap'
   use 'terryma/vim-multiple-cursors'
   use 'airblade/vim-gitgutter'
   use 'qpkorr/vim-bufkill'

@@ -1,0 +1,3 @@
+#!/bin/bash
+
+xdg-mime default mpv.desktop audio/mpeg

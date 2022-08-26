@@ -1,4 +1,5 @@
 #!/bin/bash
+
 # song=`playerctl --player=cmus metadata | grep title | awk '{for(i=3;i<=NF;++i)printf $i""FS ; print ""}'`
 # filename=`cmus-remote -Q | grep file | rev | cut -d '/' -f1 | rev `
 #
@@ -16,5 +17,12 @@
 # urldecodedOutput=$(urldecode "$output")
 # echo $urldecodedOutput
 
+max_length=50
 song=`mpc current`
-echo $song
+length=`echo $song | wc -c`
+if [ "$length" -le "$max_length" ];then
+  echo "${song}"
+else
+  truncated=`echo $song | head -c $max_length`
+  echo "${truncated}..."
+fi

@@ -27,11 +27,11 @@ require('telescope').setup {
 -- make sure telescope uses fzf plugin
 require('telescope').load_extension('fzf')
 
-vim.keymap.set('n', '<C-p>', builtin.find_files)
-vim.keymap.set('n', '<C-M-p>', builtin.buffers)
-vim.keymap.set('n', '<C-s>', builtin.live_grep)
-vim.keymap.set('n', '<C-;>', builtin.commands)
-vim.keymap.set('n', '<C-e>', builtin.diagnostics)
+vim.keymap.set('n', '<leader>sf', builtin.find_files)
+vim.keymap.set('n', '<leader>sb', builtin.buffers)
+vim.keymap.set('n', '<leader>ss', builtin.live_grep)
+vim.keymap.set('n', '<leader>sc', builtin.commands)
+vim.keymap.set('n', '<leader>sd', builtin.diagnostics)
 
 vim.cmd('highlight TelescopeSelection guifg=#b16286 gui=bold')
 vim.cmd('highlight TelescopePromptPrefix guifg=#458588')
