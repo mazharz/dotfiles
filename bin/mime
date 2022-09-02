@@ -1,3 +1,70 @@
 #!/bin/bash
 
+# Text
+xdg-mime default org.gnome.gedit.desktop text/css
+xdg-mime default org.gnome.gedit.desktop text/csv
+xdg-mime default org.gnome.gedit.desktop text/html
+xdg-mime default org.gnome.gedit.desktop text/javascript
+xdg-mime default org.gnome.gedit.desktop application/json
+xdg-mime default org.gnome.gedit.desktop application/ld+json
+xdg-mime default org.gnome.gedit.desktop text/javascript
+xdg-mime default org.gnome.gedit.desktop application/x-sh
+xdg-mime default org.gnome.gedit.desktop text/plain
+xdg-mime default org.gnome.gedit.desktop application/xhtml+xml
+
+# Document
+xdg-mime default libreoffice-writer.desktop application/vnd.oasis.opendocument.text
+xdg-mime default libreoffice-writer.desktop application/msword
+xdg-mime default libreoffice-writer.desktop application/vnd.openxmlformats-officedocument.wordprocessingml.document
+xdg-mime default libreoffice-impress.desktop application/vnd.oasis.opendocument.presentation
+xdg-mime default libreoffice-impress.desktop application/vnd.ms-powerpoint
+xdg-mime default libreoffice-impress.desktop application/vnd.openxmlformats-officedocument.presentationml.presentation
+xdg-mime default libreoffice-calc.desktop application/vnd.oasis.opendocument.spreadsheet
+xdg-mime default libreoffice-calc.desktop application/vnd.ms-excel
+xdg-mime default libreoffice-calc.desktop application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+xdg-mime default org.gnome.Evince.desktop application/pdf
+
+# Audio
 xdg-mime default mpv.desktop audio/mpeg
+xdg-mime default mpv.desktop audio/aac
+xdg-mime default mpv.desktop audio/ogg
+xdg-mime default mpv.desktop audio/opus
+xdg-mime default mpv.desktop audio/wav
+xdg-mime default mpv.desktop audio/webm
+
+# Video
+xdg-mime default mpv.desktop video/mp4
+xdg-mime default mpv.desktop video/mpeg
+xdg-mime default mpv.desktop video/ogg
+xdg-mime default mpv.desktop video/webm
+xdg-mime default mpv.desktop video/x-msvideo
+xdg-mime default mpv.desktop video/mp2t
+
+# Image
+xdg-mime default org.gnome.eog.desktop image/gif
+xdg-mime default org.gnome.eog.desktop image/jpeg
+xdg-mime default org.gnome.eog.desktop image/png
+xdg-mime default org.gnome.eog.desktop image/svg+xml
+xdg-mime default gimp.desktop image/avif
+xdg-mime default gimp.desktop image/tiff
+xdg-mime default gimp.desktop image/webp
+
+# Ebook
+xdg-mime default calibre-ebook-viewer.desktop application/vnd.amazon.ebook
+xdg-mime default calibre-ebook-viewer.desktop application/epub+zip
+
+# Archive
+xdg-mime default org.gnome.FileRoller.desktop application/x-bzip
+xdg-mime default org.gnome.FileRoller.desktop application/x-bzip2
+xdg-mime default org.gnome.FileRoller.desktop application/gzip
+xdg-mime default org.gnome.FileRoller.desktop application/vnd.rar
+xdg-mime default org.gnome.FileRoller.desktop application/zip
+xdg-mime default org.gnome.FileRoller.desktop application/x-7z-compressed
+
+# Font
+xdg-mime default org.gnome.font-viewer.desktop application/vnd.ms-fontobject
+xdg-mime default org.gnome.font-viewer.desktop font/otf
+xdg-mime default org.gnome.font-viewer.desktop font/ttf
+xdg-mime default org.gnome.font-viewer.desktop font/woff
+xdg-mime default org.gnome.font-viewer.desktop font/woff2
+

@@ -12,7 +12,7 @@ echo '##################################################'
 echo '# Installing system apps...'
 echo '##################################################'
 sleep 1
-sudo pacman -S calibre xournalpp libreoffice-still evince gedit
+sudo pacman -S calibre xournalpp libreoffice-still evince gedit gnome-font-viewer file-roller
 
 # Install multimedia apps
 echo '##################################################'
@@ -70,3 +70,6 @@ echo '# Installing gnome-shell-pomodoro...'
 echo '##################################################'
 sleep 1
 trizen -S --noconfirm gnome-shell-pomodoro
+
+# Set default applications for common MIME types
+sh ~/bin/mime
