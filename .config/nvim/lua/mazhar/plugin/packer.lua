@@ -77,7 +77,10 @@ return packer.startup(function(use)
   use 'tpope/vim-sleuth'
   use 'jiangmiao/auto-pairs'
   use 'easymotion/vim-easymotion'
+
+  -- highlighting
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+  use 'RRethy/vim-illuminate'
 
   -- managing session
   use {

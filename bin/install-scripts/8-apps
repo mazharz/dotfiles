@@ -26,7 +26,7 @@ echo '##################################################'
 echo '# Installing internet apps...'
 echo '##################################################'
 sleep 1
-sudo pacman -S telegram-desktop firefox tor qbittorrent
+sudo pacman -S telegram-desktop discord firefox tor qbittorrent
 
 # Install cli utils
 echo '##################################################'

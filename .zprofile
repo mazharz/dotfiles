@@ -19,4 +19,4 @@ fi
 . "$HOME/.cargo/env"
 
 # Scale qt apps
-export QT_SCALE_FACTOR=1.25
+export QT_SCALE_FACTOR=1.3

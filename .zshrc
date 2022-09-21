@@ -57,6 +57,7 @@ VIM='nvim'
 # For a full list of active aliases, run `alias`.
 alias vim="nvim"
 alias vi="nvim"
+alias v="nvim"
 alias wd="cd ~/mzd/wd/; ls"
 alias code="cd ~/mzd/code/; ls"
 alias m="cd ~/mzd/text/markdowns; nvim"
@@ -64,8 +65,6 @@ alias t="nvim ~/mzd/text/markdowns/notes/todo.md"
 alias backup="rsync -au --delete --progress /home/m47h4r/mzd/* /run/media/m47h4r/mzed"
 alias gwat="cd ~/mzd/code/gwat"
 alias sortMirrors="sudo reflector --latest 5 --sort rate --protocol https --save /etc/pacman.d/mirrorlist"
-alias ncum="nmcli con up mzv"
-alias ncdm="nmcli con down mzv"
 alias upgrade="google-chrome-stable https://archlinux.org && sudo pacman -Syu"
 
 # add nvm path

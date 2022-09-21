@@ -27,7 +27,7 @@ keymap('n', '<leader>wQ', ':wqa<CR>', opts)
 -- faster quit
 keymap('n', '<leader>q', ':q<CR>', opts)
 -- use register for pasting yanked
-keymap('n', '<leader>p', 'ciw<C-r>0<ESC>')
+keymap('x', '<leader>p', "\"_dP")
 
 -- easier tab cycling
 keymap('n', '<A-S-,>', ':tabnext<CR>', opts)

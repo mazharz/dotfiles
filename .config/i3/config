@@ -226,6 +226,11 @@ bindsym $mod+Mod1+shift+h exec ~/bin/huion-buttons
 
 bindsym $mod+i exec ~/bin/kb_layout
 
+# Macros
+bindsym $mod+o exec i3-input -f "pango:FiraCode Nerd Font 12" \
+  -F 'exec macro %s' \
+  -P 'Macro: '
+
 bindsym $mod+semicolon exec ~/bin/lock
 
 bindsym $mod+Mod1+period       exec mpc next; exec pkill -SIGRTMIN+11 i3blocks
@@ -243,6 +248,7 @@ bindsym $mod+Mod1+c exec google-chrome-stable --profile-directory='Profile 1'
 bindsym $mod+Mod1+f exec nautilus
 bindsym $mod+Mod1+t exec telegram-desktop
 bindsym $mod+Mod1+s exec slack
+bindsym $mod+Mod1+d exec discord
 bindsym $mod+Mod1+m exec kitty ncmpc
 bindsym $mod+Ctrl+c exec ~/bin/clocks
 
@@ -255,6 +261,7 @@ bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
 bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
 
 # autostart programs
+exec --no-startup-id /usr/bin/lxpolkit &
 exec_always ~/bin/kb_layout
 exec ~/bin/rw.sh
 exec dunst &

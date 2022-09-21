@@ -29,25 +29,6 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<leader>r', vim.lsp.buf.rename, bufopts)
   vim.keymap.set('n', '<leader>a', vim.lsp.buf.code_action, bufopts)
 
-  -- under cursor symbol highlighting
-  -- from: https://sbulav.github.io/til/til-neovim-highlight-references/
-  if client.server_capabilities.documentHighlightProvider then
-    vim.api.nvim_create_augroup("lsp_document_highlight", { clear = true })
-    vim.api.nvim_clear_autocmds { buffer = bufnr, group = "lsp_document_highlight" }
-    vim.api.nvim_create_autocmd("CursorHold", {
-      callback = vim.lsp.buf.document_highlight,
-      buffer = bufnr,
-      group = "lsp_document_highlight",
-      desc = "Document Highlight",
-    })
-    vim.api.nvim_create_autocmd("CursorMoved", {
-      callback = vim.lsp.buf.clear_references,
-      buffer = bufnr,
-      group = "lsp_document_highlight",
-      desc = "Clear All the References",
-    })
-  end
-
   -- prevent tsserver from formatting, let null-ls handle it
   if client.name == "tsserver" then
     client.resolved_capabilities.document_formatting = false
