@@ -6,7 +6,6 @@ require('telescope').setup {
   defaults = {
     prompt_prefix = "$ ",
     layout_strategy = 'flex',
-    sorting_strategy = 'ascending',
     layout_config = {
       height = 0.95,
       width = 0.95

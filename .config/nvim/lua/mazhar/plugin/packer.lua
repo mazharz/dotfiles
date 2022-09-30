@@ -68,6 +68,9 @@ return packer.startup(function(use)
   -- support for tsx commenting
   use 'JoosepAlviste/nvim-ts-context-commentstring'
 
+  -- undo tree
+  use 'mbbill/undotree'
+
   use 'terryma/vim-multiple-cursors'
   use 'airblade/vim-gitgutter'
   use 'qpkorr/vim-bufkill'
