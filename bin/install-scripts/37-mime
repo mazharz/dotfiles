@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Set default applications for common MIME types
+sh ~/bin/mime

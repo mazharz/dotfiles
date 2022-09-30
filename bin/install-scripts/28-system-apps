@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Install system apps
+echo '##################################################'
+echo '# Installing system apps...'
+echo '##################################################'
+sleep 1
+sudo pacman -S calibre xournalpp libreoffice-still evince gedit gnome-font-viewer file-roller

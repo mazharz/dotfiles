@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Create ~/builds dir
+echo '##################################################'
+echo '# Creating ~/builds directory...'
+echo '##################################################'
+sleep 1
+mkdir $HOME/builds

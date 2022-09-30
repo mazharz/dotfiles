@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Install internet apps
+echo '##################################################'
+echo '# Installing internet apps...'
+echo '##################################################'
+sleep 1
+sudo pacman -S telegram-desktop discord firefox tor qbittorrent

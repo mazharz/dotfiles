@@ -1,0 +1,16 @@
+#!/bin/bash
+# Run with root
+
+# enable click on touch for touchpad
+echo '##################################################'
+echo '# Installing xorg...'
+echo '##################################################'
+sleep 1
+pacman -S xorg
+echo '##################################################'
+echo '# Copying touchpad file...'
+echo '##################################################'
+sleep 1
+touchpad_source="./files/touchpad/30-touchpad.conf"
+touchpad_destination="/etc/X11/xorg.conf.d/30-touchpad.conf"
+cp $touchpad_source $touchpad_destination

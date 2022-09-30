@@ -1,0 +1,13 @@
+#!/bin/bash
+
+echo '##################################################'
+echo '# This script does not do anything. Please do:'
+echo '# install other node versions you might need'
+echo '# Also install these npm packages:'
+echo '# - eslint'
+echo '# - sass'
+echo '# - prettier'
+echo '# - typescript'
+echo '# - percollate'
+echo '# - yarn'
+echo '##################################################'

@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Install packages
+echo '##################################################'
+echo '# Installing packages...'
+echo '##################################################'
+sleep 1
+# unzip is required by neovim plugins
+sudo pacman -S fzf tmux neovim ripgrep sqlitebrowser filezilla docker docker-compose unzip xclip 
+

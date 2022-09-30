@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# Install themes
+echo '##################################################'
+echo '# Installing themes...'
+echo '##################################################'
+sleep 1
+trizen -S gruvbox-material-gtk-theme-git
+trizen -S gruvbox-material-icon-theme-git

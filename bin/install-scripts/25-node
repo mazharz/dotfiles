@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Install node
+echo '##################################################'
+echo '# Installing node...'
+echo '##################################################'
+sleep 1
+source $HOME/.nvm/nvm.sh && nvm install node

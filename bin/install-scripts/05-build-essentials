@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# Essentials
+echo '##################################################'
+echo '# Installing the very essentials...'
+echo '##################################################'
+sleep 1
+sudo pacman -S base-devel curl wget git stow python-pip
+

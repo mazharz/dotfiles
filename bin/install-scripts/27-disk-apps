@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Install disk apps
+echo '##################################################'
+echo '# Installing disk apps...'
+echo '##################################################'
+sleep 1
+sudo pacman -S baobab gparted gnome-disk-utility

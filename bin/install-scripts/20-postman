@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Install postman
+echo '##################################################'
+echo '# Installing postman...'
+echo '##################################################'
+sleep 1
+trizen -S postman-bin

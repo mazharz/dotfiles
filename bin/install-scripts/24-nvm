@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# Install nvm
+echo '##################################################'
+echo '# Installing nvm...'
+echo '##################################################'
+sleep 1
+trizen -S --noconfirm nvm
+

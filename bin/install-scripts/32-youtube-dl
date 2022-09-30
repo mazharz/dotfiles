@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Install youtube-dl
+echo '##################################################'
+echo '# Installing youtube-dl...'
+echo '##################################################'
+sleep 1
+pip install youtube-dl

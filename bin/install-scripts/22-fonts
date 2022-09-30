@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Install fonts
+echo '##################################################'
+echo '# Installing fonts...'
+echo '##################################################'
+sleep 1
+sudo pacman -S noto-fonts noto-fonts-emoji
+trizen -S nerd-fonts-fira-code
+trizen -S vazirmatn-fonts
