@@ -5,5 +5,5 @@ echo '##################################################'
 echo '# Installing altair...'
 echo '##################################################'
 sleep 1
-trizen -S altair
+trizen -S --noconfirm altair
 

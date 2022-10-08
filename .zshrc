@@ -56,7 +56,6 @@ VIM='nvim'
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 alias vim="nvim"
-alias vi="nvim"
 alias v="nvim"
 alias wd="cd ~/mzd/wd/; ls"
 alias code="cd ~/mzd/code/; ls"

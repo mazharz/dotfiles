@@ -49,7 +49,8 @@ return packer.startup(function(use)
 
   -- lsp
   use 'neovim/nvim-lspconfig'
-  use 'williamboman/nvim-lsp-installer'
+  use 'williamboman/mason.nvim'
+  use 'williamboman/mason-lspconfig.nvim'
   use 'jose-elias-alvarez/null-ls.nvim'
   -- lsp autocomplete
   use 'hrsh7th/nvim-cmp'
@@ -71,6 +72,9 @@ return packer.startup(function(use)
   -- undo tree
   use 'mbbill/undotree'
 
+  -- motions
+  use { 'phaazon/hop.nvim', branch = 'v2' }
+
   use 'terryma/vim-multiple-cursors'
   use 'airblade/vim-gitgutter'
   use 'qpkorr/vim-bufkill'
@@ -79,7 +83,6 @@ return packer.startup(function(use)
   use 'tpope/vim-repeat'
   use 'tpope/vim-sleuth'
   use 'jiangmiao/auto-pairs'
-  use 'easymotion/vim-easymotion'
 
   -- highlighting
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }

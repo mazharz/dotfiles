@@ -49,13 +49,15 @@ local options = {
   pastetoggle = "<F9>",
   -- customize spaces and tabs
   list = true,
-  listchars = "tab:> ,trail:·,nbsp:·,multispace:· ",
+  listchars = "tab:> ",
   -- find next match as typing for search
   incsearch = true,
   -- auto indent
   autoindent = true,
   -- mouse right button extends selection
   mousemodel = 'extend',
+  -- set spell checker
+  spell = true,
 }
 
 for key, value in pairs(options) do

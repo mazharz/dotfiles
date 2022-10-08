@@ -16,7 +16,7 @@ else
     neww -n shell \; \
     send-keys -t 2 "cd $1" Enter \; \
     neww -n notes \; \
-    send-keys -t 3 "nvim todo.md" Enter \; \
+    send-keys -t 3 "cd notes && nvim todo.md" Enter \; \
     selectw -t 1
 fi
 

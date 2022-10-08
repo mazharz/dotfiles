@@ -6,6 +6,6 @@ echo '# Setting up cli essentials...'
 echo '##################################################'
 sleep 1
 sudo pacman -S zsh
-trizen -S oh-my-zsh-git
+trizen -S --noconfirm oh-my-zsh-git
 sudo chsh --shell /usr/bin/zsh m47h4r
 

@@ -5,5 +5,5 @@ echo '##################################################'
 echo '# Installing themes...'
 echo '##################################################'
 sleep 1
-trizen -S gruvbox-material-gtk-theme-git
-trizen -S gruvbox-material-icon-theme-git
+trizen -S --noconfirm gruvbox-material-gtk-theme-git
+trizen -S --noconfirm gruvbox-material-icon-theme-git

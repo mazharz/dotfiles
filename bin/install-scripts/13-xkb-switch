@@ -5,4 +5,4 @@ echo '##################################################'
 echo '# Installing xkb-switch...'
 echo '##################################################'
 sleep 1
-trizen -S xkb-switch
+trizen -S --noconfirm xkb-switch

@@ -31,13 +31,14 @@ local on_attach = function(client, bufnr)
 
   -- prevent tsserver from formatting, let null-ls handle it
   if client.name == "tsserver" then
-    client.resolved_capabilities.document_formatting = false
+    client.server_capabilities.document_formatting = false
   end
 end
 
-require("nvim-lsp-installer").setup {
+require("mason").setup()
+require("mason-lspconfig").setup({
   automatic_installation = true
-}
+})
 
 lspconfig.tsserver.setup {
   capabilities = capabilities,

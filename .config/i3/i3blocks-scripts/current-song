@@ -1,28 +1,19 @@
 #!/bin/bash
 
-# song=`playerctl --player=cmus metadata | grep title | awk '{for(i=3;i<=NF;++i)printf $i""FS ; print ""}'`
-# filename=`cmus-remote -Q | grep file | rev | cut -d '/' -f1 | rev `
-#
-#
-# function urldecode() { local i="${*//+/ }"; echo -e "${i//%/\\x}"; }
-#
-# output=''
-#
-# if [ "${#song}" -gt 0 ]; then
-#   output=$song
-# else
-#   output=$filename
-# fi
-#
-# urldecodedOutput=$(urldecode "$output")
-# echo $urldecodedOutput
+song=`playerctl --player=rhythmbox metadata | grep title | awk '{for(i=3;i<=NF;++i)printf $i""FS ; print ""}'`
+filename=`cmus-remote -Q | grep file | rev | cut -d '/' -f1 | rev `
 
-max_length=50
-song=`mpc current`
-length=`echo $song | wc -c`
-if [ "$length" -le "$max_length" ];then
-  echo "${song}"
+
+function urldecode() { local i="${*//+/ }"; echo -e "${i//%/\\x}"; }
+
+output=''
+
+if [ "${#song}" -gt 0 ]; then
+  output=$song
 else
-  truncated=`echo $song | head -c $max_length`
-  echo "${truncated}..."
+  output=$filename
 fi
+
+urldecodedOutput=$(urldecode "$output")
+echo $urldecodedOutput
+

@@ -5,4 +5,4 @@ echo '##################################################'
 echo '# Installing postman...'
 echo '##################################################'
 sleep 1
-trizen -S postman-bin
+trizen -S --noconfirm postman-bin

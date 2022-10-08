@@ -5,4 +5,4 @@ echo '##################################################'
 echo '# Installing chrome...'
 echo '##################################################'
 sleep 1
-trizen -S google-chrome
+trizen -S --noconfirm google-chrome

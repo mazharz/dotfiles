@@ -87,7 +87,7 @@ for_window [class="Google-chrome"]         mark c
 for_window [class="mpv"]                   mark v
 for_window [class="Postman"]               mark p
 for_window [class="Altair GraphQL Client"] mark a
-for_window [title="ncmpc"]                 mark m
+for_window [class="Rhythmbox"]             mark m
 
 ################################################################################
 # Auto assignments
@@ -233,23 +233,23 @@ bindsym $mod+o exec i3-input -f "pango:FiraCode Nerd Font 12" \
 
 bindsym $mod+semicolon exec ~/bin/lock
 
-bindsym $mod+Mod1+period       exec mpc next; exec pkill -SIGRTMIN+11 i3blocks
-bindsym $mod+Mod1+comma        exec mpc prev; exec pkill -SIGRTMIN+11 i3blocks
-bindsym $mod+Mod1+j            exec mpc toggle; exec pkill -SIGRTMIN+11 i3blocks
-bindsym $mod+Mod1+bracketleft  exec mpc seek -10
-bindsym $mod+Mod1+bracketright exec mpc seek +10
+bindsym $mod+Mod1+period       exec playerctl --player=rhythmbox next; exec pkill -SIGRTMIN+11 i3blocks
+bindsym $mod+Mod1+comma        exec playerctl --player=rhythmbox previous; exec pkill -SIGRTMIN+11 i3blocks
+bindsym $mod+Mod1+j            exec playerctl --player=rhythmbox play-pause; exec pkill -SIGRTMIN+11 i3blocks
+bindsym $mod+Mod1+bracketleft  exec playerctl --player=rhythmbox position 10-
+bindsym $mod+Mod1+bracketright exec playerctl --player=rhythmbox position 10+
 
 # open rofi with mouse thumb button
 bindsym --whole-window --border $mod+Tab exec rofi -show window
 
 # find profiles in ~/.cache/google-chrome
 bindsym $mod+c      exec google-chrome-stable --profile-directory=Default
-bindsym $mod+Mod1+c exec google-chrome-stable --profile-directory='Profile 1'
+bindsym $mod+Mod1+c exec google-chrome-stable --profile-directory='Profile 2'
 bindsym $mod+Mod1+f exec nautilus
 bindsym $mod+Mod1+t exec telegram-desktop
 bindsym $mod+Mod1+s exec slack
 bindsym $mod+Mod1+d exec discord
-bindsym $mod+Mod1+m exec kitty ncmpc
+bindsym $mod+Mod1+m exec rhythmbox
 bindsym $mod+Ctrl+c exec ~/bin/clocks
 
 bindsym $mod+Ctrl+space       exec dunstctl close
@@ -260,7 +260,9 @@ bindsym $mod+Ctrl+Return      exec dunstctl action
 bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
 bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
 
-# autostart programs
+################################################################################
+# Autostart programs
+################################################################################
 exec --no-startup-id /usr/bin/lxpolkit &
 exec_always ~/bin/kb_layout
 exec ~/bin/rw.sh
