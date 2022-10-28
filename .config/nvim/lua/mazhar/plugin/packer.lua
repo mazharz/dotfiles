@@ -52,6 +52,7 @@ return packer.startup(function(use)
   use 'williamboman/mason.nvim'
   use 'williamboman/mason-lspconfig.nvim'
   use 'jose-elias-alvarez/null-ls.nvim'
+  use { 'j-hui/fidget.nvim', config = function() require "fidget".setup {} end } -- lsp progress
   -- lsp autocomplete
   use 'hrsh7th/nvim-cmp'
   use 'hrsh7th/cmp-nvim-lsp'
@@ -62,7 +63,6 @@ return packer.startup(function(use)
 
   -- lualine
   use 'nvim-lualine/lualine.nvim'
-  use 'arkav/lualine-lsp-progress'
 
   -- comment
   use 'numToStr/Comment.nvim'
@@ -75,11 +75,13 @@ return packer.startup(function(use)
   -- motions
   use { 'phaazon/hop.nvim', branch = 'v2' }
 
-  use 'terryma/vim-multiple-cursors'
+  -- git
+  use 'tpope/vim-fugitive'
   use 'airblade/vim-gitgutter'
+
+  use 'terryma/vim-multiple-cursors'
   use 'qpkorr/vim-bufkill'
   use 'tpope/vim-surround'
-  use 'tpope/vim-fugitive'
   use 'tpope/vim-repeat'
   use 'tpope/vim-sleuth'
   use 'jiangmiao/auto-pairs'

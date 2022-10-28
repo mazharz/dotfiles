@@ -1,0 +1,47 @@
+#!/bin/bash
+#
+# This script generates random characters based on the the
+# type and the lenght user provides. The type being:
+# -c => lowercase characters
+# -C => uppercase characters
+# -n => number characters
+# -s => special characters
+# ex: random-string -cCns 20
+#   will generate string of length 20 of all the types
+# ex: random-string -cn 5
+#   will generate string of length 5 of lowercase & number
+
+usage() {
+  echo "Usage: $0 [-c] [-C] [-n] [-s] len" 1>&2; exit 1;
+}
+
+LOWER='a-z'
+UPPER='A-Z'
+NUMBER='0-9'
+SPECIAL=$'!"#$%&'\''()*+,-./:;<=>?@[\]^_`{|}~'
+
+applied_characters=''
+
+while getopts cCns o; do
+  case "${o}" in
+    c)
+      applied_characters+=$LOWER
+      ;;
+    C)
+      applied_characters+=$UPPER
+      ;;
+    n)
+      applied_characters+=$NUMBER
+      ;;
+    s)
+      applied_characters+=$SPECIAL
+      ;;
+    *)
+      usage
+      ;;
+  esac
+done
+shift "$((OPTIND-1))"
+
+tr -dc $applied_characters </dev/urandom | head -c $1 ; echo ''
+

@@ -1,0 +1,3 @@
+#!/bin/bash
+
+qrencode "$1" -o - | feh -

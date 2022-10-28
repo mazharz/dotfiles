@@ -243,14 +243,15 @@ bindsym $mod+Mod1+bracketright exec playerctl --player=rhythmbox position 10+
 bindsym --whole-window --border $mod+Tab exec rofi -show window
 
 # find profiles in ~/.cache/google-chrome
-bindsym $mod+c      exec google-chrome-stable --profile-directory=Default
-bindsym $mod+Mod1+c exec google-chrome-stable --profile-directory='Profile 2'
-bindsym $mod+Mod1+f exec nautilus
-bindsym $mod+Mod1+t exec telegram-desktop
-bindsym $mod+Mod1+s exec slack
-bindsym $mod+Mod1+d exec discord
-bindsym $mod+Mod1+m exec rhythmbox
-bindsym $mod+Ctrl+c exec ~/bin/clocks
+bindsym $mod+c           exec google-chrome-stable --profile-directory=Default
+bindsym $mod+Mod1+c      exec google-chrome-stable --profile-directory='Profile 2'
+bindsym $mod+Mod1+f      exec nautilus
+bindsym $mod+Mod1+t      exec telegram-desktop
+bindsym $mod+Mod1+s      exec slack
+bindsym $mod+Mod1+d      exec discord
+bindsym $mod+Mod1+m      exec rhythmbox
+bindsym $mod+Ctrl+c      exec ~/bin/clocks
+bindsym $mod+Mod1+Return exec kitty nnn -ex
 
 bindsym $mod+Ctrl+space       exec dunstctl close
 bindsym $mod+Ctrl+Shift+space exec dunstctl history-pop

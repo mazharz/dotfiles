@@ -3,15 +3,13 @@ local s = ls.snippet
 local i = ls.insert_node
 local t = ls.text_node
 local c = ls.choice_node
-local rep = require("luasnip.extras").rep
 local fmt = require("luasnip.extras.fmt").fmt
 
 local snippets = {
-  s("cl", fmt("console.{}('{}:', {})",
+  s("cl", fmt("console.{}({})",
     {
-      c(1, { t "log", t "warn", t "error" }),
-      rep(2),
-      i(2, "var")
+      c(2, { t "log", t "warn", t "error" }),
+      i(1, "var")
     }
   )),
 

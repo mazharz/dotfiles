@@ -5,4 +5,4 @@ echo '##################################################'
 echo '# Installing cli utils...'
 echo '##################################################'
 sleep 1
-sudo pacman -S lm_sensors sysstat htop unrar unzip tree rsync imagemagick nethogs net-tools aria2 bind-tools python-pip reflector
+sudo pacman -S lm_sensors sysstat htop unrar unzip tree rsync imagemagick nethogs net-tools bind-tools python-pip reflector

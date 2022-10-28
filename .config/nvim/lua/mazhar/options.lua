@@ -41,7 +41,7 @@ local options = {
   number = true,
   -- set relative numbered lines
   relativenumber = true,
-  -- is one of my fav
+  -- is one of my favorite
   scrolloff = 3,
   -- highlight column 80
   -- colorcolumn = "80",
@@ -56,8 +56,6 @@ local options = {
   autoindent = true,
   -- mouse right button extends selection
   mousemodel = 'extend',
-  -- set spell checker
-  spell = true,
 }
 
 for key, value in pairs(options) do

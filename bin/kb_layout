@@ -3,3 +3,5 @@
 #setxkbmap -layout us,ir,fr -option grp:alt_caps_toggle
 setxkbmap -layout us,ir -option grp:alt_caps_toggle
 
+# set capslock to escape
+setxkbmap -option caps:escape

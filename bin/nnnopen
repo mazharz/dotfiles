@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+
+if [[ ! -f "$1" ]];then
+  exit
+fi
+
+mime=$(file -b --mime-type "$1")
+
+text="text/css text/csv text/html text/javascript application/json application/ld+json text/javascript application/x-sh text/plain application/x-subrip"
+doc_word="application/vnd.oasis.opendocument.text application/msword application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+doc_presentation="application/vnd.oasis.opendocument.presentation application/vnd.ms-powerpoint application/vnd.openxmlformats-officedocument.presentationml.presentation"
+doc_spreadsheet="application/vnd.oasis.opendocument.spreadsheet application/vnd.ms-excel application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+pdf="application/pdf"
+audio="audio/mpeg audio/aac audio/ogg audio/opus audio/wav audio/webm"
+video="video/mp4 video/mpeg video/ogg video/webm video/x-msvideo video/mp2t video/x-matroska video/x-cdxa"
+image="image/gif image/jpeg image/png image/svg+xml image/avif image/tiff image/webp"
+ebook="application/vnd.amazon.ebook application/x-mobipocket-ebook application/epub+zip"
+archive="application/x-bzip application/x-bzip2 application/gzip application/vnd.rar application/zip application/x-7z-compressed"
+font="application/vnd.ms-fontobject font/otf font/ttf font/woff font/woff2 font/sfnt"
+
+if [[ "$text" == *"$mime"* ]];then
+  nvim "$1"
+elif [[ "$doc_word" == *"$mime"* ]];then
+  libreoffice --writer "$1"
+elif [[ "$doc_presentation" == *"$mime"* ]];then
+  libreoffice --impress "$1"
+elif [[ "$doc_spreadsheet" == *"$mime"* ]];then
+  libreoffice --calc "$1"
+elif [[ "$pdf" == *"$mime"* ]];then
+  zathura "$1"
+elif [[ "$audio" == *"$mime"* ]];then
+  mpv --force-window=yes "$1"
+elif [[ "$video" == *"$mime"* ]];then
+  mpv "$1"
+elif [[ "$image" == *"$mime"* ]];then
+  eog "$1"
+elif [[ "$ebook" == *"$mime"* ]];then
+  ebook-viewer "$1"
+elif [[ "$archive" == *"$mime"* ]];then
+  file-roller "$1"
+elif [[ "$font" == *"$mime"* ]];then
+  gnome-font-viewer "$1"
+fi
+
