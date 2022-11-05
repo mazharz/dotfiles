@@ -6,19 +6,5 @@ echo '# Installing packages...'
 echo '##################################################'
 sleep 1
 # unzip is required by neovim plugins
-sudo pacman -S fzf tmux neovim ripgrep sqlitebrowser filezilla docker docker-compose unzip xclip
-
-# Install nnn-nerd (patched version with support for nerd icons)
-echo '##################################################'
-echo '# Installing nnn-nerd...'
-echo '##################################################'
-sleep 1
-trizen -S --noconfirm nnn-nerd
-
-# Install nnn plugins
-echo '##################################################'
-echo '# Installing nnn plugins...'
-echo '##################################################'
-sleep 1
-curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs | sh
+sudo pacman -S fzf tmux neovim ripgrep dbeaver sqlitebrowser filezilla docker docker-compose unzip xclip lazygit
 

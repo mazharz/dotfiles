@@ -77,10 +77,9 @@ return packer.startup(function(use)
 
   -- git
   use 'tpope/vim-fugitive'
-  use 'airblade/vim-gitgutter'
+  use 'lewis6991/gitsigns.nvim'
 
   use 'terryma/vim-multiple-cursors'
-  use 'qpkorr/vim-bufkill'
   use 'tpope/vim-surround'
   use 'tpope/vim-repeat'
   use 'tpope/vim-sleuth'

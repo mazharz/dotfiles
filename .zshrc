@@ -65,8 +65,9 @@ alias backup="rsync -au --delete --progress /home/m47h4r/mzd/* /run/media/m47h4r
 alias gwat="cd ~/mzd/code/gwat"
 alias sortMirrors="sudo reflector --latest 5 --sort rate --protocol https --save /etc/pacman.d/mirrorlist"
 alias upgrade="google-chrome-stable https://archlinux.org && sudo pacman -Syu"
-alias n="nnn -ex"
+alias r="ranger"
 alias sss="sudo ss-local -c ~/.config/ss.json"
+alias lg="lazygit"
 
 # add nvm path
 [ -z "$NVM_DIR" ] && export NVM_DIR="$HOME/.nvm"
@@ -84,6 +85,3 @@ export FZF_DEFAULT_COMMAND='rg --hidden --files -g !node_modules -g !.git -g !.T
 export PATH=$PATH:/home/m47h4r/bin/
 export PATH=$PATH:/home/m47h4r/.local/bin # youtube-dl
 
-# nnn
-# this indicates shell being opened in nnn
-[ -n "$NNNLVL" ] && PS1="N$NNNLVL $PS1"

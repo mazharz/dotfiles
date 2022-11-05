@@ -251,7 +251,7 @@ bindsym $mod+Mod1+s      exec slack
 bindsym $mod+Mod1+d      exec discord
 bindsym $mod+Mod1+m      exec rhythmbox
 bindsym $mod+Ctrl+c      exec ~/bin/clocks
-bindsym $mod+Mod1+Return exec kitty nnn -ex
+bindsym $mod+Mod1+Return exec kitty ranger
 
 bindsym $mod+Ctrl+space       exec dunstctl close
 bindsym $mod+Ctrl+Shift+space exec dunstctl history-pop

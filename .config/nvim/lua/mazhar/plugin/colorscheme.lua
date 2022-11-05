@@ -18,6 +18,10 @@ require("gruvbox").setup({
     WinSeparator = { bg = "NONE", fg = "#504945" },
     -- apparently, nvim-tree uses vertsplit (still?!)
     VertSplit = { bg = "NONE", fg = "#504945" },
+    GitSignsAdd = { bg = "NONE" },
+    GitSignsChange = { bg = "NONE" },
+    GitSignsDelete = { bg = "NONE" },
+    -- TODO: add lsp error in sign column so it's bg is none
   }
 })
 
