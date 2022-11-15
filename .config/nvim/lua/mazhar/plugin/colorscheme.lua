@@ -1,5 +1,6 @@
+local gruvbox = require("gruvbox")
 -- setup must be called before loading the colorscheme
-require("gruvbox").setup({
+gruvbox.setup({
   undercurl = true,
   underline = true,
   bold = false,
@@ -21,8 +22,13 @@ require("gruvbox").setup({
     GitSignsAdd = { bg = "NONE" },
     GitSignsChange = { bg = "NONE" },
     GitSignsDelete = { bg = "NONE" },
-    -- TODO: add lsp error in sign column so it's bg is none
-  }
+    -- lsp diagnostics in sign column
+    DiagnosticSignError = { bg = "NONE", fg = "#fb4934" },
+    DiagnosticSignWarn = { bg = "NONE", fg = "#fabd2f" },
+    DiagnosticSignInfo = { bg = "NONE", fg = "#83a598" },
+    DiagnosticSignHint = { bg = "NONE", fg = "#8ec07c" },
+  },
+  transparent_mode = true,
 })
 
 -- set colorscheme

@@ -5,4 +5,4 @@ echo '##################################################'
 echo '# Installing disk apps...'
 echo '##################################################'
 sleep 1
-sudo pacman -S baobab gparted gnome-disk-utility
+sudo pacman -S ncdu gparted gnome-disk-utility

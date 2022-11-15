@@ -65,8 +65,9 @@ alias backup="rsync -au --delete --progress /home/m47h4r/mzd/* /run/media/m47h4r
 alias gwat="cd ~/mzd/code/gwat"
 alias sortMirrors="sudo reflector --latest 5 --sort rate --protocol https --save /etc/pacman.d/mirrorlist"
 alias upgrade="google-chrome-stable https://archlinux.org && sudo pacman -Syu"
-alias r="ranger"
+alias x="xplr"
 alias sss="sudo ss-local -c ~/.config/ss.json"
+alias ep="export all_proxy=socks5://localhost:3477"
 alias lg="lazygit"
 
 # add nvm path
