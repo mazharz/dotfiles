@@ -5,7 +5,7 @@ echo '##################################################'
 echo '# Installing i3 packages...'
 echo '##################################################'
 sleep 1
-sudo pacman -S xorg xorg-xinit xdotool i3 i3blocks rofi kitty maim feh arandr pipewire pipewire-alsa pipewire-pulse pavucontrol nautilus dunst picom copyq bluez bluez-utils blueman openssh networkmanager networkmanager-openvpn network-manager-applet playerctl xclip redshift lxappearance gucharmap gnome-calculator slop gvfs-mtp gvfs-gphoto2 gnome-keyring libsecret libgnome-keyring seahorse lxsession xplr
+sudo pacman -S xorg xorg-xinit xdotool i3 i3blocks rofi kitty maim feh arandr pipewire pipewire-alsa pipewire-pulse pavucontrol thunar dunst picom copyq bluez bluez-utils blueman openssh networkmanager networkmanager-openvpn network-manager-applet playerctl xclip redshift lxappearance gucharmap gnome-calculator slop gvfs-mtp gvfs-gphoto2 gnome-keyring libsecret libgnome-keyring seahorse lxsession gst-plugins-bad gst-plugins-base gst-plugins-good gstreamer
 
 # Install vpn packages
 echo '##################################################'

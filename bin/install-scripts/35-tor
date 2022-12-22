@@ -5,5 +5,5 @@ echo '##################################################'
 echo '# Installing tor browser...'
 echo '##################################################'
 sleep 1
-gpg --auto-key-locate nodefault,wkd --locate-keys torbrowser@torproject.org
-trizen -S --noconfirm tor-browser
+# gpg --auto-key-locate nodefault,wkd --locate-keys torbrowser@torproject.org
+# trizen -S --noconfirm tor-browser

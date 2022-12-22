@@ -5,4 +5,8 @@ echo '##################################################'
 echo '# Installing cli utils...'
 echo '##################################################'
 sleep 1
-sudo pacman -S lm_sensors sysstat htop unrar unzip tree rsync imagemagick nethogs net-tools bind-tools python-pip reflector
+sudo pacman -S lm_sensors sysstat htop unrar unzip tree rsync imagemagick nethogs net-tools bind-tools python-pip reflector nnn
+
+echo '# Installing nnn plugins'
+sleep 1
+sh -c "$(curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs)"

@@ -15,14 +15,6 @@ if fn.empty(fn.glob(install_path)) > 0 then
   vim.cmd [[packadd packer.nvim]]
 end
 
--- Autocommand that reloads neovim whenever you save this file
-vim.cmd [[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost packer.lua source <afile> | PackerSync
-  augroup end
-]]
-
 -- Use a protected call so we don't error out on first use
 local status_ok, packer = pcall(require, "packer")
 if not status_ok then
@@ -31,7 +23,7 @@ if not status_ok then
 end
 
 return packer.startup(function(use)
-  -- almighty packer himself!
+  -- packer itself
   use 'wbthomason/packer.nvim'
   -- colorscheme
   use 'ellisonleao/gruvbox.nvim'
@@ -44,15 +36,12 @@ return packer.startup(function(use)
   use 'nvim-telescope/telescope.nvim'
   -- plugin for better sort
   use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
-  -- plugin for devicons
-  use 'kyazdani42/nvim-web-devicons'
 
   -- lsp
   use 'neovim/nvim-lspconfig'
   use 'williamboman/mason.nvim'
   use 'williamboman/mason-lspconfig.nvim'
   use 'jose-elias-alvarez/null-ls.nvim'
-  use { 'j-hui/fidget.nvim', config = function() require "fidget".setup {} end } -- lsp progress
   -- lsp autocomplete
   use 'hrsh7th/nvim-cmp'
   use 'hrsh7th/cmp-nvim-lsp'
@@ -63,6 +52,7 @@ return packer.startup(function(use)
 
   -- lualine
   use 'nvim-lualine/lualine.nvim'
+  use 'arkav/lualine-lsp-progress'
 
   -- comment
   use 'numToStr/Comment.nvim'
@@ -71,9 +61,6 @@ return packer.startup(function(use)
 
   -- undo tree
   use 'mbbill/undotree'
-
-  -- motions
-  use { 'phaazon/hop.nvim', branch = 'v2' }
 
   -- git
   use 'tpope/vim-fugitive'
@@ -87,7 +74,9 @@ return packer.startup(function(use)
 
   -- highlighting
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+  use 'nvim-treesitter/nvim-treesitter-textobjects'
   use 'RRethy/vim-illuminate'
+  use 'nvim-treesitter/playground'
 
   -- managing session
   use {

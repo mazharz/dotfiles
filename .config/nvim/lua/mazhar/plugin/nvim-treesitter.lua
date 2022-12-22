@@ -1,5 +1,6 @@
 require 'nvim-treesitter.configs'.setup {
   ensure_installed = {
+    "help",
     "bash",
     "c",
     "comment",
@@ -15,11 +16,13 @@ require 'nvim-treesitter.configs'.setup {
     "jsdoc",
     "python",
     "regex",
+    "rust",
     "scss",
     "tsx",
     "typescript",
     "markdown",
-    "markdown_inline"
+    "markdown_inline",
+    "query"
   },
 
   sync_install = false,
@@ -35,7 +38,62 @@ require 'nvim-treesitter.configs'.setup {
   },
 
   textobjects = {
-    enable = true,
+    select = {
+      enable = true,
+      lookahead = true,
+      keymaps = {
+        ["af"] = "@function.outer",
+        ["if"] = "@function.inner",
+        ["ac"] = "@call.outer",
+        ["ic"] = "@call.inner",
+        ["aC"] = "@class.outer",
+        ["iC"] = "@class.inner",
+        ["a/"] = "@comment.outer",
+        ["ik"] = "@conditional.inner",
+        ["ak"] = "@conditional.outer",
+        ["il"] = "@loop.inner",
+        ["al"] = "@loop.outer",
+        ["ia"] = "@parameter.inner",
+        ["aa"] = "@parameter.outer",
+      },
+    },
+    move = {
+      enable = true,
+      set_jumps = true,
+      goto_next_start = {
+        ["<leader>gf"] = "@function.outer",
+        ["<leader>gc"] = "@call.outer",
+        ["<leader>g/"] = "@comment.outer",
+        ["<leader>gk"] = "@conditional.outer",
+        ["<leader>gl"] = "@loop.outer",
+        ["<leader>ga"] = "@parameter.inner",
+      },
+      goto_previous_start = {
+        ["<leader>gF"] = "@function.outer",
+        ["<leader>gC"] = "@call.outer",
+        ["<leader>g?"] = "@comment.outer",
+        ["<leader>gK"] = "@conditional.outer",
+        ["<leader>gL"] = "@loop.outer",
+        ["<leader>gA"] = "@parameter.inner",
+      },
+    },
+    swap = {
+      enable = true,
+      swap_next = {
+        ["<leader>aj"] = "@parameter.inner",
+      },
+      swap_previous = {
+        ["<leader>ak"] = "@parameter.inner",
+      },
+    },
+    lsp_interop = {
+      enable = true,
+      border = 'none',
+      peek_definition_code = {
+        ["<leader>df"] = "@function.outer",
+        ["<leader>dC"] = "@class.outer",
+      },
+    },
   },
 
   indent = {

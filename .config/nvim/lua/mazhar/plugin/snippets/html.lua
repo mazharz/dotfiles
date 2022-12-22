@@ -27,6 +27,14 @@ local snippets = {
   s("p", fmt("<p>{}</p>",
     { i(1) }
   )),
+
+  s("article", fmt("<article>{}</article>",
+    { i(1) }
+  )),
+
+  s("section", fmt("<section>{}</section>",
+    { i(1) }
+  )),
 }
 
 ls.add_snippets("html", snippets);

@@ -10,7 +10,7 @@ custom_gruvbox.inactive.c.bg = '#00000000'
 
 require('lualine').setup {
   options = {
-    icons_enabled        = true,
+    icons_enabled        = false,
     theme                = custom_gruvbox,
     section_separators   = { left = '', right = '' },
     component_separators = { left = '', right = '' },
@@ -20,10 +20,10 @@ require('lualine').setup {
   },
   sections = {
     lualine_a = { 'mode' },
-    lualine_b = { 'branch', 'diff', 'diagnostics' },
-    lualine_c = { { 'filename', path = 1 } },
-    lualine_x = { 'encoding', 'filetype' },
-    lualine_y = {},
+    lualine_b = { 'branch', 'diagnostics' },
+    lualine_c = { { 'filename', path = 1 }, 'lsp_progress' },
+    lualine_x = { 'encoding' },
+    lualine_y = { 'filetype' },
     lualine_z = {}
   },
   tabline = {

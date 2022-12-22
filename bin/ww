@@ -3,20 +3,24 @@
 # set mark for i3
 i3-msg 'mark w'
 
-workingDirectory=$1
+cd ~/mzd/code/gwat
 
-if [ -z "$1" ]; then
-  tmux new -s work -n code \; \
-    send-keys -t 1 "nvim" Enter \; \
-    neww -n shell \; \
-    selectw -t 1
-else
-  tmux new -s work -n code \; \
-    send-keys -t 1 "cd $1; nvim" Enter \; \
-    neww -n shell \; \
-    send-keys -t 2 "cd $1" Enter \; \
-    neww -n notes \; \
-    send-keys -t 3 "cd notes && nvim todo.md" Enter \; \
-    selectw -t 1
-fi
+tmux new -s work-notes -n main \; \
+  send-keys -t 1 "cd notes && nvim todo.md" Enter\; \
+  selectw -t 1
+
+# if [ -z "$1" ]; then
+#   tmux new -s work -n code \; \
+#     send-keys -t 1 "nvim" Enter \; \
+#     neww -n shell \; \
+#     selectw -t 1
+# else
+#   tmux new -s work -n code \; \
+#     send-keys -t 1 "cd $1; nvim" Enter \; \
+#     neww -n shell \; \
+#     send-keys -t 2 "cd $1" Enter \; \
+#     neww -n notes \; \
+#     send-keys -t 3 "cd notes && nvim todo.md" Enter \; \
+#     selectw -t 1
+# fi
 

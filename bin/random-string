@@ -1,5 +1,5 @@
 #!/bin/bash
-#
+
 # This script generates random characters based on the the
 # type and the lenght user provides. The type being:
 # -c => lowercase characters

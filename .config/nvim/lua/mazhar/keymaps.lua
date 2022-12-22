@@ -7,6 +7,12 @@ vim.g.mapleader = " "
 -- center cursor in file
 -- don't keep it centered though, reset to normal behavior
 keymap("n", "zz", ":let &scrolloff=999-&scrolloff+3<CR> | :let &scrolloff=3<CR>")
+keymap("n", "<C-d>", "<C-d>zz")
+keymap("n", "<C-u>", "<C-u>zz")
+
+-- move lines in visual mode
+keymap("v", "J", ":m '>+1<CR>gv=gv")
+keymap("v", "K", ":m '<-2<CR>gv=gv")
 
 -- select all with <leader>a
 keymap("n", "<leader>A", "ggVG", opts)
@@ -29,8 +35,8 @@ keymap('n', '<leader>q', ':q<CR>', opts)
 keymap('x', '<leader>p', "\"_dP")
 
 -- easier tab cycling
-keymap('n', '<A-t>', ':tabnext<CR>', opts)
-keymap('n', '<A-S-t>', ':tabprevious<CR>', opts)
+keymap('n', '<A-r>', ':tabnext<CR>', opts)
+keymap('n', '<A-e>', ':tabprevious<CR>', opts)
 
 -- pass selected lines to appropriate program
 keymap('v', '<leader>c', "::w !xargs kitty xdg-open<CR>", opts)

@@ -1,7 +1,5 @@
 require('mazhar.plugin.packer')
 require('mazhar.plugin.lualine')
-require('mazhar.plugin.vim-bufkill')
-require('mazhar.plugin.hop')
 require('mazhar.plugin.nvim-treesitter')
 require('mazhar.plugin.vim-session')
 require('mazhar.plugin.nvim-tree')

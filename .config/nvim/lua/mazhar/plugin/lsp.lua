@@ -9,18 +9,22 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
   vim.keymap.set('n', 'gvd', ':vsplit | lua vim.lsp.buf.definition()<CR>', bufopts)
   vim.keymap.set('n', 'ghd', ':split | lua vim.lsp.buf.definition()<CR>', bufopts)
+  vim.keymap.set('n', 'gtd', ':tab split | lua vim.lsp.buf.definition()<CR>', bufopts)
 
   vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
   vim.keymap.set('n', 'gvr', ':vsplit | lua vim.lsp.buf.references()<CR>', bufopts)
   vim.keymap.set('n', 'ghr', ':split | lua vim.lsp.buf.references()<CR>', bufopts)
+  vim.keymap.set('n', 'gtr', ':tab split | lua vim.lsp.buf.references()<CR>', bufopts)
 
   vim.keymap.set('n', 'gD', vim.lsp.buf.type_definition, bufopts)
   vim.keymap.set('n', 'gvD', ':vsplit | lua vim.lsp.buf.type_definition()<CR>', bufopts)
   vim.keymap.set('n', 'ghD', ':split | lua vim.lsp.buf.type_definition()<CR>', bufopts)
+  vim.keymap.set('n', 'gtD', ':tab split | lua vim.lsp.buf.type_definition()<CR>', bufopts)
 
   vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
   vim.keymap.set('n', 'gvi', ':vsplit | lua vim.lsp.buf.implementation()<CR>', bufopts)
   vim.keymap.set('n', 'ghi', ':split | lua vim.lsp.buf.implementation()<CR>', bufopts)
+  vim.keymap.set('n', 'gti', ':tab split | lua vim.lsp.buf.implementation()<CR>', bufopts)
 
   vim.keymap.set('n', '<leader>j', vim.diagnostic.goto_next, bufopts)
   vim.keymap.set('n', '<leader>k', vim.diagnostic.goto_prev, bufopts)

@@ -66,8 +66,10 @@ local snippets = {
     const [] = ([]) => {
       []
     }
+
+    export { [] }
     ]],
-    { i(1, "func"), i(2, "arg"), i(3) },
+    { i(1, "func"), i(2, "arg"), i(4), i(3, "func") },
     { delimiters = "[]" }
   )),
 

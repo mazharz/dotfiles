@@ -3,8 +3,8 @@
 ################################################################################
 set $mod Mod4
 
-# set $bg #282828e6
-set $bg #000000cc
+set $bg #282828
+# set $bg #000000cc
 set $fg #fbf1c7
 set $ac #d79921
 set $red #cc241d
@@ -41,13 +41,27 @@ bindsym $mod+l     focus right
 bindsym $mod+Right focus right
 
 bindsym $mod+Shift+h     move left  20 px
-bindsym $mod+Shift+Left  move left  20 px
 bindsym $mod+Shift+j     move down  20 px
-bindsym $mod+Shift+Down  move down  20 px
 bindsym $mod+Shift+k     move up    20 px
-bindsym $mod+Shift+Up    move up    20 px
 bindsym $mod+Shift+l     move right 20 px
-bindsym $mod+Shift+Right move right 20 px
+# snap to screen edges
+bindsym $mod+Shift+Left  exec ~/bin/i3-move-win-to-edge -l
+bindsym $mod+Shift+Down  exec ~/bin/i3-move-win-to-edge -b
+bindsym $mod+Shift+Up    exec ~/bin/i3-move-win-to-edge -t
+bindsym $mod+Shift+Right exec ~/bin/i3-move-win-to-edge -r
+
+################################################################################
+# Resize
+################################################################################
+bindsym $mod+Control+h     resize shrink width  10 px or 10 ppt
+bindsym $mod+Control+j     resize grow   height 10 px or 10 ppt
+bindsym $mod+Control+k     resize shrink height 10 px or 10 ppt
+bindsym $mod+Control+l     resize grow   width  10 px or 10 ppt
+# bigger resize for floating windows
+bindsym $mod+Control+Left  resize shrink width  40 px or 40 ppt
+bindsym $mod+Control+Down  resize grow   height 40 px or 40 ppt
+bindsym $mod+Control+Up    resize shrink height 40 px or 40 ppt
+bindsym $mod+Control+Right resize grow   width  40 px or 40 ppt
 
 bindsym $mod+b split h
 bindsym $mod+v split v
@@ -81,7 +95,7 @@ bindsym $mod+m exec i3-input -f "pango:FiraCode Nerd Font 12" \
 
 # auto mark mostly used windows
 for_window [class="Slack"]                 mark s
-for_window [class="Nautilus"]              mark f
+for_window [class="Thunar"]                mark f
 for_window [class="TelegramDesktop"]       mark t
 for_window [class="Google-chrome"]         mark c
 for_window [class="mpv"]                   mark v
@@ -95,6 +109,7 @@ for_window [class="Rhythmbox"]             mark m
 for_window [class="Pavucontrol"]      floating enable
 for_window [class="mpv"]              floating enable
 for_window [class="gnome-calculator"] floating enable
+for_window [class="Thunar"]           floating enable
 
 ################################################################################
 # Workspaces
@@ -153,18 +168,6 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+q exec "i3-nagbar -t warning -m 'Exit?' -b 'Yes, exit i3' 'i3-msg exit'"
 
 ################################################################################
-# Resize windows
-################################################################################
-bindsym $mod+Control+h     resize shrink width  20 px or 20 ppt
-bindsym $mod+Control+Left  resize shrink width  20 px or 20 ppt
-bindsym $mod+Control+j     resize grow   height 20 px or 20 ppt
-bindsym $mod+Control+Down  resize grow   height 20 px or 20 ppt
-bindsym $mod+Control+k     resize shrink height 20 px or 20 ppt
-bindsym $mod+Control+Up    resize shrink height 20 px or 20 ppt
-bindsym $mod+Control+l     resize grow   width  20 px or 20 ppt
-bindsym $mod+Control+Right resize grow   width  20 px or 20 ppt
-
-################################################################################
 # Colors
 ################################################################################
 # class                 border  backgr. text    indicator child_border
@@ -187,9 +190,9 @@ bar {
   separator_symbol " │ "
   
   colors {
+    background #282828
     # transparency is set in picom
-    # background #282828
-    background #000000
+    # background #000000
     statusline $bg
     separator  $ac
     #<color class>     <border> <background> <text>
@@ -231,6 +234,11 @@ bindsym $mod+o exec i3-input -f "pango:FiraCode Nerd Font 12" \
   -F 'exec macro %s' \
   -P 'Macro: '
 
+# open url in chrome
+bindsym $mod+p exec i3-input -f "pango:FiraCode Nerd Font 12" \
+  -F 'exec google-chrome-stable %s' \
+  -P 'Link: '
+
 bindsym $mod+semicolon exec ~/bin/lock
 
 bindsym $mod+Mod1+period       exec playerctl --player=rhythmbox next; exec pkill -SIGRTMIN+11 i3blocks
@@ -244,14 +252,13 @@ bindsym --whole-window --border $mod+Tab exec rofi -show window
 
 # find profiles in ~/.cache/google-chrome
 bindsym $mod+c           exec google-chrome-stable --profile-directory=Default
-bindsym $mod+Mod1+c      exec google-chrome-stable --profile-directory='Profile 2'
-bindsym $mod+Mod1+f      exec nautilus
+bindsym $mod+Mod1+c      exec google-chrome-stable --profile-directory='Profile 1'
+bindsym $mod+Mod1+f      exec thunar
 bindsym $mod+Mod1+t      exec telegram-desktop
 bindsym $mod+Mod1+s      exec slack
-bindsym $mod+Mod1+d      exec discord
 bindsym $mod+Mod1+m      exec rhythmbox
 bindsym $mod+Ctrl+c      exec ~/bin/clocks
-bindsym $mod+Mod1+Return exec kitty xplr
+bindsym $mod+Mod1+Return exec kitty nnn -ex
 
 bindsym $mod+Ctrl+space       exec dunstctl close
 bindsym $mod+Ctrl+Shift+space exec dunstctl history-pop

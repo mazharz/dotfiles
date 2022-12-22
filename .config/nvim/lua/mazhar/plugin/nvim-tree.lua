@@ -5,7 +5,7 @@ require("nvim-tree").setup({
     mappings = {
       list = {
         { key = "u", action = "dir_up" },
-        { key = "<C-h>", action = "split" }, -- override <C-x> (default)
+        { key = "<C-h>", action = "split" }, -- override <C-x>
       },
     },
   },

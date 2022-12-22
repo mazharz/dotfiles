@@ -29,3 +29,5 @@
 .config/systemd/
 .config/htop/
 bin/ghcup
+.ssh/id_rsa*
+.ssh/known_hosts*
