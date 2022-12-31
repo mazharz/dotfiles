@@ -67,6 +67,7 @@ alias sss="sudo ss-local -c ~/.config/ss.json"
 alias ep="export http_proxy=http://localhost:3478; export socks_proxy=socks5://localhost:3477; export all_proxy=socks5://localhost:3477"
 alias lg="lazygit"
 alias tx="tmux"
+alias ta="tmux attach-session"
 
 # add nvm path
 [ -z "$NVM_DIR" ] && export NVM_DIR="$HOME/.nvm"

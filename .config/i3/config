@@ -13,7 +13,7 @@ font pango:FiraCode Nerd Font 12
 
 floating_modifier $mod
 
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec alacritty
 
 bindsym $mod+q kill
 
@@ -258,7 +258,7 @@ bindsym $mod+Mod1+t      exec telegram-desktop
 bindsym $mod+Mod1+s      exec slack
 bindsym $mod+Mod1+m      exec rhythmbox
 bindsym $mod+Ctrl+c      exec ~/bin/clocks
-bindsym $mod+Mod1+Return exec kitty nnn -ex
+bindsym $mod+Mod1+Return exec alacritty -e nnn -ex
 
 bindsym $mod+Ctrl+space       exec dunstctl close
 bindsym $mod+Ctrl+Shift+space exec dunstctl history-pop

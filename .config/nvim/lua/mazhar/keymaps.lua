@@ -10,10 +10,6 @@ keymap("n", "zz", ":let &scrolloff=999-&scrolloff+3<CR> | :let &scrolloff=3<CR>"
 keymap("n", "<C-d>", "<C-d>zz")
 keymap("n", "<C-u>", "<C-u>zz")
 
--- move lines in visual mode
-keymap("v", "J", ":m '>+1<CR>gv=gv")
-keymap("v", "K", ":m '<-2<CR>gv=gv")
-
 -- select all with <leader>a
 keymap("n", "<leader>A", "ggVG", opts)
 
@@ -27,6 +23,7 @@ keymap("n", "<C-l>", ":nohl<CR>", opts)
 
 -- faster save
 keymap('n', '<leader>w', ':w<CR>', opts)
+keymap('n', '<leader>W', ':wq<CR>', opts)
 
 -- faster quit
 keymap('n', '<leader>q', ':q<CR>', opts)
@@ -37,6 +34,8 @@ keymap('x', '<leader>p', "\"_dP")
 -- easier tab cycling
 keymap('n', '<A-r>', ':tabnext<CR>', opts)
 keymap('n', '<A-e>', ':tabprevious<CR>', opts)
+keymap('n', '<A-S-r>', ':tabmove +1<CR>', opts)
+keymap('n', '<A-S-e>', ':tabmove -1<CR>', opts)
 
 -- pass selected lines to appropriate program
 keymap('v', '<leader>c', "::w !xargs kitty xdg-open<CR>", opts)
