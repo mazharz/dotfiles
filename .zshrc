@@ -54,20 +54,54 @@ VIM='nvim'
 # For a full list of active aliases, run `alias`.
 alias vim="nvim"
 alias v="nvim"
-alias wd="cd ~/mzd/wd/; ls"
-alias code="cd ~/mzd/code/; ls"
+# frequest vim repositories
 alias m="cd ~/mzd/text/markdowns; nvim"
 alias t="nvim ~/mzd/text/markdowns/notes/todo.md"
-alias backup="rsync -au --delete --progress /home/m47h4r/mzd/* /run/media/m47h4r/mzed"
+# frequent directories
+alias wd="cd ~/mzd/wd/; ls"
+alias code="cd ~/mzd/code/; ls"
 alias gwat="cd ~/mzd/code/gwat"
+alias fin="cd ~/mzd/text/finances"
+alias doc="cd ~/mzd/text/docs"
+# others
+alias backup="rsync -au --delete --progress /home/m47h4r/mzd/* /run/media/m47h4r/mzed"
 alias sortMirrors="sudo reflector --latest 5 --sort rate --protocol https --save /etc/pacman.d/mirrorlist"
 alias upgrade="google-chrome-stable https://archlinux.org && sudo pacman -Syu"
 alias n="nnn -ex"
 alias sss="sudo ss-local -c ~/.config/ss.json"
-alias ep="export http_proxy=http://localhost:3478; export socks_proxy=socks5://localhost:3477; export all_proxy=socks5://localhost:3477"
 alias lg="lazygit"
 alias tx="tmux"
 alias ta="tmux attach-session"
+
+# fast cd
+c () {
+  directories=(${(@s:;:)DIR_SHORTCUTS})
+  for dir in ${directories}; do
+    parts=(${(@s/:/)dir})
+    if [[ "${parts[1]}" == "$1" ]]; then
+      cd ${parts[2]}
+    fi
+  done
+}
+
+# export proxy
+ep() {
+  export http_proxy=http://127.0.0.1:3477
+  export socks_proxy=socks5://127.0.0.1:3477
+  export all_proxy=socks5://127.0.0.1:3477
+}
+# unset proxy
+up() {
+  unset http_proxy
+  unset socks_proxy
+  unset all_proxy
+}
+# print proxy
+pp() {
+  print $http_proxy
+  print $socks_proxy
+  print $all_proxy
+}
 
 # add nvm path
 [ -z "$NVM_DIR" ] && export NVM_DIR="$HOME/.nvm"
@@ -88,3 +122,5 @@ export PATH=$PATH:/home/m47h4r/.local/bin # youtube-dl
 # nnn
 # this indicates shell being opened in nnn
 [ -n "$NNNLVL" ] && PS1="N$NNNLVL $PS1"
+
+export LEDGER_FILE=$HOME/mzd/text/finances/2023.journal

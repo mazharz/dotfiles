@@ -4,7 +4,7 @@ type=$1
 location="sanandaj"
 
 if [ "$type" == "line" ]; then
-  curl "wttr.in/${location}?format=3"
+  curl "wttr.in/${location}?m&format=3"
 else
-  curl "wttr.in/${location}"
+  curl "wttr.in/${location}?m"
 fi

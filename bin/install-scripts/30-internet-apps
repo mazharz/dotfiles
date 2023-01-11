@@ -6,3 +6,7 @@ echo '# Installing internet apps...'
 echo '##################################################'
 sleep 1
 sudo pacman -S telegram-desktop firefox tor qbittorrent
+
+echo '# Installing clash...'
+sleep 1
+trizen -S clash-for-windows-bin

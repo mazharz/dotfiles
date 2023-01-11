@@ -4,9 +4,6 @@ local opts = { noremap = true, silent = true }
 -- set leader to comma
 vim.g.mapleader = " "
 
--- center cursor in file
--- don't keep it centered though, reset to normal behavior
-keymap("n", "zz", ":let &scrolloff=999-&scrolloff+3<CR> | :let &scrolloff=3<CR>")
 keymap("n", "<C-d>", "<C-d>zz")
 keymap("n", "<C-u>", "<C-u>zz")
 

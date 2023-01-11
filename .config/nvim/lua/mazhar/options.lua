@@ -61,3 +61,12 @@ local options = {
 for key, value in pairs(options) do
   vim.opt[key] = value
 end
+
+-- hide ~ chars (end of buffer)
+vim.wo.fillchars = "eob: "
+
+-- fix xtx file not being recognized as latex
+vim.api.nvim_create_autocmd('BufReadPost', {
+  pattern = '*.xtx',
+  command = 'set filetype=tex'
+})

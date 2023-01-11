@@ -5,8 +5,16 @@ echo '##################################################'
 echo '# Installing cli utils...'
 echo '##################################################'
 sleep 1
-sudo pacman -S lm_sensors sysstat htop unrar unzip tree rsync imagemagick nethogs net-tools bind-tools python-pip reflector nnn
+sudo pacman -S lm_sensors sysstat htop unrar unzip tree rsync imagemagick python-pip reflector nnn
+
+echo '# Installing hledger...'
+sleep 1
+sudo pacman -S hledger hledger-iadd hledger-ui hledger-web
 
 echo '# Installing nnn plugins'
 sleep 1
 sh -c "$(curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs)"
+
+echo '# Installing net tools'
+sleep 1
+sudo pacman -S nmap net-tools nethogs bind-tools 
