@@ -1,2 +1,58 @@
+set font "FiraCode Nerd Font normal 14"
+
+set default-fg "#fbf1c7"
+set default-bg "#282828"
+
+# completion option
+set completion-fg "#fbf1c7"
+set completion-bg "#282828"
+set completion-group-fg "#fbf1c7"
+set completion-group-bg "#282828"
+set completion-highlight-fg "#282828"
+set completion-highlight-bg "#fbf1c7"
+
+# statusbar
+set statusbar-fg "#fbf1c7"
+set statusbar-bg "#282828"
+
+# command input
+set inputbar-fg "#fbf1c7"
+set inputbar-bg "#282828"
+
+# notification
+set notification-fg "#fbf1c7"
+set notification-bg "#282828"
+set notification-error-fg "#cc241d"
+set notification-error-bg "#282828"
+set notification-warning-fg "#d79921"
+set notification-warning-bg "#282828"
+
+# search
+set highlight-color "#458588"
+set highlight-active-color "#d79921"
+set highlight-fg "#cc241d"
+
 # start in inverted color mode
 set recolor true
+set recolor-darkcolor "#fbf1c7"
+set recolor-lightcolor "#282828"
+
+# index
+set index-fg "#fbf1c7"
+set index-bg "#282828"
+set index-active-fg "#282828"
+set index-active-bg "#d79921"
+
+# show filename (not its full path) in window title
+set window-title-basename true
+
+# show filename (not its full path) in statusbar
+set statusbar-basename true
+
+# show ~ instead of home path
+set statusbar-home-tilde true
+
+# clipboard
+# make sure you put into the main system clipboard
+set selection-clipboard clipboard
+

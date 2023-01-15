@@ -103,21 +103,16 @@ pp() {
   print $all_proxy
 }
 
-# add nvm path
-[ -z "$NVM_DIR" ] && export NVM_DIR="$HOME/.nvm"
-source /usr/share/nvm/nvm.sh
-source /usr/share/nvm/bash_completion
-source /usr/share/nvm/install-nvm-exec
+export VOLTA_HOME="$HOME/.volta"
 
 # used `pacman -Ql fzf` to figure out where this was
 [ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
 export FZF_DEFAULT_OPTS='--height 100% --layout=reverse-list --info=hidden'
 export FZF_DEFAULT_COMMAND='rg --hidden --files -g !node_modules -g !.git -g !.Trash\* .'
 
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 export PATH=$PATH:/home/m47h4r/bin/
 export PATH=$PATH:/home/m47h4r/.local/bin # youtube-dl
+export PATH="$VOLTA_HOME/bin:$PATH" # volta
 
 # nnn
 # this indicates shell being opened in nnn

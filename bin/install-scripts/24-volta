@@ -1,9 +1,8 @@
 #!/bin/bash
 
-# Install nvm
 echo '##################################################'
-echo '# Installing nvm...'
+echo '# Installing volta...'
 echo '##################################################'
 sleep 1
-trizen -S --noconfirm nvm
+curl https://get.volta.sh | bash
 

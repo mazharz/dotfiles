@@ -1,13 +1,17 @@
 #!/bin/bash
 
 echo '##################################################'
-echo '# This script does not do anything. Please do:'
-echo '# install other node versions you might need'
-echo '# Also install these npm packages:'
-echo '# - eslint'
-echo '# - sass'
-echo '# - prettier'
-echo '# - typescript'
-echo '# - percollate'
-echo '# - yarn'
+echo '# Installing global npm packages...'
 echo '##################################################'
+sleep 1
+
+echo '# Installing eslint'
+$HOME/.volta/bin/npm i -g eslint
+echo '# Installing sass'
+$HOME/.volta/bin/npm i -g sass
+echo '# Installing prettier'
+$HOME/.volta/bin/npm i -g prettier
+echo '# Installing typescript'
+$HOME/.volta/bin/npm i -g typescript
+echo '# Installing yarn'
+$HOME/.volta/bin/npm i -g yarn

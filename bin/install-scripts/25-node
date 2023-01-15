@@ -5,4 +5,5 @@ echo '##################################################'
 echo '# Installing node...'
 echo '##################################################'
 sleep 1
-source /usr/share/nvm/nvm.sh && nvm install node
+$HOME/.volta/bin/volta install node
+
