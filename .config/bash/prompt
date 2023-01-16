@@ -1,0 +1,16 @@
+#!/usr/bin/env sh
+
+_PS1_DIR="$_COLOR_BRIGHT_YELLOW$_COLOR_BOLD\W$_COLOR_RESET "
+_PS1_PROMPT="$_COLOR_BRIGHT_RED\$$_COLOR_RESET"
+_PS1_GIT_BRANCH() {
+  if git branch --show-current &> /dev/null ; then
+    echo -n -e "$_COLOR_BRIGHT_CYAN("
+    git branch --show-current | tr -d '\n'
+    echo -n -e ")$_COLOR_RESET "
+  fi
+}
+
+PS1="$_PS1_DIR\$(_PS1_GIT_BRANCH)$_PS1_PROMPT "
+
+# this indicates shell being opened in nnn
+[ -n "$NNNLVL" ] && PS1="N$NNNLVL $PS1"

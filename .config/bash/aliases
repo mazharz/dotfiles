@@ -1,0 +1,39 @@
+#!/usr/bin/env sh
+
+alias ls="ls --color=auto"
+alias c="cd"
+
+alias vim="nvim"
+alias v="nvim"
+
+# frequest vim repositories
+alias m="cd ~/mzd/text/markdowns; nvim"
+alias t="nvim ~/mzd/text/markdowns/notes/todo.md"
+
+# git
+alias g="git"
+alias ga="git add"
+alias gb="git branch"
+alias gbc="git branch --show-current"
+alias gc="git commit"
+alias gca="git commit --amend"
+alias gco="git checkout"
+alias gcob="git checkout -b"
+alias gl="git pull"
+alias glg="git log"
+alias gm="git merge"
+alias gp="git push"
+alias gs="git status"
+alias gst="git stash"
+alias gsw="git switch"
+alias gwt="git worktree"
+
+# others
+alias backup="rsync -au --delete --progress /home/m47h4r/mzd/* /run/media/m47h4r/mzed"
+alias sortMirrors="sudo reflector --latest 5 --sort rate --protocol https --save /etc/pacman.d/mirrorlist"
+alias upgrade="google-chrome-stable https://archlinux.org && sudo pacman -Syu"
+alias n="nnn -ex"
+alias sss="sudo ss-local -c ~/.config/ss.json"
+alias lg="lazygit"
+alias tx="tmux"
+alias ta="tmux attach-session"

@@ -1,0 +1,30 @@
+#!/usr/bin/env sh
+
+# vim
+VIM='nvim'
+export EDITOR='nvim'
+# tools
+export VOLTA_HOME="$HOME/.volta"
+# fzf
+# used `pacman -Ql fzf` to figure out where this was
+[ -f /usr/share/fzf/key-bindings.bash ] && source /usr/share/fzf/key-bindings.bash
+export FZF_DEFAULT_OPTS='--height 100% --layout=reverse-list --info=hidden'
+export FZF_DEFAULT_COMMAND='rg --hidden --files -g !node_modules -g !.git -g !.Trash\* .'
+# ledger
+export LEDGER_FILE=$HOME/mzd/text/finances/2023.journal
+# PATH
+export PATH="$VOLTA_HOME/bin:$PATH"
+export PATH=$PATH:/home/m47h4r/bin/
+export PATH=$PATH:/home/m47h4r/.local/bin # youtube-dl needs this
+
+# Scale qt apps
+export QT_SCALE_FACTOR=1.3
+
+export DIR_SHORTCUTS="w:$HOME/mzd/wd;n:$HOME/mzd/multimedia/not watched;m:$HOME/mzd/music;c:$HOME/mzd/code;g:$HOME/mzd/code/gwat;b:$HOME/mzd/text/book;o:$HOME/mzd/os;f:$HOME/mzd/text/finances;d:$HOME/mzd/text/docs"
+
+# nnn
+export NNN_BMS="$DIR_SHORTCUTS"
+export NNN_PLUG='e:-!sudo -E nvim $nnn*;f:fzcd;p:rsynccp;v:-!&umpv $nnn'
+BLK="64" CHR="D6" DIR="42" EXE="47" REG="E6" HARDLINK="84" SYMLINK="8E" MISSING="66" ORPHAN="AF" FIFO="A6" SOCK="8A" OTHER="A0"
+export NNN_FCOLORS="$BLK$CHR$DIR$EXE$REG$HARDLINK$SYMLINK$MISSING$ORPHAN$FIFO$SOCK$OTHER"
+export NNN_OPENER=nnnopen

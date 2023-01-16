@@ -1,0 +1,36 @@
+#!/usr/bin/env sh
+
+# export proxy
+ep() {
+  export http_proxy=http://127.0.0.1:3477
+  export socks_proxy=socks5://127.0.0.1:3477
+  export all_proxy=socks5://127.0.0.1:3477
+}
+
+# unset proxy
+up() {
+  unset http_proxy
+  unset socks_proxy
+  unset all_proxy
+}
+
+# print proxy
+pp() {
+  echo 'http_proxy='$http_proxy
+  echo 'socks_proxy='$socks_proxy
+  echo 'all_proxy='$all_proxy
+}
+
+# bookmark
+b () {
+  IFS=';'
+  directories=($DIR_SHORTCUTS)
+  for dir in "${directories[@]}"; do
+    IFS=':'
+    parts=($dir)
+    if [[ "${parts[0]}" == "$1" ]]; then
+      cd "${parts[1]}"
+    fi
+  done
+  unset IFS;
+}

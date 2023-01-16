@@ -1,0 +1,16 @@
+#!/usr/bin/env sh
+
+# https://en.wikipedia.org/wiki/ANSI_escape_code#Colors
+
+# modifiers
+export _COLOR_RESET=$'\e[m'
+export _COLOR_BOLD=$'\e[1m'
+export _COLOR_REVERSE=$'\e[7m'
+export _COLOR_DIM=$'\e[2m'
+
+# bright
+export _COLOR_BRIGHT_YELLOW=$'\e[0;93m'
+export _COLOR_BRIGHT_RED=$'\e[0;91m'
+export _COLOR_BRIGHT_CYAN=$'\e[0;96m'
+export _COLOR_BRIGHT_BLUE=$'\e[0;94m'
+export _COLOR_BRIGHT_BLACK=$'\e[0;90m' # aka gray
