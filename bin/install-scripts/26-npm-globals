@@ -15,3 +15,5 @@ echo '# Installing typescript'
 $HOME/.volta/bin/npm i -g typescript
 echo '# Installing yarn'
 $HOME/.volta/bin/npm i -g yarn
+echo '# Installing vercel'
+$HOME/.volta/bin/npm i -g vercel

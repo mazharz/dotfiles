@@ -8,3 +8,6 @@ sleep 1
 # unzip is required by neovim plugins
 sudo pacman -S fzf tmux neovim ripgrep dbeaver sqlitebrowser filezilla docker docker-compose unzip xclip lazygit
 
+echo '# Installing datagrip...'
+sleep 1
+trizen -S datagrip

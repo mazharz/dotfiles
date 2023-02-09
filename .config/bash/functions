@@ -34,3 +34,22 @@ b () {
   done
   unset IFS;
 }
+
+# lock private stuff
+_DIRS_TO_LOCK="$HOME/mzd/text/markdowns/notes/private;$HOME/mzd/multimedia/private"
+lock_private() {
+  IFS=';'
+  directories=($_DIRS_TO_LOCK)
+  for dir in "${directories[@]}"; do
+    sudo chmod 000 "$dir"
+  done
+  unset IFS;
+}
+unlock_private() {
+  IFS=';'
+  directories=($_DIRS_TO_LOCK)
+  for dir in "${directories[@]}"; do
+    sudo chmod 755 "$dir"
+  done
+  unset IFS;
+}

@@ -14,3 +14,13 @@ export _COLOR_BRIGHT_RED=$'\e[0;91m'
 export _COLOR_BRIGHT_CYAN=$'\e[0;96m'
 export _COLOR_BRIGHT_BLUE=$'\e[0;94m'
 export _COLOR_BRIGHT_BLACK=$'\e[0;90m' # aka gray
+
+# bg bright
+export _COLOR_BRIGHT_BLUE_BG_BLACK_FG=$'\e[0;104;90m'
+
+# for prompt with additional \[ & \] s
+export _PROMPT_COLOR_RESET=$'\[$_COLOR_RESET\]'
+export _PROMPT_COLOR_BOLD=$'\[$_COLOR_BOLD\]'
+export _PROMPT_COLOR_BRIGHT_YELLOW=$'\[$_COLOR_BRIGHT_YELLOW\]'
+export _PROMPT_COLOR_BRIGHT_RED=$'\[$_COLOR_BRIGHT_RED\]'
+export _PROMPT_COLOR_BRIGHT_CYAN=$'\[$_COLOR_BRIGHT_CYAN\]'

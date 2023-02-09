@@ -62,6 +62,9 @@ for key, value in pairs(options) do
   vim.opt[key] = value
 end
 
+vim.o.foldmethod = 'manual'
+vim.wo.foldenable = false -- disable by default
+
 -- hide ~ chars (end of buffer)
 vim.wo.fillchars = "eob: "
 

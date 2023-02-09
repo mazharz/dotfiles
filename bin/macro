@@ -1,7 +1,7 @@
 #!/bin/bash
 
-macroFile="$1"
-macroFilesPath="$HOME/mzd/text/macros"
+macroDir="$HOME/mzd/text/macros"
+fileToRun=`ls ${macroDir} | rofi -dmenu -p "Macro"`
 
-macroText=`cat ${macroFilesPath}/${macroFile}`
+macroText=`${macroDir}/${fileToRun}`
 xdotool type "$macroText"
