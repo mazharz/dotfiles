@@ -73,3 +73,9 @@ vim.api.nvim_create_autocmd('BufReadPost', {
   pattern = '*.xtx',
   command = 'set filetype=tex'
 })
+
+-- highlight on yank
+vim.api.nvim_create_autocmd('TextYankPost', {
+  pattern = '*',
+  command = 'lua vim.highlight.on_yank()',
+})

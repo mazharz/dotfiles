@@ -1,5 +1,6 @@
 local keymap = vim.keymap.set
 local opts = { noremap = true, silent = true }
+local errorQFList = require('mazhar.plugin.eqf');
 
 -- set leader to comma
 vim.g.mapleader = " "
@@ -35,7 +36,16 @@ keymap('n', '<A-S-r>', ':tabmove +1<CR>', opts)
 keymap('n', '<A-S-e>', ':tabmove -1<CR>', opts)
 
 -- pass selected lines to appropriate program
-keymap('v', '<leader>c', "::w !xargs kitty xdg-open<CR>", opts)
+-- keymap('v', '<leader>c', "::w !xargs kitty xdg-open<CR>", opts)
+
+-- open qflist
+keymap('n', '<leader>c', ":copen<CR>", opts)
+
+-- send project errors to qflist
+vim.cmd([[set makeprg=tsc\ --pretty\ false]])
+keymap('n', '<leader>E', function()
+  errorQFList.make()
+end)
 
 -------------------------------------------------------------------------------
 -- Windows

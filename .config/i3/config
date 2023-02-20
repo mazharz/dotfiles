@@ -230,7 +230,9 @@ bindsym $mod+Mod1+shift+h exec ~/bin/huion-buttons
 bindsym $mod+i exec ~/bin/kb_layout
 
 # Macros
-bindsym $mod+o exec ~/bin/macro
+bindsym $mod+o exec i3-input -f "pango:FiraCode Nerd Font 12" \
+  -F 'exec macro %s' \
+  -P 'Macro: '
 
 # open url in chrome
 bindsym $mod+p exec i3-input -f "pango:FiraCode Nerd Font 12" \
