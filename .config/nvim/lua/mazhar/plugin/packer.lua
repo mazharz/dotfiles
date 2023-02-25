@@ -72,6 +72,9 @@ return packer.startup(function(use)
   use 'tpope/vim-sleuth'
   use 'jiangmiao/auto-pairs'
 
+  -- task runner
+  use 'tpope/vim-dispatch'
+
   -- highlighting
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use 'nvim-treesitter/nvim-treesitter-textobjects'
