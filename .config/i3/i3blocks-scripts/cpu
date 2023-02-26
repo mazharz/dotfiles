@@ -4,22 +4,4 @@ idle=`mpstat | tail -n 1 | rev | awk '{ print $1 }' | rev`
 busy=`echo "100 $idle" | awk '{ print $1 - $2 }'`
 decimals_removed=`echo $busy | sed -e 's/\..*//'`
 
-white="#dadada"
-yellow="#d79921"
-orange="#d65d0e"
-red="#cc241d"
-
-color=''
-
-if [ "${decimals_removed}" -le 20 ]; then
-  color=$white
-elif [ "${decimals_removed}" -le 40 ]; then
-  color=$yellow
-elif [ "${decimals_removed}" -le 60 ]; then
-  color=$orange
-else
-  color=$red
-fi
-
-output="<span color='${color}'> </span><span color='${white}'>${decimals_removed}</span>"
-echo $output
+echo "$decimals_removed"
