@@ -53,3 +53,8 @@ unlock_private() {
   done
   unset IFS;
 }
+
+take() {
+  mkdir "$1"
+  cd "$1"
+}

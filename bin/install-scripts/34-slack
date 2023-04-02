@@ -1,8 +1,0 @@
-#!/bin/bash
-
-# Install slack
-echo '##################################################'
-echo '# Installing slack...'
-echo '##################################################'
-sleep 1
-trizen -S --noconfirm slack-desktop

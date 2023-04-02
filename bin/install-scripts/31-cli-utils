@@ -17,4 +17,4 @@ sh -c "$(curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/get
 
 echo '# Installing net tools'
 sleep 1
-sudo pacman -S nmap net-tools nethogs bind-tools openbsd-netcat
+sudo pacman -S nmap net-tools nethogs bind-tools openbsd-netcat bmon
