@@ -9,6 +9,7 @@ _CONFIGS=(
   "$HOME/.config/bash/aliases"
   "$HOME/.config/bash/vars"
   "$HOME/.config/bash/functions" # make sure to place after vars, (b() uses one)
+  "$HOME/.config/bash/git"
 )
 
 for _CONFIG in "${_CONFIGS[@]}"; do

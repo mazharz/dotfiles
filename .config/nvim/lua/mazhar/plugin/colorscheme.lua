@@ -33,7 +33,7 @@ gruvbox.setup({
     DiagnosticSignInfo = { bg = "NONE", fg = "#83a598" },
     DiagnosticSignHint = { bg = "NONE", fg = "#8ec07c" },
   },
-  transparent_mode = true,
+  -- transparent_mode = true,
 })
 
 -- set colorscheme

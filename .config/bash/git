@@ -1,0 +1,60 @@
+#!/usr/bin/env bash
+
+# aliases
+alias g="git"
+alias ga="git add"
+alias gb="git branch"
+alias gbc="git branch --show-current"
+alias gbd="git branch -d"
+alias gbD="git branch -D"
+alias gc="git commit"
+alias gca="git commit --amend"
+alias gco="git checkout"
+alias gcob="git checkout -b"
+alias gd="git diff"
+alias gl="git pull"
+alias glg="git log"
+alias gm="git merge"
+alias gri="git rebase -i"
+alias gp="git push"
+alias gpbc='git push -u origin $(git branch --show-current)'
+alias gs="git status"
+alias gst="git stash"
+alias gsw="git switch"
+alias gwt="git worktree"
+
+# functions
+function gfco() {
+  local branches branch
+  branches=$(git --no-pager branch --format="%(refname:short)") &&
+  branch=$(echo "$branches" | fzf +m) &&
+  git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
+}
+
+function gfbd() {
+  local branches branch
+  branches=$(git --no-pager branch --format="%(refname:short)") &&
+  branch=$(echo "$branches" | fzf +m) &&
+  git branch -d $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
+}
+
+function gfbD() {
+  local branches branch
+  branches=$(git --no-pager branch --format="%(refname:short)") &&
+  branch=$(echo "$branches" | fzf +m) &&
+  git branch -D $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
+}
+
+function gfm() {
+  local branches branch
+  branches=$(git --no-pager branch --format="%(refname:short)") &&
+  branch=$(echo "$branches" | fzf +m) &&
+  git merge $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
+}
+
+function gfri() {
+  local branches branch
+  branches=$(git --no-pager branch --format="%(refname:short)") &&
+  branch=$(echo "$branches" | fzf +m) &&
+  git rebase -i $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
+}

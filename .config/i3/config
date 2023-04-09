@@ -17,9 +17,20 @@ bindsym $mod+Return exec alacritty
 
 bindsym $mod+q kill
 
-bindsym $mod+d exec rofi -show drun
-bindsym $mod+w exec rofi -show window
-#bindsym $mod+r exec rofi -show ssh
+bindsym $mod+d exec --no-startup-id alacritty \
+  --class 'fzf-menu' \
+  -o window.dimensions.columns=50 \
+  -o window.dimensions.lines=10 \
+  -e i3-dmenu-desktop --dmenu=fzf 
+for_window [class="fzf-menu"] floating enable
+
+bindsym $mod+e exec --no-startup-id alacritty \
+  --class 'emoji-menu' \
+  -o window.dimensions.columns=30 \
+  -o window.dimensions.lines=10 \
+  -e ~/bin/emoji-picker
+for_window [class="emoji-menu"] floating enable
+
 
 new_window pixel 2
 # new_window normal 2
