@@ -15,13 +15,17 @@ alias gd="git diff"
 alias gl="git pull"
 alias glg="git log"
 alias gm="git merge"
+alias gr="git rebase"
 alias gri="git rebase -i"
+alias grc="git rebase --continue"
 alias gp="git push"
 alias gpbc='git push -u origin $(git branch --show-current)'
+alias gpfwl='git push --force-with-lease'
 alias gs="git status"
 alias gst="git stash"
 alias gsw="git switch"
 alias gwt="git worktree"
+alias gchp="git cherry-pick"
 
 # functions
 function gfco() {

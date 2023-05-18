@@ -7,8 +7,8 @@ require('telescope').setup {
     prompt_prefix = "$ ",
     layout_strategy = 'flex',
     layout_config = {
-      height = 0.95,
-      width = 0.95
+      height = { padding = 0 },
+      width = { padding = 0 }
     },
     mappings = {
       n = {

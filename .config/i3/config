@@ -241,6 +241,7 @@ bindsym $mod+shift+n exec ~/bin/monitor mono
 bindsym $mod+Mod1+shift+h exec ~/bin/huion-buttons
 
 bindsym $mod+i exec ~/bin/kb_layout
+bindsym $mod+shift+i exec ~/bin/kb_layout german
 
 # Macros
 bindsym $mod+o exec i3-input -f "pango:FiraCode Nerd Font 12" \

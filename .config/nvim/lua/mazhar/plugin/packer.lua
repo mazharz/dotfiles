@@ -28,6 +28,9 @@ return packer.startup(function(use)
   -- colorscheme
   use 'ellisonleao/gruvbox.nvim'
 
+  -- file-tree explorer
+  use 'kyazdani42/nvim-tree.lua'
+
   -- Telescope
   use 'nvim-lua/plenary.nvim'
   use 'nvim-telescope/telescope.nvim'
