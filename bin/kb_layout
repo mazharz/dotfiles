@@ -3,7 +3,7 @@
 #setxkbmap -layout us,ir,fr -option grp:alt_caps_toggle
 
 if [ "$1" == "german" ];then
-  setxkbmap -layout us,ir,de -option grp:alt_caps_toggle
+  setxkbmap -layout de -option grp:alt_caps_toggle
 else
   setxkbmap -layout us,ir -option grp:alt_caps_toggle
 fi

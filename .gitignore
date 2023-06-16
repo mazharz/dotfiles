@@ -31,3 +31,4 @@
 bin/ghcup
 .ssh/id_rsa*
 .ssh/known_hosts*
+.config/nvim/spell

@@ -39,6 +39,17 @@ local on_attach = function(client, bufnr)
   end
 end
 
+vim.diagnostic.config({
+  virtual_text = {
+    source = false,
+    spacing = 0,
+    prefix = "",
+    suffix = "<<<",
+    format = function() return "" end
+  },
+  signs = false
+})
+
 require("mason").setup()
 require("mason-lspconfig").setup({
   automatic_installation = true
@@ -102,6 +113,10 @@ lspconfig.rust_analyzer.setup {
   on_attach = on_attach,
 }
 lspconfig.texlab.setup {
+  capabilities = capabilities,
+  on_attach = on_attach,
+}
+lspconfig.gopls.setup {
   capabilities = capabilities,
   on_attach = on_attach,
 }

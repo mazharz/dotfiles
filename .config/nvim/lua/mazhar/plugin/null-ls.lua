@@ -3,6 +3,7 @@ local nls = require('null-ls');
 nls.setup({
     sources = {
         nls.builtins.formatting.prettier,
+        nls.builtins.formatting.gofumpt,
     },
 })
 

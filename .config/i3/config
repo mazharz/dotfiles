@@ -4,7 +4,7 @@
 set $mod Mod4
 
 set $bg #282828
-# set $bg #000000cc
+# set $bg #282828e6
 set $fg #fbf1c7
 set $ac #d79921
 set $red #cc241d
