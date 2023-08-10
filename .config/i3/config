@@ -6,7 +6,7 @@ set $mod Mod4
 set $bg #282828
 # set $bg #282828e6
 set $fg #fbf1c7
-set $ac #d79921
+set $ac #a89984
 set $red #cc241d
 
 font pango:FiraCode Nerd Font 12
@@ -243,16 +243,6 @@ bindsym $mod+Mod1+shift+h exec ~/bin/huion-buttons
 bindsym $mod+i exec ~/bin/kb_layout
 bindsym $mod+shift+i exec ~/bin/kb_layout german
 
-# Macros
-bindsym $mod+o exec i3-input -f "pango:FiraCode Nerd Font 12" \
-  -F 'exec macro %s' \
-  -P 'Macro: '
-
-# open url in chrome
-bindsym $mod+p exec i3-input -f "pango:FiraCode Nerd Font 12" \
-  -F 'exec google-chrome-stable %s' \
-  -P 'Link: '
-
 bindsym $mod+semicolon exec ~/bin/lock
 
 bindsym $mod+Mod1+period       exec playerctl --player=rhythmbox next; exec pkill -SIGRTMIN+11 i3blocks
@@ -286,10 +276,11 @@ bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
 ################################################################################
 exec --no-startup-id /usr/bin/lxpolkit &
 exec_always ~/bin/kb_layout
-exec ~/bin/rw.sh
+exec ~/bin/rw
 exec dunst &
 exec nm-applet &
 exec blueman-applet &
 exec copyq &
 exec picom &
 exec redshift-gtk &
+exec espanso start --unmanaged &

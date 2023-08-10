@@ -34,14 +34,14 @@ set highlight-fg "#cc241d"
 
 # start in inverted color mode
 set recolor true
-set recolor-darkcolor "#fbf1c7"
+set recolor-darkcolor "#a89984"
 set recolor-lightcolor "#282828"
 
 # index
 set index-fg "#fbf1c7"
 set index-bg "#282828"
 set index-active-fg "#282828"
-set index-active-bg "#d79921"
+set index-active-bg "#a89984"
 
 # show filename (not its full path) in window title
 set window-title-basename true

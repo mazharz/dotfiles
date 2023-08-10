@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# Install youtube-dl
+# Install yt-dlp
 echo '##################################################'
-echo '# Installing youtube-dl...'
+echo '# Installing yt-dlp...'
 echo '##################################################'
 sleep 1
-pip install youtube-dl
+sudo pacman -S yt-dlp

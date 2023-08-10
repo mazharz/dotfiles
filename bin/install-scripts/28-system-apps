@@ -8,7 +8,7 @@ sleep 1
 sudo pacman -S calibre xournalpp libreoffice-still gedit gnome-font-viewer file-roller zathura zathura-pdf-mupdf
 
 echo '##################################################'
-echo '# Installing LaTeX...'
+echo '# Installing Espanso...'
 echo '##################################################'
 sleep 1
-sudo pacman -S texlive-most texlive-lang
+sudo trizen -S espanso

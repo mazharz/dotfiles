@@ -1,7 +1,0 @@
-#!/bin/bash
-
-macroFile="$1"
-macroFilesPath="$HOME/mzd/text/macros"
-
-macroText=`${macroFilesPath}/${macroFile}`
-xdotool type "$macroText"

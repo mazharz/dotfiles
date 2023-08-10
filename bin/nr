@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+script=`cat package.json | jq '.scripts | keys[]' -r | fzf`
+
+if [[ -n "$script" ]]; then
+  echo "Running $script..."
+  npm run "$script"
+fi

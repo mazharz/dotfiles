@@ -10,7 +10,6 @@ selected_name=$(basename "$project_dir" | tr . _)
 tmux_running=$(pgrep tmux)
 
 if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
-    # TODO: doesn't really work
     tmux new-session -s $selected_name -c $project_dir\; \
         send-keys -t 1 "nvim" Enter \; \
         neww -n shell \; \
@@ -22,4 +21,7 @@ if ! tmux has-session -t=$selected_name 2> /dev/null; then
     tmux new-session -ds $selected_name -c $project_dir
 fi
 
-tmux switch-client -t $selected_name
+tmux switch-client -t $selected_name \; \
+    send-keys -t $selected_name "nvim" Enter \; \
+    neww -n shell -c $project_dir \; \
+    selectw -t 1

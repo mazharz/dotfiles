@@ -24,7 +24,7 @@ export PATH=$PATH:/home/m47h4r/.local/bin # youtube-dl needs this
 # Scale qt apps
 export QT_SCALE_FACTOR=1.3
 
-export DIR_SHORTCUTS="w:$HOME/mzd/wd;n:$HOME/mzd/multimedia/not watched;m:$HOME/mzd/music;c:$HOME/mzd/code;g:$HOME/mzd/code/gwat;b:$HOME/mzd/text/book;o:$HOME/mzd/os;f:$HOME/mzd/text/finances;d:$HOME/mzd/text/docs;t:$HOME/mzd/text"
+export DIR_SHORTCUTS="w:$HOME/mzd/wd;n:$HOME/mzd/multimedia/not watched;m:$HOME/mzd/music;c:$HOME/mzd/code;g:$HOME/mzd/code/gwat;b:$HOME/mzd/text/book;o:$HOME/mzd/os;f:$HOME/mzd/text/finances;t:$HOME/mzd/text;d:$HOME/Downloads"
 
 # nnn
 export NNN_BMS="$DIR_SHORTCUTS"

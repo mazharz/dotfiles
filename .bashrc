@@ -8,6 +8,7 @@ _CONFIGS=(
   "$HOME/.config/bash/prompt"
   "$HOME/.config/bash/aliases"
   "$HOME/.config/bash/vars"
+  "$HOME/.config/bash/vars_secret"
   "$HOME/.config/bash/functions" # make sure to place after vars, (b() uses one)
   "$HOME/.config/bash/git"
 )

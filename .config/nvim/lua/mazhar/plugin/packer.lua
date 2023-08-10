@@ -81,12 +81,6 @@ return packer.startup(function(use)
   use 'RRethy/vim-illuminate'
   use 'nvim-treesitter/playground'
 
-  -- managing session
-  use {
-    'xolox/vim-session',
-    requires = { 'xolox/vim-misc' }
-  }
-
   -- Automatically set up configuration after cloning packer.nvim
   if PACKER_BOOTSTRAP then
     require("packer").sync()
