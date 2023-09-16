@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+value="$1"
+label="$2"
+critcal="$3"
+high="$4"
+mid="$5"
+
+critical_color="#cc241d" # red
+high_color="#d79921" # yellow
+mid_color="#458588" # blue
+low_color="#fbf1c7" # white
+
+if [[ "$value" -gt "$critcal" ]]; then
+  echo "<span foreground=\"$critical_color\">$label</span>"
+elif [[ "$value" -gt "$high" ]]; then
+  echo "<span foreground=\"$high_color\">$label</span>"
+elif [[ "$value" -gt "$mid" ]]; then
+  echo "<span foreground=\"$mid_color\">$label</span>"
+else
+  echo "<span foreground=\"$low_color\">$label</span>"
+fi

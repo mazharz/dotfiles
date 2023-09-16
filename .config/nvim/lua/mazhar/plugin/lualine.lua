@@ -22,8 +22,8 @@ require('lualine').setup {
     lualine_a = { 'mode' },
     lualine_b = { 'branch', 'diagnostics' },
     lualine_c = { { 'filename', path = 1 }, 'lsp_progress' },
-    lualine_x = { 'encoding' },
-    lualine_y = { 'filetype' },
+    lualine_x = {},
+    lualine_y = {},
     lualine_z = {}
   },
   tabline = {

@@ -3,6 +3,6 @@
 script=`cat package.json | jq '.scripts | keys[]' -r | fzf`
 
 if [[ -n "$script" ]]; then
-  echo "Running $script..."
+  echo "Executing: npm run $script..."
   npm run "$script"
 fi

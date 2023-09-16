@@ -1,4 +1,5 @@
 #!/bin/bash
 memory=`free -h | grep Mem | awk '{print $3 "/" $2}' | sed 's/Gi//g'`
 
-echo $memory
+rounded=`printf "%.0f" $memory`
+$HOME/.config/i3/i3blocks-scripts/color-print "$rounded" " $memory" 12 8 4

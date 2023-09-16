@@ -4,4 +4,4 @@ idle=`mpstat | tail -n 1 | rev | awk '{ print $1 }' | rev`
 busy=`echo "100 $idle" | awk '{ print $1 - $2 }'`
 decimals_removed=`echo $busy | sed -e 's/\..*//'`
 
-echo "$decimals_removed"
+$HOME/.config/i3/i3blocks-scripts/color-print "$decimals_removed" " $decimals_removed" 80 50 30
