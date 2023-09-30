@@ -1,15 +1,8 @@
-#!/usr/bin/env sh
-
 # command shortenings
 alias ls="ls --color=auto"
 alias l="ls --color=auto"
-alias c="cd"
 alias pk="pkill"
 alias grep="grep --color=auto"
-
-alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
 
 alias vim="nvim"
 alias v="nvim"

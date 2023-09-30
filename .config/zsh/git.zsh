@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 # aliases
 alias g="git"
 alias ga="git add"

@@ -1,5 +1,3 @@
-#!/usr/bin/env sh
-
 # export proxy
 ep() {
   export http_proxy=http://127.0.0.1:3477
@@ -23,40 +21,28 @@ pp() {
 
 # bookmark
 b () {
-  IFS=';'
-  directories=($DIR_SHORTCUTS)
-  for dir in "${directories[@]}"; do
-    IFS=':'
-    parts=($dir)
-    if [[ "${parts[0]}" == "$1" ]]; then
-      cd "${parts[1]}"
+  directories=(${(@s:;:)DIR_SHORTCUTS})
+  for dir in ${directories}; do
+    parts=(${(@s/:/)dir})
+    if [[ "${parts[1]}" == "$1" ]]; then
+      cd ${parts[2]}
     fi
   done
-  unset IFS;
 }
 
 # lock private stuff
 _DIRS_TO_LOCK="$HOME/mzd/text/markdowns/notes/private;$HOME/mzd/multimedia/private"
 lock_private() {
-  IFS=';'
-  directories=($_DIRS_TO_LOCK)
-  for dir in "${directories[@]}"; do
+  directories=(${(@s:;:)_DIRS_TO_LOCK})
+  for dir in ${directories}; do
     sudo chmod 000 "$dir"
   done
-  unset IFS;
 }
 unlock_private() {
-  IFS=';'
-  directories=($_DIRS_TO_LOCK)
-  for dir in "${directories[@]}"; do
+  directories=(${(@s:;:)_DIRS_TO_LOCK})
+  for dir in ${directories}; do
     sudo chmod 755 "$dir"
   done
-  unset IFS;
-}
-
-take() {
-  mkdir "$1"
-  cd "$1"
 }
 
 # fzf

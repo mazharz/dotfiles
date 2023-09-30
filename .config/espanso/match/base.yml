@@ -63,3 +63,5 @@ matches:
     replace: "(booking)"
   - trigger: ";wb"
     replace: "(website)"
+  - trigger: ";vi"
+    replace: "visa|relocat|permit|legal"
