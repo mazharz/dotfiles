@@ -49,6 +49,8 @@ return packer.startup(function(use)
   use 'hrsh7th/cmp-path'
   use 'L3MON4D3/LuaSnip'
   use 'saadparwaiz1/cmp_luasnip'
+  -- project specific settings
+  use 'folke/neoconf.nvim'
 
   -- lualine
   use 'nvim-lualine/lualine.nvim'
@@ -80,6 +82,9 @@ return packer.startup(function(use)
   use 'nvim-treesitter/nvim-treesitter-textobjects'
   use 'RRethy/vim-illuminate'
   use 'nvim-treesitter/playground'
+
+  -- typst
+  use { 'kaarmu/typst.vim', ft = { 'typst' } }
 
   -- Automatically set up configuration after cloning packer.nvim
   if PACKER_BOOTSTRAP then

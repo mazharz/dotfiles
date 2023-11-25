@@ -13,7 +13,7 @@ export VOLTA_HOME="$HOME/.volta"
 export FZF_DEFAULT_OPTS='--height 100% --layout=reverse-list --info=hidden'
 export FZF_DEFAULT_COMMAND='rg --hidden --files -g !node_modules -g !.git -g !.Trash\* .'
 # ledger
-export LEDGER_FILE=$HOME/mzd/text/finances/2023.journal
+export LEDGER_FILE=$HOME/mzd/text/Dropbox/finances/2023.journal
 # PATH
 export PATH="$VOLTA_HOME/bin:$PATH"
 export PATH=$PATH:/home/m47h4r/bin/
@@ -21,7 +21,7 @@ export PATH=$PATH:/home/m47h4r/bin/
 # Scale qt apps
 export QT_SCALE_FACTOR=1.3
 
-export DIR_SHORTCUTS="w:$HOME/mzd/wd;n:$HOME/mzd/multimedia/not watched;m:$HOME/mzd/music;c:$HOME/mzd/code;g:$HOME/mzd/code/gwat;b:$HOME/mzd/text/book;o:$HOME/mzd/os;f:$HOME/mzd/text/finances;t:$HOME/mzd/text;d:$HOME/Downloads"
+export DIR_SHORTCUTS="w:$HOME/mzd/wd;n:$HOME/mzd/multimedia/not watched;m:$HOME/mzd/music;c:$HOME/mzd/code;g:$HOME/mzd/code/gwat;b:$HOME/mzd/text/book;o:$HOME/mzd/os;f:$HOME/mzd/text/Dropbox/finances;t:$HOME/mzd/text;d:$HOME/mzd/text/doc"
 
 # nnn
 export NNN_BMS="$DIR_SHORTCUTS"
@@ -34,3 +34,7 @@ export NNN_OPENER=nnnopen
 
 # cargo
 source "$HOME/.cargo/env"
+
+# ghcup
+[ -f "/home/m47h4r/.ghcup/env" ] && source "/home/m47h4r/.ghcup/env" # ghcup-env
+

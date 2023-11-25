@@ -115,6 +115,8 @@ for_window [class="mpv"]                   mark v
 for_window [class="Postman"]               mark p
 for_window [class="Altair GraphQL Client"] mark a
 for_window [class="Rhythmbox"]             mark m
+for_window [class="Clash for Windows"]     mark V
+for_window [title="fitimer"]               mark T
 
 ################################################################################
 # Auto assignments
@@ -240,8 +242,9 @@ bindsym $mod+shift+n exec ~/bin/monitor mono
 
 bindsym $mod+Mod1+shift+h exec ~/bin/huion-buttons
 
-bindsym $mod+i exec ~/bin/kb_layout
-bindsym $mod+shift+i exec ~/bin/kb_layout german
+# TODO: make keyboard layout into a mode so you can kill i3blocks on changing to any layout, ctrl+i => single letter (e, p, d, s)
+bindsym $mod+i exec ~/bin/kb_layout; exec pkill -SIGRTMIN+11 i3blocks
+bindsym $mod+shift+i exec ~/bin/kb_layout german; exec pkill -SIGRTMIN+11 i3blocks
 
 bindsym $mod+semicolon exec ~/bin/lock
 
@@ -284,3 +287,4 @@ exec copyq &
 exec picom &
 exec redshift-gtk &
 exec espanso start --unmanaged &
+exec dropbox &

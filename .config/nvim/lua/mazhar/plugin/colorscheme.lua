@@ -18,20 +18,12 @@ gruvbox.setup({
   inverse = true, -- invert background for search, diffs, statuslines and errors
   contrast = "",  -- can be "hard", "soft" or empty string
   overrides = {
-    Normal = { bg = "NONE" },
-    LineNr = { bg = "NONE" },
     SignColumn = { bg = "NONE" },
-    WinSeparator = { bg = "NONE", fg = "#504945" },
-    -- apparently, nvim-tree uses vertsplit (still?!)
-    VertSplit = { bg = "NONE", fg = "#504945" },
-    GitSignsAdd = { bg = "NONE" },
-    GitSignsChange = { bg = "NONE" },
-    GitSignsDelete = { bg = "NONE" },
-    -- lsp diagnostics in sign column
-    DiagnosticSignError = { bg = "NONE", fg = "#fb4934" },
-    DiagnosticSignWarn = { bg = "NONE", fg = "#fabd2f" },
-    DiagnosticSignInfo = { bg = "NONE", fg = "#83a598" },
-    DiagnosticSignHint = { bg = "NONE", fg = "#8ec07c" },
+    WinSeparator = { bg = "NONE", fg = "#3c3836" },
+    GitSignsAdd = { bg = "#282828", fg = "#98971a" },
+    GitSignsChange = { bg = "#282828", fg = "#689d6a" },
+    GitSignsDelete = { bg = "#282828", fg = "#cc241d" },
+    GitSignsUntracked = { bg = "#282828", fg = "#d79921" },
   },
   -- transparent_mode = true,
 })

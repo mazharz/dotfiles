@@ -1,3 +1,5 @@
+local neoconf = require('neoconf');
+neoconf.setup({})
 local lspconfig = require('lspconfig');
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
@@ -59,10 +61,13 @@ lspconfig.clangd.setup {
   capabilities = capabilities,
   on_attach = on_attach
 }
-lspconfig.tsserver.setup {
-  capabilities = capabilities,
-  on_attach = on_attach
-}
+
+if not neoconf.get("tsserver.disable") then
+  lspconfig.tsserver.setup {
+    capabilities = capabilities,
+    on_attach = on_attach
+  }
+end
 
 lspconfig.lua_ls.setup {
   capabilities = capabilities,
@@ -93,6 +98,10 @@ lspconfig.html.setup {
   on_attach = on_attach,
 }
 lspconfig.cssls.setup {
+  capabilities = capabilities,
+  on_attach = on_attach,
+}
+lspconfig.jsonls.setup {
   capabilities = capabilities,
   on_attach = on_attach,
 }
@@ -127,4 +136,12 @@ lspconfig.hls.setup {
 lspconfig.volar.setup {
   capabilities = capabilities,
   on_attach = on_attach,
+  filetypes = { 'vue', 'typescript', 'javascript' }
+}
+lspconfig.typst_lsp.setup {
+  capabilities = capabilities,
+  on_attach = on_attach,
+  settings = {
+    exportPdf = "onSave" -- Choose onType, onSave or never.
+  }
 }

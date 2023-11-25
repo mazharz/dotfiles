@@ -2,7 +2,7 @@ local options = {
   -- always show signcolumn git-gutter and diagnostics use it
   signcolumn = 'yes',
   -- make updates more frequent/faster
-  updatetime = 300,
+  updatetime = 1000,
   -- make sure to enable hidden if off, vim will not let you have files
   -- with unsaved changes in abandoned buffers
   hidden = true,
@@ -68,12 +68,6 @@ vim.wo.foldenable = false -- disable by default
 
 -- hide ~ chars (end of buffer)
 vim.wo.fillchars = "eob: "
-
--- fix xtx file not being recognized as latex
-vim.api.nvim_create_autocmd('BufReadPost', {
-  pattern = '*.xtx',
-  command = 'set filetype=tex'
-})
 
 -- highlight on yank
 vim.api.nvim_create_autocmd('TextYankPost', {

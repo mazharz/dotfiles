@@ -21,15 +21,30 @@ require('telescope').setup {
         ["<C-k>"] = actions.move_selection_previous,
         ["<C-j>"] = actions.move_selection_next,
       }
+    },
+    file_ignore_patterns = {
+      "%.git",
     }
   }
 }
 -- make sure telescope uses fzf plugin
 require('telescope').load_extension('fzf')
 
-vim.keymap.set('n', '<leader>sf', builtin.find_files)
+local find_files = function()
+  builtin.find_files({ hidden = true })
+end
+
+local live_grep = function()
+  builtin.live_grep({
+    additional_args = {
+      '--hidden',
+    }
+  })
+end
+
+vim.keymap.set('n', '<leader>sf', find_files)
 vim.keymap.set('n', '<leader>sb', builtin.buffers)
-vim.keymap.set('n', '<leader>ss', builtin.live_grep)
+vim.keymap.set('n', '<leader>ss', live_grep)
 vim.keymap.set('n', '<leader>sc', builtin.commands)
 vim.keymap.set('n', '<leader>sd', builtin.diagnostics)
 

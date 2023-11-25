@@ -8,8 +8,8 @@ alias vim="nvim"
 alias v="nvim"
 
 # frequent vim repositories
-alias m="cd ~/mzd/text/markdowns; nvim"
-alias t="nvim ~/mzd/text/markdowns/notes/todo.md"
+alias m="cd ~/mzd/text/Dropbox/markdowns; nvim"
+alias t="cd ~/mzd/text/Dropbox/markdowns; nvim to-do.md"
 
 # tmux
 alias tx="tmux"
@@ -18,6 +18,7 @@ alias txs="tmux-sessionizer"
 
 # others
 alias backup="rsync -au --delete --progress /home/m47h4r/mzd/* /run/media/m47h4r/mzed"
+alias backup2="rsync -au --delete --progress /home/m47h4r/mzd/* /run/media/m47h4r/mzd"
 alias sortMirrors="sudo reflector --latest 5 --sort rate --protocol https --save /etc/pacman.d/mirrorlist"
 alias upgrade="google-chrome-stable https://archlinux.org && sudo pacman -Syu"
 alias n="nnn -ex"

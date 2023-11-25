@@ -11,7 +11,7 @@ require 'nvim-treesitter.configs'.setup {
     "gitcommit",
     "gitignore",
     "graphql",
-    "help",
+    -- "help",
     "html",
     "http",
     "javascript",
@@ -28,7 +28,8 @@ require 'nvim-treesitter.configs'.setup {
     "typescript",
     "markdown",
     "markdown_inline",
-    "query"
+    "query",
+    "vue"
   },
 
   sync_install = false,

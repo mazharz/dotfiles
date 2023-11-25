@@ -26,4 +26,4 @@ require("Comment").setup {
 -- duplicate line, comment the upper, go to lower
 -- useful for when you change a line but want to keep reference of the old one
 vim.keymap.set('n', 'gcyc', 'yypk <cmd>lua require("Comment.api").toggle_current_linewise()<CR> | j')
-
+vim.g.skip_ts_context_commentstring_module = true

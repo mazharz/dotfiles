@@ -31,7 +31,7 @@ b () {
 }
 
 # lock private stuff
-_DIRS_TO_LOCK="$HOME/mzd/text/markdowns/notes/private;$HOME/mzd/multimedia/private"
+_DIRS_TO_LOCK="$HOME/mzd/text/Dropbox/markdowns/private;$HOME/mzd/multimedia/private"
 lock_private() {
   directories=(${(@s:;:)_DIRS_TO_LOCK})
   for dir in ${directories}; do

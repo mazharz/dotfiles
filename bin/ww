@@ -8,6 +8,6 @@ cd ~/mzd/code/gwat
 tmux new -s work-notes -n notes -c "notes" \; \
   send-keys -t 1 "nvim todo.md" Enter\; \
   neww -n updates \; \
-  send-keys -t 2 "nvim daily-updates.md" Enter\; \
+  send-keys -t 2 "nvim daily-updates/2023.md" Enter\; \
   selectw -t 1
 

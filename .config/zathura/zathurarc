@@ -34,7 +34,7 @@ set highlight-fg "#cc241d"
 
 # start in inverted color mode
 set recolor true
-set recolor-darkcolor "#a89984"
+set recolor-darkcolor "#ebdbb2"
 set recolor-lightcolor "#282828"
 
 # index
