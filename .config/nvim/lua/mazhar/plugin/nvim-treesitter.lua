@@ -105,10 +105,5 @@ require 'nvim-treesitter.configs'.setup {
 
   indent = {
     enable = true,
-  },
-
-  -- provided by JoosepAlviste/nvim-ts-context-commentstring
-  context_commentstring = {
-    enable = true
   }
 }

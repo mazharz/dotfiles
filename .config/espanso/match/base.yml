@@ -65,3 +65,5 @@ matches:
     replace: "(website)"
   - trigger: ";vi"
     replace: "visa|relocat|permit|legal"
+  - trigger: ";127"
+    replace: "http://127.0.0.1"

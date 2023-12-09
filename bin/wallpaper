@@ -1,5 +1,4 @@
 #!/bin/bash
-picture=$1
 
 if [ -n "$1" ]; then
 	cp "$1" ~/Pictures/Wallpaper/wal.jpeg

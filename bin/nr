@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-script=`cat package.json | jq '.scripts | keys[]' -r | fzf`
+script=$(jq < package.json  '.scripts | keys[]' -r | fzf)
 
 if [[ -n "$script" ]]; then
   echo "Executing: npm run $script..."

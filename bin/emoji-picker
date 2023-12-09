@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-selected_line=`cat ~/.config/emojis | fzf`
-selected_emoji=`echo "$selected_line" | cut -d ' ' -f 1`
+selected_line=$(fzf < ~/.config/emojis)
+selected_emoji=$(echo "$selected_line" | cut -d ' ' -f 1)
 xdotool key "super+space"
 xdotool type "$selected_emoji"

@@ -1,7 +1,7 @@
 #!/bin/bash
 
-Brisbane=`TZ=Australia/Brisbane date`
-UTC=`TZ=UTC date`
-Germany=`TZ=Europe/Berlin date`
+Brisbane=$(TZ=Australia/Brisbane date)
+UTC=$(TZ=UTC date)
+Germany=$(TZ=Europe/Berlin date)
 notify-send  "$(echo -e "Brisbane: ${Brisbane}\nUTC: ${UTC}\nGermany: ${Germany}")"
 

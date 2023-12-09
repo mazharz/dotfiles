@@ -1,6 +1,6 @@
 #!/bin/bash
-value=`cat /sys/class/backlight/intel_backlight/brightness | awk '{print int($1+0.5)}'`
-max=`cat /sys/class/backlight/intel_backlight/max_brightness`
+value=$( awk '{print int($1+0.5)}' < /sys/class/backlight/intel_backlight/brightness )
+max=$( cat /sys/class/backlight/intel_backlight/max_brightness )
 step=$((max / 20))
 action=$1
 if [ "$action" == "inc" ]

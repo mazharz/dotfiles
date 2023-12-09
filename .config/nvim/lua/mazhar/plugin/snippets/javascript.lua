@@ -69,7 +69,7 @@ local snippets = {
 
     export { [] }
     ]],
-    { i(1, "func"), i(2, "arg"), i(4), i(3, "func") },
+    { i(1, "func"), i(3), i(4), i(2, "func") },
     { delimiters = "[]" }
   )),
 

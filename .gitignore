@@ -23,7 +23,7 @@
 .config/trizen/
 .config/gedit/
 .config/xournalpp/
-.config/nvim/plugin/
+/.config/nvim/plugin/*
 .config/sqlitebrowser/
 .config/calibre/
 .config/systemd/

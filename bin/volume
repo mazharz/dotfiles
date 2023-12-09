@@ -3,7 +3,7 @@ action=$1
 
 # TODO: remove this if the below one works well with bluetooth headphone
 # value=`pactl list sinks | grep '^[[:space:]]Volume:' | head -n $(( $SINK + 1 )) | tail -n 1 | sed -e 's,.* \([0-9][0-9]*\)%.*,\1,'`
-value=`pactl get-sink-volume @DEFAULT_SINK@ | grep -Po '[0-9]{1,3}(?=%)' | head -1`
+value=$(pactl get-sink-volume @DEFAULT_SINK@ | grep -Po '[0-9]{1,3}(?=%)' | head -1)
 
 if [ "$action" == "inc" ]; then
   if [ "$value" -le 98 ]; then
