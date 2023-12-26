@@ -26,7 +26,7 @@ return packer.startup(function(use)
   -- packer itself
   use 'wbthomason/packer.nvim'
   -- colorscheme
-  use 'ellisonleao/gruvbox.nvim'
+  use 'sainnhe/gruvbox-material'
 
   -- file-tree explorer
   use 'kyazdani42/nvim-tree.lua'
@@ -51,6 +51,7 @@ return packer.startup(function(use)
   use 'saadparwaiz1/cmp_luasnip'
   -- project specific settings
   use 'folke/neoconf.nvim'
+  use 'folke/neodev.nvim'
 
   -- lualine
   use 'nvim-lualine/lualine.nvim'
@@ -85,6 +86,17 @@ return packer.startup(function(use)
 
   -- typst
   use { 'kaarmu/typst.vim', ft = { 'typst' } }
+
+  -- debugger
+  use 'mfussenegger/nvim-dap'
+  use 'rcarriga/nvim-dap-ui'
+  use 'mxsdev/nvim-dap-vscode-js'
+  -- TODO: use mason and get rid of this vvv?
+  use {
+    "microsoft/vscode-js-debug",
+    opt = true,
+    run = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out"
+  }
 
   -- Automatically set up configuration after cloning packer.nvim
   if PACKER_BOOTSTRAP then

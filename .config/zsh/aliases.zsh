@@ -19,7 +19,7 @@ alias txs="tmux-sessionizer"
 # others
 alias backup="rsync -au --delete --progress /home/m47h4r/mzd/* /run/media/m47h4r/mzed"
 alias backup2="rsync -au --delete --progress /home/m47h4r/mzd/* /run/media/m47h4r/mzd"
-alias sortMirrors="sudo reflector --latest 5 --sort rate --protocol https --save /etc/pacman.d/mirrorlist"
+alias sortMirrors="sudo reflector --age 6 --fastest 10 --latest 10 --sort rate --protocol https --save /etc/pacman.d/mirrorlist"
 alias upgrade="google-chrome-stable https://archlinux.org && sudo pacman -Syu"
 alias n="nnn -ex"
 alias sss="sudo ss-local -c ~/.config/ss.json"

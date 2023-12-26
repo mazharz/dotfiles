@@ -72,14 +72,6 @@ end
 lspconfig.lua_ls.setup {
   capabilities = capabilities,
   on_attach = on_attach,
-  settings = {
-    Lua = {
-      diagnostics = {
-        -- prevent getting lots of global var undefined warnings
-        globals = { 'vim' }
-      }
-    }
-  }
 }
 lspconfig.graphql.setup {
   capabilities = capabilities,

@@ -5,7 +5,7 @@ echo '##################################################'
 echo '# Installing cli utils...'
 echo '##################################################'
 sleep 1
-sudo pacman -S lm_sensors sysstat htop unrar unzip tree rsync imagemagick python-pip reflector nnn tldr
+sudo pacman -S lm_sensors sysstat htop unrar unzip tree rsync imagemagick python-pip reflector nnn tldr bat
 
 echo '# Installing hledger...'
 sleep 1

@@ -3,7 +3,8 @@
 ################################################################################
 set $mod Mod4
 
-set $bg #282828
+set $bg #000000cc
+# set $bg #282828
 # set $bg #282828e6
 set $fg #fbf1c7
 set $ac #a89984
@@ -207,7 +208,7 @@ bar {
   colors {
     background #282828
     # transparency is set in picom
-    # background #000000
+    background #000000
     statusline $bg
     separator  $ac
     #<color class>     <border> <background> <text>

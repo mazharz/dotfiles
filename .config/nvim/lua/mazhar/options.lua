@@ -66,9 +66,6 @@ end
 vim.o.foldmethod = 'manual'
 vim.wo.foldenable = false -- disable by default
 
--- hide ~ chars (end of buffer)
-vim.wo.fillchars = "eob: "
-
 -- highlight on yank
 vim.api.nvim_create_autocmd('TextYankPost', {
   pattern = '*',

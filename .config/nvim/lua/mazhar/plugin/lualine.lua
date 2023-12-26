@@ -1,17 +1,7 @@
-local custom_gruvbox = require 'lualine.themes.gruvbox'
-
--- Change the background of lualine_c section for normal mode
-custom_gruvbox.normal.c.bg = '#00000000'
-custom_gruvbox.insert.c.bg = '#00000000'
-custom_gruvbox.visual.c.bg = '#00000000'
-custom_gruvbox.replace.c.bg = '#00000000'
-custom_gruvbox.command.c.bg = '#00000000'
-custom_gruvbox.inactive.c.bg = '#00000000'
-
 require('lualine').setup {
   options = {
     icons_enabled        = false,
-    theme                = custom_gruvbox,
+    theme                = 'gruvbox-material',
     section_separators   = { left = '', right = '' },
     component_separators = { left = '', right = '' },
     disabled_filetypes   = {},

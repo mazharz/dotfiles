@@ -97,6 +97,7 @@ require 'nvim-treesitter.configs'.setup {
       enable = true,
       border = 'none',
       peek_definition_code = {
+        -- TODO: find better keymaps, used <leader>d prefix for dap
         ["<leader>df"] = "@function.outer",
         ["<leader>dC"] = "@class.outer",
       },

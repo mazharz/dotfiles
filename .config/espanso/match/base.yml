@@ -64,6 +64,6 @@ matches:
   - trigger: ";wb"
     replace: "(website)"
   - trigger: ";vi"
-    replace: "visa|relocat|permit|legal"
+    replace: "visa|relocat|permit|legal|sponsor"
   - trigger: ";127"
     replace: "http://127.0.0.1"

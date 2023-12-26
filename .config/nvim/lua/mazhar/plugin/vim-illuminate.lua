@@ -4,9 +4,3 @@ require('illuminate').configure({
     'NvimTree'
   }
 })
-
-vim.cmd [[
-  hi def IlluminatedWordText gui=bold,underline
-  hi def IlluminatedWordRead gui=bold,underline
-  hi def IlluminatedWordWrite gui=bold,underline
-]]
