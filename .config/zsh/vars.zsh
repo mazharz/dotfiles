@@ -13,7 +13,7 @@ export VOLTA_HOME="$HOME/.volta"
 export FZF_DEFAULT_OPTS='--height 100% --layout=reverse-list --info=hidden'
 export FZF_DEFAULT_COMMAND='rg --hidden --files -g !node_modules -g !.git -g !.Trash\* .'
 # ledger
-export LEDGER_FILE=$HOME/mzd/text/Dropbox/finances/2023.journal
+export LEDGER_FILE=$HOME/mzd/text/Dropbox/finances/2024.journal
 # PATH
 export PATH="$VOLTA_HOME/bin:$PATH"
 export PATH=$PATH:/home/m47h4r/bin/
