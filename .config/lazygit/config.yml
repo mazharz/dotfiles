@@ -1,0 +1,17 @@
+gui:
+  showListFooter: false
+  showBottomLine: false
+  theme:
+    selectedLineBgColor:
+      - bold
+      - underline
+    selectedRangeBgColor:
+      - bold
+      - underline
+git:
+  log:
+    order: "date-order"
+  autoFetch: false
+  autoRefresh: false
+  branchLogCmd: "git log --color=always --abbrev-commit --decorate --pretty=medium {{branchName}} --"
+  allBranchesLogCmd: "git log --all --color=always --abbrev-commit --decorate --pretty=medium"

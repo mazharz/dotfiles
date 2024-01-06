@@ -97,6 +97,10 @@ lspconfig.jsonls.setup {
   capabilities = capabilities,
   on_attach = on_attach,
 }
+lspconfig.yamlls.setup {
+  capabilities = capabilities,
+  on_attach = on_attach,
+}
 lspconfig.cssmodules_ls.setup {
   capabilities = capabilities,
   on_attach = on_attach,
