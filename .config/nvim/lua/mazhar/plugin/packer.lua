@@ -98,6 +98,9 @@ return packer.startup(function(use)
     run = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out"
   }
 
+  -- tabnine
+  use { 'codota/tabnine-nvim', run = "./dl_binaries.sh" }
+
   -- Automatically set up configuration after cloning packer.nvim
   if PACKER_BOOTSTRAP then
     require("packer").sync()

@@ -13,8 +13,6 @@ if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
     tmux new-session -s $selected_name -c $project_dir\; \
         send-keys -t 1 "nvim" Enter \; \
         neww -n shell \; \
-        neww -n git \; \
-        send-keys -t 3 "lazygit" Enter \; \
         selectw -t 1
     exit 0
 fi
@@ -26,6 +24,4 @@ fi
 tmux switch-client -t $selected_name \; \
     send-keys -t 1 "nvim" Enter \; \
     neww -n shell -c $project_dir \; \
-    neww -n git -c $project_dir \; \
-    send-keys -t 3 "lazygit" Enter \; \
     selectw -t 1
