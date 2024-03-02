@@ -34,3 +34,4 @@ bin/ghcup
 .config/nvim/spell
 .config/zsh/vars_secret.zsh
 .config/lazygit/state.yml
+**/__pycache__/*

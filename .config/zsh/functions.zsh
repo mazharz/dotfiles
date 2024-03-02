@@ -30,21 +30,6 @@ b () {
   done
 }
 
-# lock private stuff
-_DIRS_TO_LOCK="$HOME/mzd/text/Dropbox/markdowns/private;$HOME/mzd/multimedia/private"
-lock_private() {
-  directories=(${(@s:;:)_DIRS_TO_LOCK})
-  for dir in ${directories}; do
-    sudo chmod 000 "$dir"
-  done
-}
-unlock_private() {
-  directories=(${(@s:;:)_DIRS_TO_LOCK})
-  for dir in ${directories}; do
-    sudo chmod 755 "$dir"
-  done
-}
-
 # fzf
 # find mang pages
 function fman() {

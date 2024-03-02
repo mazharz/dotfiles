@@ -1,0 +1,9 @@
+#!/bin/bash
+
+status=$(dunstctl is-paused)
+
+if [ "$status" == "true" ]; then
+  "$HOME/.config/i3/i3blocks-scripts/color-print" 2 "⦻ " 1 1 1
+else
+  "$HOME/.config/i3/i3blocks-scripts/color-print" 1 "⦽ " 2 2 2
+fi

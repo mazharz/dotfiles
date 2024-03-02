@@ -92,6 +92,23 @@ lspconfig.html.setup {
 lspconfig.cssls.setup {
   capabilities = capabilities,
   on_attach = on_attach,
+  settings = {
+    css = { validate = true,
+      lint = {
+        unknownAtRules = "ignore"
+      }
+    },
+    scss = { validate = true,
+      lint = {
+        unknownAtRules = "ignore"
+      }
+    },
+    less = { validate = true,
+      lint = {
+        unknownAtRules = "ignore"
+      }
+    },
+  },
 }
 lspconfig.jsonls.setup {
   capabilities = capabilities,
@@ -125,10 +142,6 @@ lspconfig.gopls.setup {
   capabilities = capabilities,
   on_attach = on_attach,
 }
-lspconfig.hls.setup {
-  capabilities = capabilities,
-  on_attach = on_attach,
-}
 lspconfig.volar.setup {
   capabilities = capabilities,
   on_attach = on_attach,
@@ -140,4 +153,8 @@ lspconfig.typst_lsp.setup {
   settings = {
     exportPdf = "onSave" -- Choose onType, onSave or never.
   }
+}
+lspconfig.pyright.setup {
+  capabilities = capabilities,
+  on_attach = on_attach,
 }
