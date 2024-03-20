@@ -4,8 +4,6 @@
 [user]
   name = Mazhar Zandsalimi
   email = m47h4r@gmail.com
-[merge]
-  conflictstyle = diff3
 
 [includeIf "gitdir:~/mzd/code/gwat/"]
   path = gwat

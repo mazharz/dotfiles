@@ -29,6 +29,3 @@ export DIR_SHORTCUTS="w:$HOME/mzd/wd;n:$HOME/mzd/multimedia/not watched;m:$HOME/
 # cargo
 source "$HOME/.cargo/env"
 
-# ghcup
-[ -f "/home/m47h4r/.ghcup/env" ] && source "/home/m47h4r/.ghcup/env" # ghcup-env
-

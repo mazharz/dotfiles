@@ -118,6 +118,7 @@ for_window [class="Altair GraphQL Client"] mark a
 for_window [class="Rhythmbox"]             mark m
 for_window [class="Clash for Windows"]     mark V
 for_window [title="fitimer"]               mark T
+for_window [class="DBeaver"]               mark D
 
 ################################################################################
 # Auto assignments

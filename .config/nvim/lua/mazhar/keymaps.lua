@@ -32,6 +32,11 @@ keymap('n', '<leader>q', ':q<CR>', opts)
 -- use register for pasting yanked
 keymap('x', '<leader>p', "\"_dP")
 
+-- make new stuff
+keymap('n', '<leader>nt', ':tabnew<CR>', opts)
+keymap('n', '<leader>nv', ':vsplit<CR>', opts)
+keymap('n', '<leader>nh', ':split<CR>', opts)
+
 -- easier tab cycling
 keymap('n', '<A-r>', ':tabnext<CR>', opts)
 keymap('n', '<A-e>', ':tabprevious<CR>', opts)
