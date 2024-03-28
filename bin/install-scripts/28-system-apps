@@ -8,12 +8,6 @@ sleep 1
 sudo pacman -S calibre xournalpp libreoffice-still gedit gnome-font-viewer file-roller zathura zathura-pdf-mupdf
 
 echo '##################################################'
-echo '# Installing Espanso...'
-echo '##################################################'
-sleep 1
-trizen -S espanso
-
-echo '##################################################'
 echo '# Installing dropbox...'
 echo '##################################################'
 sleep 1

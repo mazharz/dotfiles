@@ -16,7 +16,6 @@ source $ZSH/oh-my-zsh.sh
 
 # load my custom stuff
 source $HOME/.config/zsh/vars.zsh
-source $HOME/.config/zsh/vars_secret.zsh
 source $HOME/.config/zsh/aliases.zsh
 source $HOME/.config/zsh/functions.zsh # make sure to place after vars, (b() uses one)
 source $HOME/.config/zsh/git.zsh

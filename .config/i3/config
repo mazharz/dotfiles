@@ -108,25 +108,23 @@ bindsym $mod+m exec i3-input -f "pango:FiraCode Nerd Font 12" \
   -l 1 \
   -P 'Goto: '
 
-# auto mark mostly used windows
-for_window [class="Thunar"]                mark f
-for_window [class="TelegramDesktop"]       mark t
-for_window [class="Google-chrome"]         mark c
-for_window [class="mpv"]                   mark v
-for_window [class="Postman"]               mark p
-for_window [class="Altair GraphQL Client"] mark a
-for_window [class="Rhythmbox"]             mark m
-for_window [class="Clash for Windows"]     mark V
-for_window [title="fitimer"]               mark T
-for_window [class="DBeaver"]               mark D
-
 ################################################################################
 # Auto assignments
 ################################################################################
-for_window [class="Pavucontrol"]      floating enable
-for_window [class="mpv"]              floating enable
-for_window [class="gnome-calculator"] floating enable
-for_window [class="Thunar"]           floating enable
+for_window [class="(?i)thunar"]                                            mark f, floating enable
+# make sure media viewer window doesn't hijack the telegram window mark
+for_window [class="(?i)telegramdesktop" title="^(?i)(?!media viewer).*"]   mark t
+for_window [class="(?i)telegramdesktop" title="^(?i)media viewer.*"]       floating enable
+for_window [class="(?i)google-chrome"]                                     mark c
+for_window [class="(?i)mpv"]                                               mark v, floating enable
+for_window [class="(?i)postman"]                                           mark p
+for_window [class="(?i)altair graphqL client"]                             mark a
+for_window [class="(?i)rhythmbox"]                                         mark m
+for_window [class="(?i)clash for windows"]                                 mark V
+for_window [title="(?i)fitimer"]                                           mark T
+for_window [class="(?i)dbeaver"]                                           mark D
+for_window [class="(?i)pavucontrol"]                                       floating enable
+for_window [class="(?i)gnome-calculator"]                                  floating enable
 
 ################################################################################
 # Workspaces
@@ -204,7 +202,7 @@ bar {
   tray_output primary
   tray_padding 2
   font pango:FiraCode Nerd Font 12
-  separator_symbol " │ "
+  separator_symbol "│"
   
   colors {
     background #282828
@@ -244,6 +242,11 @@ bindsym $mod+shift+n exec ~/bin/monitor mono
 
 bindsym $mod+Mod1+shift+h exec ~/bin/huion-buttons
 
+# Macros
+bindsym $mod+o exec i3-input -f "pango:FiraCode Nerd Font 12" \
+  -F 'exec macro %s' \
+  -P 'Macro: '
+
 mode "keyboard-layout" {
   bindsym e exec ~/bin/kb_layout en; exec pkill -SIGRTMIN+11 i3blocks; mode "default"
   bindsym d exec ~/bin/kb_layout de; exec pkill -SIGRTMIN+11 i3blocks; mode "default"
@@ -272,6 +275,8 @@ bindsym $mod+Mod1+t      exec telegram-desktop
 bindsym $mod+Mod1+m      exec rhythmbox
 bindsym $mod+Ctrl+c      exec ~/bin/clocks
 bindsym $mod+Mod1+Return exec alacritty -e ranger
+bindsym $mod+Mod1+d      exec dbeaver
+bindsym $mod+Mod1+Shift+c exec gnome-calculator
 
 bindsym $mod+Ctrl+space       exec dunstctl close
 bindsym $mod+Ctrl+Shift+space exec dunstctl history-pop
@@ -294,5 +299,4 @@ exec blueman-applet &
 exec copyq &
 exec picom &
 exec redshift-gtk &
-exec espanso start --unmanaged &
 exec dropbox &
