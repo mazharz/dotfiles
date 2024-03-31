@@ -222,8 +222,8 @@ bar {
 ################################################################################
 # Key bindings
 ################################################################################
-bindsym $mod+x      exec maim | tee /home/m47h4r/Pictures/$(date +%s).png | xclip -selection clipboard -t image/png
-bindsym $mod+ctrl+x exec maim -s | tee /home/m47h4r/Pictures/$(date +%s).png | xclip -selection clipboard -t image/png
+bindsym $mod+x      exec flameshot screen --clipboard
+bindsym $mod+ctrl+x exec flameshot gui
 
 bindsym $mod+Mod1+z exec slop -r boxzoom
 

@@ -1,15 +1,17 @@
 #!/bin/bash
 
-song=`playerctl --player=rhythmbox metadata | grep title | awk '{for(i=3;i<=NF;++i)printf $i""FS ; print ""}'`
+# NOTE: xargs trims the leading/trailing white-spaces
+artist=$(playerctl --player=rhythmbox metadata | grep artist | awk '{for(i=3;i<=NF;++i)printf $i""FS ; print ""}' | xargs)
+song=$(playerctl --player=rhythmbox metadata | grep title | awk '{for(i=3;i<=NF;++i)printf $i""FS ; print ""}' | xargs)
 
 function urldecode() { local i="${*//+/ }"; echo -e "${i//%/\\x}"; }
 
 output=''
 
 if [ "${#song}" -gt 0 ]; then
-  output=$song
+  output="$artist - $song"
 fi
 
 urldecodedOutput=$(urldecode "$output")
-echo $urldecodedOutput
+echo "$urldecodedOutput"
 

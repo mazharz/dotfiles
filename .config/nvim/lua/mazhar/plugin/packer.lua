@@ -89,7 +89,7 @@ return packer.startup(function(use)
 
   -- debugger
   use 'mfussenegger/nvim-dap'
-  use 'rcarriga/nvim-dap-ui'
+  use { 'rcarriga/nvim-dap-ui', requires = 'nvim-neotest/nvim-nio' }
   use 'mxsdev/nvim-dap-vscode-js'
   -- TODO: use mason and get rid of this vvv?
   use {
