@@ -1,19 +1,18 @@
 #!/bin/bash
+set -e
 
-echo '##################################################'
 echo '# Installing global npm packages...'
-echo '##################################################'
 sleep 1
 
 echo '# Installing eslint'
-$HOME/.volta/bin/npm i -g eslint
+"$HOME/.volta/bin/npm" i -g eslint
 echo '# Installing sass'
-$HOME/.volta/bin/npm i -g sass
+"$HOME/.volta/bin/npm" i -g sass
 echo '# Installing prettier'
-$HOME/.volta/bin/npm i -g prettier
+"$HOME/.volta/bin/npm" i -g prettier
 echo '# Installing typescript'
-$HOME/.volta/bin/npm i -g typescript
+"$HOME/.volta/bin/npm" i -g typescript
 echo '# Installing yarn'
-$HOME/.volta/bin/npm i -g yarn
+"$HOME/.volta/bin/npm" i -g yarn
 echo '# Installing vercel'
-$HOME/.volta/bin/npm i -g vercel
+"$HOME/.volta/bin/npm" i -g vercel

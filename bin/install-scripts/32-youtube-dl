@@ -1,8 +1,6 @@
 #!/bin/bash
+set -e
 
-# Install yt-dlp
-echo '##################################################'
 echo '# Installing yt-dlp...'
-echo '##################################################'
 sleep 1
 sudo pacman -S yt-dlp

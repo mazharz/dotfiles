@@ -1,10 +1,9 @@
 #!/bin/bash
 # Run with root
+set -e
 
 # disable power saving for audio devices
-echo '##################################################'
 echo '# Copying audio powersaving file...'
-echo '##################################################'
 sleep 1
 audio_source="./files/power/audio"
 audio_destination="/etc/modprobe.d/audio_powersave.conf"

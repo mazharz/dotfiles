@@ -277,6 +277,7 @@ bindsym $mod+Ctrl+c      exec ~/bin/clocks
 bindsym $mod+Mod1+Return exec alacritty -e ranger
 bindsym $mod+Mod1+d      exec dbeaver
 bindsym $mod+Mod1+Shift+c exec gnome-calculator
+bindsym $mod+Mod1+v      exec cfw
 
 bindsym $mod+Ctrl+space       exec dunstctl close
 bindsym $mod+Ctrl+Shift+space exec dunstctl history-pop

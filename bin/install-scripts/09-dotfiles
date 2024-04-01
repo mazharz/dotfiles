@@ -1,11 +1,9 @@
 #!/bin/bash
+set -e
 
-# Populate dotfiles
-echo '##################################################'
 echo '# Populating dotfiles...'
-echo '##################################################'
 sleep 1
-git clone git@github.com:m47h4r/dotfiles.git $HOME/.dotfiles
+git clone git@github.com:m47h4r/dotfiles.git "$HOME/.dotfiles"
 cd ~/.dotfiles/
 stow .
-cd $HOME
+cd "$HOME"

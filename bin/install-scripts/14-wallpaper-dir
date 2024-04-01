@@ -1,8 +1,6 @@
 #!/bin/bash
+set -e
 
-# Create ~/Pictures/Wallpaper dir
-echo '##################################################'
 echo '# Creating ~/Pictures/Wallpaper dir...'
-echo '##################################################'
 sleep 1
-mkdir -p $HOME/Pictures/Wallpaper
+mkdir -p "$HOME/Pictures/Wallpaper"

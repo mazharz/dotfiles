@@ -1,9 +1,7 @@
 #!/bin/bash
+set -e
 
-# Install altair
-echo '##################################################'
 echo '# Installing altair...'
-echo '##################################################'
 sleep 1
 trizen -S --noconfirm altair
 

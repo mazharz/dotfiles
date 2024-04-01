@@ -1,17 +1,11 @@
 #!/bin/bash
+set -e
 
-echo '##################################################'
 echo '# Installing zsh...'
-echo '##################################################'
 sudo pacman -S zsh zsh-completions
 
-echo '##################################################'
 echo '# Installing oh-my-zsh...'
-echo '##################################################'
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-
-echo '##################################################'
 echo '# Changing shell to zsh...'
-echo '##################################################'
 sudo chsh --shell /usr/bin/zsh m47h4r

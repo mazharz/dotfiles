@@ -1,9 +1,7 @@
 #!/bin/bash
+set -e
 
-# Install fonts
-echo '##################################################'
 echo '# Installing fonts...'
-echo '##################################################'
 sleep 1
 sudo pacman -S noto-fonts noto-fonts-emoji ttf-firacode-nerd
 trizen -S --noconfirm vazirmatn-fonts

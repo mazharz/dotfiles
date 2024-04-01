@@ -1,9 +1,7 @@
 #!/bin/bash
+set -e
 
-# Install node
-echo '##################################################'
 echo '# Installing node...'
-echo '##################################################'
 sleep 1
-$HOME/.volta/bin/volta install node
+"$HOME/.volta/bin/volta" install node
 

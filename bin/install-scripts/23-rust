@@ -1,8 +1,6 @@
 #!/bin/bash
+set -e
 
-# Install rustup
-echo '##################################################'
 echo '# Installing rustup'
-echo '##################################################'
 sleep 1
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh

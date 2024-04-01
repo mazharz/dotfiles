@@ -1,9 +1,7 @@
 #!/bin/bash
+set -e
 
-# Install packages
-echo '##################################################'
-echo '# Installing packages...'
-echo '##################################################'
+echo '# Installing pde packages...'
 sleep 1
 # unzip is required by neovim plugins
 sudo pacman -S fzf tmux neovim ripgrep dbeaver sqlitebrowser filezilla docker docker-compose unzip xclip lazygit typst shellcheck

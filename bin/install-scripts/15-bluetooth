@@ -1,8 +1,6 @@
 #!/bin/bash
+set -e
 
-# Enable & start bluetooth service
-echo '##################################################'
 echo '# Enabling & starting bluetooth service...'
-echo '##################################################'
 sleep 1
 sudo systemctl enable --now bluetooth.service

@@ -1,15 +1,11 @@
 #!/bin/bash
+set -e
 
-# Install system apps
-echo '##################################################'
 echo '# Installing system apps...'
-echo '##################################################'
 sleep 1
 sudo pacman -S calibre xournalpp libreoffice-still gedit gnome-font-viewer file-roller zathura zathura-pdf-mupdf
 
-echo '##################################################'
 echo '# Installing dropbox...'
-echo '##################################################'
 sleep 1
 gpg --recv-keys 1C61A2656FB57B7E4DE0F4C1FC918B335044912E
 trizen -S dropbox

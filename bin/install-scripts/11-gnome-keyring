@@ -1,8 +1,11 @@
 #!/bin/bash
+set -e
 
-# Append necessary configuration to gnome keyring
-echo '##################################################'
 echo '# Appending necessary configuration to gnome keyring...'
-echo '##################################################'
 sleep 1
-echo -e "\nauth optional pam_gnome_keyring.so\nsession optional pam_gnome_keyring.so auto_start\n" | sudo tee -a /etc/pam.d/login
+cat <<EOF | sudo tee -a /etc/pam.d/login
+
+auth optional pam_gnome_keyring.so
+session optional pam_gnome_keyring.so auto_start
+
+EOF

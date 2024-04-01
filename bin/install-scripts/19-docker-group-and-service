@@ -1,15 +1,10 @@
 #!/bin/bash
+set -e
 
-# Add m47h4r to docker group
-echo '##################################################'
 echo '# Adding m47h4r to docker group...'
-echo '##################################################'
 sleep 1
 sudo gpasswd -a m47h4r docker
 
-# Enable & start docker.service
-echo '##################################################'
 echo '# Enabling & starting docker.service...'
-echo '##################################################'
 sleep 1
 sudo systemctl enable --now docker.service

@@ -1,15 +1,12 @@
 #!/bin/bash
 # Run with root
+set -e
 
-# copy sudoers file for m47h4r user
-echo '##################################################'
 echo '# Installing sudo...'
-echo '##################################################'
 sleep 1
 pacman -S sudo
-echo '##################################################'
+
 echo '# Copying sudoers file...'
-echo '##################################################'
 sleep 1
 sudo_source="./files/sudo/m47h4r"
 sudo_destination="/etc/sudoers.d/m47h4r"

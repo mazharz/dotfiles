@@ -1,8 +1,7 @@
 #!/bin/bash
+set -e
 
-echo '##################################################'
 echo '# Installing volta...'
-echo '##################################################'
 sleep 1
 curl https://get.volta.sh | bash
 

@@ -1,8 +1,6 @@
 #!/bin/bash
+set -e
 
-# Install multimedia apps
-echo '##################################################'
 echo '# Installing multimedia apps...'
-echo '##################################################'
 sleep 1
 sudo pacman -S vlc mpv simplescreenrecorder audacity kid3 handbrake mkvtoolnix-gui ffmpegthumbnailer eog gimp rhythmbox inkscape spotify-launcher
