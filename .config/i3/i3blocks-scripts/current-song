@@ -1,7 +1,6 @@
 #!/bin/bash
 
-# NOTE: xargs trims the leading/trailing white-spaces
-song=$(playerctl --player=rhythmbox metadata | grep title | awk '{for(i=3;i<=NF;++i)printf $i""FS ; print ""}' | xargs)
+song=$(playerctl --player=rhythmbox metadata | grep title | awk '{for(i=3;i<=NF;++i)printf $i""FS ; print ""}')
 
 function urldecode() { local i="${*//+/ }"; echo -e "${i//%/\\x}"; }
 

@@ -247,18 +247,7 @@ bindsym $mod+o exec i3-input -f "pango:FiraCode Nerd Font 12" \
   -F 'exec macro %s' \
   -P 'Macro: '
 
-mode "keyboard-layout" {
-  bindsym e exec ~/bin/kb_layout en; exec pkill -SIGRTMIN+11 i3blocks; mode "default"
-  bindsym d exec ~/bin/kb_layout de; exec pkill -SIGRTMIN+11 i3blocks; mode "default"
-  bindsym p exec ~/bin/kb_layout pe; exec pkill -SIGRTMIN+11 i3blocks; mode "default"
-  bindsym k exec ~/bin/kb_layout ku; exec pkill -SIGRTMIN+11 i3blocks; mode "default"
-
-  bindsym Tab exec ~/bin/kb_layout en; exec pkill -SIGRTMIN+11 i3blocks; mode "default"
-  bindsym Return exec ~/bin/kb_layout en; exec pkill -SIGRTMIN+11 i3blocks; mode "default"
-  bindsym Escape exec ~/bin/kb_layout en; exec pkill -SIGRTMIN+11 i3blocks; mode "default"
-}
-bindsym $mod+Tab mode "keyboard-layout"
-
+bindsym $mod+i exec ~/bin/kb_layout; exec pkill -SIGRTMIN+11 i3blocks
 bindsym $mod+semicolon exec ~/bin/lock
 
 bindsym $mod+Mod1+period       exec playerctl --player=rhythmbox next; exec pkill -SIGRTMIN+11 i3blocks

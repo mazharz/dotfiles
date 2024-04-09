@@ -1,15 +1,7 @@
 #!/bin/bash
 # NOTE: see /usr/share/X11/xkb/rules/base.lst for layouts and variants
 
-if [ "$1" == "de" ];then
-  setxkbmap -layout de;
-elif [ "$1" == "pe" ];then
-  setxkbmap -layout ir;
-elif [ "$1" == "ku" ];then
-  setxkbmap -layout ir -variant ku_ara;
-else
-  setxkbmap -layout us;
-fi
+setxkbmap -layout "us,ir,ir" -variant ",,ku_ara" -option grp:alt_caps_toggle;
 
 # set capslock to escape
 setxkbmap -option caps:escape
