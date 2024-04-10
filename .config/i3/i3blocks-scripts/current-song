@@ -1,15 +1,3 @@
 #!/bin/bash
 
-song=$(playerctl --player=rhythmbox metadata | grep title | awk '{for(i=3;i<=NF;++i)printf $i""FS ; print ""}')
-
-function urldecode() { local i="${*//+/ }"; echo -e "${i//%/\\x}"; }
-
-output=''
-
-if [ "${#song}" -gt 0 ]; then
-  output="$song"
-fi
-
-urldecodedOutput=$(urldecode "$output")
-echo "$urldecodedOutput"
-
+mpc current

@@ -35,3 +35,4 @@ bin/ghcup
 .config/zsh/vars_secret.zsh
 .config/lazygit/state.yml
 **/__pycache__/*
+.config/ncmpcpp/error.log

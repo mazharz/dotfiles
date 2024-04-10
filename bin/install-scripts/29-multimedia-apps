@@ -3,4 +3,13 @@ set -e
 
 echo '# Installing multimedia apps...'
 sleep 1
-sudo pacman -S vlc mpv simplescreenrecorder audacity kid3 handbrake mkvtoolnix-gui ffmpegthumbnailer eog gimp rhythmbox inkscape spotify-launcher
+sudo pacman -S vlc mpv simplescreenrecorder audacity kid3 handbrake mkvtoolnix-gui ffmpegthumbnailer eog gimp inkscape spotify-launcher
+
+echo '# Installing mpd...'
+sleep 1
+sudo pacman -S mpd mpc ncmpcpp
+echo '# Enable & Start mpd user service...'
+systemctl enable --user --now mpd
+echo "# Create directories for mpd's necessary files..."
+mkdir "$HOME/.mpd"
+mkdir "$HOME/.mpd/playlists"

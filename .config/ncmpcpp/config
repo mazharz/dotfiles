@@ -1,0 +1,39 @@
+##### connection settings #####
+# Needed for tag editor and file operations to work.
+mpd_music_dir = ~/mzd/music
+
+##### song format #####
+song_list_format = {%a - }{%t}|{%f}
+song_library_format = {%n - }{%t}|{%f}
+current_item_prefix = $(yellow)$r
+current_item_suffix = $/r$(end)
+current_item_inactive_column_prefix = $(white)$r
+current_item_inactive_column_suffix = $/r$(end)
+now_playing_prefix = $(yellow)$b
+now_playing_suffix = $/b$(end)
+
+##### various settings #####
+playlist_display_mode = classic
+browser_display_mode = classic
+search_engine_display_mode = classic
+playlist_editor_display_mode = classic
+autocenter_mode = yes
+centered_cursor = yes
+progressbar_look = "—➤ "
+user_interface = classic
+header_visibility = no
+statusbar_visibility = no
+connected_message_on_startup = yes
+titles_visibility = yes
+allow_for_physical_item_deletion = yes
+jump_to_now_playing_song_at_start = yes
+ask_before_clearing_playlists = yes
+lines_scrolled = 3
+# keep below set to no so window title isn't modified by ncmpcpp
+# so a tag can be made for the window reliably in i3
+enable_window_title = no
+
+##### colors definitions #####
+colors_enabled = yes
+main_window_color = default
+progressbar_elapsed_color = green
