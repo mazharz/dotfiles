@@ -3,7 +3,7 @@ set -e
 
 echo '# Installing multimedia apps...'
 sleep 1
-sudo pacman -S vlc mpv simplescreenrecorder audacity kid3 handbrake mkvtoolnix-gui ffmpegthumbnailer eog gimp inkscape spotify-launcher
+sudo pacman -S vlc mpv simplescreenrecorder audacity kid3 handbrake mkvtoolnix-gui ffmpegthumbnailer eog gimp inkscape
 
 echo '# Installing mpd...'
 sleep 1
