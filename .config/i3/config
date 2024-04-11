@@ -33,7 +33,7 @@ bindsym $mod+e exec --no-startup-id alacritty \
 for_window [class="emoji-menu"] floating enable
 
 
-new_window pixel 2
+new_window pixel 0
 # new_window normal 2
 
 # new windows should be opened in tab mode
@@ -41,7 +41,8 @@ workspace_layout tabbed
 
 hide_edge_borders smart
 
-gaps inner 0
+gaps inner 20
+smart_gaps on
 
 ################################################################################
 # Focus and moving
