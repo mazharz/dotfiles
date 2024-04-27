@@ -41,8 +41,8 @@ workspace_layout tabbed
 
 hide_edge_borders smart
 
-gaps inner 20
-smart_gaps on
+gaps inner 0
+# smart_gaps on
 
 ################################################################################
 # Focus and moving

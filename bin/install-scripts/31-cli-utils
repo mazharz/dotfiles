@@ -3,11 +3,7 @@ set -e
 
 echo '# Installing cli utils...'
 sleep 1
-sudo pacman -S lm_sensors sysstat htop unrar unzip tree rsync imagemagick python-pip reflector ranger tldr
-
-echo '# Installing hledger...'
-sleep 1
-sudo pacman -S hledger hledger-iadd hledger-ui hledger-web
+sudo pacman -S lm_sensors sysstat htop unrar unzip tree rsync imagemagick python-pip reflector ranger tldr ledger
 
 echo '# Installing net tools...'
 sleep 1
