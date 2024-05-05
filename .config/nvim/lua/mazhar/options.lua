@@ -49,7 +49,7 @@ local options = {
   pastetoggle = "<F9>",
   -- customize spaces and tabs
   list = true,
-  listchars = "tab:> ",
+  listchars = "tab:  ",
   -- find next match as typing for search
   incsearch = true,
   -- auto indent

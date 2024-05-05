@@ -14,12 +14,14 @@ require('telescope').setup {
       n = {
         ["<M-p>"] = layout.toggle_preview,
         ["<C-h>"] = actions.file_split,
+        ["dd"] = actions.delete_buffer,
       },
       i = {
         ["<M-p>"] = layout.toggle_preview,
         ["<C-h>"] = actions.file_split,
         ["<C-k>"] = actions.move_selection_previous,
         ["<C-j>"] = actions.move_selection_next,
+        ["<Del>"] = actions.delete_buffer,
       }
     },
     file_ignore_patterns = {
