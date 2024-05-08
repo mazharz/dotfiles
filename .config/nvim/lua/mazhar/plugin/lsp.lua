@@ -142,6 +142,10 @@ lspconfig.gopls.setup {
   capabilities = capabilities,
   on_attach = on_attach,
 }
+lspconfig.golangci_lint_ls.setup {
+  capabilities = capabilities,
+  on_attach = on_attach,
+}
 lspconfig.volar.setup {
   capabilities = capabilities,
   on_attach = on_attach,

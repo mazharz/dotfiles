@@ -29,3 +29,7 @@ export DIR_SHORTCUTS="w:$HOME/mzd/wd;n:$HOME/mzd/multimedia/not watched;m:$HOME/
 # cargo
 source "$HOME/.cargo/env"
 
+# go
+export GOPATH="$HOME/go"
+export GOBIN="$GOPATH/bin"
+export PATH=$PATH:$GOBIN
