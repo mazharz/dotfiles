@@ -28,8 +28,8 @@ return packer.startup(function(use)
   -- colorscheme
   use 'sainnhe/gruvbox-material'
 
-  -- file-tree explorer
-  use 'kyazdani42/nvim-tree.lua'
+  -- file explorer
+  use 'stevearc/oil.nvim'
 
   -- Telescope
   use 'nvim-lua/plenary.nvim'

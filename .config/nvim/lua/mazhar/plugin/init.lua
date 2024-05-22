@@ -1,7 +1,7 @@
 require('mazhar.plugin.packer')
 require('mazhar.plugin.lualine')
 require('mazhar.plugin.nvim-treesitter')
-require('mazhar.plugin.nvim-tree')
+require('mazhar.plugin.oil')
 require('mazhar.plugin.telescope')
 require('mazhar.plugin.neodev') -- make sure to keep before lsp
 require('mazhar.plugin.lsp')
