@@ -25,3 +25,10 @@ cmp.setup({
   -- disable auto selecting suggestions
   preselect = cmp.PreselectMode.None
 })
+
+cmp.setup.filetype({ "sql" }, {
+  sources = {
+    { name = "vim-dadbod-completion" },
+    { name = "buffer" },
+  }
+})

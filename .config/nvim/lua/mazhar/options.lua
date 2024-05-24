@@ -43,10 +43,6 @@ local options = {
   relativenumber = true,
   -- is one of my favorite
   scrolloff = 3,
-  -- highlight column 80
-  -- colorcolumn = "80",
-  -- paste mode
-  pastetoggle = "<F9>",
   -- customize spaces and tabs
   list = true,
   listchars = "tab:  ",

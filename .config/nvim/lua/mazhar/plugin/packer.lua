@@ -91,12 +91,16 @@ return packer.startup(function(use)
   use 'mfussenegger/nvim-dap'
   use { 'rcarriga/nvim-dap-ui', requires = 'nvim-neotest/nvim-nio' }
   use 'mxsdev/nvim-dap-vscode-js'
-  -- TODO: use mason and get rid of this vvv?
   use {
     "microsoft/vscode-js-debug",
     opt = true,
     run = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out"
   }
+
+  -- db client
+  use 'tpope/vim-dadbod'
+  use 'kristijanhusak/vim-dadbod-ui'
+  use 'kristijanhusak/vim-dadbod-completion'
 
   -- Automatically set up configuration after cloning packer.nvim
   if PACKER_BOOTSTRAP then

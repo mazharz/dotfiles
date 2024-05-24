@@ -16,6 +16,10 @@ vim.keymap.set('n', "<leader>dl", function()
   dap.list_breakpoints()
   vim.cmd('copen')
 end)
+-- evaluate symbol under cursor and show its value in floating window
+vim.keymap.set('n', "<leader>dk", function()
+  dapui.eval(nil, { enter = true })
+end)
 
 -- Set up icons.
 local icons = {
