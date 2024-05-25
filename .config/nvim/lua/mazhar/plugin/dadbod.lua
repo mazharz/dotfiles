@@ -1,7 +1,7 @@
 local keymap = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
-keymap('n', '<leader>S', ':DBUI<CR>', opts)
+keymap('n', '<leader>Q', ':DBUIToggle<CR>', opts)
 
 vim.cmd [[
   " use neovim's notify api instead of the default horrible notification mechanism

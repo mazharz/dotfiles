@@ -13,15 +13,14 @@ cmp.setup({
     ['<C-u>'] = cmp.mapping.scroll_docs(-4),
     ['<C-d>'] = cmp.mapping.scroll_docs(4),
     ['<C-Space>'] = cmp.mapping.complete(),
-    ['<CR>'] = cmp.mapping.confirm({ select = false }),
+    ['<C-y>'] = cmp.mapping.confirm({ select = true }),
   }),
-  sources = cmp.config.sources({
+  sources = {
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
-    { name = 'path' }
-  }, { -- this second table arg won't be included if the first exits
-    { name = 'buffer' },
-  }),
+    { name = 'path' },
+    { name = 'buffer' }
+  },
   -- disable auto selecting suggestions
   preselect = cmp.PreselectMode.None
 })

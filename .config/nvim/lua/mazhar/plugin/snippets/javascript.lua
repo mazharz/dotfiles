@@ -69,7 +69,7 @@ local snippets = {
 
     export { [] }
     ]],
-    { i(1, "func"), i(3), i(4), i(2, "func") },
+    { i(1, "func"), i(3), i(0), i(2, "func") },
     { delimiters = "[]" }
   )),
 
@@ -78,7 +78,7 @@ local snippets = {
       []
     }
     ]],
-    { i(1, "func"), i(2, "arg"), i(3) },
+    { i(1, "func"), i(2, "arg"), i(0) },
     { delimiters = "[]" }
   )),
 
@@ -96,7 +96,7 @@ local snippets = {
       console.log([]);
     }
     ]],
-    { i(2), i(1, "error") },
+    { i(0), i(1, "error") },
     { delimiters = "[]" }
   )),
 
@@ -105,7 +105,7 @@ local snippets = {
       []
     }, [])
     ]],
-    { i(2), i(1, "1000") },
+    { i(0), i(1, "1000") },
     { delimiters = "[]" }
   )),
 
@@ -114,7 +114,7 @@ local snippets = {
       []
     }, [])
     ]],
-    { i(2), i(1, "1000") },
+    { i(0), i(1, "1000") },
     { delimiters = "[]" }
   ))
 }
