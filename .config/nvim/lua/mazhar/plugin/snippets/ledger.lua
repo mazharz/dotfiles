@@ -61,6 +61,17 @@ local snippets = {
       i(2, "<description>"),
       i(3),
     })),
+  s("ap", fmt([[
+    {} {}
+        assets:checking            IRR {}
+        revenues:profit
+
+    ]],
+    {
+      i(1, getToday()),
+      i(2, "<description>"),
+      i(3),
+    })),
 }
 
 ls.add_snippets("ledger", snippets);

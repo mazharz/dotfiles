@@ -37,6 +37,8 @@ keymap('n', '<leader>nt', ':tabnew<CR>', opts)
 keymap('n', '<leader>nv', ':vsplit<CR>', opts)
 keymap('n', '<leader>nh', ':split<CR>', opts)
 
+keymap('n', '<leader>o', ':only<CR>', opts)
+
 -- easier tab cycling
 keymap('n', '<A-r>', ':tabnext<CR>', opts)
 keymap('n', '<A-e>', ':tabprevious<CR>', opts)
@@ -97,4 +99,4 @@ keymap('i', '<A-_>', '<C-w>=<C-w>|', opts)
 -- macro keymaps
 -------------------------------------------------------------------------------
 
-keymap('n', '<leader>oc', '?><CR>i className=""<ESC>:nohl<CR>i', opts)
+keymap('n', '<leader>mc', '?><CR>i className=""<ESC>:nohl<CR>i', opts)
