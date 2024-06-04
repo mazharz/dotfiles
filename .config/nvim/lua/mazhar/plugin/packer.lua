@@ -51,7 +51,6 @@ return packer.startup(function(use)
   use 'saadparwaiz1/cmp_luasnip'
   -- project specific settings
   use 'folke/neoconf.nvim'
-  use 'folke/neodev.nvim'
 
   -- lualine
   use 'nvim-lualine/lualine.nvim'
@@ -72,7 +71,15 @@ return packer.startup(function(use)
   use 'tpope/vim-surround'
   use 'tpope/vim-repeat'
   use 'tpope/vim-sleuth'
-  use 'jiangmiao/auto-pairs'
+  -- use 'jiangmiao/auto-pairs'
+  use {
+    'altermo/ultimate-autopair.nvim',
+    event = { 'InsertEnter', 'CmdlineEnter' },
+    branch = 'v0.6', --recommended as each new version will have breaking changes
+    config = function()
+      require('ultimate-autopair').setup()
+    end,
+  }
 
   -- task runner
   use 'tpope/vim-dispatch'
