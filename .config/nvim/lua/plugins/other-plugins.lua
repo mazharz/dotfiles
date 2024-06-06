@@ -14,5 +14,8 @@ return {
   },
 
   -- task runner
-  'tpope/vim-dispatch'
+  'tpope/vim-dispatch',
+
+  -- icons
+  'nvim-tree/nvim-web-devicons'
 }
