@@ -88,7 +88,6 @@ return packer.startup(function(use)
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use 'nvim-treesitter/nvim-treesitter-textobjects'
   use 'RRethy/vim-illuminate'
-  use 'nvim-treesitter/playground'
 
   -- typst
   use { 'kaarmu/typst.vim', ft = { 'typst' } }

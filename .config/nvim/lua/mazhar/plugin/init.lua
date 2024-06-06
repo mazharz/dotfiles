@@ -1,5 +1,4 @@
 require('mazhar.plugin.packer')
-require('mazhar.plugin.lualine')
 require('mazhar.plugin.nvim-treesitter')
 require('mazhar.plugin.oil')
 require('mazhar.plugin.telescope')
@@ -17,3 +16,4 @@ require('mazhar.plugin.undotree')
 require('mazhar.plugin.typst')
 require('mazhar.plugin.dap')
 require('mazhar.plugin.dadbod')
+require('mazhar.plugin.statusline') -- keep after setting colorscheme

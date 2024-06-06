@@ -49,6 +49,7 @@ vim.keymap.set('n', '<leader>sb', builtin.buffers)
 vim.keymap.set('n', '<leader>ss', live_grep)
 vim.keymap.set('n', '<leader>sc', builtin.commands)
 vim.keymap.set('n', '<leader>sd', builtin.diagnostics)
+vim.keymap.set('n', '<leader>sm', builtin.marks)
 
 vim.cmd('highlight TelescopeSelection guifg=#b16286 gui=bold')
 vim.cmd('highlight TelescopePromptPrefix guifg=#458588')

@@ -10,9 +10,12 @@ require('lualine').setup {
   },
   sections = {
     lualine_a = { 'mode' },
-    lualine_b = { 'branch', 'diagnostics' },
-    lualine_c = { { 'filename', path = 1 }, 'lsp_progress' },
-    lualine_x = {},
+    lualine_b = { 'branch' },
+    lualine_c = {
+      { 'filename',     path = 1 },
+      { 'lsp_progress', display_components = { 'spinner' } }
+    },
+    lualine_x = { 'diagnostics' },
     lualine_y = {},
     lualine_z = {}
   },
@@ -21,7 +24,7 @@ require('lualine').setup {
       {
         'tabs',
         max_length = vim.o.columns, -- defaults to init terminal length
-        mode = 1
+        mode = 1,
       }
     }
   },
