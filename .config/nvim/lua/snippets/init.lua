@@ -31,11 +31,11 @@ ls.config.set_config {
   updateevents = "TextChanged,TextChangedI"
 }
 
-require('mazhar.plugin.snippets.javascript')
-require('mazhar.plugin.snippets.typescript')
-require('mazhar.plugin.snippets.javascriptreact')
-require('mazhar.plugin.snippets.typescriptreact')
-require('mazhar.plugin.snippets.html')
-require('mazhar.plugin.snippets.markdown')
-require('mazhar.plugin.snippets.gitcommit')
-require('mazhar.plugin.snippets.ledger')
+require('snippets.javascript')
+require('snippets.typescript')
+require('snippets.javascriptreact')
+require('snippets.typescriptreact')
+require('snippets.html')
+require('snippets.markdown')
+require('snippets.gitcommit')
+require('snippets.ledger')
