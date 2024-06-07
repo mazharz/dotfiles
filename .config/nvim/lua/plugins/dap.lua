@@ -3,25 +3,6 @@ local setupDap = function()
   local utils = require("dap.utils")
   local dapui = require("dapui")
 
-  vim.keymap.set('n', '<leader>dc', dap.continue)
-  vim.keymap.set('n', '<leader>do', dap.step_over)
-  vim.keymap.set('n', '<leader>di', dap.step_into)
-  vim.keymap.set('n', '<leader>dO', dap.step_out)
-  vim.keymap.set('n', '<leader>db', dap.toggle_breakpoint)
-  vim.keymap.set('n', '<leader>dB', function()
-    dap.toggle_breakpoint(vim.fn.input('Condition: '))
-  end)
-  vim.keymap.set('n', '<leader>dd', dap.clear_breakpoints)
-  vim.keymap.set('n', '<leader>du', dapui.toggle)
-  vim.keymap.set('n', "<leader>dl", function()
-    dap.list_breakpoints()
-    vim.cmd('copen')
-  end)
-  -- evaluate symbol under cursor and show its value in floating window
-  vim.keymap.set('n', "<leader>dk", function()
-    dapui.eval(nil, { enter = true })
-  end)
-
   -- Set up icons.
   local icons = {
     DapStopped = { ' ', 'DiagnosticWarn', 'DapStoppedLine' },
@@ -96,6 +77,22 @@ return {
       "microsoft/vscode-js-debug",
       build = "npm i && npm run compile vsDebugServerBundle && rm -rf out && mv -f dist out"
     }
+  },
+  keys = {
+    { '<leader>dc', function() require("dap").continue() end },
+    { '<leader>do', function() require("dap").step_over() end },
+    { '<leader>di', function() require("dap").step_into() end },
+    { '<leader>dO', function() require("dap").step_out() end },
+    { '<leader>db', function() require("dap").toggle_breakpoint() end },
+    { '<leader>dB', function() require("dap").toggle_breakpoint(vim.fn.input('Condition: ')) end },
+    { '<leader>dd', function() require("dap").clear_breakpoints() end },
+    { '<leader>du', function() require("dapui").toggle() end },
+    { "<leader>dl", function()
+      require("dap").list_breakpoints()
+      vim.cmd('copen')
+    end },
+    -- evaluate symbol under cursor and show its value in floating window
+    { "<leader>dk", function() require("dapui").eval(nil, { enter = true }) end },
   },
   config = setupDap
 }

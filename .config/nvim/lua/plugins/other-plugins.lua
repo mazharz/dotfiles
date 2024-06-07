@@ -14,7 +14,12 @@ return {
   },
 
   -- task runner
-  'tpope/vim-dispatch',
+  {
+    'tpope/vim-dispatch',
+    keys = {
+      { "<leader>Dt", ":Dispatch tsc --pretty false<CR>" }
+    }
+  },
 
   -- icons
   'nvim-tree/nvim-web-devicons'

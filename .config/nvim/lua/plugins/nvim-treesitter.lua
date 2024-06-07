@@ -12,7 +12,7 @@ local setupTreeSitter = function()
       "gitcommit",
       "gitignore",
       "graphql",
-      -- "help",
+      "vimdoc",
       "html",
       "http",
       "javascript",
@@ -117,5 +117,6 @@ return {
     'nvim-treesitter/nvim-treesitter-textobjects',
   },
   build = ':TSUpdate',
+  event = "VeryLazy",
   config = setupTreeSitter
 }

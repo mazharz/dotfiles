@@ -32,28 +32,6 @@ local setupTelescope = function()
   }
   -- make sure telescope uses fzf plugin
   require('telescope').load_extension('fzf')
-
-  local find_files = function()
-    builtin.find_files({ hidden = true })
-  end
-
-  local live_grep = function()
-    builtin.live_grep({
-      additional_args = {
-        '--hidden',
-      }
-    })
-  end
-
-  vim.keymap.set('n', '<leader>sf', find_files)
-  vim.keymap.set('n', '<leader>sb', builtin.buffers)
-  vim.keymap.set('n', '<leader>ss', live_grep)
-  vim.keymap.set('n', '<leader>sc', builtin.commands)
-  vim.keymap.set('n', '<leader>sd', builtin.diagnostics)
-  vim.keymap.set('n', '<leader>sm', builtin.marks)
-
-  vim.cmd('highlight TelescopeSelection guifg=#b16286 gui=bold')
-  vim.cmd('highlight TelescopePromptPrefix guifg=#458588')
 end
 
 return {
@@ -65,6 +43,24 @@ return {
       'nvim-telescope/telescope-fzf-native.nvim',
       build = 'make'
     }
+  },
+  keys = {
+    {
+      '<leader>sf', function()
+      require('telescope.builtin').find_files({ hidden = true })
+    end
+    },
+    { '<leader>sb', function() require('telescope.builtin').buffers() end },
+    { '<leader>ss', function()
+      require('telescope.builtin').live_grep({
+        additional_args = {
+          '--hidden',
+        }
+      })
+    end },
+    { '<leader>sc', function() require('telescope.builtin').commands() end },
+    { '<leader>sd', function() require('telescope.builtin').diagnostics() end },
+    { '<leader>sm', function() require('telescope.builtin').marks() end },
   },
   config = setupTelescope
 }

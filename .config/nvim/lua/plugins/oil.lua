@@ -1,6 +1,5 @@
 local setupOil = function()
   local oil = require('oil');
-  local actions = require('oil.actions')
 
   oil.setup({
     keymaps = {
@@ -12,12 +11,17 @@ local setupOil = function()
       show_hidden = true,
     }
   })
-
-  vim.keymap.set("n", "-", ":Oil<CR>", { desc = "Open parent directory via oil.nvim" })
-  vim.keymap.set("n", "_", actions.open_cwd.callback, { desc = "Open current working directory via oil.nvim" })
 end
 
 return {
   'stevearc/oil.nvim',
+  keys = {
+    { "-", ":Oil<CR>" },
+    {
+      "_", function()
+      require('oil.actions').open_cwd.callback()
+    end
+    }
+  },
   config = setupOil
 }

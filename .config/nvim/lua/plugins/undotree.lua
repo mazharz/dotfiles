@@ -1,9 +1,7 @@
 return {
   'mbbill/undotree',
-  config = function()
-    local keymap = vim.keymap.set
-    local opts = { noremap = true, silent = true }
-
-    keymap("n", "<leader>u", ":UndotreeToggle<CR>", opts)
-  end
+  keys = {
+    { "<leader>u", ":UndotreeToggle<CR>" }
+  },
+  config = true
 }

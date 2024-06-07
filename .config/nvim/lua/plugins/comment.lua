@@ -26,7 +26,7 @@ local setupComment = function()
 
   -- duplicate line, comment the upper, go to lower
   -- useful for when you change a line but want to keep reference of the old one
-  vim.keymap.set('n', 'gcyc', 'yypk <cmd>lua require("Comment.api").toggle_current_linewise()<CR> | j')
+  vim.keymap.set('n', 'gcyc', 'yypk <cmd>lua require("Comment.api").toggle.linewise.current()<CR> | j')
   vim.g.skip_ts_context_commentstring_module = true
 end
 
@@ -36,5 +36,6 @@ return {
     -- support for tsx commenting
     'JoosepAlviste/nvim-ts-context-commentstring'
   },
+  event = "VeryLazy",
   config = setupComment
 }

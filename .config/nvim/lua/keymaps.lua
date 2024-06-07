@@ -16,9 +16,6 @@ keymap("n", "<C-j>", ":cnext<CR>", opts)
 keymap("n", "<leader>cc", ":cclose<CR>", opts)
 keymap('n', '<leader>co', ":copen<CR>", opts)
 
--- vim-dispatch
-keymap("n", "<leader>Dt", ":Dispatch tsc --pretty false<CR>", opts)
-
 -- unhighlight search results
 keymap("n", "<C-l>", ":nohl<CR>", opts)
 
