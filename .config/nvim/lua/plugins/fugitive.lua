@@ -1,5 +1,6 @@
 return {
   'tpope/vim-fugitive',
+  cmd = { "Git", "Gclog" },
   keys = {
     { '<leader>gs',   ':Git<CR><C-w>_<C-w>|' },
     { '<leader>gvd',  ':Gvdiffsplit<CR>' },
@@ -7,5 +8,7 @@ return {
     { '<leader>ghd',  ':Gdiffsplit<CR>' },
     { '<leader>gh3d', ':Gdiffsplit!<CR>' }
   },
-  config = true
+  -- for some reason, using `config = true` results
+  -- in an error
+  config = function() end
 }

@@ -1,6 +1,7 @@
 # command shortenings
 alias ls="ls --color=auto"
 alias l="ls --color=auto"
+alias la="ls -a --color=auto"
 alias pk="pkill"
 alias grep="grep --color=auto"
 
