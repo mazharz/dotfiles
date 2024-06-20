@@ -21,7 +21,7 @@ export PATH=$PATH:/home/m47h4r/bin/
 # Scale qt apps
 export QT_SCALE_FACTOR=1.3
 
-export DIR_SHORTCUTS="w:$HOME/mzd/wd;n:$HOME/mzd/multimedia/not watched;m:$HOME/mzd/music;c:$HOME/mzd/code;g:$HOME/mzd/code/gwat;b:$HOME/mzd/text/book;o:$HOME/mzd/os;f:$HOME/mzd/text/Dropbox/finances;t:$HOME/mzd/text;d:$HOME/mzd/text/doc"
+export DIR_SHORTCUTS="w:$HOME/mzd/wd;n:$HOME/mzd/multimedia/not watched;m:$HOME/mzd/music;c:$HOME/mzd/code;b:$HOME/mzd/text/book;o:$HOME/mzd/os;f:$HOME/mzd/text/Dropbox/finances;t:$HOME/mzd/text;d:$HOME/mzd/text/doc"
 
 # ranger
 [ -n "$RANGER_LEVEL" ] && PS1="R$RANGER_LEVEL $PS1"
@@ -33,3 +33,6 @@ source "$HOME/.cargo/env"
 export GOPATH="$HOME/go"
 export GOBIN="$GOPATH/bin"
 export PATH=$PATH:$GOBIN
+
+# haskell
+[ -f "/home/m47h4r/.ghcup/env" ] && . "/home/m47h4r/.ghcup/env"

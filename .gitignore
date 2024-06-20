@@ -36,3 +36,4 @@ bin/ghcup
 .config/lazygit/state.yml
 **/__pycache__/*
 .config/ncmpcpp/error.log
+bin/xvpn

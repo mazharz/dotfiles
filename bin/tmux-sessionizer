@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
 
-project_dir=$(find ~/mzd/code -mindepth 1 -maxdepth 3 -type d | fzf)
+project_dir=$(
+find ~/mzd/code \
+    ! -path '*.git' \
+    ! -path '*node_modules*' \
+    -mindepth 2 -maxdepth 3 -type d | fzf
+)
 
 if [[ -z $project_dir ]]; then
     exit 0

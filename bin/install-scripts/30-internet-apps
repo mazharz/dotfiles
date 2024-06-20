@@ -5,7 +5,13 @@ echo '# Installing internet apps...'
 sleep 1
 sudo pacman -S telegram-desktop firefox tor qbittorrent
 
-echo '# Installing clash...'
+echo '# Installing oblivion...'
 sleep 1
-sudo pacman -S nftables iproute2
-trizen -S clash-for-windows-bin
+trizen -S oblivion-desktop-bin
+
+echo '########################################################################'
+echo '# Install xvpn yourself:'
+echo '# - download from the website'
+echo '# - move to ~/bin/xvpn'
+echo '# - install required dirs that the errors yell out'
+echo '########################################################################'

@@ -100,11 +100,11 @@ focus_follows_mouse yes
 ################################################################################
 show_marks yes
 
-bindsym $mod+Shift+m exec i3-input -f "pango:FiraCode Nerd Font 12" \
+bindsym $mod+m exec i3-input -f "pango:FiraCode Nerd Font 12" \
   -F 'mark %s' \
   -l 1 \
   -P 'Mark: '
-bindsym $mod+m exec i3-input -f "pango:FiraCode Nerd Font 12" \
+bindsym $mod+apostrophe exec i3-input -f "pango:FiraCode Nerd Font 12" \
   -F '[con_mark="%s"] focus' \
   -l 1 \
   -P 'Goto: '
@@ -121,7 +121,7 @@ for_window [class="(?i)mpv"]                                               mark 
 for_window [class="(?i)postman"]                                           mark p
 for_window [class="(?i)altair graphqL client"]                             mark a
 for_window [title="(?i)ncmpcpp"]                                           mark m
-for_window [class="(?i)clash for windows"]                                 mark V
+for_window [title="(?i)xvpn"]                                              mark V
 for_window [title="(?i)fitimer"]                                           mark T
 for_window [class="(?i)dbeaver"]                                           mark D
 for_window [class="(?i)pavucontrol"]                                       floating enable
@@ -259,7 +259,8 @@ bindsym $mod+Mod1+bracketright exec mpc seek +10
 
 # find profiles in ~/.cache/google-chrome
 bindsym $mod+c           exec google-chrome-stable --profile-directory=Default
-bindsym $mod+Mod1+c      exec google-chrome-stable --profile-directory='Profile 1'
+bindsym $mod+Mod1+Shift+c      exec google-chrome-stable --profile-directory='Profile 1'
+bindsym $mod+Mod1+c      exec google-chrome-stable --profile-directory='Profile 3'
 bindsym $mod+Mod1+f      exec thunar
 bindsym $mod+Mod1+t      exec telegram-desktop
 bindsym $mod+Mod1+m      exec alacritty --title ncmpcpp -e ncmpcpp -q
@@ -267,7 +268,7 @@ bindsym $mod+Mod1+p      exec alacritty --title fitimer -e fitimer
 bindsym $mod+Ctrl+c      exec ~/bin/clocks
 bindsym $mod+Mod1+Return exec alacritty -e ranger
 bindsym $mod+Mod1+d      exec dbeaver
-bindsym $mod+Mod1+Shift+c exec gnome-calculator
+# bindsym $mod+Mod1+Shift+c exec gnome-calculator
 bindsym $mod+Mod1+v      exec cfw
 
 bindsym $mod+Ctrl+space       exec dunstctl close
