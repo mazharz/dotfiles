@@ -1,5 +1,4 @@
 #!/bin/bash
-# Run with root
 set -e
 
 # disable power saving for audio devices

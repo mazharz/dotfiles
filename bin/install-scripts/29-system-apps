@@ -8,4 +8,4 @@ sudo pacman -S calibre xournalpp libreoffice-still gedit gnome-font-viewer file-
 echo '# Installing dropbox...'
 sleep 1
 gpg --recv-keys 1C61A2656FB57B7E4DE0F4C1FC918B335044912E
-trizen -S dropbox
+trizen -S --noconfirm dropbox

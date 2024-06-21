@@ -1,5 +1,4 @@
 #!/bin/bash
-# Run with root
 set -e
 
 echo '# Installing sudo...'

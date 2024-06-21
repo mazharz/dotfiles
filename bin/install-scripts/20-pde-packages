@@ -4,11 +4,11 @@ set -e
 echo '# Installing pde packages...'
 sleep 1
 # unzip is required by neovim plugins
-sudo pacman -S fzf tmux neovim ripgrep dbeaver sqlitebrowser filezilla docker docker-compose unzip xclip lazygit typst shellcheck go go-tools postgresql mariadb
+sudo pacman -S fzf tmux neovim ripgrep sqlitebrowser filezilla docker docker-compose unzip xclip lazygit typst shellcheck go go-tools postgresql mariadb
 
 echo '# Installing go packages...'
 sleep 1
 go install mvdan.cc/gofumpt@latest
 go install github.com/kisielk/errcheck@latest
 # golangci-lint itself recommends to install binaries and not use `go install`
-trizen -S golangci-lint-bin
+trizen -S --noconfirm golangci-lint-bin

@@ -1,6 +1,0 @@
-#!/bin/bash
-set -e
-
-echo '# Installing gnome-shell-pomodoro...'
-sleep 1
-trizen -S --noconfirm gnome-shell-pomodoro

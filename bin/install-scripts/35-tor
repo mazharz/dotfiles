@@ -1,7 +1,0 @@
-#!/bin/bash
-set -e
-
-echo '# Installing tor browser...'
-sleep 1
-# gpg --auto-key-locate nodefault,wkd --locate-keys torbrowser@torproject.org
-# trizen -S --noconfirm tor-browser

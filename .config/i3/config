@@ -259,8 +259,8 @@ bindsym $mod+Mod1+bracketright exec mpc seek +10
 
 # find profiles in ~/.cache/google-chrome
 bindsym $mod+c           exec google-chrome-stable --profile-directory=Default
-bindsym $mod+Mod1+Shift+c      exec google-chrome-stable --profile-directory='Profile 1'
-bindsym $mod+Mod1+c      exec google-chrome-stable --profile-directory='Profile 3'
+bindsym $mod+Mod1+Shift+c      exec google-chrome-stable --profile-directory='Profile 9'
+bindsym $mod+Mod1+c      exec google-chrome-stable --profile-directory='Profile 8'
 bindsym $mod+Mod1+f      exec thunar
 bindsym $mod+Mod1+t      exec telegram-desktop
 bindsym $mod+Mod1+m      exec alacritty --title ncmpcpp -e ncmpcpp -q
