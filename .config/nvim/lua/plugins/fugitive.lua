@@ -6,7 +6,9 @@ return {
     { '<leader>gvd',  ':Gvdiffsplit<CR>' },
     { '<leader>gv3d', ':Gvdiffsplit!<CR>' },
     { '<leader>ghd',  ':Gdiffsplit<CR>' },
-    { '<leader>gh3d', ':Gdiffsplit!<CR>' }
+    { '<leader>gh3d', ':Gdiffsplit!<CR>' },
+    { '<leader>gm',   ':Git mergetool<CR>' },
+    { '<leader>gd',   ':Git difftool<CR>' },
   },
   -- for some reason, using `config = true` results
   -- in an error

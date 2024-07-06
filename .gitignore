@@ -30,6 +30,7 @@
 .config/htop/
 bin/ghcup
 .ssh/id_rsa*
+.ssh/fakir-github*
 .ssh/known_hosts*
 .config/nvim/spell
 .config/zsh/vars_secret.zsh

@@ -73,6 +73,17 @@ local snippets = {
     { delimiters = "[]" }
   )),
 
+  s("fdd", fmt([[
+    const [] = ([]) => {
+      []
+    }
+
+    export default []
+    ]],
+    { i(1, "func"), i(3), i(0), i(2, "func") },
+    { delimiters = "[]" }
+  )),
+
   s("fn", fmt([[
     function [] ([]) {
       []

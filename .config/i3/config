@@ -122,8 +122,9 @@ for_window [class="(?i)postman"]                                           mark 
 for_window [class="(?i)altair graphqL client"]                             mark a
 for_window [title="(?i)ncmpcpp"]                                           mark m
 for_window [title="(?i)xvpn"]                                              mark V
-for_window [title="(?i)fitimer"]                                           mark T
-for_window [class="(?i)dbeaver"]                                           mark D
+for_window [class="(?i)hubstaff" title="(?i)hubstaff"]                     mark T
+# for_window [class="(?i)dbeaver"]                                           mark D
+for_window [class="(?i)mongodb compass"]                                   mark d
 for_window [class="(?i)pavucontrol"]                                       floating enable
 for_window [class="(?i)gnome-calculator"]                                  floating enable
 

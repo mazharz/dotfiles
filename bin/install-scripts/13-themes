@@ -2,6 +2,5 @@
 set -e
 
 echo '# Installing themes...'
-echo '# NOTE: select both provided icon & gtk packages'
 sleep 1
 trizen -S --noconfirm gruvbox-material-icon-theme-git gruvbox-material-gtk-theme-git 

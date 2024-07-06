@@ -69,7 +69,7 @@ local snippets = {
     ]],
     {
       i(1, getToday()),
-      i(2, "<description>"),
+      i(2, "account profit"),
       i(3),
     })),
 }

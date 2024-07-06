@@ -1,8 +1,13 @@
 # export proxy
 ep() {
-  export http_proxy=http://127.0.0.1:3477
-  export socks_proxy=socks5://127.0.0.1:3477
-  export all_proxy=socks5://127.0.0.1:3477
+  if [[ "$1" != "" ]];then
+    port="$1"
+  else
+    port="8086"
+  fi
+  export http_proxy="http://127.0.0.1:$port"
+  export socks_proxy="socks5://127.0.0.1:$port"
+  export all_proxy="socks5://127.0.0.1:$port"
 }
 
 # unset proxy

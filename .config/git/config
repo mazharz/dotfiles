@@ -7,3 +7,6 @@
 
 [includeIf "gitdir:~/mzd/code/gwat/"]
   path = gwat
+
+[includeIf "gitdir:~/mzd/code/fakir/"]
+  path = fakir

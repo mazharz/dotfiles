@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+wifiIfName="wlp7s0"
+wifiIfIp="192.168.1.1"
+vpnIfName=$(ip addr | grep xvpn | grep inet | sed 's/^\s*//g' | rev | cut -d ' ' -f 1 | rev)
+vpnIfIp=$(ip addr | grep xvpn | grep inet | sed 's/^\s*//g' | cut -d ' ' -f 2 | cut -d '/' -f 1)
+
+if [ "$1" == "e" ];then
+  sudo ip route del default via $wifiIfIp dev $wifiIfName
+  sudo ip route add default via "$vpnIfIp" dev "$vpnIfName"
+elif [ "$1" == "d" ];then
+  sudo ip route add default via $wifiIfIp dev $wifiIfName
+fi

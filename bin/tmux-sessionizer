@@ -2,9 +2,9 @@
 
 project_dir=$(
 find ~/mzd/code \
+    -mindepth 2 -maxdepth 3 -type d \
     ! -path '*.git' \
-    ! -path '*node_modules*' \
-    -mindepth 2 -maxdepth 3 -type d | fzf
+    ! -path '*node_modules*' | fzf
 )
 
 if [[ -z $project_dir ]]; then

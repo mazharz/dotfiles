@@ -23,5 +23,7 @@ return {
     end
     }
   },
+  -- so it correctly replaces netrw on starting up with directory argument
+  lazy = false,
   config = setupOil
 }

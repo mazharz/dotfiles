@@ -40,6 +40,14 @@ local snippets = {
     { i(1, "memoized"), i(3), i(2, "dep") },
     { delimiters = "qp" }
   )),
+
+  s("mbox", fmt("<Box>{}</Box>",
+    { i(1) }
+  )),
+
+  s("mtyp", fmt("<Typography>{}</Typography>",
+    { i(1) }
+  )),
 }
 
 ls.add_snippets("javascriptreact", snippets);
