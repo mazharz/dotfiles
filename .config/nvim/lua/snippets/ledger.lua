@@ -52,14 +52,15 @@ local snippets = {
     })),
   s("r", fmt([[
     {} {}
-        assets:checking            IRR {}
-        revenues:reimbursement
+        assets:checking                IRR {}
+        assets:reimbursements:{}
 
     ]],
     {
       i(1, getToday()),
       i(2, "<description>"),
       i(3),
+      i(4, "person"),
     })),
   s("ap", fmt([[
     {} {}

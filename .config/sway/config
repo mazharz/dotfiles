@@ -1,26 +1,24 @@
-################################################################################
+###############################################################################
 # Core
 ################################################################################
 set $mod Mod4
 
 set $bg #000000cc
-# set $bg #282828
-# set $bg #282828e6
 set $fg #fbf1c7
 set $ac #a89984
 set $red #cc241d
 set $term alacritty
 
-font pango:FiraCode Nerd Font 12
+font pango:FiraCode Nerd Font 11
 
 floating_modifier $mod
 
-bindsym $mod+Return exec $term
+bindsym $mod+Return exec $term 
 
 bindsym $mod+q kill
 
-new_window pixel 2
-# new_window normal 2
+default_border pixel 2
+titlebar_padding 5 1
 
 # new windows should be opened in tab mode
 workspace_layout tabbed
@@ -29,6 +27,30 @@ hide_edge_borders smart
 
 gaps inner 0
 # smart_gaps on
+
+################################################################################
+# Input configuration
+################################################################################
+# see /usr/share/X11/xkb/rules/base.lst for layouts and variants
+input "type:keyboard" {
+    xkb_layout us,ir
+    xkb_options grp:alt_caps_toggle,caps:escape
+}
+input "1739:52575:SYNA2B46:00_06CB:CD5F_Touchpad" {
+    dwt enabled
+    tap enabled
+    natural_scroll disabled
+    middle_emulation enabled
+}
+
+################################################################################
+# Idle & lock configuration
+################################################################################
+exec swayidle -w \
+  timeout 1200 ~/bin/wlock \
+  timeout 1205 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+  before-sleep ~/bin/wlock
+bindsym $mod+semicolon exec ~/bin/wlock
 
 ################################################################################
 # Focus and moving
@@ -47,10 +69,10 @@ bindsym $mod+Shift+j     move down  20 px
 bindsym $mod+Shift+k     move up    20 px
 bindsym $mod+Shift+l     move right 20 px
 # snap to screen edges
-bindsym $mod+Shift+Left  exec ~/bin/i3-move-win-to-edge -l
-bindsym $mod+Shift+Down  exec ~/bin/i3-move-win-to-edge -b
-bindsym $mod+Shift+Up    exec ~/bin/i3-move-win-to-edge -t
-bindsym $mod+Shift+Right exec ~/bin/i3-move-win-to-edge -r
+bindsym $mod+Shift+Left  exec ~/bin/sway-move-win-to-edge left
+bindsym $mod+Shift+Down  exec ~/bin/sway-move-win-to-edge down
+bindsym $mod+Shift+Up    exec ~/bin/sway-move-win-to-edge up
+bindsym $mod+Shift+Right exec ~/bin/sway-move-win-to-edge right
 
 ################################################################################
 # Resize
@@ -81,62 +103,70 @@ bindsym $mod+z focus child
 
 focus_follows_mouse yes 
 
+###############################################################################
+# Menus
 ################################################################################
-# menus
-################################################################################
-bindsym $mod+o exec --no-startup-id $term \
-  --class 'macro-menu' \
-  -o window.dimensions.columns=30 \
-  -o window.dimensions.lines=10 \
-  -e ~/bin/macro
-for_window [class="macro-menu"] floating enable
-
-bindsym $mod+d exec --no-startup-id $term \
-  --class 'fzf-menu' \
-  -o window.dimensions.columns=50 \
-  -o window.dimensions.lines=10 \
-  -e i3-dmenu-desktop --dmenu=fzf 
-for_window [class="fzf-menu"] floating enable
+bindsym $mod+d exec j4-dmenu-desktop --dmenu='bemenu -i -p "$" -b --fn "Fira Code Nerd Font 12" --hp 10 -H 27'
+# TODO: vvv
+# bindsym $mod+d exec --no-startup-id $term \
+#   --class 'app-launcher-menu' \
+#   -o window.dimensions.columns=50 \
+#   -o window.dimensions.lines=10 \
+#   -e j4-dmenu-desktop --dmenu=fzf 
+# for_window [app_id="app-launcher-menu"] floating enable
 
 bindsym $mod+e exec --no-startup-id $term \
   --class 'emoji-menu' \
   -o window.dimensions.columns=30 \
   -o window.dimensions.lines=10 \
   -e ~/bin/emoji-picker
-for_window [class="emoji-menu"] floating enable
+for_window [app_id="emoji-menu"] floating enable
+
+bindsym $mod+o exec --no-startup-id $term \
+  --class 'macro-menu' \
+  -o window.dimensions.columns=30 \
+  -o window.dimensions.lines=10 \
+  -e ~/bin/macro
+for_window [app_id="macro-menu"] floating enable
 
 ################################################################################
 # Marks
 ################################################################################
 show_marks yes
 
-bindsym $mod+m exec i3-input -f "pango:FiraCode Nerd Font 12" \
-  -F 'mark %s' \
-  -l 1 \
-  -P 'Mark: '
-bindsym $mod+apostrophe exec i3-input -f "pango:FiraCode Nerd Font 12" \
-  -F '[con_mark="%s"] focus' \
-  -l 1 \
-  -P 'Goto: '
+# TODO: vvv
+# maybe handle it with i3 mode (like how resize is originally done)
+
+# mode "macro" {
+#   bindsym v [con_mark="v"] focus; mode "default"
+#   bindsym c [con_mark="c"] focus; mode "default"
+# }
+# bindsym $mod+apostrophe mode "macro"
+
+# bindsym $mod+m exec i3-input -f "pango:FiraCode Nerd Font 12" \
+#   -F 'mark %s' \
+#   -l 1 \
+#   -P 'Mark: '
+# bindsym $mod+apostrophe exec i3-input -f "pango:FiraCode Nerd Font 12" \
+#   -F '[con_mark="%s"] focus' \
+#   -l 1 \
+#   -P 'Goto: '
 
 ################################################################################
 # Auto assignments
 ################################################################################
-for_window [class="(?i)thunar"]                                            mark f, floating enable
+for_window [app_id="thunar"]                                               mark f, floating enable
 # make sure media viewer window doesn't hijack the telegram window mark
-for_window [class="(?i)telegramdesktop" title="^(?i)(?!media viewer).*"]   mark t
-for_window [class="(?i)telegramdesktop" title="^(?i)media viewer.*"]       floating enable
+for_window [app_id="org.telegram.desktop" title="^(?i)(?!media viewer).*"] mark t
+for_window [app_id="org.telegram.desktop" title="^(?i)media viewer.*"]     floating enable
 for_window [class="(?i)google-chrome"]                                     mark c
-for_window [class="(?i)mpv"]                                               mark v, floating enable
+for_window [app_id="mpv"]                                                  mark v, floating enable
 for_window [class="(?i)postman"]                                           mark p
-for_window [class="(?i)altair graphqL client"]                             mark a
 for_window [title="(?i)ncmpcpp"]                                           mark m
-for_window [title="(?i)xvpn"]                                              mark V
 for_window [class="(?i)hubstaff" title="(?i)hubstaff"]                     mark T
-# for_window [class="(?i)dbeaver"]                                           mark D
 for_window [class="(?i)mongodb compass"]                                   mark d
-for_window [class="(?i)pavucontrol"]                                       floating enable
-for_window [class="(?i)gnome-calculator"]                                  floating enable
+for_window [app_id="org.pulseaudio.pavucontrol"]                           floating enable
+for_window [app_id="org.gnome.Calculator"]                                 floating enable
 
 ################################################################################
 # Workspaces
@@ -192,7 +222,7 @@ bindsym $mod+Ctrl+0 move container to workspace $ws10; workspace $ws10
 ################################################################################
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
-bindsym $mod+Shift+q exec "i3-nagbar -t warning -m 'Exit?' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+q exec swaynag -t warning -m 'Exit?' -B 'Yes, exit sway' 'swaymsg exit'
 
 ################################################################################
 # Colors
@@ -211,15 +241,12 @@ client.background       $bg
 bar {
   status_command i3blocks -c ~/.config/i3/i3blocks.conf
   position bottom
-  tray_output primary
-  tray_padding 2
   font pango:FiraCode Nerd Font 12
   separator_symbol "│"
-  
+
   colors {
     background #282828
-    # transparency is set in picom
-    background #000000
+    background #000000cc
     statusline $bg
     separator  $ac
     #<color class>     <border> <background> <text>
@@ -234,28 +261,24 @@ bar {
 ################################################################################
 # Key bindings
 ################################################################################
-bindsym $mod+x      exec flameshot screen --clipboard
-bindsym $mod+ctrl+x exec flameshot gui
+bindsym $mod+x            exec flameshot screen --clipboard
+bindsym $mod+ctrl+x       exec flameshot gui
 
-bindsym $mod+Mod1+z exec slop -r boxzoom
+# TODO: vvv
+# bindsym $mod+Mod1+z exec slop -r boxzoom
 
-#bindsym XF86MonBrightnessDown exec xbacklight -dec 5
-#bindsym XF86MonBrightnessUp exec xbacklight -inc 5
-bindsym XF86MonBrightnessDown exec sudo ~/bin/brightness dec; exec pkill -SIGRTMIN+11 i3blocks
-bindsym XF86MonBrightnessUp   exec sudo ~/bin/brightness inc; exec pkill -SIGRTMIN+11 i3blocks
+bindsym XF86MonBrightnessDown exec brightnessctl set 5%-; exec pkill -SIGRTMIN+11 i3blocks
+bindsym XF86MonBrightnessUp exec brightnessctl set 5%+; exec pkill -SIGRTMIN+11 i3blocks
 
 bindsym --whole-window --border $mod+Mod1+button4 exec ~/bin/volume inc; exec pkill -SIGRTMIN+11 i3blocks
 bindsym --whole-window --border $mod+Mod1+button5 exec ~/bin/volume dec; exec pkill -SIGRTMIN+11 i3blocks
 bindsym $mod+Mod1+i exec ~/bin/volume inc; exec pkill -SIGRTMIN+11 i3blocks
 bindsym $mod+Mod1+k exec ~/bin/volume dec; exec pkill -SIGRTMIN+11 i3blocks
 
-bindsym $mod+n       exec ~/bin/monitor dual
-bindsym $mod+shift+n exec ~/bin/monitor mono
+bindsym $mod+n       exec ~/bin/wmonitor external
+bindsym $mod+shift+n exec ~/bin/wmonitor laptop
 
-bindsym $mod+Mod1+shift+h exec ~/bin/huion-buttons
-
-bindsym $mod+i exec ~/bin/kb_layout; exec pkill -SIGRTMIN+11 i3blocks
-bindsym $mod+semicolon exec ~/bin/lock
+# bindsym $mod+Mod1+shift+h exec ~/bin/huion-buttons
 
 bindsym $mod+Mod1+period       exec mpc next; exec pkill -SIGRTMIN+11 i3blocks
 bindsym $mod+Mod1+comma        exec mpc prev; exec pkill -SIGRTMIN+11 i3blocks
@@ -264,40 +287,40 @@ bindsym $mod+Mod1+bracketleft  exec mpc seek -10
 bindsym $mod+Mod1+bracketright exec mpc seek +10
 
 # find profiles in ~/.cache/google-chrome
-bindsym $mod+c           exec google-chrome-stable --profile-directory=Default
-bindsym $mod+Mod1+Shift+c      exec google-chrome-stable --profile-directory='Profile 9'
-bindsym $mod+Mod1+c      exec google-chrome-stable --profile-directory='Profile 8'
-bindsym $mod+Mod1+f      exec thunar
-bindsym $mod+Mod1+t      exec telegram-desktop
-bindsym $mod+Mod1+m      exec $term --title ncmpcpp -e ncmpcpp -q
-bindsym $mod+Mod1+p      exec $term --title fitimer -e fitimer
-bindsym $mod+Ctrl+c      exec ~/bin/clocks
-bindsym $mod+Mod1+Return exec $term -e ranger
-bindsym $mod+Mod1+d      exec dbeaver
+bindsym $mod+c            exec google-chrome-stable --profile-directory=Default
+bindsym $mod+Mod1+Shift+c exec google-chrome-stable --profile-directory='Profile 9'
+bindsym $mod+Mod1+c       exec google-chrome-stable --profile-directory='Profile 8'
+bindsym $mod+Mod1+f       exec thunar
+bindsym $mod+Mod1+t       exec telegram-desktop
+bindsym $mod+Mod1+m       exec $term --title ncmpcpp -e ncmpcpp -q
+bindsym $mod+Mod1+p       exec $term --title fitimer -e fitimer
+bindsym $mod+Ctrl+c       exec ~/bin/clocks
+bindsym $mod+Mod1+Return  exec $term -e ranger
 # bindsym $mod+Mod1+Shift+c exec gnome-calculator
 bindsym $mod+Mod1+v exec --no-startup-id $term \
   --class 'xvpn' -e sudo xvpn ui
-for_window [class="xvpn"] mark V
+for_window [app_id="xvpn"] mark V
 
 bindsym $mod+Ctrl+space       exec dunstctl close
 bindsym $mod+Ctrl+Shift+space exec dunstctl history-pop
 bindsym $mod+Ctrl+Return      exec dunstctl action
 bindsym $mod+Ctrl+Mod1+space  exec dunstctl set-paused toggle; exec pkill -SIGRTMIN+11 i3blocks
 
-# needed for i3blocks for capslock and numlock
-bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
-bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
-
 ################################################################################
-# Autostart programs
+# Auto-start programs
 ################################################################################
 exec --no-startup-id /usr/bin/lxpolkit &
-exec_always ~/bin/kb_layout
-exec ~/bin/rw
+exec_always ~/bin/random-wallpaper
 exec dunst &
 exec nm-applet &
 exec blueman-applet &
 exec copyq &
-exec picom &
-exec redshift-gtk &
+exec gammastep &
 exec dropbox &
+exec_always {
+  gsettings set org.gnome.desktop.interface gtk-theme 'Gruvbox-Material-Dark'
+  gsettings set org.gnome.desktop.interface icon-theme 'Gruvbox-Material-Dark'
+  # gsettings set org.gnome.desktop.interface font-name 'Noto Sans'
+}
+
+include /etc/sway/config.d/*

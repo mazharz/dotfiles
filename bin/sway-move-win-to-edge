@@ -1,0 +1,69 @@
+#!/bin/bash
+
+# TODO: refine/understand this if you have extra time
+
+set -x
+
+if (pgrep -x sway); then
+  wmmsg=swaymsg
+else
+  wmmsg=i3-msg
+fi
+
+if [ $wmmsg == "swaymsg" ]; then
+  mintree=($($wmmsg -t get_tree|jq -r '..|select(.type? == "root")|(.rect.width,.rect.height),(..|select(.type? == "output")|select(.active? == true)|.nodes|.[0]|.rect|.height),(..|select(.focused? == true)|.id,.rect.width,.rect.height,.rect.x,.rect.y)'))
+else
+  mintree=($($wmmsg -t get_tree|jq -r '..|select(.type? == "root")|(.rect.width,.rect.height),(..|select(.type? == "output")|.nodes|.[1]|select(.name? == "content")|.rect|.height),(..|select(.focused? == true)|.id,.rect.width,.rect.height,.rect.x,.rect.y)'))
+fi
+echo
+echo mintree is: ${mintree[@]}
+echo
+
+resx=${mintree[0]}
+resy=${mintree[1]}
+
+wrkspy=${mintree[2]}
+barheight=$(( $resy - $wrkspy ))
+
+wid=${mintree[3]}
+wwidth=${mintree[4]}
+wheight=${mintree[5]}
+snapx=${mintree[6]}
+snapy=${mintree[7]}
+
+case $1 in
+  0)
+    snapx=0
+    snapy=0
+    ;;
+  1)
+    snapx=$(( $resx - $wwidth ))
+    snapy=0
+    ;;
+  2)
+    snapx=$(( $resx - $wwidth ))
+    snapy=$(( $resy - $wheight - $barheight ))
+    ;;
+  3)
+    snapx=$(( 0 ))
+    snapy=$(( $resy - $wheight - $barheight ))
+    ;;
+  "up")
+    snapy=0
+    ;;
+  "down")
+    snapy=$(( $resy - $wheight - $barheight ))
+    ;;
+  "right")
+    snapx=$(( $resx - $wwidth ))
+    ;;
+  "left")
+    snapx=0
+    ;;
+  "center"|*)
+    snapx=$(( ( $resx - $wwidth ) / 2  ))
+    snapy=$(( ( $resy - $wheight ) / 2  ))
+    ;;
+esac
+
+$wmmsg "[con_id=$wid] move position $snapx $snapy"

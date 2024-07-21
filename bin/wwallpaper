@@ -1,0 +1,7 @@
+#!/bin/bash
+
+if [ -n "$1" ]; then
+	cp "$1" ~/Pictures/Wallpaper/wal.jpeg
+fi
+
+swaymsg output "*" bg ~/Pictures/Wallpaper/wal.jpeg fill

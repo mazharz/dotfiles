@@ -1,0 +1,38 @@
+daemonize
+image=~/Pictures/Wallpaper/lock.jpeg
+indicator-radius=100
+indicator-thickness=8
+font-size=14
+
+# black
+inside-color=000000cc
+ring-color=000000cc
+text-color=fbf1c7
+# yellow
+inside-clear-color=d79921cc
+ring-clear-color=d79921
+text-clear-color=000000
+# orange
+inside-caps-lock-color=d65d0ecc
+ring-caps-lock-color=d65d0e
+text-caps-lock-color=000000
+# aqua
+inside-ver-color=689d6acc
+ring-ver-color=689d6a
+text-ver-color=000000
+# red
+inside-wrong-color=cc241dcc
+ring-wrong-color=cc241d
+text-wrong-color=000000
+
+# blue
+key-hl-color=458588
+
+# transparent
+layout-bg-color=000000cc
+# transparent
+layout-border-color=000000cc
+# white
+layout-text-color=fbf1c7
+
+line-uses-inside

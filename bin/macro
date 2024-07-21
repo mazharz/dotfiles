@@ -1,8 +1,8 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-macroFile="$1"
 macroFilesPath="$HOME/mzd/text/macros"
+macroFile=$(find "$macroFilesPath" -type f -printf "%f\n" | fzf)
 
 macroText=$("${macroFilesPath}"/"${macroFile}")
+xdotool key "super+space"
 xdotool type "$macroText"
-

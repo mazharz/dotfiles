@@ -10,7 +10,7 @@ return {
 				-- TODO: vvv
 				-- lua = { "stylua" },
 				go = { "gofumpt" },
-				["_"] = { { "prettierd", "prettier" } },
+				["_"] = { "prettier" },
 			},
 			-- prevent annoying error when file can't be formatted
 			notify_on_error = false
@@ -21,7 +21,7 @@ return {
 			pattern = "*",
 			callback = function(args)
 				if shouldFormat then
-					conform.format({ bufnr = args.buf })
+					conform.format({ bufnr = args.buf, quiet = true })
 				end
 			end,
 		})

@@ -5,3 +5,7 @@ echo '# Installing i3 packages...'
 sleep 1
 sudo pacman -S xorg xorg-xinit xdotool i3 i3blocks alacritty flameshot feh arandr pipewire pipewire-alsa pipewire-pulse pavucontrol thunar tumbler dunst picom copyq bluez bluez-utils blueman openssh networkmanager networkmanager-openvpn network-manager-applet playerctl xclip redshift lxappearance gucharmap gnome-calculator slop gvfs-mtp gvfs-gphoto2 gnome-keyring libsecret libgnome-keyring seahorse lxsession gst-plugins-bad gst-plugins-base gst-plugins-good gstreamer
 
+# sway
+echo '# Installing sway packages...'
+sleep 1
+sudo pacman -S sway swaylock swayidle swaybg j4-dmenu-desktop bemenu wl-clipboard xdg-desktop-portal xdg-desktop-portal-gtk xdg-desktop-portal-wlr brightnessctl gammasetp grim slurp imv

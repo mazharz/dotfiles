@@ -4,7 +4,7 @@ set -e
 echo '# Installing pde packages...'
 sleep 1
 # unzip is required by neovim plugins
-sudo pacman -S fzf tmux neovim ripgrep sqlitebrowser filezilla docker docker-compose unzip xclip lazygit typst shellcheck go go-tools postgresql mariadb jq
+sudo pacman -S fzf tmux neovim ripgrep sqlitebrowser docker docker-compose unzip xclip lazygit typst shellcheck go go-tools postgresql mariadb jq
 
 echo '# Installing go packages...'
 sleep 1

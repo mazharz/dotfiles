@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if [ "$1" == "laptop" ]; then
+  swaymsg output eDP-1 enable
+  swaymsg output DP-2 disable
+elif [ "$1" == "external" ]; then
+  swaymsg output eDP-1 disable
+  swaymsg output DP-2 enable
+fi

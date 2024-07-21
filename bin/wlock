@@ -1,0 +1,5 @@
+#!/bin/bash
+
+convert -filter Gaussian -blur 0x8 "$HOME/Pictures/Wallpaper/wal.jpeg" "$HOME/Pictures/Wallpaper/lock.jpeg"
+
+swaylock
