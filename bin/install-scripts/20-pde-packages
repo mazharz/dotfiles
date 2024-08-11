@@ -4,7 +4,7 @@ set -e
 echo '# Installing pde packages...'
 sleep 1
 # unzip is required by neovim plugins
-sudo pacman -S fzf tmux neovim ripgrep sqlitebrowser docker docker-compose unzip xclip lazygit typst shellcheck go go-tools postgresql mariadb jq
+sudo pacman -S fzf tmux neovim ripgrep sqlitebrowser docker docker-compose unzip xclip lazygit typst shellcheck go go-tools postgresql mariadb jq stylua
 
 echo '# Installing go packages...'
 sleep 1
@@ -12,3 +12,17 @@ go install mvdan.cc/gofumpt@latest
 go install github.com/kisielk/errcheck@latest
 # golangci-lint itself recommends to install binaries and not use `go install`
 trizen -S --noconfirm golangci-lint-bin
+
+echo '# Installing mongo packages...'
+sleep 1
+trizen -S mongodb-bin mongodb-compass
+echo '# Enabling mongo service...'
+sleep 1
+sudo systemctl enable --now mongodb
+
+echo '# Installing redis packages...'
+sleep 1
+sudo pacman -S redis
+echo '# Enabling redis service...'
+sleep 1
+sudo systemctl enable --now redis

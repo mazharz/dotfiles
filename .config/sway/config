@@ -288,7 +288,6 @@ bindsym $mod+Mod1+bracketright exec mpc seek +10
 
 # find profiles in ~/.cache/google-chrome
 bindsym $mod+c            exec google-chrome-stable --profile-directory=Default
-bindsym $mod+Mod1+Shift+c exec google-chrome-stable --profile-directory='Profile 9'
 bindsym $mod+Mod1+c       exec google-chrome-stable --profile-directory='Profile 8'
 bindsym $mod+Mod1+f       exec thunar
 bindsym $mod+Mod1+t       exec telegram-desktop
@@ -296,7 +295,7 @@ bindsym $mod+Mod1+m       exec $term --title ncmpcpp -e ncmpcpp -q
 bindsym $mod+Mod1+p       exec $term --title fitimer -e fitimer
 bindsym $mod+Ctrl+c       exec ~/bin/clocks
 bindsym $mod+Mod1+Return  exec $term -e ranger
-# bindsym $mod+Mod1+Shift+c exec gnome-calculator
+bindsym $mod+Mod1+Shift+c exec gnome-calculator
 bindsym $mod+Mod1+v exec --no-startup-id $term \
   --class 'xvpn' -e sudo xvpn ui
 for_window [app_id="xvpn"] mark V

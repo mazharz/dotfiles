@@ -6,48 +6,52 @@ local fmt = require("luasnip.extras.fmt").fmt
 ls.filetype_extend("javascriptreact", { "javascript", "html" })
 
 local snippets = {
-  s("us", fmt("const [{}, set{}] = useState({})",
-    { i(1, "state"), i(2, "State"), i(3, "init") }
-  )),
+	s("us", fmt("const [{}, set{}] = useState({})", { i(1, "state"), i(2, "State"), i(3, "init") })),
 
-  s("ue", fmt([[
+	s(
+		"ue",
+		fmt(
+			[[
     useEffect(() => {
       qp
     }, [qp])
     ]],
-    { i(2), i(1, "dep") },
-    { delimiters = "qp" }
-  )),
+			{ i(2), i(1, "dep") },
+			{ delimiters = "qp" }
+		)
+	),
 
-  s("uc", fmt("const {} = useContext({})",
-    { i(1, "ctx"), i(2, "Ctx") }
-  )),
+	s("uc", fmt("const {} = useContext({})", { i(1, "ctx"), i(2, "Ctx") })),
 
-  s("ucb", fmt([[
+	s(
+		"ucb",
+		fmt(
+			[[
     const qp = useCallback(() => {
       qp
     }, [qp])
     ]],
-    { i(1, "fn"), i(3), i(2, "dep") },
-    { delimiters = "qp" }
-  )),
+			{ i(1, "fn"), i(3), i(2, "dep") },
+			{ delimiters = "qp" }
+		)
+	),
 
-  s("ume", fmt([[
+	s(
+		"ume",
+		fmt(
+			[[
     const qp = useMemo(() => {
       qp
     }, [qp])
     ]],
-    { i(1, "memoized"), i(3), i(2, "dep") },
-    { delimiters = "qp" }
-  )),
+			{ i(1, "memoized"), i(3), i(2, "dep") },
+			{ delimiters = "qp" }
+		)
+	),
 
-  s("mbox", fmt("<Box>{}</Box>",
-    { i(1) }
-  )),
+	s("mbox", fmt("<Box>{}</Box>", { i(1) })),
 
-  s("mtyp", fmt("<Typography>{}</Typography>",
-    { i(1) }
-  )),
+	s("mtyp", fmt("<Typography>{}</Typography>", { i(1) })),
 }
 
-ls.add_snippets("javascriptreact", snippets);
+ls.add_snippets("javascriptreact", snippets)

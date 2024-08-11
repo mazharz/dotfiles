@@ -12,3 +12,7 @@ sudo_destination="/etc/sudoers.d/m47h4r"
 cp $sudo_source $sudo_destination
 chown root:root $sudo_destination
 chmod 0440 $sudo_destination
+
+echo '########################################################################'
+echo '# add /home/m47h4r/bin to the end of secure_path if it exists in the sudoers file'
+echo '########################################################################'

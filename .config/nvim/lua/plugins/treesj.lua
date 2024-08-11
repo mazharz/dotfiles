@@ -1,13 +1,13 @@
 return {
-	'Wansmer/treesj',
+	"Wansmer/treesj",
 	keys = {
 		{
-			'<space>J',
-			":TSJToggle<CR>"
-		}
+			"<space>J",
+			":TSJToggle<CR>",
+		},
 	},
 	config = function()
-		require('treesj').setup({
+		require("treesj").setup({
 			use_default_keymaps = false,
 		})
 	end,

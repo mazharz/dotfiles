@@ -22,6 +22,14 @@ alias packageRemoveOrphans="sudo pacman -Rs $(pacman -Qdtq)"
 alias packageSortMirrors="sudo reflector --age 6 --fastest 10 --latest 10 --sort rate --protocol https --save /etc/pacman.d/mirrorlist"
 alias packageUpgrade="google-chrome-stable https://archlinux.org && sudo pacman -Syu"
 
+# calendars
+alias cy="cal -y"
+alias c3="cal -3"
+alias c="cal"
+alias jcy="jcal -y"
+alias jc3="jcal -3"
+alias jc="jcal"
+
 # others
 alias backup="rsync -au --delete --progress /home/m47h4r/mzd/* /run/media/m47h4r/mzed"
 alias backup2="rsync -au --delete --progress /home/m47h4r/mzd/* /run/media/m47h4r/mzd"

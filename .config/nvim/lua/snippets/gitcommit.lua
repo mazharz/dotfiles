@@ -6,21 +6,23 @@ local t = ls.text_node
 local fmt = require("luasnip.extras.fmt").fmt
 
 local snippets = {
-  s("f", fmt([[
+	s(
+		"f",
+		fmt(
+			[[
     {}({}): {}
 
 
     ]],
-    {
-      c(1, { t "feat", t "fix", t "refactor", t "perf", t "test" }),
-      i(2, "scope"),
-      i(3, "message")
-    }
-  )),
+			{
+				c(1, { t("feat"), t("fix"), t("refactor"), t("perf"), t("test") }),
+				i(2, "scope"),
+				i(3, "message"),
+			}
+		)
+	),
 
-  s("b", fmt("BREAKING CHANGE: {}",
-    { i(1, "message") }
-  )),
+	s("b", fmt("BREAKING CHANGE: {}", { i(1, "message") })),
 }
 
-ls.add_snippets("gitcommit", snippets);
+ls.add_snippets("gitcommit", snippets)

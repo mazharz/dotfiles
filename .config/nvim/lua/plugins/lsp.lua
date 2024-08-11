@@ -1,40 +1,40 @@
 local setupLsp = function()
-	local neoconf = require('neoconf');
+	local neoconf = require("neoconf")
 	neoconf.setup({})
-	local lspconfig = require('lspconfig');
-	local capabilities = require('cmp_nvim_lsp').default_capabilities()
+	local lspconfig = require("lspconfig")
+	local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 	local on_attach = function(client, bufnr)
 		local bufopts = { noremap = true, silent = true, buffer = bufnr }
-		vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
-		vim.keymap.set('n', '<leader>K', vim.lsp.buf.signature_help, bufopts)
+		vim.keymap.set("n", "K", vim.lsp.buf.hover, bufopts)
+		vim.keymap.set("n", "<leader>K", vim.lsp.buf.signature_help, bufopts)
 
-		vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
-		vim.keymap.set('n', 'gvd', ':vsplit | lua vim.lsp.buf.definition()<CR>', bufopts)
-		vim.keymap.set('n', 'ghd', ':split | lua vim.lsp.buf.definition()<CR>', bufopts)
-		vim.keymap.set('n', 'gtd', ':tab split | lua vim.lsp.buf.definition()<CR>', bufopts)
+		vim.keymap.set("n", "gd", vim.lsp.buf.definition, bufopts)
+		vim.keymap.set("n", "gvd", ":vsplit | lua vim.lsp.buf.definition()<CR>", bufopts)
+		vim.keymap.set("n", "ghd", ":split | lua vim.lsp.buf.definition()<CR>", bufopts)
+		vim.keymap.set("n", "gtd", ":tab split | lua vim.lsp.buf.definition()<CR>", bufopts)
 
-		vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
-		vim.keymap.set('n', 'gvr', ':vsplit | lua vim.lsp.buf.references()<CR>', bufopts)
-		vim.keymap.set('n', 'ghr', ':split | lua vim.lsp.buf.references()<CR>', bufopts)
-		vim.keymap.set('n', 'gtr', ':tab split | lua vim.lsp.buf.references()<CR>', bufopts)
+		vim.keymap.set("n", "gr", vim.lsp.buf.references, bufopts)
+		vim.keymap.set("n", "gvr", ":vsplit | lua vim.lsp.buf.references()<CR>", bufopts)
+		vim.keymap.set("n", "ghr", ":split | lua vim.lsp.buf.references()<CR>", bufopts)
+		vim.keymap.set("n", "gtr", ":tab split | lua vim.lsp.buf.references()<CR>", bufopts)
 
-		vim.keymap.set('n', 'gD', vim.lsp.buf.type_definition, bufopts)
-		vim.keymap.set('n', 'gvD', ':vsplit | lua vim.lsp.buf.type_definition()<CR>', bufopts)
-		vim.keymap.set('n', 'ghD', ':split | lua vim.lsp.buf.type_definition()<CR>', bufopts)
-		vim.keymap.set('n', 'gtD', ':tab split | lua vim.lsp.buf.type_definition()<CR>', bufopts)
+		vim.keymap.set("n", "gD", vim.lsp.buf.type_definition, bufopts)
+		vim.keymap.set("n", "gvD", ":vsplit | lua vim.lsp.buf.type_definition()<CR>", bufopts)
+		vim.keymap.set("n", "ghD", ":split | lua vim.lsp.buf.type_definition()<CR>", bufopts)
+		vim.keymap.set("n", "gtD", ":tab split | lua vim.lsp.buf.type_definition()<CR>", bufopts)
 
-		vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
-		vim.keymap.set('n', 'gvi', ':vsplit | lua vim.lsp.buf.implementation()<CR>', bufopts)
-		vim.keymap.set('n', 'ghi', ':split | lua vim.lsp.buf.implementation()<CR>', bufopts)
-		vim.keymap.set('n', 'gti', ':tab split | lua vim.lsp.buf.implementation()<CR>', bufopts)
+		vim.keymap.set("n", "gi", vim.lsp.buf.implementation, bufopts)
+		vim.keymap.set("n", "gvi", ":vsplit | lua vim.lsp.buf.implementation()<CR>", bufopts)
+		vim.keymap.set("n", "ghi", ":split | lua vim.lsp.buf.implementation()<CR>", bufopts)
+		vim.keymap.set("n", "gti", ":tab split | lua vim.lsp.buf.implementation()<CR>", bufopts)
 
-		vim.keymap.set('n', '<leader>j', vim.diagnostic.goto_next, bufopts)
-		vim.keymap.set('n', '<leader>k', vim.diagnostic.goto_prev, bufopts)
-		vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, bufopts)
+		vim.keymap.set("n", "<leader>j", vim.diagnostic.goto_next, bufopts)
+		vim.keymap.set("n", "<leader>k", vim.diagnostic.goto_prev, bufopts)
+		vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, bufopts)
 
-		vim.keymap.set('n', '<leader>r', vim.lsp.buf.rename, bufopts)
-		vim.keymap.set('n', '<leader>a', vim.lsp.buf.code_action, bufopts)
+		vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, bufopts)
+		vim.keymap.set("n", "<leader>a", vim.lsp.buf.code_action, bufopts)
 
 		-- prevent tsserver from formatting, let null-ls handle it
 		if client.name == "tsserver" then
@@ -47,147 +47,154 @@ local setupLsp = function()
 			source = false,
 			spacing = 0,
 			prefix = "",
-			suffix = "<<<",
-			format = function() return "" end
+			suffix = function(diagnostic)
+				if diagnostic.severity == vim.diagnostic.severity.ERROR then
+					return "󰅚"
+				elseif diagnostic.severity == vim.diagnostic.severity.WARN then
+					return "󰀪"
+				elseif diagnostic.severity == vim.diagnostic.severity.INFO then
+					return "󰋽"
+				elseif diagnostic.severity == vim.diagnostic.severity.HINT then
+					return "󰌶"
+				else
+					return "󰋽"
+				end
+			end,
+			format = function()
+				return ""
+			end,
 		},
-		signs = false
+		signs = false,
 	})
 
 	require("mason").setup()
 	require("mason-lspconfig").setup({
-		automatic_installation = true
+		automatic_installation = true,
 	})
 
-
-	lspconfig.clangd.setup {
+	lspconfig.clangd.setup({
 		capabilities = capabilities,
-		on_attach = on_attach
-	}
+		on_attach = on_attach,
+	})
 
 	if not neoconf.get("tsserver.disable") then
-		lspconfig.tsserver.setup {
+		lspconfig.tsserver.setup({
 			capabilities = capabilities,
-			on_attach = on_attach
-		}
+			on_attach = on_attach,
+		})
 	end
 
-	lspconfig.lua_ls.setup {
+	lspconfig.lua_ls.setup({
 		capabilities = capabilities,
 		on_attach = on_attach,
-	}
-	lspconfig.graphql.setup {
+	})
+	lspconfig.graphql.setup({
 		capabilities = capabilities,
 		on_attach = on_attach,
-	}
-	lspconfig.eslint.setup {
+	})
+	lspconfig.eslint.setup({
 		capabilities = capabilities,
 		on_attach = on_attach,
-	}
-	lspconfig.tailwindcss.setup {
+	})
+	lspconfig.tailwindcss.setup({
 		capabilities = capabilities,
 		on_attach = on_attach,
-	}
-	lspconfig.html.setup {
+	})
+	lspconfig.html.setup({
 		capabilities = capabilities,
 		on_attach = on_attach,
-	}
-	lspconfig.cssls.setup {
+	})
+	lspconfig.cssls.setup({
 		capabilities = capabilities,
 		on_attach = on_attach,
 		settings = {
-			css = { validate = true,
-				lint = {
-					unknownAtRules = "ignore"
-				}
-			},
-			scss = { validate = true,
-				lint = {
-					unknownAtRules = "ignore"
-				}
-			},
-			less = { validate = true,
-				lint = {
-					unknownAtRules = "ignore"
-				}
-			},
+			css = { validate = true, lint = {
+				unknownAtRules = "ignore",
+			} },
+			scss = { validate = true, lint = {
+				unknownAtRules = "ignore",
+			} },
+			less = { validate = true, lint = {
+				unknownAtRules = "ignore",
+			} },
 		},
-	}
-	lspconfig.jsonls.setup {
+	})
+	lspconfig.jsonls.setup({
 		capabilities = capabilities,
 		on_attach = on_attach,
-	}
-	lspconfig.yamlls.setup {
+	})
+	lspconfig.yamlls.setup({
 		capabilities = capabilities,
 		on_attach = on_attach,
-	}
-	lspconfig.cssmodules_ls.setup {
+	})
+	lspconfig.cssmodules_ls.setup({
 		capabilities = capabilities,
 		on_attach = on_attach,
-	}
-	lspconfig.angularls.setup {
+	})
+	lspconfig.angularls.setup({
 		capabilities = capabilities,
 		on_attach = on_attach,
-	}
-	lspconfig.bashls.setup {
+	})
+	lspconfig.bashls.setup({
 		capabilities = capabilities,
 		on_attach = on_attach,
-	}
-	lspconfig.rust_analyzer.setup {
+	})
+	lspconfig.rust_analyzer.setup({
 		capabilities = capabilities,
 		on_attach = on_attach,
-	}
-	lspconfig.texlab.setup {
+	})
+	lspconfig.texlab.setup({
 		capabilities = capabilities,
 		on_attach = on_attach,
-	}
-	lspconfig.gopls.setup {
+	})
+	lspconfig.gopls.setup({
 		capabilities = capabilities,
 		on_attach = on_attach,
-	}
-	lspconfig.golangci_lint_ls.setup {
+	})
+	lspconfig.golangci_lint_ls.setup({
 		capabilities = capabilities,
 		on_attach = on_attach,
-	}
-	lspconfig.hls.setup {
+	})
+	lspconfig.hls.setup({
 		capabilities = capabilities,
 		on_attach = on_attach,
-	}
-	lspconfig.volar.setup {
+	})
+	lspconfig.volar.setup({
 		capabilities = capabilities,
 		on_attach = on_attach,
-		filetypes = { 'vue', 'typescript', 'javascript' }
-	}
-	lspconfig.typst_lsp.setup {
+		filetypes = { "vue", "typescript", "javascript" },
+	})
+	lspconfig.typst_lsp.setup({
 		capabilities = capabilities,
 		on_attach = on_attach,
 		settings = {
-			exportPdf = "onSave" -- Choose onType, onSave or never.
-		}
-	}
-	lspconfig.pyright.setup {
+			exportPdf = "onSave", -- Choose onType, onSave or never.
+		},
+	})
+	lspconfig.pyright.setup({
 		capabilities = capabilities,
 		on_attach = on_attach,
-	}
+	})
 end
 
 return {
-	'neovim/nvim-lspconfig',
-	event = { 'BufReadPre', 'BufNewFile' },
+	"neovim/nvim-lspconfig",
+	event = { "BufReadPre", "BufNewFile" },
 	dependencies = {
 		{
-			'williamboman/mason-lspconfig.nvim',
+			"williamboman/mason-lspconfig.nvim",
 			opts = {
-				automatic_installation = true
-			}
+				automatic_installation = true,
+			},
 		},
 		{
-			'williamboman/mason.nvim',
+			"williamboman/mason.nvim",
 			cmd = "Mason",
-			config = true
+			config = true,
 		},
 		{
-			'folke/neoconf.nvim',
-		}
+			"folke/neoconf.nvim",
+		},
 	},
-	config = setupLsp
+	config = setupLsp,
 }
