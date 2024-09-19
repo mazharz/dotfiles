@@ -5,7 +5,7 @@ return {
 		"kristijanhusak/vim-dadbod-completion",
 	},
 	keys = {
-		{ "<leader>Q", ":DBUIToggle<CR>" },
+		{ "<leader>S", ":DBUIToggle<CR>" },
 	},
 	config = function()
 		vim.cmd([[

@@ -20,7 +20,6 @@ alias txs="tmux-sessionizer"
 # packages
 alias packageRemoveOrphans="sudo pacman -Rs $(pacman -Qdtq)"
 alias packageSortMirrors="sudo reflector --age 6 --fastest 10 --latest 10 --sort rate --protocol https --save /etc/pacman.d/mirrorlist"
-alias packageUpgrade="google-chrome-stable https://archlinux.org && sudo pacman -Syu"
 
 # calendars
 alias cy="cal -y"

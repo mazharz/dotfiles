@@ -5,6 +5,9 @@ return {
 	},
 	enabled = true,
 	opts = {
+		window = {
+			width = 100,
+		},
 		plugins = {
 			options = {
 				enabled = true,

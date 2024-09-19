@@ -46,20 +46,8 @@ local setupLsp = function()
 		virtual_text = {
 			source = false,
 			spacing = 0,
-			prefix = "",
-			suffix = function(diagnostic)
-				if diagnostic.severity == vim.diagnostic.severity.ERROR then
-					return "󰅚"
-				elseif diagnostic.severity == vim.diagnostic.severity.WARN then
-					return "󰀪"
-				elseif diagnostic.severity == vim.diagnostic.severity.INFO then
-					return "󰋽"
-				elseif diagnostic.severity == vim.diagnostic.severity.HINT then
-					return "󰌶"
-				else
-					return "󰋽"
-				end
-			end,
+			prefix = "<",
+			suffix = "",
 			format = function()
 				return ""
 			end,
@@ -69,7 +57,7 @@ local setupLsp = function()
 
 	require("mason").setup()
 	require("mason-lspconfig").setup({
-		automatic_installation = true,
+		automatic_installation = { exclude = { "hls" } },
 	})
 
 	lspconfig.clangd.setup({
@@ -131,10 +119,6 @@ local setupLsp = function()
 		capabilities = capabilities,
 		on_attach = on_attach,
 	})
-	lspconfig.angularls.setup({
-		capabilities = capabilities,
-		on_attach = on_attach,
-	})
 	lspconfig.bashls.setup({
 		capabilities = capabilities,
 		on_attach = on_attach,
@@ -158,11 +142,14 @@ local setupLsp = function()
 	lspconfig.hls.setup({
 		capabilities = capabilities,
 		on_attach = on_attach,
+		cmd = { vim.fn.expand("$HOME/.ghcup/bin/haskell-language-server-wrapper"), "--lsp" },
 	})
 	lspconfig.volar.setup({
 		capabilities = capabilities,
 		on_attach = on_attach,
-		filetypes = { "vue", "typescript", "javascript" },
+		filetypes = { "vue" },
+		-- TODO: see if the above fixes ur issues with ts lsp
+		-- filetypes = { "vue", "typescript", "javascript" },
 	})
 	lspconfig.typst_lsp.setup({
 		capabilities = capabilities,
@@ -181,12 +168,7 @@ return {
 	"neovim/nvim-lspconfig",
 	event = { "BufReadPre", "BufNewFile" },
 	dependencies = {
-		{
-			"williamboman/mason-lspconfig.nvim",
-			opts = {
-				automatic_installation = true,
-			},
-		},
+		{ "williamboman/mason-lspconfig.nvim" },
 		{
 			"williamboman/mason.nvim",
 			cmd = "Mason",

@@ -1,7 +1,7 @@
 local setupStatusLine = function()
 	require("lualine").setup({
 		options = {
-			icons_enabled = true,
+			icons_enabled = false,
 			theme = "gruvbox-material",
 			section_separators = { left = "", right = "" },
 			component_separators = { left = "", right = "" },

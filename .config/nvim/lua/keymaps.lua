@@ -25,9 +25,7 @@ keymap("n", "<leader>W", ":wq<CR>", opts)
 
 -- faster quit
 keymap("n", "<leader>q", ":q<CR>", opts)
-
--- use register for pasting yanked
-keymap("x", "<leader>p", '"_dP')
+keymap("n", "<leader>Q", ":q!<CR>", opts)
 
 -- make new stuff
 keymap("n", "<leader>nt", ":tabnew<CR>", opts)
@@ -93,7 +91,13 @@ keymap("n", "<A-_>", "<C-w>=<C-w>|", opts)
 keymap("i", "<A-_>", "<C-w>=<C-w>|", opts)
 
 -------------------------------------------------------------------------------
--- macro keymaps
+-- macros
 -------------------------------------------------------------------------------
 
 keymap("n", "<leader>mc", '?><CR>i className=""<ESC>:nohl<CR>i', opts)
+
+-------------------------------------------------------------------------------
+-- session management
+-------------------------------------------------------------------------------
+keymap("n", "<leader>xs", ":mks! | :wqa<CR>", opts)
+keymap("n", "<leader>xl", ":so Session.vim<CR>", opts)

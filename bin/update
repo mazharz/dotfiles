@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+
+set -e
+
+echo '########################################################################'
+echo '# Updating base system...'
+sleep 1
+google-chrome-stable https://archlinux.org && sudo pacman -Syu
+
+echo '########################################################################'
+echo '# Updating aur package...'
+sleep 1
+trizen -Syu
+
+echo '########################################################################'
+echo '# Updating rust stuff...'
+sleep 1
+rustup update
+
+echo '########################################################################'
+echo '# Updating haskell stuff...'
+sleep 1
+ghcup upgrade
+echo '# CTA: Please update and set to new version, then uninstall older versions manually...'
+sleep 3
+ghcup tui
+
+echo '########################################################################'
+echo '# CTA: Update neovim packages (Lazy) and tools (Mason) manually...'
+sleep 3
+nvim
+
+echo '########################################################################'
+echo '# CTA: commit ~/.dotfiles/ and push to GitHub...'
+sleep 3
+cd ~/.dotfiles/ && git status
+
+echo '########################################################################'
+echo '# CTA: Backup phone contacts & gallery, then run backup alias commands...'
+sleep 3

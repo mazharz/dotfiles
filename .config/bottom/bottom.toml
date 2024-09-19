@@ -1,0 +1,59 @@
+[flags]
+# Whether to make process searching use regex by default.
+regex = true
+# Remove space in tables
+hide_table_gap = true
+# Show memory values in the processes widget as values by default
+process_memory_as_value = true
+# Displays the network widget using bytes.
+network_use_bytes = true
+# Shows cache and buffer memory
+enable_cache_memory = true
+# Whether to put the CPU legend to the left.
+cpu_left_legend = true
+# Where to place the legend for the memory widget.
+# One of "none", "top-left", "top", "top-right", "left", "right", "bottom-left", "bottom", "bottom-right".
+memory_legend = "top-left"
+# Where to place the legend for the network widget.
+# One of "none", "top-left", "top", "top-right", "left", "right", "bottom-left", "bottom", "bottom-right".
+network_legend = "top-left"
+
+[styles]
+# Built-in themes. Valid values are:
+# - "default"
+# - "default-light"
+# - "gruvbox"
+# - "gruvbox-light"
+# - "nord"
+# - "nord-light".
+#
+theme = "gruvbox"
+
+# Layout - layouts follow a pattern like this:
+# [[row]] represents a row in the application.
+# [[row.child]] represents either a widget or a column.
+# [[row.child.child]] represents a widget.
+#
+# All widgets must have the type value set to one of ["cpu", "mem", "proc", "net", "temp", "disk", "empty"].
+# All layout components have a ratio value - if this is not set, then it defaults to 1.
+[[row]]
+  ratio=85
+  [[row.child]]
+    ratio=30
+    type="proc"
+    [[row.child]]
+      ratio=70
+      [[row.child.child]]
+        type="cpu"
+      [[row.child.child]]
+        type="mem"
+      [[row.child.child]]
+        type="net"
+[[row]]
+  ratio=15
+  [[row.child]]
+    ratio=30
+    type="temp"
+  [[row.child]]
+    ratio=70
+    type="disk"

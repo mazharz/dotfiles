@@ -4,3 +4,6 @@ echo '# Installing the very essentials...'
 sleep 1
 sudo pacman -S base-devel curl wget git stow python-pip openssh man-pages
 
+echo '# Enabling ntp...'
+sleep 1
+sudo timedatectl set-ntp true

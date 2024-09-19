@@ -5,11 +5,11 @@ local setupDap = function()
 
 	-- Set up icons.
 	local icons = {
-		DapStopped = { " ", "DiagnosticWarn", "DapStoppedLine" },
-		DapBreakpoint = { " ", "DiagnosticInfo" },
-		DapBreakpointCondition = { " ", "DiagnosticInfo" },
-		DapBreakpointRejected = { " ", "DiagnosticError" },
-		DapLogPoint = { " ", "DiagnosticInfo" },
+		DapStopped = { ">", "DiagnosticWarn", "DapStoppedLine" },
+		DapBreakpoint = { "*", "DiagnosticInfo" },
+		DapBreakpointCondition = { "?", "DiagnosticInfo" },
+		DapBreakpointRejected = { "!", "DiagnosticError" },
+		DapLogPoint = { "$", "DiagnosticInfo" },
 	}
 
 	for name, sign in pairs(icons) do

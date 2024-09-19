@@ -1,8 +1,11 @@
+local telescope = require("telescope")
+
 local setupTelescope = function()
 	local layout = require("telescope.actions.layout")
 	local actions = require("telescope.actions")
+	local lga_actions = require("telescope-live-grep-args.actions")
 
-	require("telescope").setup({
+	telescope.setup({
 		defaults = {
 			prompt_prefix = "$ ",
 			layout_strategy = "flex",
@@ -28,9 +31,26 @@ local setupTelescope = function()
 				"%.git",
 			},
 		},
+
+		extensions = {
+			live_grep_args = {
+				auto_quoting = true,
+				mappings = {
+					i = {
+						["<C-e>"] = lga_actions.quote_prompt({ postfix = " --iglob " }),
+						-- freeze the current list and start a fuzzy search in the frozen list
+						["<C-space>"] = actions.to_fuzzy_refine,
+					},
+				},
+			},
+		},
 	})
 	-- make sure telescope uses fzf plugin
-	require("telescope").load_extension("fzf")
+	telescope.load_extension("fzf")
+	-- replace default ui (ex. code actions) with telescope
+	telescope.load_extension("ui-select")
+	-- enable live grep args
+	telescope.load_extension("live_grep_args")
 end
 
 return {
@@ -42,6 +62,8 @@ return {
 			"nvim-telescope/telescope-fzf-native.nvim",
 			build = "make",
 		},
+		"nvim-telescope/telescope-ui-select.nvim",
+		"nvim-telescope/telescope-live-grep-args.nvim",
 	},
 	keys = {
 		{
@@ -59,12 +81,25 @@ return {
 		{
 			"<leader>ss",
 			function()
-				require("telescope.builtin").live_grep({
+				telescope.extensions.live_grep_args.live_grep_args({
 					additional_args = {
 						"--hidden",
 					},
 				})
 			end,
+		},
+		{
+			"<leader>sw",
+			function()
+				require("telescope-live-grep-args.shortcuts").grep_word_under_cursor()
+			end,
+		},
+		{
+			"<leader>sv",
+			function()
+				require("telescope-live-grep-args.shortcuts").grep_visual_selection()
+			end,
+			mode = "v",
 		},
 		{
 			"<leader>sc",

@@ -39,7 +39,7 @@ function gfco() {
 
 function gfbd() {
   local branches branch
-  branches=$(git --no-pager branch --format="%(refname:short)") &&
+  branches=$(git --no-pager branch --format="%(refname:short)" --merged) &&
   branch=$(echo "$branches" | fzf +m) &&
   git branch -d $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
 }
