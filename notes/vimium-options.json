@@ -1,0 +1,15 @@
+{
+  "waitForEnterForFilteredHints": false,
+  "hideHud": true,
+  "keyMappings": "# Insert your preferred key mappings here.\nmap e scrollPageUp\nmap <a-e> previousTab\nmap <a-r> nextTab\nmap <a-E> moveTabLeft\nmap <a-R> moveTabRight",
+  "linkHintCharacters": "fdsagrewqvcxztb",
+  "regexFindMode": true,
+  "settingsVersion": "2.1.2",
+  "userDefinedLinkHintCss": "div > .vimiumHintMarker {\n/* linkhint boxes */\nbackground: #fbf1c7;\nborder: 1px solid #000000;\n}\n\ndiv > .vimiumHintMarker span {\n/* linkhint text */\ncolor: #282828;\nfont-weight: bold;\nfont-size: 14px;\n}\n\ndiv > .vimiumHintMarker > .matchingCharacter {\ncolor: #d79921;\n}",
+  "exclusionRules": [
+    {
+      "passKeys": "",
+      "pattern": "https?://www.duolingo.com/*"
+    }
+  ]
+}
