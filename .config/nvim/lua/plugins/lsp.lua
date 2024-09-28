@@ -36,8 +36,8 @@ local setupLsp = function()
 		vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, bufopts)
 		vim.keymap.set("n", "<leader>a", vim.lsp.buf.code_action, bufopts)
 
-		-- prevent tsserver from formatting, let null-ls handle it
-		if client.name == "tsserver" then
+		-- prevent ts_ls from formatting, let null-ls handle it
+		if client.name == "ts_ls" then
 			client.server_capabilities.document_formatting = false
 		end
 	end
@@ -65,8 +65,8 @@ local setupLsp = function()
 		on_attach = on_attach,
 	})
 
-	if not neoconf.get("tsserver.disable") then
-		lspconfig.tsserver.setup({
+	if not neoconf.get("ts_ls.disable") then
+		lspconfig.ts_ls.setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
 		})

@@ -6,7 +6,7 @@ local options = {
 	-- make sure to enable hidden if off, vim will not let you have files
 	-- with unsaved changes in abandoned buffers
 	hidden = true,
-	-- some servers (tsserver) have issue with backup files so disable them
+	-- some servers (ts_ls) have issue with backup files so disable them
 	backup = false,
 	writebackup = false,
 	-- make sure to show one line for cmd to avoid 'hit-enter' for all commands
