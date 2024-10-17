@@ -1,7 +1,7 @@
 #!/bin/bash
 # NOTE: see /usr/share/X11/xkb/rules/base.lst for layouts and variants
 
-setxkbmap -layout "us,ir" -option grp:alt_caps_toggle;
+setxkbmap -layout "us,ir" -option grp:caps_toggle;
 
 # set capslock to escape
 setxkbmap -option caps:escape

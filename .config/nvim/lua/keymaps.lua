@@ -28,7 +28,7 @@ keymap("n", "<leader>q", ":q<CR>", opts)
 keymap("n", "<leader>Q", ":q!<CR>", opts)
 
 -- make new stuff
-keymap("n", "<leader>nt", ":tabnew<CR>", opts)
+keymap("n", "<leader>nt", ":tab split<CR>", opts)
 keymap("n", "<leader>nv", ":vsplit<CR>", opts)
 keymap("n", "<leader>nh", ":split<CR>", opts)
 

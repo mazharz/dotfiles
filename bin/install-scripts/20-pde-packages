@@ -26,3 +26,7 @@ sudo pacman -S redis
 echo '# Enabling redis service...'
 sleep 1
 sudo systemctl enable --now redis
+
+echo '# Installing qmk packages...'
+sleep 1
+sudo pacman -S libffi qmk
