@@ -119,6 +119,12 @@ return {
 				require("telescope.builtin").marks()
 			end,
 		},
+		{
+			"<leader>sr",
+			function()
+				require("telescope.builtin").registers()
+			end,
+		},
 	},
 	config = setupTelescope,
 }
