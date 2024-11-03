@@ -59,8 +59,7 @@ for key, value in pairs(options) do
 	vim.opt[key] = value
 end
 
-vim.o.foldmethod = "expr"
-vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.o.foldmethod = "manual"
 vim.wo.foldenable = false -- disable by default
 
 -- highlight on yank

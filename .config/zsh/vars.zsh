@@ -22,7 +22,7 @@ export PATH=$PATH:/home/m47h4r/bin/
 export XDG_CURRENT_DESKTOP="GNOME"
 
 # Scale qt apps
-export QT_SCALE_FACTOR=1.3
+# export QT_SCALE_FACTOR=1.3
 
 export DIR_SHORTCUTS="w:$HOME/mzd/wd;n:$HOME/mzd/multimedia/not watched;m:$HOME/mzd/music;c:$HOME/mzd/code;b:$HOME/mzd/text/book;o:$HOME/mzd/os;f:$HOME/mzd/text/Dropbox/finances;t:$HOME/mzd/text;d:$HOME/mzd/text/doc;M:$HOME/mzd/multimedia/music video/;F:$HOME/mzd/multimedia/personal media/Family/;D:$HOME/Downloads/"
 
