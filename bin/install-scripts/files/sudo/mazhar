@@ -1,0 +1,4 @@
+mazhar ALL=(ALL:ALL) ALL
+mazhar ALL=(root) NOPASSWD: /home/mazhar/bin/brightness
+mazhar ALL=(root) NOPASSWD: /home/mazhar/bin/xvpn
+mazhar ALL=(root) NOPASSWD: /home/mazhar/bin/vpn

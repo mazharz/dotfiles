@@ -30,8 +30,8 @@ alias jc3="jcal -3"
 alias jc="jcal"
 
 # others
-alias backup="rsync -au --delete --progress /home/m47h4r/mzd/* /run/media/m47h4r/mzed"
-alias backup2="rsync -au --delete --progress /home/m47h4r/mzd/* /run/media/m47h4r/mzd"
+alias backup="rsync -au --delete --progress /home/mazhar/mzd/* /run/media/m47h4r/mzed"
+alias backup2="rsync -au --delete --progress /home/mazhar/mzd/* /run/media/m47h4r/mzd"
 alias ra="ranger"
 alias lg="lazygit"
 alias ldg="ledger"

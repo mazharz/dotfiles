@@ -7,12 +7,12 @@ pacman -S sudo
 
 echo '# Copying sudoers file...'
 sleep 1
-sudo_source="./files/sudo/m47h4r"
-sudo_destination="/etc/sudoers.d/m47h4r"
+sudo_source="./files/sudo/mazhar"
+sudo_destination="/etc/sudoers.d/mazhar"
 cp $sudo_source $sudo_destination
 chown root:root $sudo_destination
 chmod 0440 $sudo_destination
 
 echo '########################################################################'
-echo '# add /home/m47h4r/bin to the end of secure_path if it exists in the sudoers file'
+echo '# add /home/mazhar/bin to the end of secure_path if it exists in the sudoers file'
 echo '########################################################################'

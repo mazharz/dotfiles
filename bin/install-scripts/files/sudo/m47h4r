@@ -1,4 +1,0 @@
-m47h4r ALL=(ALL:ALL) ALL
-m47h4r ALL=(root) NOPASSWD: /home/m47h4r/bin/brightness
-m47h4r ALL=(root) NOPASSWD: /home/m47h4r/bin/xvpn
-m47h4r ALL=(root) NOPASSWD: /home/m47h4r/bin/vpn

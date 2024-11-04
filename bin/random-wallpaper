@@ -1,6 +1,6 @@
 #!/bin/bash
 
-defaultDir='/home/m47h4r/mzd/multimedia/picture/perfect pictures/'
+defaultDir='/home/mazhar/mzd/multimedia/picture/perfect pictures/'
 dir=${1:-$defaultDir}
 
 IFS=$'\r\n' GLOBIGNORE='*' command eval 'pictureList=($(find ${dir} -type f | grep -E -i "(\.jpg|\.jpeg|\.png)"))'

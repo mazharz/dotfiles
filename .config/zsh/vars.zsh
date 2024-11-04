@@ -16,7 +16,7 @@ export FZF_DEFAULT_COMMAND='rg --hidden --files -g !node_modules -g !.git -g !.T
 export LEDGER_FILE=$HOME/mzd/text/Dropbox/finances/2024.journal
 # PATH
 export PATH="$VOLTA_HOME/bin:$PATH"
-export PATH=$PATH:/home/m47h4r/bin/
+export PATH=$PATH:/home/mazhar/bin/
 
 # necessary configurations to keep some applications (mongodb compass) sane
 export XDG_CURRENT_DESKTOP="GNOME"
@@ -38,4 +38,4 @@ export GOBIN="$GOPATH/bin"
 export PATH=$PATH:$GOBIN
 
 # haskell
-[ -f "/home/m47h4r/.ghcup/env" ] && . "/home/m47h4r/.ghcup/env"
+[ -f "/home/mazhar/.ghcup/env" ] && . "/home/m47h4r/.ghcup/env"

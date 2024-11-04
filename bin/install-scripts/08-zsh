@@ -8,4 +8,4 @@ echo '# Installing oh-my-zsh...'
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 echo '# Changing shell to zsh...'
-sudo chsh --shell /usr/bin/zsh m47h4r
+sudo chsh --shell /usr/bin/zsh mazhar

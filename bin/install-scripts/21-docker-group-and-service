@@ -1,9 +1,9 @@
 #!/bin/bash
 set -e
 
-echo '# Adding m47h4r to docker group...'
+echo '# Adding mazhar to docker group...'
 sleep 1
-sudo gpasswd -a m47h4r docker
+sudo gpasswd -a mazhar docker
 
 echo '# Enabling & starting docker.service...'
 sleep 1
