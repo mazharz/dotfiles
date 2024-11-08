@@ -15,7 +15,7 @@ trizen -S --noconfirm golangci-lint-bin
 
 echo '# Installing mongo packages...'
 sleep 1
-trizen -S mongodb-bin mongodb-compass
+trizen -S --noconfirm mongodb-bin mongodb-compass
 echo '# Enabling mongo service...'
 sleep 1
 sudo systemctl enable --now mongodb

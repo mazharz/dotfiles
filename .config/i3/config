@@ -266,14 +266,14 @@ bindsym $mod+Mod1+bracketright exec mpc seek +10
 
 # find profiles in ~/.cache/google-chrome
 bindsym $mod+c           exec google-chrome-stable --profile-directory=Default
-bindsym $mod+Mod1+c      exec google-chrome-stable --profile-directory='Profile 8'
+bindsym $mod+Mod1+c      exec google-chrome-stable --profile-directory='Profile 1'
 bindsym $mod+Mod1+f      exec thunar
 bindsym $mod+Mod1+t      exec telegram-desktop
 bindsym $mod+Mod1+m      exec $term --title ncmpcpp -e ncmpcpp -q
 bindsym $mod+Mod1+p      exec $term --title fitimer -e fitimer
 bindsym $mod+Ctrl+c      exec ~/bin/clocks
 bindsym $mod+Mod1+Return exec $term -e ranger
-bindsym $mod+Mod1+h      exec ~/Hubstaff/HubstaffClient.bin.x86_64
+bindsym $mod+Mod1+h      exec ~/builds/hubstaff/Hubstaff/HubstaffClient.bin.x86_64
 bindsym $mod+Mod1+q      exec qalculate-gtk
 bindsym $mod+Mod1+v      exec --no-startup-id $term --class 'xvpn' -e sudo xvpn ui
 bindsym $mod+Mod1+d      exec mongodb-compass
@@ -301,3 +301,4 @@ exec copyq &
 exec picom &
 exec redshift-gtk &
 exec dropbox &
+exec ~/bin/monitor mono

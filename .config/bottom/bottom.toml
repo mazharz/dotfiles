@@ -55,5 +55,8 @@ theme = "gruvbox"
     ratio=30
     type="temp"
   [[row.child]]
-    ratio=70
+    ratio=30
+    type="battery"
+  [[row.child]]
+    ratio=40
     type="disk"

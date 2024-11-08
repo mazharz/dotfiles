@@ -38,4 +38,4 @@ export GOBIN="$GOPATH/bin"
 export PATH=$PATH:$GOBIN
 
 # haskell
-[ -f "/home/mazhar/.ghcup/env" ] && . "/home/m47h4r/.ghcup/env"
+[ -f "/home/mazhar/.ghcup/env" ] && . "/home/mazhar/.ghcup/env"
