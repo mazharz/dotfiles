@@ -3,4 +3,4 @@ set -e
 
 echo '# Installing disk apps...'
 sleep 1
-sudo pacman -S ncdu gparted gnome-disk-utility
+sudo pacman -S ncdu gparted gnome-disk-utility dosfstools

@@ -3,4 +3,5 @@ set -e
 
 echo '# Installing themes...'
 sleep 1
-trizen -S --noconfirm gruvbox-material-icon-theme-git gruvbox-material-gtk-theme-git 
+trizen -S --noconfirm gruvbox-material-gtk-theme-git 
+trizen -S --noconfirm gruvbox-material-icon-theme-git
