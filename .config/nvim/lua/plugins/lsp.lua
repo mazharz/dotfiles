@@ -151,13 +151,6 @@ local setupLsp = function()
 		-- TODO: see if the above fixes ur issues with ts lsp
 		-- filetypes = { "vue", "typescript", "javascript" },
 	})
-	lspconfig.typst_lsp.setup({
-		capabilities = capabilities,
-		on_attach = on_attach,
-		settings = {
-			exportPdf = "onSave", -- Choose onType, onSave or never.
-		},
-	})
 	lspconfig.pyright.setup({
 		capabilities = capabilities,
 		on_attach = on_attach,

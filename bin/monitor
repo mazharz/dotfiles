@@ -2,6 +2,8 @@
 
 if [ "$1" == "mono" ]; then
   xrandr --output eDP-1 --primary --mode 2560x1600 --scale 0.7x0.7 --pos 0x0 --output HDMI-1-5 --off
+elif [ "$1" == "mono-60" ]; then
+  xrandr --output eDP-1 --primary --mode 2560x1600 --rate 60 --scale 0.7x0.7 --pos 0x0 --output HDMI-1-5 --off
 elif [ "$1" == "dual" ]; then
   xrandr --output eDP-1 --primary --mode 1920x1080 --scale 1x1 --pos 0x0 --output HDMI-1-5 --mode 1920x1080 --pos 0x0
 fi

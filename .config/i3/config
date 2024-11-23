@@ -218,7 +218,7 @@ bar {
   separator_symbol "│"
   
   colors {
-    background #282828
+    # background #282828
     # transparency is set in picom
     background #000000
     statusline $bg
