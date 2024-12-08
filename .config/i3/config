@@ -212,7 +212,6 @@ client.background       $bg
 bar {
   status_command i3blocks -c ~/.config/i3/i3blocks.conf
   position bottom
-  tray_output primary
   tray_padding 2
   font pango:FiraCode Nerd Font 12
   separator_symbol "│"
