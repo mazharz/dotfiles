@@ -3,14 +3,14 @@ local setupStatusLine = function()
 		options = {
 			icons_enabled = false,
 			theme = "gruvbox-material",
-			section_separators = { left = "", right = "" },
+			section_separators = { left = "", right = "" },
 			component_separators = { left = "", right = "" },
 			disabled_filetypes = {},
 			always_divide_middle = true,
 			globalstatus = true, -- aka: vim.opt.laststatus = 3
 		},
 		sections = {
-			lualine_a = { { "mode", separator = { left = "" } } },
+			lualine_a = { "mode" },
 			lualine_b = { "branch" },
 			lualine_c = {
 				{ "filename", path = 1 },
