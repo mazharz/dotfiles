@@ -1,5 +1,5 @@
 return {
-	"tpope/vim-surround",
+	{ "kylechui/nvim-surround", version = "*", event = "VeryLazy", config = true },
 	"tpope/vim-repeat",
 	"tpope/vim-sleuth",
 

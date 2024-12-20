@@ -1,13 +1,7 @@
 gui:
+  scrollHeight: 10
   showListFooter: false
   showBottomLine: false
-  theme:
-    selectedLineBgColor:
-      - bold
-      - underline
-    selectedRangeBgColor:
-      - bold
-      - underline
 git:
   log:
     order: "date-order"

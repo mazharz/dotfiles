@@ -260,8 +260,8 @@ bindsym $mod+semicolon exec ~/bin/lock
 bindsym $mod+Mod1+period       exec mpc next; exec pkill -SIGRTMIN+11 i3blocks
 bindsym $mod+Mod1+comma        exec mpc prev; exec pkill -SIGRTMIN+11 i3blocks
 bindsym $mod+Mod1+j            exec mpc toggle; exec pkill -SIGRTMIN+11 i3blocks
-bindsym $mod+Mod1+bracketleft  exec mpc seek -10
-bindsym $mod+Mod1+bracketright exec mpc seek +10
+bindsym $mod+Mod1+bracketleft  exec mpc seek -10; exec pkill -SIGRTMIN+11 i3blocks
+bindsym $mod+Mod1+bracketright exec mpc seek +10; exec pkill -SIGRTMIN+11 i3blocks
 
 # find profiles in ~/.cache/google-chrome
 bindsym $mod+c           exec google-chrome-stable --profile-directory=Default

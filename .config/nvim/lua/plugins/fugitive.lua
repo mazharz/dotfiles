@@ -10,7 +10,7 @@ return {
 		{ "<leader>gmy", ":Git mergetool -y<CR>" },
 		{ "<leader>gdd", ":Git difftool<CR>" },
 		{ "<leader>gdy", ":Git difftool -y<CR>" },
-		{ "<leader>glg", ":Git log<CR><C-w>_<C-w>|" },
+		{ "<leader>gg", ":Git log<CR><C-w>_<C-w>|" },
 		{ "<leader>gb", ":Git blame<CR>" },
 	},
 	-- for some reason, using `config = true` results

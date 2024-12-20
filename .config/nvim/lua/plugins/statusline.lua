@@ -26,6 +26,13 @@ local setupStatusLine = function()
 					"tabs",
 					max_length = vim.o.columns, -- defaults to init terminal length
 					mode = 1,
+					fmt = function(name, context)
+						-- customize oil to avoid the empty tab name
+						if context.filetype == "oil" then
+							return "[oil]"
+						end
+						return name
+					end,
 				},
 			},
 		},

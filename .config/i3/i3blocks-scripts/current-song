@@ -4,4 +4,18 @@ song=$(mpc current)
 status=$(mpc status %state%)
 icon=$([ "$status" = "playing" ] && echo -n " " || echo -n "")
 
-echo "${icon}${song}"
+progress_percent=$(mpc status "%percenttime%" | awk '{print $1}' | tr % ' ')
+progress_percent="${progress_percent:=0}" # fallback value
+
+length=${#song}
+split_index=$((length * progress_percent / 100 ))
+
+escape_amp() {
+    echo "${1//&/\&amp;}"
+}
+
+elapsed_part=$(escape_amp "${song:0:split_index}")
+remaining_part=$(escape_amp "${song:split_index}")
+
+"$HOME/.config/i3/i3blocks-scripts/color-print" 3 "${icon}${elapsed_part}" 3 2 1 "true"
+echo "$remaining_part"
