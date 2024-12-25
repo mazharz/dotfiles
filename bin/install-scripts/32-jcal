@@ -1,6 +1,0 @@
-#!/bin/bash
-set -e
-
-echo '# Installing jcal...'
-sleep 1
-trizen -S --noconfirm jcal-git

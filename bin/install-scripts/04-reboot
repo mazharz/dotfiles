@@ -1,8 +1,7 @@
 #!/bin/bash
 
 echo '########################################################################'
-echo '# We are about to reboot, after that, make sure you have your normal'
-echo '# user and run the rest of the scripts via that user.'
+echo '# We are about to reboot, run the rest of the scripts with normal user'
 echo '########################################################################'
 echo -n '# type "y" to continue: '
 

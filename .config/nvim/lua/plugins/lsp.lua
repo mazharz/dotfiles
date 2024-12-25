@@ -34,7 +34,6 @@ local setupLsp = function()
 		vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, bufopts)
 
 		vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, bufopts)
-		vim.keymap.set("n", "<leader>a", vim.lsp.buf.code_action, bufopts)
 
 		-- prevent ts_ls from formatting, let null-ls handle it
 		if client.name == "ts_ls" then

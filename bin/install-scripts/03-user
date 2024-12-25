@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+echo '# Adding "mazhar" user...'
+sleep 1
+useradd -m -s /bin/bash mazhar
+
+echo '# Set your password now:'
+passwd mazhar

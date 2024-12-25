@@ -8,3 +8,7 @@ sudo pacman -S lm_sensors sysstat bottom unrar unzip tree rsync imagemagick pyth
 echo '# Installing net tools...'
 sleep 1
 sudo pacman -S nmap net-tools nethogs bind-tools openbsd-netcat bmon whois
+
+echo '# Installing jcal...'
+sleep 1
+trizen -S --noconfirm jcal-git

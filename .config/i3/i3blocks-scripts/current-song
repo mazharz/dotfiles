@@ -17,5 +17,5 @@ escape_amp() {
 elapsed_part=$(escape_amp "${song:0:split_index}")
 remaining_part=$(escape_amp "${song:split_index}")
 
-"$HOME/.config/i3/i3blocks-scripts/color-print" 3 "${icon}${elapsed_part}" 3 2 1 "true"
+echo -n "<b>${icon}${elapsed_part}</b>"
 echo "$remaining_part"

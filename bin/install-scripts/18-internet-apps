@@ -5,16 +5,6 @@ echo '# Installing internet apps...'
 sleep 1
 sudo pacman -S telegram-desktop firefox tor qbittorrent yt-dlp
 
-#echo '# Installing clash...'
-#sleep 1
-#sudo pacman -S nftables iproute2
-#trizen -S --noconfirm clash-for-windows-bin
-
-#echo '########################################################################'
-#echo '# setup clash with your vpns'
-#echo '########################################################################'
-#sleep 1
-
 echo '# Installing oblivion...'
 sleep 1
 trizen -S --noconfirm oblivion-desktop-bin

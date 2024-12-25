@@ -86,15 +86,15 @@ local setupTreeSitter = function()
 					["<leader>gA"] = "@parameter.inner",
 				},
 			},
-			swap = {
-				enable = true,
-				swap_next = {
-					["<leader>aj"] = "@parameter.inner",
-				},
-				swap_previous = {
-					["<leader>ak"] = "@parameter.inner",
-				},
-			},
+			-- swap = {
+			-- 	enable = true,
+			-- 	swap_next = {
+			-- 		["<leader>aj"] = "@parameter.inner",
+			-- 	},
+			-- 	swap_previous = {
+			-- 		["<leader>ak"] = "@parameter.inner",
+			-- 	},
+			-- },
 			lsp_interop = {
 				enable = true,
 				border = "none",

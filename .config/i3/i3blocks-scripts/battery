@@ -1,7 +1,10 @@
 #!/bin/bash
 # status=`upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep state | awk '{print $2}'`
 # percentage=`upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep percentage | awk '{print $2}'`
-percentage=$(acpi | tail -n 1 | awk '{print $4}' | sed "s/,\|%//g")
+
+# percentage=$(acpi | tail -n 1 | awk '{print $4}' | sed "s/,\|%//g")
+# xargs is for trimming whitespace
+percentage=$(acpi | tail -n 1 | cut -d ',' -f2 | xargs | sed "s/%//g")
 
 # echo "$status: $percentage"
 echo " $percentage"

@@ -1,8 +1,0 @@
-# #!/bin/bash
-# set -e
-#
-# echo '# Adding mzd to fstab...'
-# sleep 1
-# fstab_source="./files/fstab/mzd"
-# fstab_destiantion="/etc/fstab"
-# cat $fstab_source >> $fstab_destiantion

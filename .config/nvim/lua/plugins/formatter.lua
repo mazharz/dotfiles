@@ -10,6 +10,7 @@ return {
 				lua = { "stylua" },
 				go = { "gofumpt" },
 				haskell = { "ormolu" },
+				rust = { "rustfmt" },
 				["_"] = { "prettier" },
 			},
 			-- prevent annoying error when file can't be formatted
