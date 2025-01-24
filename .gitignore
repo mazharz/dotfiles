@@ -38,5 +38,3 @@ bin/ghcup
 **/__pycache__/*
 .config/ncmpcpp/error.log
 bin/xvpn
-.newsboat/cache.db
-.newsboat/cache.db.lock
