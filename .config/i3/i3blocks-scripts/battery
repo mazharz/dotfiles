@@ -6,5 +6,9 @@
 # xargs is for trimming whitespace
 percentage=$(acpi | tail -n 1 | cut -d ',' -f2 | xargs | sed "s/%//g")
 
+if [[ "$percentage" -lt 20 ]];then
+  notify-send -u critical "Battery is running way too low!"
+fi
+
 # echo "$status: $percentage"
 echo " $percentage"

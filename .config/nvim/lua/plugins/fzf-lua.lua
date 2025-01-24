@@ -39,7 +39,11 @@ local setup = function()
 				["ctrl-t"] = require("fzf-lua.actions").file_tabedit,
 			},
 		},
+		files = {
+			git_icons = true,
+		},
 		grep = {
+			git_icons = true,
 			rg_glob = true,
 			glob_flag = "--iglob",
 			glob_separator = "%s%-%-", -- query separator pattern (lua): ' --'

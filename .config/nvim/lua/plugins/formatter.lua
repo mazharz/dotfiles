@@ -11,6 +11,7 @@ return {
 				go = { "gofumpt" },
 				haskell = { "ormolu" },
 				rust = { "rustfmt" },
+				python = { "black" },
 				["_"] = { "prettier" },
 			},
 			-- prevent annoying error when file can't be formatted

@@ -30,3 +30,8 @@ sudo systemctl enable --now redis
 echo '# Installing qmk packages...'
 sleep 1
 sudo pacman -S libffi qmk
+
+echo '# Installing huion driver...'
+sleep 1
+trizen -S huiontablet
+sudo pamcan -S xf86-input-wacom

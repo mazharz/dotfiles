@@ -126,10 +126,6 @@ local setupLsp = function()
 		capabilities = capabilities,
 		on_attach = on_attach,
 	})
-	-- lspconfig.texlab.setup({
-	-- 	capabilities = capabilities,
-	-- 	on_attach = on_attach,
-	-- })
 	lspconfig.gopls.setup({
 		capabilities = capabilities,
 		on_attach = on_attach,
@@ -143,13 +139,6 @@ local setupLsp = function()
 		on_attach = on_attach,
 		cmd = { vim.fn.expand("$HOME/.ghcup/bin/haskell-language-server-wrapper"), "--lsp" },
 	})
-	-- lspconfig.volar.setup({
-	-- 	capabilities = capabilities,
-	-- 	on_attach = on_attach,
-	-- 	filetypes = { "vue" },
-	-- 	-- TODO: see if the above fixes ur issues with ts lsp
-	-- 	-- filetypes = { "vue", "typescript", "javascript" },
-	-- })
 	lspconfig.pyright.setup({
 		capabilities = capabilities,
 		on_attach = on_attach,

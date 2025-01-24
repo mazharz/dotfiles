@@ -7,7 +7,7 @@ sudo pacman -S telegram-desktop firefox tor qbittorrent yt-dlp
 
 echo '# Installing oblivion...'
 sleep 1
-trizen -S --noconfirm oblivion-desktop-bin
+trizen -S --noconfirm oblivion-desktop-git
 
 echo '########################################################################'
 echo '# Install xvpn yourself:'

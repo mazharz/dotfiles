@@ -255,7 +255,9 @@ bindsym $mod+shift+n exec ~/bin/monitor mono
 bindsym $mod+Mod1+shift+h exec ~/bin/huion-buttons
 
 bindsym $mod+i exec ~/bin/kb_layout; exec pkill -SIGRTMIN+11 i3blocks
+bindsym $mod+Shift+i exec ~/bin/kb_layout de; exec pkill -SIGRTMIN+11 i3blocks
 bindsym $mod+semicolon exec ~/bin/lock
+bindsym $mod+p exec copyq show
 
 bindsym $mod+Mod1+period       exec mpc next; exec pkill -SIGRTMIN+11 i3blocks
 bindsym $mod+Mod1+comma        exec mpc prev; exec pkill -SIGRTMIN+11 i3blocks
