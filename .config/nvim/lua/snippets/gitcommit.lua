@@ -15,7 +15,7 @@ local snippets = {
 
     ]],
 			{
-				c(1, { t("feat"), t("fix"), t("refactor"), t("perf"), t("test") }),
+				c(1, { t("feat"), t("fix"), t("chore"), t("refactor"), t("perf"), t("test") }),
 				i(2, "scope"),
 				i(3, "message"),
 			}

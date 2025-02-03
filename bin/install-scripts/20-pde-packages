@@ -35,3 +35,11 @@ echo '# Installing huion driver...'
 sleep 1
 trizen -S huiontablet
 sudo pamcan -S xf86-input-wacom
+
+echo '# Installing google cloud cli tools...'
+sleep 1
+trizen -S google-cloud-cli google-cloud-cli-gke-gcloud-auth-plugin
+
+echo '# Installing kubernetes cli tools...'
+sleep 1
+sudo pacman -S kubectl

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-song=$(mpc current)
+song=$(mpc current | cut -c 1-50)
 status=$(mpc status %state%)
 icon=$([ "$status" = "playing" ] && echo -n " " || echo -n "")
 

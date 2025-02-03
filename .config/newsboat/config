@@ -1,3 +1,27 @@
 browser google-chrome-stable
 auto-reload yes
 max-items 10
+show-title-bar no
+show-keymap-hint no
+
+#######################################################################
+# keymaps
+#######################################################################
+unbind-key J
+unbind-key K
+unbind-key N
+
+
+bind-key  j      next
+bind-key  k      prev
+bind-key  J      next-feed
+bind-key  K      prev-feed
+bind-key  ^u     halfpageup
+bind-key  ^d     halfpagedown
+bind-key  SPACE  toggle-article-read
+
+#######################################################################
+# color
+#######################################################################
+color listfocus         yellow  black
+color listfocus_unread  yellow  black   bold

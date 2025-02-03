@@ -35,6 +35,10 @@ b () {
   done
 }
 
+n () {
+  print -z npm run $(jq < package.json  '.scripts | keys[]' -r | fzf)
+}
+
 # fzf
 # find mang pages
 function fman() {

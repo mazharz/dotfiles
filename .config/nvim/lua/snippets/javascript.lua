@@ -18,13 +18,13 @@ local snippets = {
 		"ds",
 		fmt(
 			[[
-    describe("{}", {} () => {{
+    describe("{}",{} () => {{
       {}
     }})
     ]],
 			{
 				i(1, "description"),
-				c(2, { t(""), t("async") }),
+				c(2, { t(""), t(" async") }),
 				i(0),
 			}
 		)
@@ -34,13 +34,13 @@ local snippets = {
 		"it",
 		fmt(
 			[[
-    it("should {}", {} () => {{
+    it("should {}",{} () => {{
       {}
     }})
     ]],
 			{
 				i(1, "be x y z"),
-				c(2, { t(""), t("async") }),
+				c(2, { t(""), t(" async") }),
 				i(0),
 			}
 		)

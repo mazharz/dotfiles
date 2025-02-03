@@ -12,6 +12,7 @@ alias gcnv="git commit --no-verify"
 alias gco="git checkout"
 alias gcob="git checkout -b"
 alias gd="git diff"
+alias gds="git diff --staged"
 alias gdw="git diff --word-diff=color"
 alias gl="git pull"
 alias gf="git fetch"
@@ -30,39 +31,40 @@ alias gst="git stash"
 alias gsw="git switch"
 alias gwt="git worktree"
 alias gchp="git cherry-pick"
+alias gsh="git show"
 
 # functions
 function gfco() {
   local branches branch
   branches=$(git --no-pager branch --format="%(refname:short)") &&
   branch=$(echo "$branches" | fzf +m) &&
-  git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
+  print -z git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
 }
 
 function gfbd() {
   local branches branch
   branches=$(git --no-pager branch --format="%(refname:short)" --merged) &&
   branch=$(echo "$branches" | fzf +m) &&
-  git branch -d $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
+  print -z git branch -d $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
 }
 
 function gfbD() {
   local branches branch
   branches=$(git --no-pager branch --format="%(refname:short)") &&
   branch=$(echo "$branches" | fzf +m) &&
-  git branch -D $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
+  print -z git branch -D $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
 }
 
 function gfm() {
   local branches branch
   branches=$(git --no-pager branch --format="%(refname:short)") &&
   branch=$(echo "$branches" | fzf +m) &&
-  git merge $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
+  print -z git merge $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
 }
 
 function gfri() {
   local branches branch
   branches=$(git --no-pager branch --format="%(refname:short)") &&
   branch=$(echo "$branches" | fzf +m) &&
-  git rebase -i $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
+  print -z git rebase -i $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
 }
