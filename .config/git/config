@@ -1,9 +1,17 @@
 [core]
   editor = nvim
   pager = less -F
+  excludesfile = /home/mazhar/.config/git/gitignore-global
+
 [user]
   name = Mazhar Zandsalimi
   email = m47h4r@gmail.com
+
+[color "diff"]
+  meta = dim
+
+[log]
+  date = iso
 
 [includeIf "gitdir:~/mzd/code/gwat/"]
   path = gwat

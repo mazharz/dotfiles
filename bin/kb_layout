@@ -3,6 +3,8 @@
 
 if [ "$1" == "de" ];then
   setxkbmap -layout de;
+elif [ "$1" == "es" ];then
+  setxkbmap -layout es;
 else
   setxkbmap -layout "us,ir" -option grp:caps_toggle;
 fi

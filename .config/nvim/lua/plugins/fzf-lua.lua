@@ -37,6 +37,8 @@ local setup = function()
 				["ctrl-h"] = require("fzf-lua.actions").file_split,
 				["ctrl-v"] = require("fzf-lua.actions").file_vsplit,
 				["ctrl-t"] = require("fzf-lua.actions").file_tabedit,
+				["alt-h"] = require("fzf-lua.actions").toggle_hidden,
+				["alt-i"] = require("fzf-lua.actions").toggle_ignore,
 			},
 		},
 		files = {
@@ -96,7 +98,6 @@ return {
 					require("fzf-lua").buffers()
 				end,
 			},
-			-- TODO: add hidden file
 			{
 				"<leader>ss",
 				function()
@@ -164,8 +165,8 @@ return {
 						previewer = false,
 						winopts = {
 							fullscreen = false,
-							width = 0.5,
-							height = 0.5,
+							width = 0.7,
+							height = 0.7,
 							border = true,
 						},
 					})
