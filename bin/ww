@@ -6,5 +6,5 @@ i3-msg 'mark w'
 cd ~/mzd/code/fakir || exit
 
 tmux new -s notes -n notes -c "notes" \; \
-  send-keys -t 1 "nvim -p todo.md daily-updates.md" Enter\;
+  send-keys -t 1 "nvim -p todo.md daily-updates-2025.md" Enter\;
 

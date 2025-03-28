@@ -5,7 +5,7 @@ if [ "$1" == "mono" ]; then
 elif [ "$1" == "mono-60" ]; then
   xrandr --output eDP-1 --primary --mode 2560x1600 --rate 60 --scale 0.7x0.7 --pos 0x0 --output DP-1-2 --off
 elif [ "$1" == "dual" ]; then
-  xrandr --output eDP-1 --off --output DP-1-2 --primary --mode 1920x1080 --pos 0x0
+  xrandr --output DP-1-2 --primary --mode 1920x1080 --pos 0x1200
 fi
 
 # set wallpaper after setting monitor settings

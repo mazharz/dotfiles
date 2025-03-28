@@ -8,6 +8,8 @@ alias grep="grep --color=auto"
 alias vim="nvim"
 alias v="nvim"
 
+alias q="qalc"
+
 # frequent vim repositories
 alias m="cd ~/mzd/text/Dropbox/markdowns; nvim"
 alias t="cd ~/mzd/text/Dropbox/markdowns; nvim to-do.md"

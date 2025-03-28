@@ -1,6 +1,4 @@
 local setupLsp = function()
-	local neoconf = require("neoconf")
-	neoconf.setup({})
 	local lspconfig = require("lspconfig")
 	local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
@@ -35,7 +33,7 @@ local setupLsp = function()
 
 		vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, bufopts)
 
-		-- prevent ts_ls from formatting, let null-ls handle it
+		-- prevent ts_ls from formatting, let formatter plugin handle it
 		if client.name == "ts_ls" then
 			client.server_capabilities.document_formatting = false
 		end
@@ -55,22 +53,16 @@ local setupLsp = function()
 	})
 
 	require("mason").setup()
-	require("mason-lspconfig").setup({
-		automatic_installation = { exclude = { "hls" } },
-	})
+	require("mason-lspconfig").setup()
 
 	lspconfig.clangd.setup({
 		capabilities = capabilities,
 		on_attach = on_attach,
 	})
-
-	if not neoconf.get("ts_ls.disable") then
-		lspconfig.ts_ls.setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-		})
-	end
-
+	lspconfig.ts_ls.setup({
+		capabilities = capabilities,
+		on_attach = on_attach,
+	})
 	lspconfig.lua_ls.setup({
 		capabilities = capabilities,
 		on_attach = on_attach,
@@ -134,11 +126,6 @@ local setupLsp = function()
 		capabilities = capabilities,
 		on_attach = on_attach,
 	})
-	lspconfig.hls.setup({
-		capabilities = capabilities,
-		on_attach = on_attach,
-		cmd = { vim.fn.expand("$HOME/.ghcup/bin/haskell-language-server-wrapper"), "--lsp" },
-	})
 	lspconfig.pyright.setup({
 		capabilities = capabilities,
 		on_attach = on_attach,
@@ -154,9 +141,6 @@ return {
 			"williamboman/mason.nvim",
 			cmd = "Mason",
 			config = true,
-		},
-		{
-			"folke/neoconf.nvim",
 		},
 	},
 	config = setupLsp,
