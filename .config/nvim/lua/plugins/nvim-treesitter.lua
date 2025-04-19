@@ -32,8 +32,10 @@ local setupTreeSitter = function()
 			"query",
 			"vue",
 		},
-
+		modules = {},
+		ignore_install = {},
 		sync_install = false,
+		auto_install = false,
 
 		highlight = {
 			enable = true,
