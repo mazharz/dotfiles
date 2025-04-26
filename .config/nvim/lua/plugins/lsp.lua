@@ -37,6 +37,8 @@ local setupLsp = function()
 
 		vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, bufopts)
 
+		vim.keymap.set("n", "<leader>R", ":LspRestart<CR>", bufopts)
+
 		-- prevent ts_ls from formatting, let formatter plugin handle it
 		if client.name == "ts_ls" then
 			client.server_capabilities.document_formatting = false
@@ -66,6 +68,11 @@ local setupLsp = function()
 	lspconfig.ts_ls.setup({
 		capabilities = capabilities,
 		on_attach = on_attach,
+	})
+	lspconfig.hls.setup({
+		capabilities = capabilities,
+		on_attach = on_attach,
+		cmd = { vim.fn.expand("$HOME/.ghcup/bin/haskell-language-server-wrapper"), "--lsp" },
 	})
 	lspconfig.lua_ls.setup({
 		capabilities = capabilities,

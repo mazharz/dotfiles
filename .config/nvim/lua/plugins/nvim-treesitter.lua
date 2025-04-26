@@ -31,6 +31,7 @@ local setupTreeSitter = function()
 			"markdown_inline",
 			"query",
 			"vue",
+			"haskell",
 		},
 		modules = {},
 		ignore_install = {},

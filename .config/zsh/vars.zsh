@@ -37,5 +37,8 @@ export GOPATH="$HOME/go"
 export GOBIN="$GOPATH/bin"
 export PATH=$PATH:$GOBIN
 
+# haskell
+[ -f "/home/mazhar/.ghcup/env" ] && . "/home/mazhar/.ghcup/env"
+
 # google cloud cli
 source /etc/profile.d/google-cloud-cli.sh

@@ -12,7 +12,7 @@ alias q="qalc"
 
 # frequent vim repositories
 alias m="cd ~/mzd/text/Dropbox/markdowns; nvim"
-alias t="cd ~/mzd/text/Dropbox/markdowns; nvim to-do.md"
+alias t="i3-msg 'mark x'; cd ~/mzd/text/Dropbox/markdowns; nvim -p to-do.md sites/frequent.md"
 
 # tmux
 alias tx="tmux"
@@ -30,6 +30,9 @@ alias c="cal"
 alias jcy="jcal -y"
 alias jc3="jcal -3"
 alias jc="jcal"
+
+# haskell
+alias rhs="runhaskell"
 
 # others
 alias backup="rsync -a --delete --delete-excluded --progress /home/mazhar/mzd/* /run/media/mazhar/mzed"
