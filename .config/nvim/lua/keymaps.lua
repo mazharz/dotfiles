@@ -13,6 +13,8 @@ keymap("n", "<leader>A", "ggVG", opts)
 -- quickfix list keymaps
 keymap("n", "<C-k>", ":cprevious<CR>", opts)
 keymap("n", "<C-j>", ":cnext<CR>", opts)
+keymap("n", "<C-S-k>", ":colder<CR>", opts)
+keymap("n", "<C-S-j>", ":cnewer<CR>", opts)
 keymap("n", "<leader>cc", ":cclose<CR>", opts)
 keymap("n", "<leader>co", ":copen<CR>", opts)
 

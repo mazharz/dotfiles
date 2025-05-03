@@ -12,7 +12,6 @@ alias q="qalc"
 
 # frequent vim repositories
 alias m="cd ~/mzd/text/Dropbox/markdowns; nvim"
-alias t="i3-msg 'mark x'; cd ~/mzd/text/Dropbox/markdowns; nvim -p to-do.md sites/frequent.md"
 
 # tmux
 alias tx="tmux"
@@ -20,7 +19,7 @@ alias ta="tmux attach-session"
 alias txs="tmux-sessionizer"
 
 # packages
-alias packageRemoveOrphans="sudo pacman -Rs $(pacman -Qdtq)"
+alias packageRemoveOrphans='sudo pacman -Rs $(pacman -Qdtq)'
 alias packageSortMirrors="sudo reflector --age 6 --fastest 10 --latest 10 --sort rate --protocol https --save /etc/pacman.d/mirrorlist"
 
 # calendars
@@ -30,9 +29,6 @@ alias c="cal"
 alias jcy="jcal -y"
 alias jc3="jcal -3"
 alias jc="jcal"
-
-# haskell
-alias rhs="runhaskell"
 
 # others
 alias backup="rsync -a --delete --delete-excluded --progress /home/mazhar/mzd/* /run/media/mazhar/mzed"

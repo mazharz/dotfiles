@@ -55,3 +55,24 @@ function activate_python_env() {
   return 0
 }
 activate_python_env
+
+function t() {
+  i3-msg 'mark x'
+  cd ~/mzd/text/Dropbox/markdowns
+  nvim -p to-do.md
+}
+
+function ww() {
+  i3-msg 'mark w'
+  cd ~/mzd/code/fakir || exit
+  tmux new -s notes -n notes -c "notes" \; \
+    send-keys -t 1 "nvim -p todo.md daily-updates-2025.md" Enter\;
+}
+
+function b64e {
+  echo -n "$1" | base64 -w 0
+}
+
+function b64d {
+  echo -n "$1" | base64 -d
+}

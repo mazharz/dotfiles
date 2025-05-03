@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-
-curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
-
-echo '# Installing haskell formatter...'
-sleep 1
-sudo pacman -S haskell-ormolu

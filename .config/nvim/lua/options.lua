@@ -14,7 +14,7 @@ local options = {
 	-- use system clipboard
 	clipboard = "unnamedplus",
 	-- make sure to show everything
-	conceallevel = 3,
+	conceallevel = 0,
 	-- file encoding
 	encoding = "utf-8",
 	fileencoding = "utf-8",

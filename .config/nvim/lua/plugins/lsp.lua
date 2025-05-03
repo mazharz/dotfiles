@@ -69,11 +69,6 @@ local setupLsp = function()
 		capabilities = capabilities,
 		on_attach = on_attach,
 	})
-	lspconfig.hls.setup({
-		capabilities = capabilities,
-		on_attach = on_attach,
-		cmd = { vim.fn.expand("$HOME/.ghcup/bin/haskell-language-server-wrapper"), "--lsp" },
-	})
 	lspconfig.lua_ls.setup({
 		capabilities = capabilities,
 		on_attach = on_attach,
@@ -126,14 +121,6 @@ local setupLsp = function()
 		on_attach = on_attach,
 	})
 	lspconfig.rust_analyzer.setup({
-		capabilities = capabilities,
-		on_attach = on_attach,
-	})
-	lspconfig.gopls.setup({
-		capabilities = capabilities,
-		on_attach = on_attach,
-	})
-	lspconfig.golangci_lint_ls.setup({
 		capabilities = capabilities,
 		on_attach = on_attach,
 	})
