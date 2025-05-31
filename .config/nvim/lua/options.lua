@@ -1,5 +1,5 @@
 local options = {
-	-- always show signcolumn git-gutter and diagnostics use it
+	-- always show signcolumn to avoid layout shift
 	signcolumn = "yes",
 	-- make updates more frequent/faster
 	updatetime = 1000,
@@ -42,7 +42,7 @@ local options = {
 	-- set relative numbered lines
 	relativenumber = true,
 	-- is one of my favorite
-	scrolloff = 3,
+	scrolloff = 1,
 	-- customize spaces and tabs
 	list = true,
 	listchars = "tab:  ",
@@ -58,6 +58,9 @@ local options = {
 for key, value in pairs(options) do
 	vim.opt[key] = value
 end
+
+-- enable fold in man pages
+vim.g.ft_man_folding_enable = 1
 
 vim.o.foldmethod = "manual"
 vim.wo.foldenable = false -- disable by default

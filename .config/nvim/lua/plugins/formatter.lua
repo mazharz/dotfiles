@@ -27,6 +27,11 @@ return {
 
 		vim.keymap.set("n", "<C-f>", function()
 			shouldFormat = not shouldFormat
+			if shouldFormat then
+				vim.print("Formatter is on")
+			else
+				vim.print("Formatter is off")
+			end
 		end)
 	end,
 }

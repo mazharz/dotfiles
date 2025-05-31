@@ -76,3 +76,8 @@ function b64e {
 function b64d {
   echo -n "$1" | base64 -d
 }
+
+function re {
+  sleep "$1"
+  notify-send "${@:2}"
+}

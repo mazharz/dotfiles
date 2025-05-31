@@ -1,20 +1,18 @@
 local keymap = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
--- set leader to comma
 vim.g.mapleader = " "
 
 keymap("n", "<C-d>", "<C-d>zz")
 keymap("n", "<C-u>", "<C-u>zz")
 
--- select all with <leader>a
 keymap("n", "<leader>A", "ggVG", opts)
 
--- quickfix list keymaps
+-- quickfix list
 keymap("n", "<C-k>", ":cprevious<CR>", opts)
 keymap("n", "<C-j>", ":cnext<CR>", opts)
-keymap("n", "<C-S-k>", ":colder<CR>", opts)
-keymap("n", "<C-S-j>", ":cnewer<CR>", opts)
+keymap("n", "<leader>ck", ":colder<CR>", opts)
+keymap("n", "<leader>cj", ":cnewer<CR>", opts)
 keymap("n", "<leader>cc", ":cclose<CR>", opts)
 keymap("n", "<leader>co", ":copen<CR>", opts)
 

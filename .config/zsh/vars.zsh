@@ -2,6 +2,9 @@
 HISTSIZE=10000
 HISTFILESIZE=10000
 
+LESS="$LESS --mouse --wheel-lines=3"
+export MANPAGER="nvim +Man!"
+
 # vim
 VIM='nvim'
 export EDITOR='nvim'
@@ -10,7 +13,8 @@ export VOLTA_HOME="$HOME/.volta"
 # fzf
 # used `pacman -Ql fzf` to figure out where this was
 [ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
-export FZF_DEFAULT_OPTS='--height 100% --layout=reverse-list --info=hidden'
+# export FZF_DEFAULT_OPTS='--height 100% --info=hidden'
+export FZF_DEFAULT_OPTS='--layout=reverse-list --info=inline-right --info-command="echo -e \"$FZF_POS/$FZF_INFO\"" --no-separator'
 export FZF_DEFAULT_COMMAND='rg --hidden --files -g !node_modules -g !.git -g !.Trash\* .'
 # ledger
 export LEDGER_FILE=$HOME/mzd/text/Dropbox/finances/2025.journal

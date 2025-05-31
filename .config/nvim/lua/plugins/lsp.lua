@@ -2,6 +2,14 @@ local setupLsp = function()
 	local lspconfig = require("lspconfig")
 	local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
+	-- remove stupid default keybinds
+	local bufopts = { noremap = true, silent = true }
+	vim.keymap.del("n", "gra", bufopts)
+	vim.keymap.del("x", "gra", bufopts)
+	vim.keymap.del("n", "grn", bufopts)
+	vim.keymap.del("n", "grr", bufopts)
+	vim.keymap.del("n", "gri", bufopts)
+
 	local on_attach = function(client, bufnr)
 		local bufopts = { noremap = true, silent = true, buffer = bufnr }
 		vim.keymap.set("n", "K", vim.lsp.buf.hover, bufopts)

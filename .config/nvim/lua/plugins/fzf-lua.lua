@@ -54,19 +54,20 @@ local setup = function()
 			cwd_only = true,
 		},
 		-- TODO: explore fzf options and either set them globally or here
-		-- fzf_opts = {
-		--   -- options are sent as `<left>=<right>`
-		--   -- set to `false` to remove a flag
-		--   -- set to `true` for a no-value flag
-		--   -- for raw args use `fzf_args` instead
-		--   ["--ansi"]           = true,
-		--   ["--info"]           = "inline-right", -- fzf < v0.42 = "inline"
-		--   ["--height"]         = "100%",
-		--   ["--layout"]         = "reverse",
-		--   ["--border"]         = "none",
-		--   ["--highlight-line"] = true,           -- fzf >= v0.53
-		-- },
+		fzf_opts = {
+			-- options are sent as `<left>=<right>`
+			-- set to `false` to remove a flag
+			-- set to `true` for a no-value flag
+			-- for raw args use `fzf_args` instead
+			-- ["--ansi"]           = true,
+			-- ["--info"]           = "inline-right", -- fzf < v0.42 = "inline"
+			-- ["--height"]         = "100%",
+			-- ["--layout"]         = "reverse",
+			-- ["--border"]         = "none",
+			-- ["--highlight-line"] = true,           -- fzf >= v0.53
+		},
 	})
+	require("fzf-lua").register_ui_select()
 end
 
 return {
@@ -161,16 +162,9 @@ return {
 			{
 				"<leader>a",
 				function()
-					require("fzf-lua").lsp_code_actions({
-						previewer = false,
-						winopts = {
-							fullscreen = false,
-							width = 0.7,
-							height = 0.7,
-							border = true,
-						},
-					})
+					require("fzf-lua").lsp_code_actions()
 				end,
+				mode = { "n", "v" },
 			},
 		},
 	},
