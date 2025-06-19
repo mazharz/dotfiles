@@ -271,7 +271,7 @@ bindsym $mod+Mod1+bracketright exec mpc seek +10; exec pkill -SIGRTMIN+11 i3bloc
 bindsym $mod+c           exec google-chrome-stable --profile-directory=Default
 bindsym $mod+Mod1+c      exec google-chrome-stable --profile-directory='Profile 1'
 bindsym $mod+Mod1+f      exec thunar
-bindsym $mod+Mod1+t      exec telegram-desktop
+bindsym $mod+Mod1+t      exec Telegram
 bindsym $mod+Mod1+m      exec $term --title ncmpcpp -e ncmpcpp -q
 bindsym $mod+Mod1+p      exec $term --title fitimer -e fitimer
 bindsym $mod+Ctrl+c      exec ~/bin/clocks

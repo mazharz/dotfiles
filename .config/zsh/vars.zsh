@@ -13,8 +13,7 @@ export VOLTA_HOME="$HOME/.volta"
 # fzf
 # used `pacman -Ql fzf` to figure out where this was
 [ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
-# export FZF_DEFAULT_OPTS='--height 100% --info=hidden'
-export FZF_DEFAULT_OPTS='--layout=reverse-list --info=inline-right --info-command="echo -e \"$FZF_POS/$FZF_INFO\"" --no-separator'
+export FZF_DEFAULT_OPTS='--layout=reverse-list --info=inline-right --info-command="echo -e \"$FZF_POS/$FZF_INFO\"" --no-separator --no-scrollbar --bind "ctrl-d:half-page-down" --bind "ctrl-u:half-page-up"'
 export FZF_DEFAULT_COMMAND='rg --hidden --files -g !node_modules -g !.git -g !.Trash\* .'
 # ledger
 export LEDGER_FILE=$HOME/mzd/text/Dropbox/finances/2025.journal

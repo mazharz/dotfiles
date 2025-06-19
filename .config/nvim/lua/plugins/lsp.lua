@@ -45,7 +45,7 @@ local setupLsp = function()
 
 		vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, bufopts)
 
-		vim.keymap.set("n", "<leader>R", ":LspRestart<CR>", bufopts)
+		vim.keymap.set("n", "<leader>R", ":LspRestart", bufopts)
 
 		-- prevent ts_ls from formatting, let formatter plugin handle it
 		if client.name == "ts_ls" then
@@ -67,7 +67,9 @@ local setupLsp = function()
 	})
 
 	require("mason").setup()
-	require("mason-lspconfig").setup()
+	require("mason-lspconfig").setup({
+		automatic_enable = false,
+	})
 
 	lspconfig.clangd.setup({
 		capabilities = capabilities,
