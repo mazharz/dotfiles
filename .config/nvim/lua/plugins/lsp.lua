@@ -9,9 +9,10 @@ local setupLsp = function()
 	vim.keymap.del("n", "grn", bufopts)
 	vim.keymap.del("n", "grr", bufopts)
 	vim.keymap.del("n", "gri", bufopts)
+	vim.keymap.del("n", "grt", bufopts)
 
 	local on_attach = function(client, bufnr)
-		local bufopts = { noremap = true, silent = true, buffer = bufnr }
+		bufopts = { noremap = true, silent = true, buffer = bufnr }
 		vim.keymap.set("n", "K", vim.lsp.buf.hover, bufopts)
 		vim.keymap.set("n", "<leader>K", vim.lsp.buf.signature_help, bufopts)
 
@@ -45,7 +46,7 @@ local setupLsp = function()
 
 		vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, bufopts)
 
-		vim.keymap.set("n", "<leader>R", ":LspRestart", bufopts)
+		vim.keymap.set("n", "<leader>Rt", ":LspRestart", bufopts)
 
 		-- prevent ts_ls from formatting, let formatter plugin handle it
 		if client.name == "ts_ls" then
@@ -132,6 +133,14 @@ local setupLsp = function()
 		on_attach = on_attach,
 	})
 	lspconfig.rust_analyzer.setup({
+		capabilities = capabilities,
+		on_attach = on_attach,
+	})
+	lspconfig.gopls.setup({
+		capabilities = capabilities,
+		on_attach = on_attach,
+	})
+	lspconfig.golangci_lint_ls.setup({
 		capabilities = capabilities,
 		on_attach = on_attach,
 	})

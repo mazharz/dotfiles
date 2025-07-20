@@ -29,8 +29,8 @@ export XDG_CURRENT_DESKTOP="GNOME"
 
 export DIR_SHORTCUTS="w:$HOME/mzd/wd;n:$HOME/mzd/multimedia/not watched;m:$HOME/mzd/music;c:$HOME/mzd/code;b:$HOME/mzd/text/book;o:$HOME/mzd/os;f:$HOME/mzd/text/Dropbox/finances;t:$HOME/mzd/text;s:$HOME/mzd/multimedia/series;M:$HOME/mzd/multimedia/music video/;F:$HOME/mzd/multimedia/personal media/Family/;D:$HOME/Downloads/"
 
-# ranger
-[ -n "$RANGER_LEVEL" ] && PS1="R$RANGER_LEVEL $PS1"
+# lf
+[ -n "$LF_LEVEL" ] && PS1="L$LF_LEVEL $PS1"
 
 # cargo
 source "$HOME/.cargo/env"

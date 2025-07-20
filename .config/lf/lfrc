@@ -1,0 +1,104 @@
+set shell sh
+set shellopts '-eu'
+set ifs "\n"
+
+set scrolloff 1
+set wrapscroll true
+set mouse true
+set number true
+set relativenumber true
+
+# Normal right column preview instead of underline
+set cursorpreviewfmt "\033[7m"
+
+map <enter> open
+map S shell
+
+map g<space> :push :glob-select<space>
+map gc :calcdirsize
+
+# show the result of execution of previous commands
+map ` !true
+
+cmd open &{{
+    case $(file --mime-type -Lb $f) in
+        text/*) lf -remote "send $id \$$EDITOR \$fx";;
+        audio/*) lf -remote "send $id \$mpv --video=no \$fx";;
+        application/octet-stream) lf -remote "send $id \$mpv --video=no \$fx";;
+        application/pdf) lf -remote "send $id \$setsid zathura \$fx > /dev/null 2> /dev/null &";;
+        *) for f in $fx; do $OPENER $f > /dev/null 2> /dev/null & done;;
+    esac
+}}
+
+map ad :push %mkdir<space>
+map af :push %touch<space>
+
+cmd trash %trash-put -- $fx
+map <delete> trash
+
+# find file/dir
+cmd fzf_jump ${{
+    res="$(find . | fzf)"
+    if [ -n "$res" ]; then
+        if [ -d "$res" ]; then
+            cmd="cd"
+        else
+            cmd="select"
+        fi
+        res="$(printf '%s' "$res" | sed 's/\\/\\\\/g;s/"/\\"/g')"
+        lf -remote "send $id $cmd \"$res\""
+    fi
+}}
+map <a-f> :fzf_jump
+
+# find file by grep
+cmd fzf_search ${{
+    cmd="rg --column --line-number --no-heading --color=always --smart-case"
+    fzf --ansi --disabled --delimiter=: \
+        --bind="start:reload([ -n {q} ] && $cmd -- {q} || true)" \
+        --bind="change:reload([ -n {q} ] && $cmd -- {q} || true)" \
+        --bind='enter:become(lf -remote "send $id select \"$(printf "%s" {1} | sed '\''s/\\/\\\\/g;s/"/\\"/g'\'')\"")' \
+        --preview='cat -- {1}'
+}}
+map <a-s> :fzf_search
+
+# batch rename
+cmd brename $vidir -- $fx
+map <a-r> brename
+
+# queue video to mpv
+cmd umpv ${{
+  [ -n "$f" ] && setsid umpv "$f" &
+}}
+map <a-v> umpv
+
+cmd extract ${{
+    set -f
+    case $f in
+        *.tar.bz|*.tar.bz2|*.tbz|*.tbz2) tar xjvf $f;;
+        *.tar.gz|*.tgz) tar xzvf $f;;
+        *.tar.xz|*.txz) tar xJvf $f;;
+        *.zip) unzip $f;;
+        *.rar) unrar x $f;;
+        *.7z) 7z x $f;;
+    esac
+}}
+map xx extract
+
+cmd tar ${{
+    set -f
+    mkdir $1
+    cp -r $fx $1
+    tar czf $1.tar.gz $1
+    rm -rf $1
+}}
+map xt :push :tar<space>
+
+cmd zip ${{
+    set -f
+    mkdir $1
+    cp -r $fx $1
+    zip -r $1.zip $1
+    rm -rf $1
+}}
+map xz :push :zip<space>

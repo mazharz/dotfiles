@@ -8,6 +8,7 @@ local setupTreeSitter = function()
 			"css",
 			"diff",
 			"dockerfile",
+			"go",
 			"gitcommit",
 			"gitignore",
 			"graphql",

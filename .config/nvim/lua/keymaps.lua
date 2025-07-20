@@ -3,9 +3,6 @@ local opts = { noremap = true, silent = true }
 
 vim.g.mapleader = " "
 
-keymap("n", "<C-d>", "<C-d>zz")
-keymap("n", "<C-u>", "<C-u>zz")
-
 keymap("n", "<leader>A", "ggVG", opts)
 
 -- quickfix list

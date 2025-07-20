@@ -4,10 +4,24 @@ set -e
 echo '# Installing pde packages...'
 sleep 1
 # unzip is required by neovim plugins
-sudo pacman -S fzf tmux neovim ripgrep fd sqlitebrowser docker docker-compose unzip xclip lazygit shellcheck postgresql mariadb jq stylua
+sudo pacman -S fzf tmux neovim ripgrep fd ast-grep sqlitebrowser docker docker-compose unzip xclip lazygit shellcheck go go-tools postgresql mariadb jq stylua
+
+echo '# Installing go packages...'
+sleep 1
+go install mvdan.cc/gofumpt@latest
+go install github.com/kisielk/errcheck@latest
+# golangci-lint itself recommends to install binaries and not use `go install`
+trizen -S --noconfirm golangci-lint-bin
+
+echo '# Installing cli file manager packages...'
+sleep 1
+# moreutils provides vidir
+sudo pacman -S lf trash-cli moreutils
 
 echo '# Installing mongo packages...'
 sleep 1
+# currently due to nvidia & electron removing option to disable gpu,
+# must install v32.3.3 manually via their releases
 trizen -S --noconfirm mongodb-bin mongodb-compass mongodb-tools-bin
 echo '# Enabling mongo service...'
 sleep 1

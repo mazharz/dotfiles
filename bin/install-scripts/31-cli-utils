@@ -3,7 +3,7 @@ set -e
 
 echo '# Installing cli utils...'
 sleep 1
-sudo pacman -S lm_sensors sysstat bottom unrar unzip tree rsync imagemagick python-pip reflector ranger tldr ledger tokei lshw acpi newsboat
+sudo pacman -S lm_sensors sysstat bottom unrar unzip tree rsync imagemagick python-pip reflector tldr ledger tokei lshw acpi newsboat
 
 echo '# Installing net tools...'
 sleep 1

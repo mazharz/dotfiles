@@ -33,7 +33,6 @@ alias jc="jcal"
 # others
 alias backup="rsync -a --delete --delete-excluded --progress /home/mazhar/mzd/* /run/media/mazhar/mzed"
 alias backup2="rsync -a --delete --delete-excluded --progress /home/mazhar/mzd/* /run/media/mazhar/mzd"
-alias ra="ranger"
 alias lg="lazygit"
 alias ldg="ledger"
 alias f="cd $HOME/mzd/text/Dropbox/finances; nvim ${LEDGER_FILE}"
