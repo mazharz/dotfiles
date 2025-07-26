@@ -236,8 +236,9 @@ bar {
 ################################################################################
 # Key bindings
 ################################################################################
-bindsym $mod+x      exec flameshot screen --clipboard
-bindsym $mod+ctrl+x exec flameshot gui
+bindsym $mod+x exec maim -u -s | xclip -selection clipboard -t image/png -i
+# bindsym $mod+x       exec flameshot gui
+# bindsym $mod+ctrl+x  exec flameshot screen --clipboard
 
 bindsym $mod+Mod1+z exec slop -r boxzoom
 

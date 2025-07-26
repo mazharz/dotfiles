@@ -57,9 +57,14 @@ function activate_python_env() {
 activate_python_env
 
 function t() {
-  i3-msg 'mark x'
-  cd ~/mzd/text/Dropbox/markdowns
-  nvim -p to-do.md
+  local exists=$(i3-msg -t get_marks | jq '. | contains(["x"])')
+  if [[ "$exists" == true ]]; then
+    i3-msg 'kill, [con_mark=x] focus'
+  else
+    i3-msg 'mark x'
+    cd ~/mzd/text/Dropbox/markdowns
+    nvim -p to-do.md
+  fi
 }
 
 function ww() {
