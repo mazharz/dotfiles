@@ -11,6 +11,16 @@ set relativenumber true
 # Normal right column preview instead of underline
 set cursorpreviewfmt "\033[7m"
 
+# format to use for duplicating a file
+set dupfilefmt "%f.bak"
+
+# keep getting input for find until only one option remains
+set findlen 0
+
+# incremental search/filter
+set incsearch true
+set incfilter true
+
 map <enter> open
 map S shell
 
@@ -33,7 +43,7 @@ cmd open &{{
 map ad :push %mkdir<space>
 map af :push %touch<space>
 
-cmd trash %trash-put -- $fx
+cmd trash $trash-put -- $fx
 map <delete> trash
 
 # find file/dir
