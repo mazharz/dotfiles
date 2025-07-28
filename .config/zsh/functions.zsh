@@ -36,7 +36,10 @@ b () {
 }
 
 n () {
-  print -z npm run $(jq < package.json  '.scripts | keys[]' -r | fzf)
+  local script_to_run=$(jq < package.json '.scripts | keys[]' -r | fzf)
+  if [[ -n "$script_to_run" ]]; then
+    print -z npm run "$script_to_run"
+  fi
 }
 
 # fzf
