@@ -30,6 +30,11 @@ alias jcy="jcal -y"
 alias jc3="jcal -3"
 alias jc="jcal"
 
+# kubectl
+alias kd="kubectl -n rc-dev"
+alias ks="kubectl -n rc-stage"
+alias kp="kubectl -n rc-prod"
+
 # others
 alias backup="rsync -a --delete --delete-excluded --progress /home/mazhar/mzd/* /run/media/mazhar/mzed"
 alias backup2="rsync -a --delete --delete-excluded --progress /home/mazhar/mzd/* /run/media/mazhar/mzd"

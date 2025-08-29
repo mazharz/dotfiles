@@ -21,6 +21,8 @@ set findlen 0
 set incsearch true
 set incfilter true
 
+set info size
+
 map <enter> open
 map S shell
 
@@ -34,6 +36,7 @@ cmd open &{{
     case $(file --mime-type -Lb $f) in
         text/*) lf -remote "send $id \$$EDITOR \$fx";;
         audio/*) lf -remote "send $id \$mpv --video=no \$fx";;
+        video/*) lf -remote "send $id \$setsid mpv \$fx &> /dev/null &";;
         application/octet-stream) lf -remote "send $id \$mpv --video=no \$fx";;
         application/pdf) lf -remote "send $id \$setsid zathura \$fx > /dev/null 2> /dev/null &";;
         *) for f in $fx; do $OPENER $f > /dev/null 2> /dev/null & done;;
@@ -77,7 +80,7 @@ cmd brename $vidir -- $fx
 map <a-r> brename
 
 # queue video to mpv
-cmd umpv ${{
+cmd umpv &{{
   [ -n "$f" ] && setsid umpv "$f" &
 }}
 map <a-v> umpv

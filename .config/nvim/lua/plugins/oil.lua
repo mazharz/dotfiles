@@ -10,6 +10,8 @@ local setupOil = function()
 		view_options = {
 			show_hidden = true,
 		},
+		-- faster cleanup after closing all oil windows
+		cleanup_delay_ms = 500,
 	})
 end
 

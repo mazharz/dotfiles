@@ -105,6 +105,13 @@ bindsym $mod+e exec --no-startup-id $term \
   -e ~/bin/emoji-picker
 for_window [class="emoji-menu"] floating enable
 
+bindsym $mod+Mod1+q exec --no-startup-id $term \
+  --class 'qalculate-terminal' \
+  -o window.dimensions.columns=50 \
+  -o window.dimensions.lines=10 \
+  -e qalc
+for_window [class="qalculate-terminal"] floating enable
+
 ################################################################################
 # Marks
 ################################################################################
@@ -165,6 +172,8 @@ bindsym $mod+9 workspace  $ws9
 bindsym $mod+0 workspace  $ws10
 bindsym $mod+comma  workspace prev
 bindsym $mod+period workspace next
+bindsym --whole-window --border $mod+button4 workspace prev
+bindsym --whole-window --border $mod+button5 workspace next
 
 bindsym $mod+Shift+1 move container to workspace $ws1
 bindsym $mod+Shift+2 move container to workspace $ws2
@@ -237,6 +246,7 @@ bar {
 # Key bindings
 ################################################################################
 bindsym $mod+x exec maim -u -s | xclip -selection clipboard -t image/png -i
+bindsym $mod+Mod1+x exec maim -u -s "/home/mazhar/Pictures/$(date).png"
 # bindsym $mod+x       exec flameshot gui
 # bindsym $mod+ctrl+x  exec flameshot screen --clipboard
 
@@ -278,11 +288,10 @@ bindsym $mod+Mod1+p      exec $term --title fitimer -e fitimer
 bindsym $mod+Ctrl+c      exec ~/bin/clocks
 bindsym $mod+Mod1+Return exec $term -e lf
 bindsym $mod+Mod1+h      exec ~/builds/Hubstaff/HubstaffClient.bin.x86_64
-bindsym $mod+Mod1+q      exec qalculate-gtk
 bindsym $mod+Mod1+v      exec --no-startup-id $term --class 'xvpn' -e sudo xvpn ui
 bindsym $mod+Mod1+d      exec /home/mazhar/builds/mongodb-compass/MongoDB\ Compass --disable-gpu
 bindsym $mod+Mod1+b      exec $term -e btm
-bindsym $mod+Mod1+o      exec /opt/oblivion-desktop/oblivion-desktop
+bindsym $mod+Mod1+o      exec /opt/oblivion-desktop/oblivion-desktop --no-sandbox --gtk-version=3
 
 bindsym $mod+Ctrl+space       exec dunstctl close
 bindsym $mod+Ctrl+Shift+space exec dunstctl history-pop

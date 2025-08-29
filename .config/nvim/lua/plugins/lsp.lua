@@ -1,5 +1,4 @@
 local setupLsp = function()
-	local lspconfig = require("lspconfig")
 	local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 	-- remove stupid default keybinds
@@ -14,7 +13,6 @@ local setupLsp = function()
 	local on_attach = function(client, bufnr)
 		bufopts = { noremap = true, silent = true, buffer = bufnr }
 		vim.keymap.set("n", "K", vim.lsp.buf.hover, bufopts)
-		vim.keymap.set("n", "<leader>K", vim.lsp.buf.signature_help, bufopts)
 
 		vim.keymap.set("n", "gd", vim.lsp.buf.definition, bufopts)
 		vim.keymap.set("n", "gvd", ":vsplit | lua vim.lsp.buf.definition()<CR>", bufopts)
@@ -46,7 +44,7 @@ local setupLsp = function()
 
 		vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, bufopts)
 
-		vim.keymap.set("n", "<leader>Rt", ":LspRestart", bufopts)
+		vim.keymap.set("n", "<leader>R", ":LspRestart<CR>", bufopts)
 
 		-- prevent ts_ls from formatting, let formatter plugin handle it
 		if client.name == "ts_ls" then
@@ -58,7 +56,7 @@ local setupLsp = function()
 		virtual_text = {
 			source = false,
 			spacing = 0,
-			prefix = "<",
+			prefix = "●",
 			suffix = "",
 			format = function()
 				return ""
@@ -73,81 +71,40 @@ local setupLsp = function()
 		automatic_enable = false,
 	})
 
-	lspconfig.clangd.setup({
-		capabilities = capabilities,
-		on_attach = on_attach,
-	})
-	lspconfig.ts_ls.setup({
-		capabilities = capabilities,
-		on_attach = on_attach,
-	})
-	lspconfig.lua_ls.setup({
-		capabilities = capabilities,
-		on_attach = on_attach,
-	})
-	lspconfig.graphql.setup({
-		capabilities = capabilities,
-		on_attach = on_attach,
-	})
-	lspconfig.eslint.setup({
-		capabilities = capabilities,
-		on_attach = on_attach,
-	})
-	-- lspconfig.tailwindcss.setup({
-	-- 	capabilities = capabilities,
-	-- 	on_attach = on_attach,
-	-- })
-	lspconfig.html.setup({
-		capabilities = capabilities,
-		on_attach = on_attach,
-	})
-	lspconfig.cssls.setup({
-		capabilities = capabilities,
-		on_attach = on_attach,
-		settings = {
-			css = { validate = true, lint = {
-				unknownAtRules = "ignore",
-			} },
-			scss = { validate = true, lint = {
-				unknownAtRules = "ignore",
-			} },
-			less = { validate = true, lint = {
-				unknownAtRules = "ignore",
-			} },
+	local servers = {
+		clangd = {},
+		ts_ls = {},
+		lua_ls = {},
+		graphql = {},
+		eslint = {},
+		html = {},
+		cssls = {
+			settings = {
+				css = { validate = true, lint = { unknownAtRules = "ignore" } },
+				scss = { validate = true, lint = { unknownAtRules = "ignore" } },
+				less = { validate = true, lint = { unknownAtRules = "ignore" } },
+			},
 		},
-	})
-	lspconfig.jsonls.setup({
-		capabilities = capabilities,
-		on_attach = on_attach,
-	})
-	lspconfig.yamlls.setup({
-		capabilities = capabilities,
-		on_attach = on_attach,
-	})
-	lspconfig.cssmodules_ls.setup({
-		capabilities = capabilities,
-		on_attach = on_attach,
-	})
-	lspconfig.bashls.setup({
-		capabilities = capabilities,
-		on_attach = on_attach,
-	})
-	lspconfig.rust_analyzer.setup({
-		capabilities = capabilities,
-		on_attach = on_attach,
-	})
-	lspconfig.gopls.setup({
-		capabilities = capabilities,
-		on_attach = on_attach,
-	})
-	lspconfig.golangci_lint_ls.setup({
-		capabilities = capabilities,
-		on_attach = on_attach,
-	})
-	lspconfig.pyright.setup({
-		capabilities = capabilities,
-		on_attach = on_attach,
-	})
+		jsonls = {},
+		yamlls = {},
+		cssmodules_ls = {},
+		bashls = {},
+		rust_analyzer = {},
+		gopls = {},
+		golangci_lint_ls = {},
+		pyright = {},
+	}
+
+	for name, extra in pairs(servers) do
+		vim.lsp.config(
+			name,
+			vim.tbl_deep_extend("force", {
+				capabilities = capabilities,
+				on_attach = on_attach,
+			}, extra)
+		)
+		vim.lsp.enable(name)
+	end
 end
 
 return {

@@ -5,6 +5,8 @@ if [ "$1" == "de" ];then
   setxkbmap -layout de;
 elif [ "$1" == "es" ];then
   setxkbmap -layout es;
+elif [ "$1" == "ku" ];then
+  setxkbmap -layout "us,ir" -variant ",ku_ara" -option grp:alt_caps_toggle;
 else
   setxkbmap -layout "us,ir" -option grp:caps_toggle;
 fi

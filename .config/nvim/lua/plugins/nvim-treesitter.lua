@@ -1,41 +1,10 @@
 local setupTreeSitter = function()
 	require("nvim-treesitter.configs").setup({
-		ensure_installed = {
-			"bash",
-			"c",
-			"comment",
-			"cpp",
-			"css",
-			"diff",
-			"dockerfile",
-			"go",
-			"gitcommit",
-			"gitignore",
-			"graphql",
-			"vimdoc",
-			"html",
-			"http",
-			"javascript",
-			"json",
-			"jsdoc",
-			"ledger",
-			"lua",
-			"python",
-			"regex",
-			"rust",
-			"scss",
-			"sql",
-			"tsx",
-			"typescript",
-			"markdown",
-			"markdown_inline",
-			"query",
-			"vue",
-		},
+		ensure_installed = {},
 		modules = {},
 		ignore_install = {},
 		sync_install = false,
-		auto_install = false,
+		auto_install = true,
 
 		highlight = {
 			enable = true,
@@ -44,6 +13,13 @@ local setupTreeSitter = function()
 		},
 
 		incremental_selection = {
+			enable = true,
+			keymaps = {
+				node_incremental = "v",
+			},
+		},
+
+		indent = {
 			enable = true,
 		},
 
@@ -90,25 +66,20 @@ local setupTreeSitter = function()
 			-- swap = {
 			-- 	enable = true,
 			-- 	swap_next = {
-			-- 		["<leader>aj"] = "@parameter.inner",
+			-- 		["<leader>J"] = "@parameter.inner",
 			-- 	},
 			-- 	swap_previous = {
-			-- 		["<leader>ak"] = "@parameter.inner",
+			-- 		["<leader>K"] = "@parameter.inner",
 			-- 	},
 			-- },
 			lsp_interop = {
 				enable = true,
 				border = "none",
 				peek_definition_code = {
-					-- TODO: find better keymaps, used <leader>d prefix for dap
-					["<leader>df"] = "@function.outer",
-					["<leader>dC"] = "@class.outer",
+					["<leader>pf"] = "@function.outer",
+					["<leader>pC"] = "@class.outer",
 				},
 			},
-		},
-
-		indent = {
-			enable = true,
 		},
 	})
 end
