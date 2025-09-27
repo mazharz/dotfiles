@@ -63,15 +63,6 @@ local setupTreeSitter = function()
 					["<leader>gA"] = "@parameter.inner",
 				},
 			},
-			-- swap = {
-			-- 	enable = true,
-			-- 	swap_next = {
-			-- 		["<leader>J"] = "@parameter.inner",
-			-- 	},
-			-- 	swap_previous = {
-			-- 		["<leader>K"] = "@parameter.inner",
-			-- 	},
-			-- },
 			lsp_interop = {
 				enable = true,
 				border = "none",

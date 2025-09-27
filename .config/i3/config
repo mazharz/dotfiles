@@ -129,12 +129,12 @@ bindsym $mod+apostrophe exec i3-input -f "pango:FiraCode Nerd Font 12" \
 ################################################################################
 # Auto assignments
 ################################################################################
-for_window [class="(?i)thunar"]                                            mark f, floating enable
+for_window [class="(?i)thunar"]                                            mark e, floating enable
 # make sure media viewer window doesn't hijack the telegram window mark
 for_window [class="(?i)telegramdesktop" title="^(?i)(?!media viewer).*"]   mark t
 for_window [class="(?i)telegramdesktop" title="^(?i)media viewer.*"]       floating enable
-for_window [class="(?i)google-chrome"]                                     mark c
-for_window [class="(?i)mpv"]                                               mark v, floating enable
+for_window [class="(?i)firefox"]                                           mark f
+for_window [class="(?i)mpv"]                                               mark v, floating enable, sticky enable
 for_window [class="(?i)postman"]                                           mark p
 for_window [class="(?i)altair graphqL client"]                             mark a
 for_window [title="(?i)ncmpcpp"]                                           mark m
@@ -159,6 +159,14 @@ set $ws7  "7"
 set $ws8  "8"
 set $ws9  "9"
 set $ws10 "10"
+
+assign [class="(?i)firefox"]         $ws3
+assign [class="(?i)qbittorrent"]     $ws5
+assign [class="(?i)telegramdesktop"] $ws6
+assign [class="(?i)mongodb compass"] $ws7
+assign [class="(?i)postman"]         $ws8
+assign [title="(?i)ncmpcpp"]         $ws9
+assign [class="(?i)hubstaff"]        $ws10
 
 bindsym $mod+1 workspace  $ws1
 bindsym $mod+2 workspace  $ws2
@@ -196,6 +204,11 @@ bindsym $mod+Ctrl+7 move container to workspace $ws7;  workspace $ws7
 bindsym $mod+Ctrl+8 move container to workspace $ws8;  workspace $ws8
 bindsym $mod+Ctrl+9 move container to workspace $ws9;  workspace $ws9
 bindsym $mod+Ctrl+0 move container to workspace $ws10; workspace $ws10
+
+bindsym $mod+Ctrl+Shift+h move workspace to output left
+bindsym $mod+Ctrl+Shift+j move workspace to output down
+bindsym $mod+Ctrl+Shift+k move workspace to output up
+bindsym $mod+Ctrl+Shift+l move workspace to output right
 
 ################################################################################
 # Manage i3 instance
@@ -278,25 +291,26 @@ bindsym $mod+Mod1+j            exec mpc toggle; exec pkill -SIGRTMIN+11 i3blocks
 bindsym $mod+Mod1+bracketleft  exec mpc seek -10; exec pkill -SIGRTMIN+11 i3blocks
 bindsym $mod+Mod1+bracketright exec mpc seek +10; exec pkill -SIGRTMIN+11 i3blocks
 
-# find profiles in ~/.cache/google-chrome
-bindsym $mod+c           exec google-chrome-stable --profile-directory=Default
-bindsym $mod+Mod1+c      exec google-chrome-stable --profile-directory='Profile 1'
-bindsym $mod+Mod1+f      exec thunar
-bindsym $mod+Mod1+t      exec Telegram
-bindsym $mod+Mod1+m      exec $term --title ncmpcpp -e ncmpcpp -q
-bindsym $mod+Mod1+p      exec $term --title fitimer -e fitimer
+bindsym $mod+Mod1+f      workspace $ws3; exec firefox
+bindsym $mod+Mod1+e      exec thunar
+bindsym $mod+Mod1+t      workspace $ws6; exec Telegram
+bindsym $mod+Mod1+m      workspace $ws9; exec $term --title ncmpcpp -e ncmpcpp -q
+bindsym $mod+Mod1+p      workspace $ws8; exec postman
 bindsym $mod+Ctrl+c      exec ~/bin/clocks
 bindsym $mod+Mod1+Return exec $term -e lf
-bindsym $mod+Mod1+h      exec ~/builds/Hubstaff/HubstaffClient.bin.x86_64
-bindsym $mod+Mod1+v      exec --no-startup-id $term --class 'xvpn' -e sudo xvpn ui
-bindsym $mod+Mod1+d      exec /home/mazhar/builds/mongodb-compass/MongoDB\ Compass --disable-gpu
+bindsym $mod+Mod1+h      workspace $ws10; exec ~/builds/Hubstaff/HubstaffClient.bin.x86_64
+bindsym $mod+Mod1+v      workspace $ws1; exec --no-startup-id $term --class 'xvpn' -e sudo xvpn ui
+bindsym $mod+Mod1+d      workspace $ws7; exec /home/mazhar/builds/mongodb-compass/MongoDB\ Compass --disable-gpu
 bindsym $mod+Mod1+b      exec $term -e btm
-bindsym $mod+Mod1+o      exec /opt/oblivion-desktop/oblivion-desktop --no-sandbox --gtk-version=3
+bindsym $mod+Mod1+o      workspace $ws1; exec /opt/oblivion-desktop/oblivion-desktop --no-sandbox --gtk-version=3
 
 bindsym $mod+Ctrl+space       exec dunstctl close
 bindsym $mod+Ctrl+Shift+space exec dunstctl history-pop
 bindsym $mod+Ctrl+Return      exec dunstctl action
 bindsym $mod+Ctrl+Mod1+space  exec dunstctl set-paused toggle; exec pkill -SIGRTMIN+11 i3blocks
+
+# to renew ip location info
+bindsym $mod+Mod1+l           exec pkill -SIGRTMIN+10 i3blocks
 
 # needed for i3blocks for capslock and numlock
 bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks

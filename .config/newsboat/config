@@ -1,8 +1,9 @@
-browser google-chrome-stable
+browser firefox
 auto-reload yes
 max-items 10
 show-title-bar no
 show-keymap-hint no
+cleanup-on-quit yes
 
 #######################################################################
 # keymaps

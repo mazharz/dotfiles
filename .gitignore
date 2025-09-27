@@ -38,3 +38,4 @@ bin/ghcup
 **/__pycache__/*
 .config/ncmpcpp/error.log
 bin/xvpn
+bin/stripe

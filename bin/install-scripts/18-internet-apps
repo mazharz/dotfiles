@@ -3,7 +3,7 @@ set -e
 
 echo '# Installing internet apps...'
 sleep 1
-sudo pacman -S telegram-desktop firefox tor qbittorrent yt-dlp
+sudo pacman -S telegram-desktop firefox chromium tor qbittorrent yt-dlp
 
 echo '# Installing oblivion...'
 sleep 1

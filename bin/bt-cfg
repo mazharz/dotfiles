@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+if [ "$1" == "cons" ]; then
+  echo 1 | sudo tee /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode
+elif [ "$1" == "nocons" ]; then
+  echo 0 | sudo tee /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode
+fi

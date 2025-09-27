@@ -34,6 +34,7 @@ map ` !true
 
 cmd open &{{
     case $(file --mime-type -Lb $f) in
+        text/html) lf -remote "send $id \$firefox \$fx";;
         text/*) lf -remote "send $id \$$EDITOR \$fx";;
         audio/*) lf -remote "send $id \$mpv --video=no \$fx";;
         video/*) lf -remote "send $id \$setsid mpv \$fx &> /dev/null &";;

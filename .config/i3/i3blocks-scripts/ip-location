@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+result=$(curl http://ip-api.com/json | jq -r '.countryCode')
+
+echo "$result" | tr '[:upper:]' '[:lower:]'

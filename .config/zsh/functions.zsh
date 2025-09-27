@@ -64,14 +64,14 @@ function t() {
   if [[ "$exists" == true ]]; then
     i3-msg 'kill, [con_mark=x] focus'
   else
-    i3-msg 'mark x'
+    i3-msg 'move container to workspace 2; workspace 2; mark x'
     cd ~/mzd/text/Dropbox/markdowns
     nvim -p to-do.md
   fi
 }
 
 function ww() {
-  i3-msg 'mark w'
+  i3-msg 'move container to workspace 4; workspace 4; mark w'
   cd ~/mzd/code/fakir || exit
   tmux new -s notes -n notes -c "notes" \; \
     send-keys -t 1 "nvim -p todo.md daily-updates-2025.md" Enter\;

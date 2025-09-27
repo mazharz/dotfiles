@@ -17,6 +17,8 @@ memory_legend = "top-left"
 # Where to place the legend for the network widget.
 # One of "none", "top-left", "top", "top-right", "left", "right", "bottom-left", "bottom", "bottom-right".
 network_legend = "top-left"
+# Use dot for graph instead of braille
+dot_marker = true
 
 [styles]
 # Built-in themes. Valid values are:

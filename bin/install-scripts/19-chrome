@@ -1,6 +1,0 @@
-#!/bin/bash
-set -e
-
-echo '# Installing chrome...'
-sleep 1
-trizen -S --noconfirm google-chrome
