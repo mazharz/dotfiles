@@ -20,7 +20,6 @@ bindsym $mod+Return exec $term
 bindsym $mod+q kill
 
 new_window pixel 2
-# new_window normal 2
 
 # new windows should be opened in tab mode
 workspace_layout tabbed
@@ -28,7 +27,6 @@ workspace_layout tabbed
 hide_edge_borders smart
 
 gaps inner 0
-# smart_gaps on
 
 ################################################################################
 # Focus and moving
@@ -260,13 +258,9 @@ bar {
 ################################################################################
 bindsym $mod+x exec maim -u -s | xclip -selection clipboard -t image/png -i
 bindsym $mod+Mod1+x exec maim -u -s "/home/mazhar/Pictures/$(date).png"
-# bindsym $mod+x       exec flameshot gui
-# bindsym $mod+ctrl+x  exec flameshot screen --clipboard
 
 bindsym $mod+Mod1+z exec slop -r boxzoom
 
-#bindsym XF86MonBrightnessDown exec xbacklight -dec 5
-#bindsym XF86MonBrightnessUp exec xbacklight -inc 5
 bindsym XF86MonBrightnessDown exec sudo ~/bin/brightness dec; exec pkill -SIGRTMIN+11 i3blocks
 bindsym XF86MonBrightnessUp   exec sudo ~/bin/brightness inc; exec pkill -SIGRTMIN+11 i3blocks
 

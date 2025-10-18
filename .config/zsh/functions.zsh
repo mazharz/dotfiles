@@ -65,8 +65,8 @@ function t() {
     i3-msg 'kill, [con_mark=x] focus'
   else
     i3-msg 'move container to workspace 2; workspace 2; mark x'
-    cd ~/mzd/text/Dropbox/markdowns
-    nvim -p to-do.md
+    cd ~/mzd/text/Dropbox/markdowns/to
+    nvim -p do.md remember.md consume.md learn.md download.md read.md
   fi
 }
 

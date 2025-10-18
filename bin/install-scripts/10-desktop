@@ -10,8 +10,3 @@ sleep 1
 sudo systemctl enable tlp.service
 sudo systemctl mask systemd-rfkill.service
 sudo systemctl mask systemd-rfkill.socket
-
-# sway
-echo '# Installing sway packages...'
-sleep 1
-sudo pacman -S sway swaylock swayidle swaybg j4-dmenu-desktop bemenu wl-clipboard xdg-desktop-portal xdg-desktop-portal-gtk xdg-desktop-portal-wlr brightnessctl gammastep grim slurp imv

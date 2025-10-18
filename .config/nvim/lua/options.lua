@@ -62,8 +62,9 @@ end
 -- enable fold in man pages
 vim.g.ft_man_folding_enable = 1
 
-vim.o.foldmethod = "manual"
-vim.wo.foldenable = false -- disable by default
+vim.o.foldmethod = "expr"
+vim.wo.foldenable = false
+vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 
 -- highlight on yank
 vim.api.nvim_create_autocmd("TextYankPost", {
