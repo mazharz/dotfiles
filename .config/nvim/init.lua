@@ -16,6 +16,8 @@ vim.opt.rtp:prepend(lazypath)
 require("options")
 require("keymaps")
 require("file-manager")
+require("statusline")
+require("tabline")
 
 require("lazy").setup("plugins", {
 	change_detection = {

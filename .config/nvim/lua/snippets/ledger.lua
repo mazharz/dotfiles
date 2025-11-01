@@ -87,14 +87,15 @@ local snippets = {
 		fmt(
 			[[
     {} {}
-        assets:checking            IRR {}
+        assets:{}            IRR {}
         revenues:profit
 
     ]],
 			{
 				i(1, getToday()),
 				i(2, "account profit"),
-				i(3),
+				i(3, "savings"),
+				i(4),
 			}
 		)
 	),
