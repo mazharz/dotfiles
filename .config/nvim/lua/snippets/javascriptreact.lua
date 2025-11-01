@@ -48,10 +48,6 @@ local snippets = {
 			{ delimiters = "qp" }
 		)
 	),
-
-	s("mbox", fmt("<Box>{}</Box>", { i(1) })),
-
-	s("mtyp", fmt("<Typography>{}</Typography>", { i(1) })),
 }
 
 ls.add_snippets("javascriptreact", snippets)
