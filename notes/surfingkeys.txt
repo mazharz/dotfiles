@@ -1,4 +1,4 @@
-api.Hints.style('font-size: 10pt;background: white;color: black;')
+api.Hints.style('font-size: 12pt;background: white;color: black;')
 
 settings.theme = `
 .sk_theme {
@@ -65,3 +65,10 @@ settings.theme = `
     background: var(--theme-ace-select) !important;
 }
 `;
+
+api.mapkey('ymm', 'Copy markdown link', function() {
+    const title = document.title;
+    const url = window.location.href;
+    const markdown = `[${title}](${url})`;
+    api.Clipboard.write(markdown);
+});
