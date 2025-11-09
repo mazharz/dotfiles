@@ -15,6 +15,8 @@ local function tab_item(index, max_width)
 		name = "[No Name]"
 	elseif filetype == "oil" then
 		name = "[oil]"
+	elseif filetype == "fugitive" then
+		name = "[fugitive]"
 	else
 		name = vim.fn.fnamemodify(name, ":t")
 	end

@@ -64,7 +64,7 @@ function t() {
   if [[ "$exists" == true ]]; then
     i3-msg 'kill, [con_mark=x] focus'
   else
-    i3-msg 'move container to workspace 2; workspace 2; mark x'
+    i3-msg 'move container to workspace 2; workspace 2; mark x' > /dev/null
     cd ~/mzd/text/Dropbox/markdowns/to
     nvim -p do.md remember.md consume.md learn.md download.md read.md
   fi
