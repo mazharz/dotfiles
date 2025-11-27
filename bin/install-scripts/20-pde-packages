@@ -27,6 +27,13 @@ echo '# Enabling mongo service...'
 sleep 1
 sudo systemctl enable --now mongodb
 
+echo '# Installing rabbitmq packages...'
+sleep 1
+sudo pacman -S rabbitmq
+echo '# Enabling rabbitmq service...'
+sleep 1
+sudo systemctl enable --now rabbitmq
+
 echo '# Installing redis packages...'
 sleep 1
 sudo pacman -S redis

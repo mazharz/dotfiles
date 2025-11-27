@@ -114,7 +114,7 @@ local snippets = {
     try {
       []
     } catch(error) {
-      console.log([]);
+      console.error([]);
     }
     ]],
 			{ i(0), i(1, "error") },

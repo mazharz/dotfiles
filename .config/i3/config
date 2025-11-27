@@ -132,11 +132,13 @@ for_window [class="(?i)thunar"]                                            mark 
 for_window [class="(?i)telegramdesktop" title="^(?i)(?!media viewer).*"]   mark t
 for_window [class="(?i)telegramdesktop" title="^(?i)media viewer.*"]       floating enable
 for_window [class="(?i)firefox"]                                           mark f
+for_window [class="(?i)firefox" title="(?i)Picture-in-Picture"]            sticky enable
 for_window [class="(?i)mpv"]                                               mark v, floating enable, sticky enable
 for_window [class="(?i)postman"]                                           mark p
 for_window [class="(?i)altair graphqL client"]                             mark a
 for_window [title="(?i)ncmpcpp"]                                           mark m
 for_window [title="(?i)xvpn"]                                              mark V
+for_window [class="(?i)fitimer"]                                           mark F
 for_window [class="(?i)hubstaff" title="(?i)hubstaff"]                     mark T
 # for_window [class="(?i)dbeaver"]                                           mark D
 for_window [class="(?i)mongodb compass"]                                   mark d
@@ -285,18 +287,19 @@ bindsym $mod+Mod1+j            exec mpc toggle; exec pkill -SIGRTMIN+11 i3blocks
 bindsym $mod+Mod1+bracketleft  exec mpc seek -10; exec pkill -SIGRTMIN+11 i3blocks
 bindsym $mod+Mod1+bracketright exec mpc seek +10; exec pkill -SIGRTMIN+11 i3blocks
 
-bindsym $mod+Mod1+f      workspace $ws3; exec firefox
-bindsym $mod+Mod1+e      exec thunar
-bindsym $mod+Mod1+t      workspace $ws6; exec Telegram
-bindsym $mod+Mod1+m      workspace $ws9; exec $term --title ncmpcpp -e ncmpcpp -q
-bindsym $mod+Mod1+p      workspace $ws8; exec postman
-bindsym $mod+Ctrl+c      exec ~/bin/clocks
-bindsym $mod+Mod1+Return exec $term -e lf
-bindsym $mod+Mod1+h      workspace $ws10; exec ~/builds/Hubstaff/HubstaffClient.bin.x86_64
-bindsym $mod+Mod1+v      workspace $ws1; exec --no-startup-id $term --class 'xvpn' -e sudo xvpn ui
-bindsym $mod+Mod1+d      workspace $ws7; exec /home/mazhar/builds/mongodb-compass/MongoDB\ Compass --disable-gpu
-bindsym $mod+Mod1+b      exec $term -e btm
-bindsym $mod+Mod1+o      workspace $ws1; exec /opt/oblivion-desktop/oblivion-desktop --no-sandbox --gtk-version=3
+bindsym $mod+Mod1+f       workspace $ws3; exec firefox
+bindsym $mod+Mod1+e       exec thunar
+bindsym $mod+Mod1+t       workspace $ws6; exec Telegram
+bindsym $mod+Mod1+m       workspace $ws9; exec $term --title ncmpcpp -e ncmpcpp -q
+bindsym $mod+Mod1+p       workspace $ws8; exec postman
+bindsym $mod+Ctrl+c       exec ~/bin/clocks
+bindsym $mod+Mod1+Return  exec $term -e lf
+bindsym $mod+Mod1+Shift+t workspace $ws1; exec $term --class 'fitimer' -e fitimer
+bindsym $mod+Mod1+h       workspace $ws10; exec ~/builds/Hubstaff/HubstaffClient.bin.x86_64
+bindsym $mod+Mod1+v       workspace $ws1; exec --no-startup-id $term --class 'xvpn' -e sudo xvpn ui
+bindsym $mod+Mod1+d       workspace $ws7; exec /home/mazhar/builds/mongodb-compass/MongoDB\ Compass --disable-gpu
+bindsym $mod+Mod1+b       exec $term -e btm
+bindsym $mod+Mod1+o       workspace $ws1; exec /opt/oblivion-desktop/oblivion-desktop --no-sandbox --gtk-version=3
 
 bindsym $mod+Ctrl+space       exec dunstctl close
 bindsym $mod+Ctrl+Shift+space exec dunstctl history-pop
