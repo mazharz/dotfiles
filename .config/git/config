@@ -13,6 +13,9 @@
 [log]
   date = iso
 
+[diff]
+  external = difft
+
 [includeIf "gitdir:~/mzd/code/gwat/"]
   path = gwat
 
