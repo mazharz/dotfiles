@@ -42,3 +42,7 @@ export PATH=$PATH:$GOBIN
 
 # google cloud cli
 source /etc/profile.d/google-cloud-cli.sh
+
+# difftastic
+# use one column instead of two columns
+export DFT_DISPLAY=inline
