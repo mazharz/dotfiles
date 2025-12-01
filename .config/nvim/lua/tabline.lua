@@ -4,7 +4,6 @@ local PADDING = 1
 --- @field name string
 --- @field length number
 --- @field is_modified boolean
---- @field filetype string
 
 --- Format tab item
 --- @param tab Tab
@@ -13,17 +12,6 @@ local function format_tab(tab)
 	local name = tab.name
 	local length = tab.length - (PADDING * 2)
 	local is_modified = tab.is_modified
-	local filetype = tab.filetype
-
-	if name == "" then
-		name = "[No Name]"
-	elseif filetype == "oil" then
-		name = "[oil]"
-	elseif filetype == "fugitive" then
-		name = "[fugitive]"
-	else
-		name = vim.fn.fnamemodify(name, ":t")
-	end
 
 	if is_modified then
 		name = name .. " ●"
@@ -44,12 +32,21 @@ local function current_tab_buffer_info(index)
 	local win = vim.fn.tabpagewinnr(index)
 	local bufnr = buf_list[win]
 	local name = vim.fn.bufname(bufnr)
+	local filetype = vim.api.nvim_get_option_value("filetype", { buf = bufnr })
+
+	if name == "" then
+		name = "[No Name]"
+	elseif filetype == "oil" then
+		name = "[oil]"
+	elseif filetype == "fugitive" then
+		name = "[fugitive]"
+	else
+		name = vim.fn.fnamemodify(name, ":t")
+	end
 
 	local length = #vim.fn.fnamemodify(name, ":t") + (PADDING * 2)
 
 	local is_modified = vim.api.nvim_get_option_value("modified", { buf = bufnr })
-
-	local filetype = vim.api.nvim_get_option_value("filetype", { buf = bufnr })
 
 	return {
 		name = name,
@@ -99,7 +96,6 @@ local function apply_length_reduction(tab, surplus_fraction, surplus)
 		name = tab.name,
 		length = length,
 		is_modified = tab.is_modified,
-		filetype = tab.filetype,
 	}
 end
 
