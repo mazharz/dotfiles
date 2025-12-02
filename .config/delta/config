@@ -1,0 +1,14 @@
+[delta "general-options"]
+  navigate = true
+
+[delta "gruvbox-theme"]
+  dark = true
+  syntax-theme = gruvbox-dark
+  file-style = omit
+  hunk-header-decoration-style = gray box
+  hunk-header-style = file line-number normal
+  plus-style = green
+  plus-emph-style = black green bold
+  minus-style = red
+  minus-emph-style = black red bold
+  zero-style = normal ; style of context lines

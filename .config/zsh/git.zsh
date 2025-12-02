@@ -32,11 +32,11 @@ alias gstl="git stash list"
 alias gsta="git stash apply"
 alias gstp="git stash pop"
 alias gstpu="git stash push -u"
-alias gsts="git stash show -p --ext-diff"
+alias gstsh="git stash show -p"
 alias gsw="git switch"
 alias gwt="git worktree"
 alias gchp="git cherry-pick"
-alias gsh="git show --ext-diff"
+alias gsh="git show"
 
 # functions
 function gfco() {

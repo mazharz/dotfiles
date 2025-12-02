@@ -1,6 +1,6 @@
 [core]
   editor = nvim
-  pager = less -F
+  pager = delta
   excludesfile = /home/mazhar/.config/git/gitignore-global
 
 [user]
@@ -13,8 +13,14 @@
 [log]
   date = iso
 
-[diff]
-  external = difft
+[interactive]
+  diffFilter = delta --color-only
+
+[include]
+  path = ~/.config/delta/config
+
+[delta]
+  features = general-options gruvbox-theme
 
 [includeIf "gitdir:~/mzd/code/gwat/"]
   path = gwat

@@ -11,4 +11,5 @@ git:
   allBranchesLogCmds:
     - git log --all --color=always --abbrev-commit --decorate --pretty=medium
   pagers:
-    - externalDiffCommand: difft --color=always
+    - pager: delta --paging=never
+      colorArg: always
