@@ -2,5 +2,4 @@
 
 selected_line=$(fzf < ~/.config/emojis)
 selected_emoji=$(echo "$selected_line" | cut -d ' ' -f 1)
-xdotool key "super+space"
-xdotool type "$selected_emoji"
+wl-copy "$selected_emoji"

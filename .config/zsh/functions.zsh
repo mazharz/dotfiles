@@ -59,19 +59,7 @@ function activate_python_env() {
 }
 activate_python_env
 
-function t() {
-  local exists=$(i3-msg -t get_marks | jq '. | contains(["x"])')
-  if [[ "$exists" == true ]]; then
-    i3-msg 'kill, [con_mark=x] focus'
-  else
-    i3-msg 'move container to workspace 2; workspace 2; mark x' > /dev/null
-    cd ~/mzd/text/Dropbox/markdowns/to
-    nvim -p do.md remember.md consume.md learn.md download.md read.md
-  fi
-}
-
 function ww() {
-  i3-msg 'move container to workspace 4; workspace 4; mark w'
   cd ~/mzd/code/fakir || exit
   tmux new -s notes -n notes -c "notes" \; \
     send-keys -t 1 "nvim -p todo.md daily-updates-2025.md" Enter\;

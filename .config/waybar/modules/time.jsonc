@@ -1,0 +1,8 @@
+{
+  "clock#time": {
+    "format": "{:%H:%M}",
+    "min-length": 5,
+    "max-length": 5,
+    "tooltip": false,
+  },
+}

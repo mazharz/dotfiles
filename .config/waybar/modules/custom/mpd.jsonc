@@ -1,0 +1,9 @@
+{
+  "custom/mpd": {
+    "exec": "~/.config/waybar/modules/custom/mpd.sh",
+    "interval": 10,
+    "tooltip": false,
+    "signal": 11,
+    "on-click": "mpc toggle",
+  },
+}

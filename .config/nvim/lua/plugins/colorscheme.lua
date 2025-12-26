@@ -10,5 +10,23 @@ return {
 		vim.g.gruvbox_material_better_performance = 1
 
 		vim.cmd("colorscheme gruvbox-material")
+
+		-- Colorscheme overrides for tabline
+		vim.api.nvim_set_hl(0, "TabActive", {
+			fg = "#282828",
+			bg = "#d5c4a1",
+		})
+		vim.api.nvim_set_hl(0, "TabActiveEdge", {
+			fg = "#d5c4a1",
+			bg = "NONE",
+		})
+		vim.api.nvim_set_hl(0, "TabInactive", {
+			fg = "#d5c4a1",
+			bg = "NONE",
+		})
+		vim.api.nvim_set_hl(0, "TabInactiveEdge", {
+			fg = "#d5c4a1",
+			bg = "NONE",
+		})
 	end,
 }

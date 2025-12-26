@@ -1,5 +1,16 @@
 local lsp_operations = {}
 
+--- @return string
+local function filename_segment()
+	local name = vim.api.nvim_buf_get_name(0)
+
+	if name == "" then
+		return "∅"
+	end
+
+	return vim.fn.fnamemodify(name, ":~:.")
+end
+
 --- Wrap text in highlight group markers
 --- @param highlight_group string
 --- @param text string
@@ -97,7 +108,7 @@ vim.api.nvim_create_autocmd({ "DiagnosticChanged" }, {
 
 function _G.generate_statusline()
 	return table.concat({
-		"%f", -- filename
+		filename_segment(),
 		readonly_segment(),
 		modified_segment(),
 		"%=", -- right align

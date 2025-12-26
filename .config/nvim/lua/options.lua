@@ -59,9 +59,6 @@ for key, value in pairs(options) do
 	vim.opt[key] = value
 end
 
--- enable fold in man pages
-vim.g.ft_man_folding_enable = 1
-
 vim.o.foldmethod = "expr"
 vim.wo.foldenable = false
 vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"

@@ -1,0 +1,6 @@
+#custom-mpd {
+  background-color: @dark0;
+  color: @light2;
+  /* fix for layout shift with arabic text */
+  padding: 0 10px;
+}

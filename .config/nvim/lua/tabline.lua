@@ -1,4 +1,5 @@
 local PADDING = 1
+local MODIFIED_INDICATOR = " ●"
 
 --- @class Tab
 --- @field name string
@@ -7,21 +8,36 @@ local PADDING = 1
 
 --- Format tab item
 --- @param tab Tab
+--- @param is_active boolean
 --- @return string
-local function format_tab(tab)
+local function format_tab(tab, is_active)
 	local name = tab.name
 	local length = tab.length - (PADDING * 2)
 	local is_modified = tab.is_modified
 
 	if is_modified then
-		name = name .. " ●"
+		name = name .. MODIFIED_INDICATOR
 	end
 
 	if #name > length then
 		name = name:sub(#name - length, #name)
 	end
 
-	return " " .. name .. " "
+	if is_active then
+		return table.concat({
+			"%#TabActiveEdge#",
+			"%#TabActive#",
+			name,
+			"%#TabActiveEdge#",
+		})
+	else
+		return table.concat({
+			"%#TabInactiveEdge# ",
+			"%#TabInactive#",
+			name,
+			"%#TabInactiveEdge# ",
+		})
+	end
 end
 
 --- Get current tab
@@ -35,11 +51,11 @@ local function current_tab_buffer_info(index)
 	local filetype = vim.api.nvim_get_option_value("filetype", { buf = bufnr })
 
 	if name == "" then
-		name = "[No Name]"
+		name = "∅"
 	elseif filetype == "oil" then
-		name = "[oil]"
+		name = "▢"
 	elseif filetype == "fugitive" then
-		name = "[fugitive]"
+		name = "⎇"
 	else
 		name = vim.fn.fnamemodify(name, ":t")
 	end
@@ -47,6 +63,10 @@ local function current_tab_buffer_info(index)
 	local length = #vim.fn.fnamemodify(name, ":t") + (PADDING * 2)
 
 	local is_modified = vim.api.nvim_get_option_value("modified", { buf = bufnr })
+
+	if is_modified then
+		length = length + #MODIFIED_INDICATOR
+	end
 
 	return {
 		name = name,
@@ -120,7 +140,7 @@ function _G.generate_tabline()
 		-- setting tab number (to be able to use with mouse)
 		result = result .. "%" .. index .. "T"
 
-		result = result .. format_tab(tab)
+		result = result .. format_tab(tab, index == vim.fn.tabpagenr())
 	end
 
 	-- reset highlight and mark end of last tab number (for mouse)

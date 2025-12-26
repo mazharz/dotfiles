@@ -3,6 +3,7 @@ return {
 	{ "kylechui/nvim-surround", version = "*", event = "VeryLazy", config = true },
 	"tpope/vim-repeat",
 	"tpope/vim-sleuth",
+	"nvim-tree/nvim-web-devicons",
 
 	{
 		"windwp/nvim-autopairs",

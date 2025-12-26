@@ -1,0 +1,7 @@
+{
+  "custom/jdate": {
+    "exec": "~/.config/waybar/modules/custom/jdate.sh",
+    "interval": 60,
+    "tooltip": false,
+  },
+}

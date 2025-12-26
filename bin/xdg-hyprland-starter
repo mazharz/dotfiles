@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# as xdg-desktop-portal-hyprland isn't reliabe to auto start with
+# hyprland, this is used to absolutely make sure that it will
+
+sleep 1
+killall -e xdg-desktop-portal-hyprland
+killall xdg-desktop-portal
+/usr/lib/xdg-desktop-portal-hyprland &
+sleep 2
+/usr/lib/xdg-desktop-portal &

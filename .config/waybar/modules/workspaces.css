@@ -1,0 +1,26 @@
+#workspaces button {
+  padding: 1px 6px 1px 3px;
+  margin: 0 2px;
+  background-color: @dark0;
+  color: @light2;
+  border-radius: 16px;
+  font-size: 10px;
+}
+
+#workspaces button:first-child {
+  margin-left: 0;
+}
+
+#workspaces label {
+  font-size: 16px;
+}
+
+#workspaces button.focused,
+#workspaces button.active {
+  background-color: @light2;
+  color: @dark0;
+}
+
+#workspaces button.urgent {
+  background-color: @neutral-red;
+}

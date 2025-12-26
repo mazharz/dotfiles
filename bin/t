@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+cd ~/mzd/text/Dropbox/markdowns/to || exit
+nvim -p do.md remember.md consume.md learn.md download.md read.md

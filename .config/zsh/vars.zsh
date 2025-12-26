@@ -20,9 +20,7 @@ export LEDGER_FILE=$HOME/mzd/text/Dropbox/finances/2025.journal
 # PATH
 export PATH="$VOLTA_HOME/bin:$PATH"
 export PATH=$PATH:/home/mazhar/bin/
-
-# necessary configurations to keep some applications (mongodb compass) sane
-export XDG_CURRENT_DESKTOP="GNOME"
+export PATH=$PATH:/home/mazhar/.config/emacs/bin
 
 # Scale qt apps
 # export QT_SCALE_FACTOR=1.3

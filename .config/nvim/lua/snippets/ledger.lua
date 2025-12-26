@@ -68,7 +68,7 @@ local snippets = {
 		fmt(
 			[[
     {} {}
-        assets:checking                IRR {}
+        assets:savings                IRR {}
         assets:reimbursements:{}
 
     ]],

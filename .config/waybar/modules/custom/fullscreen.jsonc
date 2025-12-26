@@ -1,0 +1,9 @@
+{
+  "custom/fullscreen": {
+    "exec": "~/.config/waybar/modules/custom/fullscreen.sh",
+    "interval": 3,
+    "tooltip": false,
+    "signal": 10,
+    "format": "{}",
+  },
+}

@@ -4,4 +4,4 @@ if [ -n "$1" ]; then
 	cp "$1" ~/Pictures/wallpaper.jpeg
 fi
 
-feh --bg-fill ~/Pictures/wallpaper.jpeg
+hyprctl hyprpaper reload ,~/Pictures/wallpaper.jpeg
