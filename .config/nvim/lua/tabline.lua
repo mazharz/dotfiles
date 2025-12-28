@@ -8,9 +8,8 @@ local MODIFIED_INDICATOR = " ●"
 
 --- Format tab item
 --- @param tab Tab
---- @param is_active boolean
 --- @return string
-local function format_tab(tab, is_active)
+local function format_tab(tab)
 	local name = tab.name
 	local length = tab.length - (PADDING * 2)
 	local is_modified = tab.is_modified
@@ -23,21 +22,7 @@ local function format_tab(tab, is_active)
 		name = name:sub(#name - length, #name)
 	end
 
-	if is_active then
-		return table.concat({
-			"%#TabActiveEdge#",
-			"%#TabActive#",
-			name,
-			"%#TabActiveEdge#",
-		})
-	else
-		return table.concat({
-			"%#TabInactiveEdge# ",
-			"%#TabInactive#",
-			name,
-			"%#TabInactiveEdge# ",
-		})
-	end
+	return " " .. name .. " "
 end
 
 --- Get current tab
@@ -140,7 +125,7 @@ function _G.generate_tabline()
 		-- setting tab number (to be able to use with mouse)
 		result = result .. "%" .. index .. "T"
 
-		result = result .. format_tab(tab, index == vim.fn.tabpagenr())
+		result = result .. format_tab(tab)
 	end
 
 	-- reset highlight and mark end of last tab number (for mouse)

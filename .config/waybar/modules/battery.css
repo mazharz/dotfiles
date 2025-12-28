@@ -1,13 +1,12 @@
 #battery {
   color: @light2;
-  background-color: @dark0;
+  border-left: 1px solid @dark4;
 }
 
 #battery.warning:not(.charging) {
-  background-color: @neutral-yellow;
-  color: @dark0;
+  color: @neutral-yellow;
 }
 
 #battery.critical:not(.charging) {
-  background-color: @neutral-red;
+  color: @neutral-red;
 }

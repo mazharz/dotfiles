@@ -1,5 +1,4 @@
 #tray {
-  background-color: @dark0;
   padding: 4px 12px;
-  border-radius: 16px;
+  border-left: 1px solid @dark4;
 }

@@ -3,7 +3,7 @@
 add_newline = false
 
 format = """
-[](color_orange)\
+[ ](bg:color_orange)\
 $character\
 [](bg:color_yellow fg:color_orange)\
 $directory\
@@ -19,8 +19,8 @@ $haskell\
 $python\
 [](fg:color_blue bg:color_bg3)\
 $docker_context\
-[](fg:color_bg3 bg:color_bg1)\
-[ ](fg:color_bg1)\
+[](fg:color_bg3 bg:none)\
+[ ]()\
 $line_break"""
 
 palette = 'gruvbox_dark'

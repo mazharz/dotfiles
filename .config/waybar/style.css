@@ -1,3 +1,5 @@
+@import "colors.css";
+
 * {
   /* `otf-font-awesome` is required to be installed for icons */
   border: none;
@@ -9,21 +11,17 @@
 /* ------------------------------------------------------------ */
 
 window#waybar {
-  background-color: transparent;
-  color: #bdae93;
+  background-color: @bg;
+  color: @light2;
 }
 
 label.module {
   padding: 4px 12px;
-  border-radius: 16px;
-}
-
-box.module {
 }
 
 tooltip {
   background: @dark0;
-  border-radius: 16px;
+  padding: 8px;
 }
 
 tooltip label {
@@ -237,7 +235,6 @@ tooltip label {
 /*   background-color: #0069d4; */
 /* } */
 
-@import "colors.css";
 @import "modules/time.css";
 @import "modules/workspaces.css";
 @import "modules/pulseaudio.css";
@@ -247,4 +244,3 @@ tooltip label {
 @import "modules/custom/mpd.css";
 @import "modules/custom/date.css";
 @import "modules/custom/jdate.css";
-@import "modules/custom/fullscreen.css";

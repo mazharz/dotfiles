@@ -1,4 +1,4 @@
 #pulseaudio {
   color: @light2;
-  background-color: @dark0;
+  border-left: 1px solid @dark4;
 }

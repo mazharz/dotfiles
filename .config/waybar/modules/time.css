@@ -1,6 +1,5 @@
 #clock.time {
-  color: @light2;
-  background-color: @dark0;
   margin: 0;
   padding-bottom: 2px;
+  border-left: 1px solid @dark4;
 }
