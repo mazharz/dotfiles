@@ -1,0 +1,10 @@
+{
+  "custom/ip-location": {
+    "exec": "~/.config/waybar/modules/custom/ip-location.sh",
+    "format": " {}",
+    "on-click": "~/.config/waybar/modules/custom/ip-location.sh",
+    "interval": "once",
+    "signal": 9,
+    "return-type": "json",
+  },
+}

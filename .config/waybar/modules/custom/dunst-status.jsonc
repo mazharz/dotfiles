@@ -1,0 +1,10 @@
+{
+  "custom/dunst-status": {
+    "exec": "~/.config/waybar/modules/custom/dunst-status.sh",
+    "on-click": "dunstctl set-paused toggle; pkill -SIGRTMIN+10 waybar",
+    "interval": 30,
+    "tooltip": false,
+    "return-type": "json",
+    "signal": 10,
+  },
+}

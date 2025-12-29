@@ -1,5 +1,3 @@
 #language {
-  color: @light2;
-  min-width: 20px;
-  border-left: 1px solid @dark4;
+  min-width: 40px;
 }
