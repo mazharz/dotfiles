@@ -2,7 +2,7 @@
 set -e
 
 echo '# Installing zsh...'
-sudo pacman -S zsh zsh-completions starship
+sudo pacman -S zsh zsh-completions
 
 echo '# Installing oh-my-zsh...'
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
