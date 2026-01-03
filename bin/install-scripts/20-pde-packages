@@ -4,12 +4,7 @@ set -e
 echo '# Installing pde packages...'
 sleep 1
 # unzip is required by neovim plugins
-sudo pacman -S fzf tmux neovim ripgrep fd ast-grep sqlitebrowser docker docker-compose unzip xclip lazygit shellcheck go go-tools postgresql mariadb jq stylua git-delta emacs-wayland
-
-echo '# Installing doomemacs...'
-sleep 1
-git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.config/emacs
-~/.config/emacs/bin/doom install
+sudo pacman -S fzf tmux neovim ripgrep fd ast-grep sqlitebrowser docker docker-compose unzip xclip lazygit shellcheck go go-tools postgresql mariadb jq stylua git-delta
 
 echo '# Installing go packages...'
 sleep 1

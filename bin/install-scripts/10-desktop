@@ -13,7 +13,7 @@ sudo systemctl mask systemd-rfkill.socket
 
 echo '# Installing hyprland packages...'
 sleep 1
-sudo pacman -S hyprland egl-wayland brightnessctl waybar pipewire pipewire-alsa pipewire-pulse wireplumber xdg-desktop-portal-hyprland xdg-desktop-portal-gtk wl-clipboard hyprpaper hyprshot libva-nvidia-driver hyprpolkitagent gnome-keyring libsecret libgnome-keyring seahorse nwg-look gammastep qt6-wayland qt5-wayland meson cpio cmake
+sudo pacman -S hyprland egl-wayland brightnessctl waybar pipewire pipewire-alsa pipewire-pulse wireplumber xdg-desktop-portal-hyprland xdg-desktop-portal-gtk wl-clipboard hyprpaper hyprshot libva-nvidia-driver hyprpolkitagent gnome-keyring libsecret libgnome-keyring seahorse nwg-look gammastep qt6-wayland qt5-wayland meson cpio cmake j4-dmenu-desktop
 
 echo '# Installing hyprland plugins...'
 sleep 1

@@ -16,11 +16,10 @@ export VOLTA_HOME="$HOME/.volta"
 export FZF_DEFAULT_OPTS='--layout=reverse-list --info=inline-right --info-command="echo -e \"$FZF_POS/$FZF_INFO\"" --no-separator --no-scrollbar --bind "ctrl-d:half-page-down" --bind "ctrl-u:half-page-up"'
 export FZF_DEFAULT_COMMAND='rg --hidden --files -g !node_modules -g !.git -g !.Trash\* .'
 # ledger
-export LEDGER_FILE=$HOME/mzd/text/Dropbox/finances/2025.journal
+export LEDGER_FILE=$HOME/mzd/text/Dropbox/finances/2026.journal
 # PATH
 export PATH="$VOLTA_HOME/bin:$PATH"
 export PATH=$PATH:/home/mazhar/bin/
-export PATH=$PATH:/home/mazhar/.config/emacs/bin
 
 # Scale qt apps
 # export QT_SCALE_FACTOR=1.3
