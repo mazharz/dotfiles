@@ -20,9 +20,7 @@ sudo pacman -S lf trash-cli moreutils
 
 echo '# Installing mongo packages...'
 sleep 1
-# currently due to nvidia & electron removing option to disable gpu,
-# must install v32.3.3 manually via their releases
-trizen -S --noconfirm mongodb-bin mongodb-compass mongodb-tools-bin
+trizen -S --noconfirm mongodb-bin mongodb-compass-bin mongodb-tools-bin
 echo '# Enabling mongo service...'
 sleep 1
 sudo systemctl enable --now mongodb
