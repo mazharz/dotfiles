@@ -1,0 +1,9 @@
+{
+  "custom/break-timer": {
+    "exec": "~/.config/waybar/modules/custom/break-timer.sh",
+    "interval": 60,
+    "tooltip": false,
+    "return-type": "json",
+    "signal": 8,
+  },
+}

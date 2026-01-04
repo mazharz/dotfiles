@@ -14,6 +14,7 @@
     "~/.config/waybar/modules/custom/jdate.jsonc",
     "~/.config/waybar/modules/custom/dunst-status.jsonc",
     "~/.config/waybar/modules/custom/ip-location.jsonc",
+    "~/.config/waybar/modules/custom/break-timer.jsonc",
   ],
 
   "layer": "bottom",
@@ -39,6 +40,7 @@
     "clock#time",
     "battery",
     "custom/dunst-status",
+    "custom/break-timer",
     "tray",
   ],
 }

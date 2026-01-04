@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+while :
+do
+  sleep 25m
+  notify-send " Take a break"
+done

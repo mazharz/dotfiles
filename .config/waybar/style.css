@@ -43,3 +43,4 @@ tooltip label {
 @import "modules/tray.css";
 @import "modules/custom/mpd.css";
 @import "modules/custom/dunst-status.css";
+@import "modules/custom/break-timer.css";
