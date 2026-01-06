@@ -62,7 +62,7 @@ activate_python_env
 function ww() {
   cd ~/mzd/code/fakir || exit
   tmux new -s notes -n notes -c "notes" \; \
-    send-keys -t 1 "nvim -p todo.md daily-updates-2025.md" Enter\;
+    send-keys -t 1 "nvim -p todo.md daily-updates-2026.md" Enter\;
 }
 
 function b64e {

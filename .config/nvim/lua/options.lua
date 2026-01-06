@@ -45,7 +45,7 @@ local options = {
 	scrolloff = 1,
 	-- customize spaces and tabs
 	list = true,
-	listchars = "tab:  ",
+	listchars = "tab:  ,trail:·",
 	-- find next match as typing for search
 	incsearch = true,
 	-- auto indent
@@ -62,6 +62,9 @@ end
 vim.o.foldmethod = "expr"
 vim.wo.foldenable = false
 vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+
+-- disable splash screen
+vim.cmd("set shortmess+=I")
 
 -- highlight on yank
 vim.api.nvim_create_autocmd("TextYankPost", {

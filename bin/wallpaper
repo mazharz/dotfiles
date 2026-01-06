@@ -4,4 +4,4 @@ if [ -n "$1" ]; then
 	cp "$1" ~/Pictures/wallpaper.jpeg
 fi
 
-hyprctl hyprpaper reload ,~/Pictures/wallpaper.jpeg
+hyprctl hyprpaper wallpaper ,~/Pictures/wallpaper.jpeg
