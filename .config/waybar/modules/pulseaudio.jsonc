@@ -1,7 +1,0 @@
-{
-  "pulseaudio": {
-    "scroll-step": 2,
-    "format": " {volume}%",
-    "on-click": "pavucontrol",
-  },
-}

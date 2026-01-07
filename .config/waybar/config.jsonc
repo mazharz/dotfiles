@@ -15,6 +15,7 @@
     "~/.config/waybar/modules/custom/dunst-status.jsonc",
     "~/.config/waybar/modules/custom/ip-location.jsonc",
     "~/.config/waybar/modules/custom/break-timer.jsonc",
+    "~/.config/waybar/modules/custom/volume.jsonc",
   ],
 
   "layer": "bottom",
@@ -34,7 +35,7 @@
     "memory",
     "cpu",
     "backlight",
-    "pulseaudio",
+    "custom/volume",
     "custom/date",
     "custom/jdate",
     "clock#time",

@@ -30,6 +30,8 @@ keymap("n", "<leader>nv", ":vsplit<CR>", opts)
 keymap("n", "<leader>nh", ":split<CR>", opts)
 
 keymap("n", "<leader>o", ":only<CR>", opts)
+keymap("n", "<leader>e", ":e<CR>", opts)
+keymap("n", "<leader>E", ":e!<CR>", opts)
 
 -- easier tab cycling
 keymap("n", "<A-r>", ":tabnext<CR>", opts)

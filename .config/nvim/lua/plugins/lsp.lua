@@ -40,7 +40,6 @@ local setupLsp = function()
 		vim.keymap.set("n", "<leader>k", function()
 			vim.diagnostic.jump({ count = -1, float = true })
 		end, bufopts)
-		vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, bufopts)
 
 		vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, bufopts)
 

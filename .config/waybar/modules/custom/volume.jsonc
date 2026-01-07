@@ -1,0 +1,11 @@
+{
+  "custom/volume": {
+    "exec": "~/.config/waybar/modules/custom/volume.sh",
+    "interval": 30,
+    "tooltip": false,
+    "signal": 7,
+    "on-click": "pavucontrol",
+    "on-scroll-up": "wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 2%+; pkill -SIGRTMIN+7 waybar",
+    "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%-; pkill -SIGRTMIN+7 waybar",
+  },
+}
