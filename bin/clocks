@@ -1,6 +1,21 @@
 #!/bin/bash
 
-UTC=$(TZ=UTC date)
-Germany=$(TZ=Europe/Berlin date)
-notify-send  "$(echo -e "UTC: ${UTC}\nGermany: ${Germany}")"
+declare -a labels
+declare -a timezones
 
+labels=(UTC Germany Iran)
+timezones=(UTC Europe/Berlin Asia/Tehran)
+
+output=""
+
+for ((i=0; i < ${#timezones[@]}; i++)); do
+  if [[ $i -gt 0 ]]; then
+    output+="\n"
+  fi
+
+  date=$(TZ=${timezones[$i]} date "+%Y-%m-%d %T %Z")
+
+  output+="${labels[$i]}=$date"
+done
+
+notify-send "$(echo -e "$output" | column --table -s =)"

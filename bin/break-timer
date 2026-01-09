@@ -2,6 +2,6 @@
 
 while :
 do
-  sleep 25m
-  notify-send "  Take a break"
+  sleep 30m
+  notify-send " Take a break"
 done

@@ -1,6 +1,0 @@
-#!/bin/bash
-set -e
-
-echo '# Installing xkb-switch...'
-sleep 1
-trizen -S --noconfirm xkb-switch

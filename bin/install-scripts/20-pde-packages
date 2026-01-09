@@ -4,7 +4,7 @@ set -e
 echo '# Installing pde packages...'
 sleep 1
 # unzip is required by neovim plugins
-sudo pacman -S fzf tmux neovim ripgrep fd ast-grep sqlitebrowser docker docker-compose unzip xclip lazygit shellcheck go go-tools postgresql mariadb jq stylua git-delta
+sudo pacman -S fzf tmux neovim ripgrep fd sqlitebrowser docker docker-compose unzip lazygit shellcheck go go-tools postgresql mariadb jq stylua git-delta
 
 echo '# Installing go packages...'
 sleep 1
@@ -31,6 +31,14 @@ sudo pacman -S rabbitmq
 echo '# Enabling rabbitmq service...'
 sleep 1
 sudo systemctl enable --now rabbitmq
+echo '# Enabling rabbitmq management plugin...'
+sleep 1
+sudo rabbitmq-plugins enable rabbitmq_management
+echo '# Adding rabbitmq user, setting as admin, and adding permissions...'
+sleep 1
+sudo rabbitmqctl add_user mazhar
+sudo rabbitmqctl set_user_tags mazhar administrator
+sudo rabbitmqctl set_permissions -p / mazhar ".*" ".*" ".*"
 
 echo '# Installing redis packages...'
 sleep 1

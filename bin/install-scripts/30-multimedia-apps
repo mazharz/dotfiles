@@ -5,10 +5,6 @@ echo '# Installing multimedia apps...'
 sleep 1
 sudo pacman -S vlc mpv audacity kid3 handbrake mkvtoolnix-gui ffmpegthumbnailer eog gimp inkscape
 
-echo '# Installing simplescreenrecorder...'
-sleep 1
-trizen -S --noconfirm simplescreenrecorder 
-
 echo '# Installing mpd...'
 sleep 1
 sudo pacman -S mpd mpc ncmpcpp

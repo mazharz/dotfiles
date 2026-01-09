@@ -11,22 +11,28 @@ if [[ -z $project_dir ]]; then
     exit 0
 fi
 
-selected_name=$(basename "$project_dir" | tr . _)
-tmux_running=$(pgrep tmux)
+session_name=$(basename "$project_dir" | tr . _)
 
-if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
-    tmux new-session -s $selected_name -c $project_dir\; \
-        send-keys -t 1 "nvim" Enter \; \
-        neww -n shell \; \
-        selectw -t 1
+# if a session with the same name exists, just switch to it
+if tmux has-session -t="$session_name" 2> /dev/null; then
+    if [[ -n $TMUX ]]; then
+        tmux switch-client -t "$session_name"
+    else
+        tmux attach-session -t "$session_name"
+    fi
     exit 0
 fi
 
-if ! tmux has-session -t=$selected_name 2> /dev/null; then
-    tmux new-session -ds $selected_name -c $project_dir
+# by now, we know that we need to create a new session
+if [[ -n $TMUX ]]; then
+    tmux new-session -ds "$session_name" -c "$project_dir";
+    tmux switch-client -t "$session_name" \; \
+        send-keys -t 1 "nvim" Enter \; \
+        neww -n shell -c "$project_dir" \; \
+        selectw -t 1
+else
+    tmux new-session -s "$session_name" -c "$project_dir"\; \
+        send-keys -t 1 "nvim" Enter \; \
+        neww -n shell \; \
+        selectw -t 1
 fi
-
-tmux switch-client -t $selected_name \; \
-    send-keys -t 1 "nvim" Enter \; \
-    neww -n shell -c $project_dir \; \
-    selectw -t 1

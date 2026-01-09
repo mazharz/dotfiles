@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# This script generates random characters based on the the
-# type and the lenght user provides. The type being:
+# This script generates random characters based on the
+# type and the length user provides. The type being:
 # -c => lowercase characters
 # -C => uppercase characters
 # -n => number characters
@@ -43,5 +43,4 @@ while getopts cCns o; do
 done
 shift "$((OPTIND-1))"
 
-tr -dc $applied_characters </dev/urandom | head -c $1 ; echo ''
-
+tr -dc "$applied_characters" </dev/urandom | head -c "$1" ; echo ''

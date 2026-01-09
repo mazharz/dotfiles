@@ -5,7 +5,7 @@
 
 args=("$@")
 
-for ((i=0; i < $#; i++)); do
+for ((i=0; i < ${#args[@]}; i++)); do
   ffmpeg -i "${args[$i]}" -c:a copy -vn "${args[$i]}.ogg"
 done
 

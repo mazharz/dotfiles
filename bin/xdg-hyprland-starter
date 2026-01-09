@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# as xdg-desktop-portal-hyprland isn't reliabe to auto start with
+# as xdg-desktop-portal-hyprland isn't reliable to auto start with
 # hyprland, this is used to absolutely make sure that it will
 
 sleep 1

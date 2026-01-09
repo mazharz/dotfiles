@@ -77,3 +77,7 @@ function re {
   sleep "$1"
   notify-send "${@:2}"
 }
+
+function str-to-qr {
+  qrencode "$1" -o - | feh -
+}
