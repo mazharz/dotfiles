@@ -84,7 +84,7 @@ map <a-r> brename
 
 # queue video to mpv
 cmd umpv &{{
-  [ -n "$f" ] && setsid umpv "$f" &
+  [ -n "$fx" ] && setsid umpv $fx &
 }}
 map <a-v> umpv
 

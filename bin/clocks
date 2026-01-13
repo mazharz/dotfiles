@@ -1,8 +1,5 @@
 #!/bin/bash
 
-declare -a labels
-declare -a timezones
-
 labels=(UTC Germany Iran)
 timezones=(UTC Europe/Berlin Asia/Tehran)
 

@@ -11,12 +11,6 @@ alias v="nvim"
 
 alias q="qalc"
 
-# this is to enable hardware accelerated decoding
-alias mpvhw="mpv --hwdec=auto"
-
-# frequent vim repositories
-alias m="cd ~/mzd/text/Dropbox/markdowns; nvim"
-
 # tmux
 alias tx="tmux"
 alias ta="tmux attach-session"
@@ -45,7 +39,6 @@ alias backup2="rsync -a --delete --delete-excluded --progress /home/mazhar/mzd/*
 alias lg="lazygit"
 alias ldg="ledger"
 alias f="cd $HOME/mzd/text/Dropbox/finances; nvim ${LEDGER_FILE}"
-alias sx="startx"
 alias hy="start-hyprland"
 alias wgc="wget --continue"
 alias nb="newsboat"
