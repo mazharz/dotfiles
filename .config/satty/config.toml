@@ -3,5 +3,5 @@ early-exit = true
 initial-tool = "arrow"
 copy-command = "wl-copy"
 annotation-size-factor = 0.5
-output-filename = "~/Pictures/screenshot %Y-%m-%d %H:%M.png"
+output-filename = "~/Pictures/screenshot %Y-%m-%d %H:%M:%S.png"
 disable-notifications = true

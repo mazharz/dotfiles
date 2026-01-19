@@ -36,7 +36,7 @@ yellow = "#d79921"
 
 [colors.primary]
 background = "#000000"
-foreground = "#fbf1c7"
+foreground = "#d5c4a1"
 
 [colors.search.focused_match]
 background = "#d79921"

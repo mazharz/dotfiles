@@ -25,15 +25,6 @@ set incfilter true
 
 set info size
 
-map <enter> open
-map S shell
-
-map g<space> :push :glob-select<space>
-map gc :calcdirsize
-
-# show the result of execution of previous commands
-map ` !true
-
 cmd open &{{
     case $(file --mime-type -Lb $f) in
         text/html) lf -remote "send $id \$firefox \$fx";;
@@ -45,6 +36,23 @@ cmd open &{{
         *) for f in $fx; do $OPENER $f > /dev/null 2> /dev/null & done;;
     esac
 }}
+map <enter> open
+
+cmd open-with %{{
+    printf " Open with: "
+    read prog
+    command -v "$prog" &> /dev/null && lf -remote "send $id \$setsid $prog \$fx &> /dev/null &"
+    lf -remote "send $id reload"
+}}
+map <a-enter> open-with
+
+map S shell
+
+map g<space> :push :glob-select<space>
+map gc :calcdirsize
+
+# show the result of execution of previous commands
+map ` !true
 
 map ad :push %mkdir<space>
 map af :push %touch<space>
@@ -87,6 +95,11 @@ cmd umpv &{{
   [ -n "$fx" ] && setsid umpv $fx &
 }}
 map <a-v> umpv
+
+cmd random-mpv &{{
+  [ -n "$fx" ] && setsid mpv --shuffle $fx &
+}}
+map <a-V> random-mpv
 
 cmd extract ${{
     set -f
