@@ -59,16 +59,6 @@ local setupDap = function()
 				end,
 				cwd = "${workspaceFolder}",
 			},
-			{
-				type = "pwa-node",
-				request = "attach",
-				name = "Attach to motherfucker nx nestjs",
-				address = "0.0.0.0",
-				cwd = "${workspaceFolder}/apps/core-be",
-				port = 9229,
-				restart = true,
-				skipFiles = { "<node_internals>/**" },
-			},
 		}
 	end
 

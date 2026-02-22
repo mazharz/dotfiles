@@ -88,7 +88,6 @@ local setupLsp = function()
 		yamlls = {},
 		cssmodules_ls = {},
 		bashls = {},
-		rust_analyzer = {},
 		gopls = {},
 		golangci_lint_ls = {},
 		pyright = {},

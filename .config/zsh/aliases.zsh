@@ -11,6 +11,8 @@ alias v="nvim"
 
 alias q="qalc"
 
+alias record-screen='wf-recorder --audio -g "$(slurp)"'
+
 # tmux
 alias tx="tmux"
 alias ta="tmux attach-session"

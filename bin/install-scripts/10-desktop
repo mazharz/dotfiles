@@ -3,7 +3,7 @@ set -e
 
 echo '# Installing hyprland packages...'
 sleep 1
-sudo pacman -S hyprland egl-wayland alacritty brightnessctl waybar pipewire pipewire-alsa pipewire-pulse wireplumber pavucontrol xdg-desktop-portal-hyprland xdg-desktop-portal-gtk wl-clipboard hyprpaper hyprlock nvidia-open nvidia-settings nvidia-utils nvidia-prime libva-nvidia-driver hyprpolkitagent gnome-keyring libsecret libgnome-keyring seahorse nwg-look gammastep qt6-wayland qt5-wayland meson cpio cmake j4-dmenu-desktop satty slurp grim thunar tumbler dunst copyq bluez bluez-utils blueman networkmanager networkmanager-openvpn network-manager-applet gucharmap qalculate-gtk gvfs-mtp gvfs-gphoto2 gst-plugins-bad gst-plugins-base gst-plugins-good gstreamer tlp scrcpy
+sudo pacman -S hyprland egl-wayland alacritty brightnessctl waybar pipewire pipewire-alsa pipewire-pulse wireplumber pavucontrol xdg-desktop-portal-hyprland xdg-desktop-portal-gtk wl-clipboard hyprpaper hyprlock nvidia-open nvidia-settings nvidia-utils nvidia-prime libva-nvidia-driver hyprpolkitagent gnome-keyring libsecret libgnome-keyring seahorse nwg-look gammastep qt6-wayland qt5-wayland meson cpio cmake j4-dmenu-desktop satty slurp grim wf-recorder thunar tumbler dunst copyq bluez bluez-utils blueman networkmanager networkmanager-openvpn network-manager-applet gucharmap qalculate-gtk gvfs-mtp gvfs-gphoto2 gst-plugins-bad gst-plugins-base gst-plugins-good gstreamer tlp scrcpy
 
 echo '# Enabling tlp (powersaving)...'
 sleep 1

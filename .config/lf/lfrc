@@ -3,7 +3,7 @@ set shellopts '-eu'
 set ifs "\n"
 
 set scrolloff 1
-map zz :set scrolloff 999; redraw; set scrolloff 1
+map zz :set scrolloff 999; up; down; set scrolloff 1
 
 set wrapscroll true
 set mouse true

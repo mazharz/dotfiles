@@ -29,9 +29,6 @@ export DIR_SHORTCUTS="w:$HOME/mzd/wd;n:$HOME/mzd/multimedia/not watched;m:$HOME/
 # lf
 [ -n "$LF_LEVEL" ] && PS1="L$LF_LEVEL $PS1"
 
-# cargo
-source "$HOME/.cargo/env"
-
 # go
 export GOPATH="$HOME/go"
 export GOBIN="$GOPATH/bin"

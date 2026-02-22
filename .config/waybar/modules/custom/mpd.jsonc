@@ -5,5 +5,9 @@
     "tooltip": false,
     "signal": 11,
     "on-click": "mpc toggle",
+    "on-click-right": "mpc next",
+    "on-click-middle": "mpc prev",
+    "on-scroll-up": "mpc seek +10",
+    "on-scroll-down": "mpc seek -10",
   },
 }
