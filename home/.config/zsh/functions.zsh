@@ -79,5 +79,5 @@ function re {
 }
 
 function str-to-qr {
-  qrencode "$1" -o - | feh -
+  qrencode "$1" -o - | display
 }

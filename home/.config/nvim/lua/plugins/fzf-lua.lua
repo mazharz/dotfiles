@@ -54,6 +54,11 @@ local setup = function()
 		oldfiles = {
 			cwd_only = true,
 		},
+		lsp = {
+			code_actions = {
+				previewer = "codeaction_native", -- enables usage of delta for previews
+			},
+		},
 	})
 	require("fzf-lua").register_ui_select()
 end

@@ -22,6 +22,8 @@ local options = {
 	hlsearch = true,
 	-- case insensitive search
 	ignorecase = true,
+	-- find next match as typing for search
+	incsearch = true,
 	-- enable mouse support for everything
 	mouse = "a",
 	-- split below and right, the default is stupid
@@ -46,8 +48,6 @@ local options = {
 	-- customize spaces and tabs
 	list = true,
 	listchars = "tab:  ,trail:·",
-	-- find next match as typing for search
-	incsearch = true,
 	-- auto indent
 	autoindent = true,
 	-- mouse right button extends selection

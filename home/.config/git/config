@@ -1,7 +1,6 @@
 [core]
   editor = nvim
   pager = delta
-  excludesfile = /home/mazhar/.config/git/gitignore-global
 
 [user]
   name = Mazhar Zandsalimi

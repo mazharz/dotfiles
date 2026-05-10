@@ -9,6 +9,7 @@ local setupLsp = function()
 	vim.keymap.del("n", "grr", bufopts)
 	vim.keymap.del("n", "gri", bufopts)
 	vim.keymap.del("n", "grt", bufopts)
+	vim.keymap.del("n", "grx", bufopts)
 
 	local on_attach = function(client, bufnr)
 		bufopts = { noremap = true, silent = true, buffer = bufnr }
@@ -71,7 +72,6 @@ local setupLsp = function()
 	})
 
 	local servers = {
-		clangd = {},
 		ts_ls = {},
 		lua_ls = {},
 		graphql = {},

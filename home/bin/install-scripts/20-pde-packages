@@ -4,7 +4,8 @@ set -e
 echo '# Installing pde packages...'
 sleep 1
 # unzip is required by neovim plugins
-sudo pacman -S fzf tmux neovim ripgrep fd sqlitebrowser docker docker-compose unzip lazygit shellcheck go go-tools postgresql mariadb jq stylua git-delta
+# tree-sitter-cli is required by neovim's tree-sitter implementation
+sudo pacman -S fzf tmux neovim ripgrep fd sqlitebrowser docker docker-compose unzip lazygit shellcheck go go-tools postgresql mariadb jq stylua git-delta tree-sitter-cli
 
 echo '# Installing go packages...'
 sleep 1

@@ -1,5 +1,6 @@
 {
   "clock#time": {
+    "interval": 20,
     "format": "{:%H:%M}",
     "min-length": 5,
     "max-length": 5,

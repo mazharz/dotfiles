@@ -1,7 +1,0 @@
-#!/bin/bash
-set -e
-
-echo '# Installing altair...'
-sleep 1
-trizen -S --noconfirm altair
-

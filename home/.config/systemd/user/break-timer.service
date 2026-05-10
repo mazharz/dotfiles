@@ -1,0 +1,10 @@
+[Unit]
+Description=Break timer
+
+[Service]
+Type=simple
+ExecStart=/home/mazhar/bin/break-timer
+Restart=no
+
+[Install]
+WantedBy=default.target

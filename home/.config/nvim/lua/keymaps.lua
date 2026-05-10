@@ -58,10 +58,12 @@ keymap("i", "<A-S-h>", "<C-\\><C-N><C-w>H", opts)
 keymap("i", "<A-S-j>", "<C-\\><C-N><C-w>J", opts)
 keymap("i", "<A-S-k>", "<C-\\><C-N><C-w>K", opts)
 keymap("i", "<A-S-l>", "<C-\\><C-N><C-w>L", opts)
+keymap("i", "<A-S-t>", "<C-\\><C-N><C-w>T", opts)
 keymap("n", "<A-S-h>", "<C-w>H", opts)
 keymap("n", "<A-S-j>", "<C-w>J", opts)
 keymap("n", "<A-S-k>", "<C-w>K", opts)
 keymap("n", "<A-S-l>", "<C-w>L", opts)
+keymap("n", "<A-S-t>", "<C-w>T", opts)
 
 -- resize window
 keymap("n", "<A-C-h>", "<C-w>2<", opts)
