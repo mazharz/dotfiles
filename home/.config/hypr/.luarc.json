@@ -1,0 +1,11 @@
+{
+  "workspace": {
+    "library": ["/usr/share/hypr/stubs"]
+  },
+  "runtime": {
+    "path": ["lua/?.lua", "lua/?/init.lua", "?.lua", "?/init.lua"]
+  },
+  "diagnostics": {
+    "globals": ["hl"]
+  }
+}

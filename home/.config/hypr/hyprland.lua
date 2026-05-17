@@ -1,0 +1,5 @@
+require("hyprland.env")
+require("hyprland.options")
+require("hyprland.keybinds")
+require("hyprland.autostart")
+require("hyprland.windowrules")

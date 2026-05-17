@@ -3,7 +3,7 @@
     "exec": "~/.config/waybar/modules/custom/mpd.sh",
     "interval": 10,
     "tooltip": false,
-    "signal": 11,
+    "signal": 7,
     "on-click": "mpc toggle",
     "on-click-right": "mpc next",
     "on-click-middle": "mpc prev",
