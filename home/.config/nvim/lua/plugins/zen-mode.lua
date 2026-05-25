@@ -6,6 +6,7 @@ return {
 	opts = {
 		window = {
 			backdrop = 1, -- don't shade backdrop
+			width = 124,
 		},
 		plugins = {
 			options = { laststatus = 0 },

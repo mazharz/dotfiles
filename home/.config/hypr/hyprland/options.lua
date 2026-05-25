@@ -6,8 +6,10 @@ hl.config({
 		gaps_out = 0,
 		float_gaps = { top = 20, right = 0, bottom = 0, left = 0 },
 		border_size = 1,
-		["col.active_border"] = globals.fg,
-		["col.inactive_border"] = globals.bg,
+		col = {
+			active_border = globals.fg,
+			inactive_border = globals.bg,
+		},
 		resize_on_border = true,
 		allow_tearing = false,
 		layout = "hy3",
@@ -39,7 +41,7 @@ hl.config({
 	plugin = {
 		hy3 = {
 			tabs = {
-				height = 20,
+				height = 18,
 				padding = 0,
 				radius = 0,
 				border_width = 1,

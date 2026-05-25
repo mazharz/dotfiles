@@ -209,7 +209,8 @@ end, { mouse = true })
 hl.bind("SUPER + SHIFT + mouse_down", function()
 	hl.config({ cursor = { zoom_factor = 3 } })
 end, { mouse = true })
-hl.gesture({ fingers = 2, direction = "pinch", action = "cursorZoom", zoom_level = 1, mode = "live" })
+hl.gesture({ fingers = 3, direction = "up", action = "cursorZoom", zoom_level = 3 })
+hl.gesture({ fingers = 3, direction = "down", action = "cursorZoom", zoom_level = 1 })
 
 ----------------------------------------------------------------------
 -- misc

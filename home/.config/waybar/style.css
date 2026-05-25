@@ -29,7 +29,7 @@ label.module {
 }
 
 tooltip {
-  background: @dark0;
+  background: @bg;
   padding: 8px;
 }
 
