@@ -37,7 +37,7 @@ alias kp="kubectl -n rc-prod"
 
 # others
 alias backup="rsync -a --delete --delete-excluded --progress /home/mazhar/mzd/* /run/media/mazhar/mzed"
-alias backup2="rsync -a --delete --delete-excluded --progress /home/mazhar/mzd/* /run/media/mazhar/mzd"
+alias backup2="rsync -a --delete --delete-excluded --progress /home/mazhar/mzd/* /run/media/mazhar/mzed2"
 alias lg="lazygit"
 alias ldg="ledger"
 alias f="cd $HOME/mzd/text/Dropbox/finances; nvim ${LEDGER_FILE}"

@@ -47,7 +47,7 @@ hl.bind("SUPER + ALT + o", hl.dsp.exec_cmd("/opt/oblivion-desktop/oblivion-deskt
 -- window
 ----------------------------------------------------------------------
 
-hl.bind("SUPER + q", hl.dsp.window.kill())
+hl.bind("SUPER + q", hl.dsp.window.close())
 
 -- layout
 hl.bind("SUPER + f", hl.dsp.window.fullscreen())
