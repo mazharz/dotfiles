@@ -5,13 +5,10 @@ echo '# Installing internet apps...'
 sleep 1
 sudo pacman -S telegram-desktop firefox chromium tor qbittorrent yt-dlp
 
-echo '# Installing oblivion...'
+echo '# Installing v2rayn...'
 sleep 1
-trizen -S --noconfirm oblivion-desktop-git
+trizen -S --noconfirm v2rayn-bin
 
 echo '########################################################################'
-echo '# Install xvpn yourself:'
-echo '# - download from the website'
-echo '# - move to ~/bin/xvpn'
-echo '# - install required dirs that the errors yell out'
+echo '# Install xvpn from its website'
 echo '########################################################################'

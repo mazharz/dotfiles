@@ -6,4 +6,4 @@ sleep 1
 git clone https://aur.archlinux.org/trizen-git.git "$HOME/builds/trizen"
 cd "$HOME/builds/trizen"
 makepkg -si
-cd "$HOME"
+cd "$HOME/bin/install-scripts"

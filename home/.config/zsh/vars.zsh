@@ -21,10 +21,7 @@ export LEDGER_FILE=$HOME/mzd/text/Dropbox/finances/2026.journal
 export PATH="$VOLTA_HOME/bin:$PATH"
 export PATH=$PATH:/home/mazhar/bin/
 
-# Scale qt apps
-# export QT_SCALE_FACTOR=1.3
-
-export DIR_SHORTCUTS="w:$HOME/mzd/wd;n:$HOME/mzd/multimedia/not watched;m:$HOME/mzd/music;c:$HOME/mzd/code;b:$HOME/mzd/text/book;o:$HOME/mzd/os;f:$HOME/mzd/text/Dropbox/finances;t:$HOME/mzd/text;s:$HOME/mzd/multimedia/series;F:$HOME/mzd/multimedia/personal media/Family/;D:$HOME/Downloads/"
+export DIR_SHORTCUTS="w:$HOME/mzd/wd;n:$HOME/mzd/multimedia/not watched;m:$HOME/mzd/music;c:$HOME/mzd/code;b:$HOME/mzd/text/book;o:$HOME/mzd/os;t:$HOME/mzd/text;s:$HOME/mzd/multimedia/series;f:$HOME/mzd/multimedia/personal media/Family/;d:$HOME/Downloads/"
 
 # lf
 [ -n "$LF_LEVEL" ] && PS1="L$LF_LEVEL $PS1"

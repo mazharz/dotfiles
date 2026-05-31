@@ -12,3 +12,6 @@ hl.env("__GLX_VENDOR_LIBRARY_NAME", "nvidia")
 
 -- electron apps
 hl.env("ELECTRON_OZONE_PLATFORM_HINT", "auto")
+
+-- qt
+hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")

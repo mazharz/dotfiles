@@ -64,3 +64,7 @@ trizen -S google-cloud-cli google-cloud-cli-gke-gcloud-auth-plugin
 echo '# Installing kubernetes cli tools...'
 sleep 1
 sudo pacman -S kubectl
+
+echo '# Installing claude code...'
+sleep 1
+trizen -S --noconfirm claude-code

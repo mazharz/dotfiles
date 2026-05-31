@@ -11,5 +11,4 @@ sudo pacman -S mpd mpc ncmpcpp
 echo "# Create directories for mpd's necessary files..."
 mkdir -p "$HOME/.mpd/playlists"
 echo '# Enable & Start mpd user service...'
-echo '# You can now hit "u" in ncmpcpp to update the db'
 systemctl enable --user --now mpd

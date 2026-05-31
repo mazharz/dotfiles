@@ -6,8 +6,6 @@ sleep 1
 
 echo '# Installing eslint'
 "$HOME/.volta/bin/npm" i -g eslint
-echo '# Installing sass'
-"$HOME/.volta/bin/npm" i -g sass
 echo '# Installing prettier'
 "$HOME/.volta/bin/npm" i -g prettier
 echo '# Installing typescript'

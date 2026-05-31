@@ -17,3 +17,10 @@ server=1.1.1.1
 
 address=/name/1.1.1.1
 ```
+
+## before os migration
+
+- commit and push ~/.dotfiles
+- backup .ssh keys
+- save torrent magnet links in a file
+- run backup commands

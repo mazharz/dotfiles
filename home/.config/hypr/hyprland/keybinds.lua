@@ -37,8 +37,8 @@ hl.bind(
 	"SUPER + CTRL + ALT + t",
 	hl.dsp.exec_cmd("systemctl --user stop break-timer.service; pkill -SIGRTMIN+8 waybar")
 )
-hl.bind("SUPER + ALT + h", hl.dsp.exec_cmd("~/builds/Hubstaff/HubstaffClient.bin.x86_64"))
-hl.bind("SUPER + ALT + v", hl.dsp.exec_cmd(globals.terminal .. " --class xvpn -e sudo xvpn ui"))
+hl.bind("SUPER + ALT + h", hl.dsp.exec_cmd("~/builds/hubstaff/HubstaffClient.bin.x86_64"))
+hl.bind("SUPER + ALT + v", hl.dsp.exec_cmd("/opt/v2rayn-bin/v2rayN"))
 hl.bind("SUPER + ALT + d", hl.dsp.exec_cmd("XDG_CURRENT_DESKTOP=GNOME mongodb-compass"))
 hl.bind("SUPER + ALT + b", hl.dsp.exec_cmd(globals.terminal .. " -e btm"))
 hl.bind("SUPER + ALT + o", hl.dsp.exec_cmd("/opt/oblivion-desktop/oblivion-desktop --no-sandbox --gtk-version=3"))

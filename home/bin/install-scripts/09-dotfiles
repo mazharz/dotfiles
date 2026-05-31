@@ -5,5 +5,6 @@ echo '# Populating dotfiles...'
 sleep 1
 mkdir -p ~/.config
 cd ~/.dotfiles/
-stow .
-cd "$HOME"
+stow -t .. home
+sudo stow -t /etc/ etc
+cd "$HOME/bin/install-scripts"

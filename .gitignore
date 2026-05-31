@@ -1,4 +1,5 @@
 etc/NetworkManager/dnsmasq.d/local.conf
+home/.config/systemd/user/default.target.wants
 home/.config/nvim/spell
 home/.ssh/id_rsa*
 home/.ssh/fakir-github*

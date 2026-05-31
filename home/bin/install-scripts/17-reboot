@@ -1,3 +1,13 @@
 #!/bin/bash
 
-reboot
+echo '########################################################################'
+echo '# We are about to reboot'
+echo '########################################################################'
+echo -n '# type "y" to continue: '
+
+read -r answer
+
+if [ "$answer" == "y" ]; then
+  reboot
+fi
+
