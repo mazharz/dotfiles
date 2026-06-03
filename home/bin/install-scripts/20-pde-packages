@@ -5,7 +5,7 @@ echo '# Installing pde packages...'
 sleep 1
 # unzip is required by neovim plugins
 # tree-sitter-cli is required by neovim's tree-sitter implementation
-sudo pacman -S fzf tmux neovim ripgrep fd sqlitebrowser docker docker-compose unzip lazygit shellcheck go go-tools postgresql mariadb jq stylua git-delta tree-sitter-cli
+sudo pacman -S fzf tmux neovim ripgrep fd sqlitebrowser docker docker-compose unzip lazygit shellcheck go go-tools jq stylua git-delta tree-sitter-cli
 
 echo '# Installing go packages...'
 sleep 1
@@ -25,28 +25,6 @@ trizen -S --noconfirm mongodb-bin mongodb-compass-bin mongodb-tools-bin
 echo '# Enabling mongo service...'
 sleep 1
 sudo systemctl enable --now mongodb
-
-echo '# Installing rabbitmq packages...'
-sleep 1
-sudo pacman -S rabbitmq
-echo '# Enabling rabbitmq service...'
-sleep 1
-sudo systemctl enable --now rabbitmq
-echo '# Enabling rabbitmq management plugin...'
-sleep 1
-sudo rabbitmq-plugins enable rabbitmq_management
-echo '# Adding rabbitmq user, setting as admin, and adding permissions...'
-sleep 1
-sudo rabbitmqctl add_user mazhar
-sudo rabbitmqctl set_user_tags mazhar administrator
-sudo rabbitmqctl set_permissions -p / mazhar ".*" ".*" ".*"
-
-echo '# Installing redis packages...'
-sleep 1
-sudo pacman -S redis
-echo '# Enabling redis service...'
-sleep 1
-sudo systemctl enable --now redis
 
 echo '# Installing qmk packages...'
 sleep 1
