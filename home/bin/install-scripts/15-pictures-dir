@@ -1,0 +1,6 @@
+#!/bin/bash
+set -e
+
+echo '# Creating ~/Pictures dir...'
+sleep 1
+mkdir -p "$HOME/Pictures"

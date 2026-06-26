@@ -7,7 +7,7 @@ sudo pacman -S vlc mpv audacity kid3 handbrake mkvtoolnix-gui ffmpegthumbnailer 
 
 echo '# Installing mpd...'
 sleep 1
-sudo pacman -S mpd mpc ncmpcpp
+sudo pacman -S mpd mpc
 echo "# Create directories for mpd's necessary files..."
 mkdir -p "$HOME/.mpd/playlists"
 echo '# Enable & Start mpd user service...'

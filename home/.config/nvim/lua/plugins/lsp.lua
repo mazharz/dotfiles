@@ -65,12 +65,6 @@ local setupLsp = function()
 		signs = false,
 	})
 
-	require("mason").setup()
-	require("mason-lspconfig").setup({
-		ensure_installed = {},
-		automatic_enable = false,
-	})
-
 	local servers = {
 		ts_ls = {},
 		lua_ls = {},
@@ -90,8 +84,16 @@ local setupLsp = function()
 		bashls = {},
 		gopls = {},
 		golangci_lint_ls = {},
+		rust_analyzer = {},
 		pyright = {},
+		tailwindcss = {},
 	}
+
+	require("mason").setup()
+	require("mason-lspconfig").setup({
+		ensure_installed = vim.tbl_keys(servers),
+		automatic_enable = false,
+	})
 
 	for name, extra in pairs(servers) do
 		vim.lsp.config(

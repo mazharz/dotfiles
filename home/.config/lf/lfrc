@@ -131,3 +131,13 @@ cmd zip ${{
     rm -rf $1
 }}
 map xz :push :zip<space>
+
+cmd encrypt ${{
+    crypter encrypt "$fx"
+}}
+map xe encrypt
+
+cmd decrypt ${{
+    crypter decrypt "$fx"
+}}
+map xd decrypt

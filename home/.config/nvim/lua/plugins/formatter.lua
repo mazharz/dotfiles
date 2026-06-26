@@ -9,6 +9,7 @@ return {
 			formatters_by_ft = {
 				lua = { "stylua" },
 				go = { "gofumpt" },
+				rust = { "rustfmt" },
 				python = { "black" },
 				["_"] = { "prettier" },
 			},

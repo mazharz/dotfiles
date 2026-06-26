@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+lf "$HOME/mzd/music/$(mpc -f '%file%' current)"

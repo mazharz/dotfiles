@@ -23,7 +23,7 @@ hl.bind("SUPER + return", hl.dsp.exec_cmd(globals.terminal))
 hl.bind("SUPER + ALT + f", hl.dsp.exec_cmd("firefox"))
 hl.bind("SUPER + ALT + e", hl.dsp.exec_cmd("thunar"))
 hl.bind("SUPER + ALT + t", hl.dsp.exec_cmd("Telegram"))
-hl.bind("SUPER + ALT + m", hl.dsp.exec_cmd(globals.terminal .. " --class ncmpcpp -e ncmpcpp -q"))
+hl.bind("SUPER + ALT + m", hl.dsp.exec_cmd(globals.terminal .. " -e current_song"))
 hl.bind("SUPER + ALT + p", hl.dsp.exec_cmd("postman"))
 hl.bind("SUPER + ALT + c", hl.dsp.exec_cmd("~/bin/clocks"))
 hl.bind("SUPER + ALT + q", hl.dsp.exec_cmd(globals.terminal .. " --class qalculate-terminal -e qalc"))
@@ -159,20 +159,20 @@ hl.bind(
 -- music
 ----------------------------------------------------------------------
 
-hl.bind("SUPER + ALT + period", hl.dsp.exec_cmd("mpc next; pkill -SIGRTMIN+7 waybar"), { locked = true })
-hl.bind("SUPER + ALT + comma", hl.dsp.exec_cmd("mpc prev; pkill -SIGRTMIN+7 waybar"), { locked = true })
-hl.bind("SUPER + ALT + mouse_right", hl.dsp.exec_cmd("mpc next; pkill -SIGRTMIN+7 waybar"), { locked = true })
-hl.bind("SUPER + ALT + mouse_left", hl.dsp.exec_cmd("mpc prev; pkill -SIGRTMIN+7 waybar"), { locked = true })
-hl.bind("SUPER + ALT + j", hl.dsp.exec_cmd("mpc toggle; pkill -SIGRTMIN+7 waybar"), { locked = true })
-hl.bind("SUPER + ALT + mouse:274", hl.dsp.exec_cmd("mpc toggle; pkill -SIGRTMIN+7 waybar"), { locked = true })
+hl.bind("SUPER + ALT + period", hl.dsp.exec_cmd("mpc -q next; pkill -SIGRTMIN+7 waybar"), { locked = true })
+hl.bind("SUPER + ALT + comma", hl.dsp.exec_cmd("mpc -q prev; pkill -SIGRTMIN+7 waybar"), { locked = true })
+hl.bind("SUPER + ALT + mouse_right", hl.dsp.exec_cmd("mpc -q next; pkill -SIGRTMIN+7 waybar"), { locked = true })
+hl.bind("SUPER + ALT + mouse_left", hl.dsp.exec_cmd("mpc -q prev; pkill -SIGRTMIN+7 waybar"), { locked = true })
+hl.bind("SUPER + ALT + j", hl.dsp.exec_cmd("mpc -q toggle; pkill -SIGRTMIN+7 waybar"), { locked = true })
+hl.bind("SUPER + ALT + mouse:274", hl.dsp.exec_cmd("mpc -q toggle; pkill -SIGRTMIN+7 waybar"), { locked = true })
 hl.bind(
 	"SUPER + ALT + bracketleft",
-	hl.dsp.exec_cmd("mpc seek -10; pkill -SIGRTMIN+7 waybar"),
+	hl.dsp.exec_cmd("mpc -q seek -10; pkill -SIGRTMIN+7 waybar"),
 	{ locked = true, repeating = true }
 )
 hl.bind(
 	"SUPER + ALT + bracketright",
-	hl.dsp.exec_cmd("mpc seek +10; pkill -SIGRTMIN+7 waybar"),
+	hl.dsp.exec_cmd("mpc -q seek +10; pkill -SIGRTMIN+7 waybar"),
 	{ locked = true, repeating = true }
 )
 

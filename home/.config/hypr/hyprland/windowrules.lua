@@ -19,6 +19,5 @@ hl.window_rule({
 hl.window_rule({ match = { class = "^(MongoDB Compass)$" }, workspace = 7 })
 hl.window_rule({ match = { class = "^(Postman)$" }, workspace = 8 })
 hl.window_rule({ match = { class = "^(Altair GraphQL Client)$" }, workspace = 8 })
-hl.window_rule({ match = { class = "^(ncmpcpp)$" }, workspace = 9 })
 hl.window_rule({ match = { class = "^(Netsoft-com.netsoft.hubstaff)$" }, workspace = 10 })
 hl.window_rule({ match = { class = "^(v2rayN)$" }, workspace = 1 })

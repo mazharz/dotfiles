@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+set -e
+
+# usage:
+# $ crypter encrypt <raw file or directory>
+# $ crypter decrypt <encrypted file>
+
+operation="$1"
+target="${2}"
+targetBasename=$(basename "$target")
+dir=${target%"$targetBasename"}
+
+if [[ "$operation" == "encrypt" ]];then
+  tar czO --directory="$dir" "$targetBasename" | gpg --symmetric --cipher-algo AES256 > "${target}.tar.gz.gpg"
+elif [[ "$operation" == "decrypt" ]];then
+  gpg --decrypt "$target" | tar xz > "${target%.tar.gz.gpg}"
+else
+  echo "operation was not recognized"
+fi

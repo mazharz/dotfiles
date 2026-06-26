@@ -16,7 +16,7 @@ local snippets = {
       []
     }
 
-    function [] ({[]}: Props) {
+    function []({[]}: Props) {
       []
     }
 
@@ -35,7 +35,7 @@ local snippets = {
       []
     }
 
-    function [] ({[]}: Props) {
+    function []({[]}: Props) {
       []
     }
 

@@ -1,11 +1,20 @@
 #!/usr/bin/env bash
 
-# using `cut -c 1-50` causes error on umlaut breakage (split in two)
-# hence using the `awk print substr`
+get_icon() {
+    if [[ "$status" == "playing" ]]; then
+        echo -n " "
+    elif [[ "$status" == "paused" ]]; then
+        echo -n " "
+    elif [[ "$status" == "stopped" ]];then
+        echo -n ""
+    fi
+}
+
 song=$(mpc current)
+# awk preserves umlauts when breaking up strings
 song_truncated=$(echo -n "$song" |  awk '{print substr($0, 1, 40)}')
 status=$(mpc status %state%)
-icon=$([ "$status" = "playing" ] && echo -n " " || echo -n " ")
+icon=$(get_icon status)
 
 progress_percent=$(mpc status "%percenttime%" | awk '{print $1}' | tr % ' ')
 progress_percent="${progress_percent:=0}" # fallback value

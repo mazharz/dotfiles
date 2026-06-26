@@ -60,7 +60,7 @@ local snippets = {
 		"fd",
 		fmt(
 			[[
-    function [] ([]) {
+    function []([]) {
       []
     }
 
@@ -75,7 +75,7 @@ local snippets = {
 		"fdd",
 		fmt(
 			[[
-    function [] ([]) {
+    function []([]) {
       []
     }
 

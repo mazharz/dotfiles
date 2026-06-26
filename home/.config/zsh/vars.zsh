@@ -15,8 +15,6 @@ export VOLTA_HOME="$HOME/.volta"
 [ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
 export FZF_DEFAULT_OPTS='--layout=reverse-list --info=inline-right --info-command="echo -e \"$FZF_POS/$FZF_INFO\"" --no-separator --no-scrollbar --bind "ctrl-d:half-page-down" --bind "ctrl-u:half-page-up"'
 export FZF_DEFAULT_COMMAND='rg --hidden --files -g !node_modules -g !.git -g !.Trash\* .'
-# ledger
-export LEDGER_FILE=$HOME/mzd/text/Dropbox/finances/2026.journal
 # PATH
 export PATH="$VOLTA_HOME/bin:$PATH"
 export PATH=$PATH:/home/mazhar/bin/
@@ -30,6 +28,9 @@ export DIR_SHORTCUTS="w:$HOME/mzd/wd;n:$HOME/mzd/multimedia/not watched;m:$HOME/
 export GOPATH="$HOME/go"
 export GOBIN="$GOPATH/bin"
 export PATH=$PATH:$GOBIN
+
+# rust
+source "$HOME/.cargo/env"
 
 # google cloud cli
 source /etc/profile.d/google-cloud-cli.sh

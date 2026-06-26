@@ -4,6 +4,5 @@ home/.config/nvim/spell
 home/.ssh/id_rsa*
 home/.ssh/fakir-github*
 home/.ssh/known_hosts*
-home/.config/ncmpcpp/error.log
 home/bin/xvpn
 home/bin/stripe
