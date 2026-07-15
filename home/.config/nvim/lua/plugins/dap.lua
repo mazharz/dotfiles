@@ -2,7 +2,6 @@ local utils = require("utils")
 
 local setupDap = function()
 	local dap = require("dap")
-	local dapUtils = require("dap.utils")
 	local dapui = require("dapui")
 
 	-- Set up icons.
@@ -24,42 +23,68 @@ local setupDap = function()
 	end
 
 	-- NOTE: install `js-debug-adapter` manually via :Mason
-	dap.adapters["pwa-node"] = {
-		type = "server",
-		host = "localhost",
-		port = "${port}",
-		executable = {
-			command = "node",
-			args = {
-				utils.get_mason_pkg_path("js-debug-adapter", "/js-debug/src/dapDebugServer.js"),
-				"${port}",
-			},
-		},
-	}
-
-	local js_langs = { "typescript", "javascript" }
-
-	for _, language in ipairs(js_langs) do
-		dap.configurations[language] = {
-			-- for single file debugging
-			{
-				type = "pwa-node",
-				request = "launch",
-				name = "Launch file",
-				program = "${file}",
-				cwd = "${workspaceFolder}",
-			},
-			-- for attaching to running application
-			{
-				type = "pwa-node",
-				request = "attach",
-				name = "Attach to process",
-				processId = function()
-					dapUtils.pick_process({ filter = vim.fn.input("Filter processes: ") })
-				end,
-				cwd = "${workspaceFolder}",
+	if not dap.adapters["pwa-node"] then
+		require("dap").adapters["pwa-node"] = {
+			type = "server",
+			host = "localhost",
+			port = "${port}",
+			executable = {
+				command = "node",
+				args = {
+					utils.get_mason_pkg_path("js-debug-adapter", "/js-debug/src/dapDebugServer.js"),
+					"${port}",
+				},
 			},
 		}
+	end
+
+	if not dap.adapters["node"] then
+		dap.adapters["node"] = function(cb, config)
+			if config.type == "node" then
+				config.type = "pwa-node"
+			end
+			local nativeAdapter = dap.adapters["pwa-node"]
+			if type(nativeAdapter) == "function" then
+				nativeAdapter(cb, config)
+			else
+				cb(nativeAdapter)
+			end
+		end
+	end
+
+	local js_filetypes = { "typescript", "javascript", "typescriptreact", "javascriptreact" }
+
+	local vscode = require("dap.ext.vscode")
+	vscode.type_to_filetypes["node"] = js_filetypes
+	vscode.type_to_filetypes["pwa-node"] = js_filetypes
+
+	for _, language in ipairs(js_filetypes) do
+		if not dap.configurations[language] then
+			dap.configurations[language] = {
+				{
+					type = "pwa-node",
+					request = "launch",
+					name = "Launch file",
+					program = "${file}",
+					cwd = "${workspaceFolder}",
+				},
+				{
+					type = "pwa-node",
+					request = "attach",
+					name = "Attach",
+					port = function()
+						return tonumber(vim.fn.input("Debug port: ", "9001"))
+					end,
+					cwd = "${workspaceFolder}",
+					sourceMaps = true,
+					resolveSourceMapLocations = {
+						"${workspaceFolder}/**",
+						"!**/node_modules/**",
+					},
+					outFiles = { "${workspaceFolder}/**/*.js", "!**/node_modules/**" },
+				},
+			}
+		end
 	end
 
 	dapui.setup()
@@ -74,10 +99,6 @@ return {
 	"mfussenegger/nvim-dap",
 	dependencies = {
 		{ "rcarriga/nvim-dap-ui", dependencies = "nvim-neotest/nvim-nio" },
-		{
-			"microsoft/vscode-js-debug",
-			build = "npm install --ignore-scripts && npm run compile vsDebugServerBundle && rm -rf out && mv -f dist out",
-		},
 	},
 	keys = {
 		{

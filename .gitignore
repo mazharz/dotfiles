@@ -6,3 +6,4 @@ home/.ssh/fakir-github*
 home/.ssh/known_hosts*
 home/bin/xvpn
 home/bin/stripe
+home/docker/mongodb/data

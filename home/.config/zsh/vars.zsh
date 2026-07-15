@@ -24,11 +24,6 @@ export DIR_SHORTCUTS="w:$HOME/mzd/wd;n:$HOME/mzd/multimedia/not watched;m:$HOME/
 # lf
 [ -n "$LF_LEVEL" ] && PS1="L$LF_LEVEL $PS1"
 
-# go
-export GOPATH="$HOME/go"
-export GOBIN="$GOPATH/bin"
-export PATH=$PATH:$GOBIN
-
 # rust
 source "$HOME/.cargo/env"
 
