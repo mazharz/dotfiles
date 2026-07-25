@@ -8,7 +8,3 @@ sudo pacman -S telegram-desktop firefox chromium tor qbittorrent yt-dlp
 echo '# Installing v2rayn...'
 sleep 1
 trizen -S --noconfirm v2rayn-bin
-
-echo '########################################################################'
-echo '# Install xvpn from its website'
-echo '########################################################################'

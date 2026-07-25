@@ -30,10 +30,8 @@ local setupTreeSitter = function()
 		"nginx",
 		"python",
 		"regex",
-		"rust",
 		"sql",
 		"styled",
-		"tmux",
 		"printf",
 		"robots_txt",
 	})
@@ -61,9 +59,7 @@ local setupTreeSitter = function()
 			"nginx",
 			"python",
 			"regex",
-			"rust",
 			"sql",
-			"tmux",
 			"robots",
 		},
 		callback = function()

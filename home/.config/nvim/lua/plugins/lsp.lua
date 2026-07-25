@@ -82,7 +82,6 @@ local setupLsp = function()
 		yamlls = {},
 		cssmodules_ls = {},
 		bashls = {},
-		rust_analyzer = {},
 		pyright = {},
 		tailwindcss = {},
 	}

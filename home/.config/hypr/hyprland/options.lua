@@ -21,6 +21,8 @@ hl.config({
 	},
 	input = {
 		kb_layout = "us,ir",
+		-- kb_layout = "us,ir,de,ir",
+		-- kb_variant = ",,,ku_ara",
 		kb_options = "grp:caps_toggle",
 	},
 	cursor = {

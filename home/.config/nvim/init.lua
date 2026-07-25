@@ -15,6 +15,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("options")
 require("keymaps")
+require("macros")
 require("file-manager")
 require("statusline")
 require("tabline")

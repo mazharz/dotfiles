@@ -106,8 +106,8 @@ for i = 1, 10 do
 	hl.bind("SUPER + CTRL + " .. key, hl.dsp.window.move({ workspace = i }))
 end
 
-hl.bind("SUPER + mouse_down", hl.dsp.focus({ workspace = "e-1" }))
-hl.bind("SUPER + mouse_up", hl.dsp.focus({ workspace = "e+1" }))
+hl.bind("SUPER + mouse_up", hl.dsp.focus({ workspace = "e-1" }))
+hl.bind("SUPER + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
 hl.bind("SUPER + period", hl.dsp.focus({ workspace = "e+1" }))
 hl.bind("SUPER + comma", hl.dsp.focus({ workspace = "e-1" }))
 
@@ -145,12 +145,12 @@ hl.bind(
 	{ locked = true, repeating = true }
 )
 hl.bind(
-	"SUPER + ALT + mouse_down",
+	"SUPER + ALT + mouse_up",
 	hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 2%+; pkill -SIGRTMIN+7 waybar"),
 	{ locked = true, repeating = true }
 )
 hl.bind(
-	"SUPER + ALT + mouse_up",
+	"SUPER + ALT + mouse_down",
 	hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%-; pkill -SIGRTMIN+7 waybar"),
 	{ locked = true, repeating = true }
 )
@@ -203,10 +203,10 @@ hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-"
 -- desktop zoom
 ----------------------------------------------------------------------
 
-hl.bind("SUPER + SHIFT + mouse_up", function()
+hl.bind("SUPER + SHIFT + mouse_down", function()
 	hl.config({ cursor = { zoom_factor = 1 } })
 end, { mouse = true })
-hl.bind("SUPER + SHIFT + mouse_down", function()
+hl.bind("SUPER + SHIFT + mouse_up", function()
 	hl.config({ cursor = { zoom_factor = 3 } })
 end, { mouse = true })
 hl.gesture({ fingers = 3, direction = "up", action = "cursorZoom", zoom_level = 3 })

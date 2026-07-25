@@ -8,7 +8,6 @@ return {
 		conform.setup({
 			formatters_by_ft = {
 				lua = { "stylua" },
-				rust = { "rustfmt" },
 				python = { "black" },
 				["_"] = { "prettier" },
 			},
