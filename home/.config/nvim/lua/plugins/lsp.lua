@@ -82,6 +82,8 @@ local setupLsp = function()
 		yamlls = {},
 		cssmodules_ls = {},
 		bashls = {},
+		gopls = {},
+		golangci_lint_ls = {},
 		pyright = {},
 		tailwindcss = {},
 	}
