@@ -1,2 +1,1 @@
 mazhar ALL=(ALL:ALL) ALL
-mazhar ALL=(root) NOPASSWD: /usr/local/bin/xvpn

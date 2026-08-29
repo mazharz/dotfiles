@@ -10,6 +10,6 @@ git:
   branchLogCmd: "git log --color=always --abbrev-commit --decorate --pretty=medium {{branchName}} --"
   allBranchesLogCmds:
     - git log --all --color=always --abbrev-commit --decorate --pretty=medium
-  pagers:
-    - pager: delta --paging=never
+  diffRenderers:
+    - command: delta --paging=never
       colorArg: always

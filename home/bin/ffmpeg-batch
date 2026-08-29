@@ -13,6 +13,6 @@ if [[ "$convertion" == "webm-to-opus" ]];then
   done
 elif [[ "$convertion" == "flac-to-opus" ]];then
   for ((i=0; i < ${#files[@]}; i++));do
-    ffmpeg -i "${files[$i]}" -c:a libopus -b:a 160k "${files[$i]%.flac}.opus"
+    ffmpeg -i "${files[$i]}" -map 0:a:0 -c:a libopus -b:a 160k "${files[$i]%.flac}.opus"
   done
 fi
