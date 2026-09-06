@@ -12,7 +12,7 @@ hl.config({
 		},
 		resize_on_border = true,
 		allow_tearing = false,
-		layout = "hy3",
+		layout = "monocle",
 	},
 	decoration = {
 		rounding = 0,
@@ -39,36 +39,6 @@ hl.config({
 	},
 	ecosystem = {
 		no_donation_nag = true,
-	},
-	plugin = {
-		hy3 = {
-			tabs = {
-				height = 18,
-				padding = 0,
-				radius = 0,
-				border_width = 1,
-				text_height = 10,
-				text_padding = 0,
-				blur = false,
-				colors = {
-					active = globals.fg,
-					active_border = globals.fg,
-					active_text = globals.bg,
-					active_alt_monitor = globals.bg,
-					active_alt_monitor_border = globals.fg,
-					active_alt_monitor_text = globals.fg,
-					focused = globals.bg,
-					focused_border = globals.fg,
-					focused_text = globals.fg,
-					inactive = globals.bg,
-					inactive_border = globals.bg,
-					inactive_text = globals.fg,
-					urgent = globals.red,
-					urgent_border = globals.red,
-					urgent_text = globals.bg,
-				},
-			},
-		},
 	},
 })
 

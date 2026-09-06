@@ -22,9 +22,6 @@ sudo pacman -S lf trash-cli moreutils
 echo '# Installing mongo packages...'
 sleep 1
 trizen -S --noconfirm mongodb-bin mongodb-compass-bin mongodb-tools-bin
-echo '# Enabling mongo service...'
-sleep 1
-sudo systemctl enable --now mongodb
 
 echo '# Installing qmk packages...'
 sleep 1

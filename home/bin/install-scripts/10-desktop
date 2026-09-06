@@ -10,12 +10,3 @@ sleep 1
 sudo systemctl enable tlp.service
 sudo systemctl mask systemd-rfkill.service
 sudo systemctl mask systemd-rfkill.socket
-
-echo '# Installing hyprland plugins...'
-sleep 1
-hyprpm add https://github.com/outfoxxed/hy3
-
-
-echo '# Enabling hyprland plugins...'
-sleep 1
-hyprpm enable hy3

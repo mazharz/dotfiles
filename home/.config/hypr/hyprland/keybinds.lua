@@ -1,5 +1,4 @@
 local globals = require("hyprland.globals")
-local hy3 = hl.plugin.hy3
 
 ----------------------------------------------------------------------
 -- menus
@@ -40,7 +39,6 @@ hl.bind(
 hl.bind("SUPER + ALT + v", hl.dsp.exec_cmd("/opt/v2rayn-bin/v2rayN"))
 hl.bind("SUPER + ALT + d", hl.dsp.exec_cmd("XDG_CURRENT_DESKTOP=GNOME mongodb-compass"))
 hl.bind("SUPER + ALT + b", hl.dsp.exec_cmd(globals.terminal .. " -e btm"))
-hl.bind("SUPER + ALT + o", hl.dsp.exec_cmd("/opt/oblivion-desktop/oblivion-desktop --no-sandbox --gtk-version=3"))
 
 ----------------------------------------------------------------------
 -- window
@@ -50,36 +48,23 @@ hl.bind("SUPER + q", hl.dsp.window.close())
 
 -- layout
 hl.bind("SUPER + f", hl.dsp.window.fullscreen())
-hl.bind("SUPER + space", hy3.toggle_focus_layer())
+hl.bind("SUPER + space", hl.dsp.window.cycle_next())
 hl.bind("SUPER + SHIFT + space", hl.dsp.window.float())
 hl.bind("SUPER + SHIFT + p", hl.dsp.window.pin())
 
-hl.bind("SUPER + b", hy3.make_group("h"))
-hl.bind("SUPER + v", hy3.make_group("v"))
-hl.bind("SUPER + t", hy3.change_group("toggletab"))
-hl.bind("SUPER + g", hy3.change_group("opposite"))
-hl.bind("SUPER + a", hy3.change_focus("raise"))
-hl.bind("SUPER + z", hy3.change_focus("lower"))
-
 -- move focus
-hl.bind("SUPER + h", hy3.move_focus("l"))
-hl.bind("SUPER + l", hy3.move_focus("r"))
-hl.bind("SUPER + k", hy3.move_focus("u"))
-hl.bind("SUPER + j", hy3.move_focus("d"))
-hl.bind("SUPER + left", hy3.move_focus("l"))
-hl.bind("SUPER + right", hy3.move_focus("r"))
-hl.bind("SUPER + up", hy3.move_focus("u"))
-hl.bind("SUPER + down", hy3.move_focus("d"))
+hl.bind("SUPER + h", hl.dsp.layout("cycleprev"))
+hl.bind("SUPER + l", hl.dsp.layout("cyclenext"))
 
 -- # move window
-hl.bind("SUPER + SHIFT + h", hy3.move_window("l"))
-hl.bind("SUPER + SHIFT + l", hy3.move_window("r"))
-hl.bind("SUPER + SHIFT + k", hy3.move_window("u"))
-hl.bind("SUPER + SHIFT + j", hy3.move_window("d"))
-hl.bind("SUPER + SHIFT + left", hl.dsp.window.move({ direction = "l" }))
-hl.bind("SUPER + SHIFT + right", hl.dsp.window.move({ direction = "r" }))
-hl.bind("SUPER + SHIFT + up", hl.dsp.window.move({ direction = "u" }))
-hl.bind("SUPER + SHIFT + down", hl.dsp.window.move({ direction = "d" }))
+hl.bind("SUPER + SHIFT + h", hl.dsp.window.move({ direction = "left" }))
+hl.bind("SUPER + SHIFT + l", hl.dsp.window.move({ direction = "right" }))
+hl.bind("SUPER + SHIFT + k", hl.dsp.window.move({ direction = "up" }))
+hl.bind("SUPER + SHIFT + j", hl.dsp.window.move({ direction = "down" }))
+hl.bind("SUPER + SHIFT + left", hl.dsp.window.move({ direction = "left" }))
+hl.bind("SUPER + SHIFT + right", hl.dsp.window.move({ direction = "right" }))
+hl.bind("SUPER + SHIFT + up", hl.dsp.window.move({ direction = "up" }))
+hl.bind("SUPER + SHIFT + down", hl.dsp.window.move({ direction = "down" }))
 
 -- resize window
 hl.bind("SUPER + CTRL + h", hl.dsp.window.resize({ x = -20, y = 0, relative = true }))
