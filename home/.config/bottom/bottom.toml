@@ -1,24 +1,33 @@
 [flags]
-# Whether to make process searching use regex by default.
-regex = true
-# Remove space in tables
-hide_table_gap = true
-# Show memory values in the processes widget as values by default
-process_memory_as_value = true
-# Displays the network widget using bytes.
-network_use_bytes = true
-# Shows cache and buffer memory
-enable_cache_memory = true
-# Whether to put the CPU legend to the left.
-cpu_left_legend = true
-# Where to place the legend for the memory widget.
-# One of "none", "top-left", "top", "top-right", "left", "right", "bottom-left", "bottom", "bottom-right".
-memory_legend = "top-left"
-# Where to place the legend for the network widget.
-# One of "none", "top-left", "top", "top-right", "left", "right", "bottom-left", "bottom", "bottom-right".
-network_legend = "top-left"
+# Remove the gap between table headers and data rows.
+# One of "none", "space" (default), "line".
+table_gap = "none"
 # Use dot for graph instead of braille
 dot_marker = true
+
+[cpu]
+# Whether to put the CPU legend to the left.
+left_legend = true
+
+[processes]
+# Whether to make process searching use regex by default.
+regex = true
+# Show memory values in the processes widget as values by default
+default_memory_value = true
+
+[memory_graph]
+# Shows cache and buffer memory
+cache_memory = true
+# Where to place the legend for the memory widget.
+# One of "none", "top-left", "top", "top-right", "left", "right", "bottom-left", "bottom", "bottom-right".
+legend_position = "top-left"
+
+[network_graph]
+# Displays the network widget using bytes.
+use_bytes = true
+# Where to place the legend for the network widget.
+# One of "none", "top-left", "top", "top-right", "left", "right", "bottom-left", "bottom", "bottom-right".
+legend_position = "top-left"
 
 [styles]
 # Built-in themes. Valid values are:
