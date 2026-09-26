@@ -38,6 +38,7 @@ hl.bind(
 )
 hl.bind("SUPER + ALT + v", hl.dsp.exec_cmd("/opt/v2rayn-bin/v2rayN"))
 hl.bind("SUPER + ALT + d", hl.dsp.exec_cmd("XDG_CURRENT_DESKTOP=GNOME mongodb-compass"))
+hl.bind("SUPER + ALT + SHIFT + d", hl.dsp.exec_cmd("beekeeper-studio"))
 hl.bind("SUPER + ALT + b", hl.dsp.exec_cmd(globals.terminal .. " -e btm"))
 
 ----------------------------------------------------------------------
@@ -53,8 +54,8 @@ hl.bind("SUPER + SHIFT + space", hl.dsp.window.float())
 hl.bind("SUPER + SHIFT + p", hl.dsp.window.pin())
 
 -- move focus
-hl.bind("SUPER + h", hl.dsp.layout("cycleprev"))
-hl.bind("SUPER + l", hl.dsp.layout("cyclenext"))
+hl.bind("SUPER + k", hl.dsp.layout("cycleprev"))
+hl.bind("SUPER + j", hl.dsp.layout("cyclenext"))
 
 -- # move window
 hl.bind("SUPER + SHIFT + h", hl.dsp.window.move({ direction = "left" }))

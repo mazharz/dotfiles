@@ -4,7 +4,6 @@ hl.config({
 	general = {
 		gaps_in = 0,
 		gaps_out = 0,
-		float_gaps = { top = 20, right = 0, bottom = 0, left = 0 },
 		border_size = 1,
 		col = {
 			active_border = globals.fg,
@@ -21,6 +20,7 @@ hl.config({
 	},
 	input = {
 		kb_layout = "us,ir",
+		-- kb_layout = "us,de",
 		-- kb_layout = "us,ir,de,ir",
 		-- kb_variant = ",,,ku_ara",
 		kb_options = "grp:caps_toggle",

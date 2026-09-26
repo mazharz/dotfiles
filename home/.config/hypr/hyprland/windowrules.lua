@@ -16,5 +16,6 @@ hl.window_rule({
 	fullscreen = true,
 })
 hl.window_rule({ match = { class = "^(MongoDB Compass)$" }, workspace = 7 })
+hl.window_rule({ match = { class = "^(beekeeper-studio)$" }, workspace = 7 })
 hl.window_rule({ match = { class = "^(Postman)$" }, workspace = 8 })
 hl.window_rule({ match = { class = "^(v2rayN)$" }, workspace = 1 })

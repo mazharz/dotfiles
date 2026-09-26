@@ -12,6 +12,10 @@ sleep 1
 # moreutils provides vidir
 sudo pacman -S lf trash-cli moreutils
 
+echo '# Installing sql packages...'
+sleep 1
+trizen -S beekeeper-studio-bin
+
 echo '# Installing mongo packages...'
 sleep 1
 trizen -S --noconfirm mongodb-bin mongodb-compass-bin mongodb-tools-bin
