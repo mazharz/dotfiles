@@ -7,7 +7,7 @@
     "on-click": "mpc -q toggle",
     "on-click-right": "mpc -q next",
     "on-click-middle": "mpc -q prev",
-    "on-scroll-up": "mpc -q seek +10",
-    "on-scroll-down": "mpc -q seek -10",
+    "on-scroll-down": "mpc -q seek +10",
+    "on-scroll-up": "mpc -q seek -10",
   },
 }

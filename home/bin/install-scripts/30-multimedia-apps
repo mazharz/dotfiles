@@ -12,3 +12,7 @@ echo "# Create directories for mpd's necessary files..."
 mkdir -p "$HOME/.mpd/playlists"
 echo '# Enable & Start mpd user service...'
 systemctl enable --user --now mpd
+
+echo '######################################################################'
+echo '# Enable multilib repo, then "sudo pacman -Syu steam"'
+echo '######################################################################'
