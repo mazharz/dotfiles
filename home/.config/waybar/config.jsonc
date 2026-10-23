@@ -2,6 +2,7 @@
   "include": [
     "~/.config/waybar/modules/time.jsonc",
     "~/.config/waybar/modules/workspaces.jsonc",
+    "~/.config/waybar/modules/submap.jsonc",
     "~/.config/waybar/modules/pulseaudio.jsonc",
     "~/.config/waybar/modules/battery.jsonc",
     "~/.config/waybar/modules/language.jsonc",
@@ -27,7 +28,7 @@
   "margin-right": 0,
   "margin-bottom": 0,
   "margin-left": 0,
-  "modules-left": ["hyprland/workspaces"],
+  "modules-left": ["hyprland/workspaces", "hyprland/submap"],
   "modules-right": [
     "custom/mpd",
     "custom/ip-location",

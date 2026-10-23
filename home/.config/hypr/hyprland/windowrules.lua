@@ -1,5 +1,5 @@
 hl.window_rule({ match = { class = "^(mpv)$" }, float = true, pin = true })
-hl.window_rule({ match = { class = "^(thunar)$" }, float = true })
+hl.window_rule({ match = { class = "^(Thunar)$" }, float = true })
 hl.window_rule({ match = { class = "^(org.pulseaudio.pavucontrol)$" }, float = true })
 hl.window_rule({ match = { class = "^(macro-menu)$" }, float = true })
 hl.window_rule({ match = { class = "^(emoji-menu)$" }, float = true })
@@ -15,7 +15,7 @@ hl.window_rule({
 	float = true,
 	fullscreen = true,
 })
-hl.window_rule({ match = { class = "^(MongoDB Compass)$" }, workspace = 7 })
+hl.window_rule({ match = { class = "^(mongodb-compass)$" }, workspace = 7 })
 hl.window_rule({ match = { class = "^(beekeeper-studio)$" }, workspace = 7 })
 hl.window_rule({ match = { class = "^(Postman)$" }, workspace = 8 })
 hl.window_rule({ match = { class = "^(v2rayN)$" }, workspace = 1 })

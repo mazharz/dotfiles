@@ -16,10 +16,11 @@ export VOLTA_HOME="$HOME/.volta"
 export FZF_DEFAULT_OPTS='--layout=reverse-list --info=inline-right --info-command="echo -e \"$FZF_POS/$FZF_INFO\"" --no-separator --no-scrollbar --bind "ctrl-d:half-page-down" --bind "ctrl-u:half-page-up"'
 export FZF_DEFAULT_COMMAND='rg --hidden --files -g !node_modules -g !.git -g !.Trash\* .'
 # PATH
-export PATH="$VOLTA_HOME/bin:$PATH"
-export PATH=$PATH:/home/mazhar/bin/
+export PATH="$PATH":"$HOME/bin"
+export PATH="$PATH":"$VOLTA_HOME/bin"
+export PATH="$PATH":"$HOME/.local/bin"
 
-export DIR_SHORTCUTS="w:$HOME/mzd/wd;n:$HOME/mzd/multimedia/not watched;m:$HOME/mzd/music;c:$HOME/mzd/code;b:$HOME/mzd/text/book;o:$HOME/mzd/os;t:$HOME/mzd/text;s:$HOME/mzd/multimedia/series;f:$HOME/mzd/multimedia/personal media/Family/;d:$HOME/Downloads/"
+export DIR_SHORTCUTS="n:$HOME/mzd/multimedia/not watched;m:$HOME/mzd/music;c:$HOME/mzd/code;b:$HOME/mzd/text/book;o:$HOME/mzd/os;t:$HOME/mzd/text;s:$HOME/mzd/multimedia/series;f:$HOME/mzd/multimedia/personal media/Family/;d:$HOME/Downloads/"
 
 # lf
 [ -n "$LF_LEVEL" ] && PS1="L$LF_LEVEL $PS1"

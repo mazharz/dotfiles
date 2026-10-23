@@ -38,6 +38,7 @@ tooltip label {
 }
 
 @import "modules/workspaces.css";
+@import "modules/submap.css";
 @import "modules/battery.css";
 @import "modules/language.css";
 @import "modules/tray.css";

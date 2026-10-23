@@ -23,7 +23,7 @@ hl.bind("SUPER + ALT + f", hl.dsp.exec_cmd("firefox"))
 hl.bind("SUPER + ALT + e", hl.dsp.exec_cmd("thunar"))
 hl.bind("SUPER + ALT + t", hl.dsp.exec_cmd("Telegram"))
 hl.bind("SUPER + ALT + m", hl.dsp.exec_cmd(globals.terminal .. " -e current_song"))
-hl.bind("SUPER + ALT + p", hl.dsp.exec_cmd("postman"))
+hl.bind("SUPER + ALT + p", hl.dsp.exec_cmd("/opt/postman/Postman"))
 hl.bind("SUPER + ALT + c", hl.dsp.exec_cmd("~/bin/clocks"))
 hl.bind("SUPER + ALT + q", hl.dsp.exec_cmd(globals.terminal .. " --class qalculate-terminal -e qalc"))
 hl.bind("SUPER + ALT + return", hl.dsp.exec_cmd(globals.terminal .. " -e lf"))
@@ -176,6 +176,23 @@ hl.bind("SUPER + CTRL + ALT + space", hl.dsp.exec_cmd("dunstctl set-paused toggl
 
 hl.bind("SUPER + x", hl.dsp.exec_cmd('grim -g "$(slurp)" -t ppm - | satty --filename -'))
 hl.bind("SUPER + ALT + x", hl.dsp.exec_cmd('grim -g "$(slurp -o -r)" -t ppm - | satty --filename -'))
+
+hl.bind("SUPER + SHIFT + x", hl.dsp.submap("ocr"))
+hl.define_submap("ocr", function()
+	hl.bind("e", function()
+		hl.dispatch(hl.dsp.exec_cmd("~/bin/ocr eng"))
+		hl.dispatch(hl.dsp.submap("reset"))
+	end)
+	hl.bind("f", function()
+		hl.dispatch(hl.dsp.exec_cmd("~/bin/ocr fas"))
+		hl.dispatch(hl.dsp.submap("reset"))
+	end)
+	hl.bind("d", function()
+		hl.dispatch(hl.dsp.exec_cmd("~/bin/ocr deu"))
+		hl.dispatch(hl.dsp.submap("reset"))
+	end)
+	hl.bind("escape", hl.dsp.submap("reset"))
+end)
 
 ----------------------------------------------------------------------
 -- brightness

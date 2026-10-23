@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+text=$(grim -g "$(slurp)" - | tesseract - - -l "$1" 2>/dev/null)
+[ -z "$text" ] && { notify-send "OCR" "No text found"; exit 1; }
+printf '%s' "$text" | wl-copy
+notify-send "OCR" "Copied: ${text:0:80}"
