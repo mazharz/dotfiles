@@ -3,7 +3,7 @@ set -e
 
 echo '# Installing system apps...'
 sleep 1
-sudo pacman -S calibre xournalpp libreoffice-still gedit gnome-font-viewer file-roller zathura zathura-pdf-mupdf
+sudo pacman -S calibre xournalpp gedit gnome-font-viewer file-roller zathura zathura-pdf-mupdf
 
 echo '# Installing dropbox...'
 sleep 1

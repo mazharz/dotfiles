@@ -81,3 +81,10 @@ function re {
 function str-to-qr {
   qrencode "$1" -o - | display
 }
+
+function html-to-pdf {
+  chromium --headless --disable-gpu --no-pdf-header-footer \
+    --virtual-time-budget=5000 \
+    --print-to-pdf="${1%.html}.pdf" \
+    "$1"
+}
